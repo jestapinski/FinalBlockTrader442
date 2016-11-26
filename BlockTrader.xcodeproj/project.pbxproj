@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		238E09284C63B69666709B25 /* Pods_BlockTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F28637A781D397010DA945 /* Pods_BlockTrader.framework */; };
+		7B271BA81DE9E6B10078C097 /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */; };
 		7B9F058F1DE8DC1F00E98C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */; };
 		7B9F05911DE8DC1F00E98C5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05901DE8DC1F00E98C5C /* ViewController.swift */; };
 		7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9F05921DE8DC1F00E98C5C /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 		7B9F05A71DE8DC2000E98C5C /* BlockTraderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05A61DE8DC2000E98C5C /* BlockTraderTests.swift */; };
 		7B9F05B21DE8DC2000E98C5C /* BlockTraderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05B11DE8DC2000E98C5C /* BlockTraderUITests.swift */; };
 		7B9F05C01DE8DE5200E98C5C /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05BF1DE8DE5200E98C5C /* MainPageViewController.swift */; };
+		7B9F05C31DE9E38D00E98C5C /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */; };
+		7B9F05C51DE9E3F900E98C5C /* StripeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		67F28637A781D397010DA945 /* Pods_BlockTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
 		7B9F058B1DE8DC1F00E98C5C /* BlockTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9F05901DE8DC1F00E98C5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		7B9F05B31DE8DC2000E98C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B9F05BF1DE8DE5200E98C5C /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		7B9F05C11DE8E6DE00E98C5C /* BlockTrader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlockTrader.entitlements; sourceTree = "<group>"; };
+		7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeAccountViewController.swift; sourceTree = "<group>"; };
 		ABCA6FAE95BD0BF9547C1188 /* Pods-BlockTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.release.xcconfig"; sourceTree = "<group>"; };
 		FD7BF3B1C780988A5672A68E /* Pods-BlockTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +132,9 @@
 				7B9F059A1DE8DC1F00E98C5C /* LaunchScreen.storyboard */,
 				7B9F059D1DE8DC1F00E98C5C /* Info.plist */,
 				7B9F05951DE8DC1F00E98C5C /* BlockTrader.xcdatamodeld */,
+				7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */,
+				7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */,
+				7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */,
 			);
 			path = BlockTrader;
 			sourceTree = "<group>";
@@ -351,7 +360,10 @@
 				7B9F05C01DE8DE5200E98C5C /* MainPageViewController.swift in Sources */,
 				7B9F05971DE8DC1F00E98C5C /* BlockTrader.xcdatamodeld in Sources */,
 				7B9F05911DE8DC1F00E98C5C /* ViewController.swift in Sources */,
+				7B271BA81DE9E6B10078C097 /* MyAPIClient.swift in Sources */,
+				7B9F05C31DE9E38D00E98C5C /* CardViewController.swift in Sources */,
 				7B9F058F1DE8DC1F00E98C5C /* AppDelegate.swift in Sources */,
+				7B9F05C51DE9E3F900E98C5C /* StripeAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

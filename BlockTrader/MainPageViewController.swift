@@ -13,6 +13,7 @@ import FacebookCore
 class MainPageViewController: UIViewController {
     
     var accessToken: AccessToken?
+    var credentials: [String: Any] = [:]
     
     @IBOutlet weak var welcomename: UILabel!
 
@@ -130,14 +131,17 @@ class MainPageViewController: UIViewController {
         let userFirstName = jsonResult!["first_name"]!
         let userLastName = jsonResult!["last_name"]!
         let userID = jsonResult!["fb_id"]!
-        let userPhone = jsonResult!["phone"]
+        let userPhone = jsonResult!["phone"]!
         //Phone may be null
+        self.credentials["api_authtoken"] = ourAUTH
+        self.credentials["email"] = userEmail
+        self.credentials["first_name"] = userFirstName
+        self.credentials["last_name"] = userLastName
+        self.credentials["fb_id"] = userID
+        self.credentials["phone"] = userPhone
         print("responseString = \(ourAUTH)")
         self.welcomename.text = userFirstName as? String
     }
-    
-    
-    
     
     
     override func didReceiveMemoryWarning() {
@@ -145,15 +149,34 @@ class MainPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Buy Food
+    
+    //@IBAction func
+        //First, check to see if CustomerID has been created
+            //If not, have them enter Credit Card and get credentials, make customer before proceeding
+    
+        //Next, go to some menu where you can pick out food, price, location
+        //Submit request
+    
+    // MARK: Deliver Food
+        //First, check to see if AccountID is known
+            //If not, have them sign into Stripe and get it back through backend
 
-    /*
+        //Next, go to some menu where all active requests are shown
+        //...
+    
+    
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "insertcard"){
+            let finalDestination = segue.destination as? CardViewController
+            finalDestination?.credentials = self.credentials
+        }
     }
-    */
 
 }

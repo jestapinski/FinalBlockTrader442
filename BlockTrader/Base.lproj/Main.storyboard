@@ -53,10 +53,16 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8b-Zx-BxO">
                                 <rect key="frame" x="85" y="386" width="76" height="30"/>
                                 <state key="normal" title="Buy Food"/>
+                                <connections>
+                                    <segue destination="jRn-ey-w2V" kind="show" identifier="insertcard" id="IKo-2d-ggw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PW-k9-GHq">
                                 <rect key="frame" x="191" y="386" width="99" height="30"/>
                                 <state key="normal" title="Deliver Food"/>
+                                <connections>
+                                    <segue destination="cwd-IF-jJ1" kind="show" identifier="getaccount" action="showDetailViewController:sender:" id="ggQ-Fh-qt2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,6 +84,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="652-Km-wME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="909.60000000000002" y="119.1904047976012"/>
+        </scene>
+        <!--Get Stripe Account VC-->
+        <scene sceneID="4pd-gs-hZa">
+            <objects>
+                <viewController storyboardIdentifier="getacct" title="Get Stripe Account VC" id="cwd-IF-jJ1" customClass="StripeAccountViewController" customModule="BlockTrader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tnu-E2-WwX"/>
+                        <viewControllerLayoutGuide type="bottom" id="baI-gO-j46"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eja-l3-7zJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6a3-9D-bFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2006" y="745"/>
+        </scene>
+        <!--All Open Orders-->
+        <scene sceneID="94Q-UY-Qa8">
+            <objects>
+                <viewController storyboardIdentifier="openorderstable" title="All Open Orders" id="NdR-sx-LPg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gMv-Iq-bGV"/>
+                        <viewControllerLayoutGuide type="bottom" id="DQf-3K-jRG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ruL-UE-8Xm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9i-yK-xhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2911" y="754"/>
+        </scene>
+        <!--Submit an Order-->
+        <scene sceneID="e0f-fa-EPU">
+            <objects>
+                <viewController storyboardIdentifier="foodform" title="Submit an Order" id="OOt-xw-TaC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZdP-eX-PUY"/>
+                        <viewControllerLayoutGuide type="bottom" id="oLk-tx-CFU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nuv-rc-Ivv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhX-QC-n87" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2902" y="-484"/>
+        </scene>
+        <!--Get Credit Card VC-->
+        <scene sceneID="1aS-tq-fjz">
+            <objects>
+                <viewController storyboardIdentifier="cardvc" title="Get Credit Card VC" id="jRn-ey-w2V" customClass="CardViewController" customModule="BlockTrader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eSJ-xN-Tdj"/>
+                        <viewControllerLayoutGuide type="bottom" id="94r-J2-7gc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1cd-Ti-Fgh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter your credit card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt7-Dz-Gej">
+                                <rect key="frame" x="71" y="106" width="232" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5A-6H-ZMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992.8" y="-484.40779610194909"/>
         </scene>
     </scenes>
 </document>

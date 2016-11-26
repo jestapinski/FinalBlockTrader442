@@ -10,4 +10,9 @@ target ‘BlockTrader’ do
   pod 'FacebookLogin'
   pod 'FacebookShare'
 
+  # Pods for Stripe and Card Auth
+  pod 'Stripe'
+  pod 'CardIO'
+  pod 'SVProgressHUD'
+
 end
