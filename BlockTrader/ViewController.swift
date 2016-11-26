@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         view.addSubview(loginButton)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         print(AccessToken.current)
         if let accessToken = AccessToken.current{
@@ -27,10 +27,15 @@ class ViewController: UIViewController {
             self.moveToMainPage(accessToken: accessToken)
         }
     }
-    
+
+    /**
+     Performs Navigation to Home Page if the user has been authenticated through Facebook
+     - parameter accessToken: The Access Token received from Facebook API
+     */
     func moveToMainPage(accessToken: AccessToken){
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "loggedin") as! MainPageViewController
+        let vc : MainPageViewController = mainStoryboard.instantiateViewController(withIdentifier: "loggedin") as! MainPageViewController
+        vc.accessToken = accessToken
         self.present(vc, animated: true, completion: nil)
     }
 

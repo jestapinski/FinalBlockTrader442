@@ -37,12 +37,47 @@
                     <view key="view" contentMode="scaleToFill" id="hsn-f9-rFD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwB-lE-VKt">
+                                <rect key="frame" x="148" y="110" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What would you like to do?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRw-4l-zwD">
+                                <rect key="frame" x="85" y="220" width="205" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8b-Zx-BxO">
+                                <rect key="frame" x="85" y="386" width="76" height="30"/>
+                                <state key="normal" title="Buy Food"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PW-k9-GHq">
+                                <rect key="frame" x="191" y="386" width="99" height="30"/>
+                                <state key="normal" title="Deliver Food"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xRw-4l-zwD" firstAttribute="top" secondItem="DwB-lE-VKt" secondAttribute="bottom" constant="103" id="0rc-z7-eXB"/>
+                            <constraint firstItem="xRw-4l-zwD" firstAttribute="centerX" secondItem="hsn-f9-rFD" secondAttribute="centerX" id="IDg-lX-vC9"/>
+                            <constraint firstItem="xRw-4l-zwD" firstAttribute="centerX" secondItem="DwB-lE-VKt" secondAttribute="centerX" id="MVS-6U-94B"/>
+                            <constraint firstItem="xRw-4l-zwD" firstAttribute="centerY" secondItem="hsn-f9-rFD" secondAttribute="centerY" id="O3x-dp-Eye"/>
+                            <constraint firstItem="1PW-k9-GHq" firstAttribute="top" secondItem="xRw-4l-zwD" secondAttribute="bottom" constant="145" id="OkV-VM-ymP"/>
+                            <constraint firstItem="1PW-k9-GHq" firstAttribute="leading" secondItem="A8b-Zx-BxO" secondAttribute="trailing" constant="30" id="o1g-At-rwt"/>
+                            <constraint firstItem="DwB-lE-VKt" firstAttribute="centerX" secondItem="hsn-f9-rFD" secondAttribute="centerX" id="srX-La-ig3"/>
+                            <constraint firstItem="A8b-Zx-BxO" firstAttribute="top" secondItem="xRw-4l-zwD" secondAttribute="bottom" constant="145" id="wSb-hE-Qa8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="welcomename" destination="DwB-lE-VKt" id="JBx-4G-Ngw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="652-Km-wME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910" y="120"/>
+            <point key="canvasLocation" x="909.60000000000002" y="119.1904047976012"/>
         </scene>
     </scenes>
 </document>
