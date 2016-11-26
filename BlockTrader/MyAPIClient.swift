@@ -18,6 +18,7 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
     var baseURLString: String? = nil
     var defaultSource: STPCard? = nil
     var sources: [STPCard] = []
+    var customerID: String = ""
     
     override init() {
         let configuration = URLSessionConfiguration.default
@@ -26,13 +27,13 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         super.init()
     }
     
-    func getStripeToken(card:STPCardParams) {
+    func getStripeToken(card:STPCardParams, parameters : [String : Any], inst: CardViewController) {
         // get stripe token for current card
         STPAPIClient.shared().createToken(withCard: card) { token, error in
             if let token = token {
                 print(token)
                 SVProgressHUD.showSuccess(withStatus: "Stripe token successfully received: \(token)")
-                self.postStripeToken(token: token)
+                self.postStripeToken(token: token, parameters: parameters, inst: inst)
             } else {
                 print(error)
                 //SVProgressHUD.showError(errorwithStatus:,, ?.localizedDescription)
@@ -41,29 +42,34 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
     }
     
     // charge money from backend
-    func postStripeToken(token: STPToken) {
+    func postStripeToken(token: STPToken, parameters: [String : Any], inst: CardViewController) {
         //Set up these params as your backend require
         //Remove hardcoding
-        let params: [String: NSObject] = ["stripeToken": token.tokenId as NSObject, "amount": 100 as NSObject, "acct" : "acct_19FdUmA1RWNbtIye" as NSObject]
+        let params: [String: NSObject] = ["stripeToken": token.tokenId as NSObject, "amount": 100 as NSObject, "acct" : "acct_19FdUmA1RWNbtIye" as NSObject, "email" : parameters["email"] as! NSObject]
         //Fix below
         let baseUrl = URL(string: "http://stripetest67442.herokuapp.com")
-        let url = baseUrl?.appendingPathComponent("charge")
+        let url = baseUrl?.appendingPathComponent("cust_new")
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 5
         let session = URLSession(configuration: configuration)
         //Actual Charge done below after passing to backend
         let request = URLRequest.request(url!, method: .POST, params: params)
         let task = session.dataTask(with: request) { (data:Data?, urlResponse, error) in
-            DispatchQueue.main.async {
+            //DispatchQueue.main.async {
+            //{
                 if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
                     return
                 } else {
                     print("Success, but will figure out in the future")
                     print(urlResponse)
                     let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                    //ResponseString! is the customer ID, this should be returned with the backend changed to be making a new customer
                     print(responseString!)
+                    inst.customerID = responseString as! String
+                    inst.handleCustomerID()
+//                    return (responseString!)
                 }
-            }}
+            }
         task.resume()
         
     }

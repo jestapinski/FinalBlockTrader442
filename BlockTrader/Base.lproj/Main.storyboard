@@ -124,7 +124,7 @@
         <!--Submit an Order-->
         <scene sceneID="e0f-fa-EPU">
             <objects>
-                <viewController storyboardIdentifier="foodform" title="Submit an Order" id="OOt-xw-TaC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="foodform" title="Submit an Order" id="OOt-xw-TaC" customClass="OrderFormViewController" customModule="BlockTrader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZdP-eX-PUY"/>
                         <viewControllerLayoutGuide type="bottom" id="oLk-tx-CFU"/>
@@ -132,12 +132,31 @@
                     <view key="view" contentMode="scaleToFill" id="Nuv-rc-Ivv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's Order!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEi-IN-OPJ">
+                                <rect key="frame" x="140" y="89" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cust_id" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stl-0N-l0r">
+                                <rect key="frame" x="153" y="151" width="68" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="cust_id" destination="stl-0N-l0r" id="Oko-km-j65"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhX-QC-n87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2902" y="-484"/>
+            <point key="canvasLocation" x="2901.5999999999999" y="-484.40779610194909"/>
         </scene>
         <!--Get Credit Card VC-->
         <scene sceneID="1aS-tq-fjz">

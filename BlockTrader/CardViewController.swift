@@ -14,11 +14,12 @@ import SVProgressHUD
 class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, CardIOPaymentViewControllerDelegate {
     
     var credentials: [String : Any] = [:]
+    var customerID: String = ""
     
     @IBOutlet weak var payButton: UIButton!
     var paymentTextField: STPPaymentCardTextField!
     
-    let API = MyAPIClient()
+    let API = MyAPIClient.sharedClient
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,18 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
         //send card information to stripe to get back a token
-        self.API.getStripeToken(card: card)
+        self.API.getStripeToken(card: card, parameters: credentials, inst: self)
+//        while (self.API.customerID == "") {
+//            
+//        }
+        print("DONE")
+        print(self.customerID)
+    }
+    
+    func handleCustomerID(){
+        //Got customer ID back, now we can move to next page
+        print("Actual ID")
+        print(self.customerID)
     }
     
     
@@ -97,7 +109,7 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
             card.cvc = info.cvv
             
             //Send to Stripe
-            self.API.getStripeToken(card: card)
+            self.API.getStripeToken(card: card, parameters: credentials, inst: self)
             
         }
     }
