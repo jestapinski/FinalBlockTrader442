@@ -31,6 +31,27 @@ class StripeAccountViewController: UIViewController {
         }
     }
     
+    func swapWindows(accessCode: String){
+        performSegue(withIdentifier: "hasbeenauthenticated", sender: accessCode)
+        return
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        print("HERE")
+        if (segue.identifier == "hasbeenauthenticated") {
+            let secondViewController = segue.destination as? MainSellerViewController
+            let acctNumber = sender as! String
+            secondViewController?.acctNumber = acctNumber
+            //self.ourPC?.hostViewController = secondViewController
+            //secondViewController?.paymentContext = self.ourPC
+            print("Userinfo")
+            print(acctNumber)
+            //At this point we can save it to DB, changing segue to only run on setup i.e. once per user
+            //secondViewController?.Label!.text! = userinfo
+            //print(secondViewController?.Label!.text!)
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

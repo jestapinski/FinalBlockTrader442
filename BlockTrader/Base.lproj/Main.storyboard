@@ -108,6 +108,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="NdR-sx-LPg" kind="show" identifier="hasbeenauthenticated" id="P94-8m-qZQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6a3-9D-bFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,7 +119,7 @@
         <!--All Open Orders-->
         <scene sceneID="94Q-UY-Qa8">
             <objects>
-                <viewController storyboardIdentifier="openorderstable" title="All Open Orders" id="NdR-sx-LPg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="openorderstable" title="All Open Orders" id="NdR-sx-LPg" customClass="MainSellerViewController" customModule="BlockTrader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gMv-Iq-bGV"/>
                         <viewControllerLayoutGuide type="bottom" id="DQf-3K-jRG"/>
@@ -124,12 +127,24 @@
                     <view key="view" contentMode="scaleToFill" id="ruL-UE-8Xm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCy-in-v2k">
+                                <rect key="frame" x="16" y="262" width="343" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="acctLabel" destination="ZCy-in-v2k" id="TCa-dF-Hue"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9i-yK-xhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2911" y="754"/>
+            <point key="canvasLocation" x="2909.5999999999999" y="753.37331334332839"/>
         </scene>
         <!--Submit an Order-->
         <scene sceneID="e0f-fa-EPU">

@@ -82,6 +82,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
+    func getVisibleViewController(_ rootViewController: UIViewController?) -> UIViewController? {
+        
+        var rootVC = rootViewController
+        if rootVC == nil {
+            rootVC = UIApplication.shared.keyWindow?.rootViewController
+        }
+        
+        if rootVC?.presentedViewController == nil {
+            return rootVC
+        }
+        
+        if let presented = rootVC?.presentedViewController {
+            if presented.isKind(of: UINavigationController.self) {
+                let navigationController = presented as! UINavigationController
+                return navigationController.viewControllers.last!
+            }
+            
+            if presented.isKind(of: UITabBarController.self) {
+                let tabBarController = presented as! UITabBarController
+                return tabBarController.selectedViewController!
+            }
+            
+            return getVisibleViewController(presented)
+        }
+        return nil
+    }
+    
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         print(url.absoluteString)
         //Below line is to distinguish Facebook from Stripe, can be improved in the future
@@ -108,8 +135,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                configuration: config,
                                                theme: settings.theme)
         print("SUCCESS! Now to swap windows")
-        //let rootVC = self.window!.rootViewController! as! ViewController
-        //rootVC.swapWindows(accessCode: self.accessCode!, pc: paymentContext)
+            
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let vc : MainSellerViewController = mainStoryboard.instantiateViewController(withIdentifier: "openorderstable") as! MainSellerViewController
+//        self.present(vc, animated: true, completion: nil)
+        let rootVC = self.getVisibleViewController(self.window!.rootViewController) as! StripeAccountViewController //self.window!.rootViewController!.presentedViewController! as! StripeAccountViewController
+        rootVC.swapWindows(accessCode: self.accessCode!)
         
         //print(self.accessCode)
         //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
