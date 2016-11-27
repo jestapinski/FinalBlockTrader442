@@ -10,6 +10,8 @@ import UIKit
 
 class StripeAccountViewController: UIViewController {
 
+    var baseURL: String = "http://stripetest67442.herokuapp.com"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,14 @@ class StripeAccountViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func findAcct(sender: AnyObject){
+        let authURL = self.baseURL + "/authorize"
+        if let requestUrl = NSURL(string: authURL) {
+            print(requestUrl)
+            UIApplication.shared.openURL(requestUrl as URL)
+        }
     }
     
 

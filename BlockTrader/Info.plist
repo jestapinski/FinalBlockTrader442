@@ -51,6 +51,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>smartappbanner</string>
 				<string>fb215846578857145</string>
 			</array>
 		</dict>

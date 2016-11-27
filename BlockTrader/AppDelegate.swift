@@ -10,16 +10,112 @@ import UIKit
 import FBSDKLoginKit
 import Stripe
 
+fileprivate enum RequiredBillingAddressFields: String {
+    case None = "None"
+    case Zip = "Zip"
+    case Full = "Full"
+    
+    init(row: Int) {
+        switch row {
+        case 0: self = .None
+        case 1: self = .Zip
+        default: self = .Full
+        }
+    }
+    
+    var stpBillingAddressFields: STPBillingAddressFields {
+        switch self {
+        case .None: return .none
+        case .Zip: return .zip
+        case .Full: return .full
+        }
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var accessCode: String?
+    let stripePublishableKey = "pk_test_BfRm3UU2gsYRebGH6cMuwnl7"
+    let appleMerchantID: String? = nil
+    fileprivate var requiredBillingAddressFields: RequiredBillingAddressFields = .None
     
+    struct Settings {
+        let theme: STPTheme
+        let additionalPaymentMethods: STPPaymentMethodType
+        let requiredBillingAddressFields: STPBillingAddressFields
+        let smsAutofillEnabled: Bool
+    }
+    
+    //    let theme = STPTheme()
+    //    theme.primaryBackgroundColor = UIColor(red:0.16, green:0.23, blue:0.31, alpha:1.00)
+    //    theme.secondaryBackgroundColor = UIColor(red:0.22, green:0.29, blue:0.38, alpha:1.00)
+    //    theme.primaryForegroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
+    //    theme.secondaryForegroundColor = UIColor(red:0.60, green:0.64, blue:0.71, alpha:1.00)
+    //    theme.accentColor = UIColor(red:0.98, green:0.80, blue:0.00, alpha:1.00)
+    //    theme.errorColor = UIColor(red:0.85, green:0.48, blue:0.48, alpha:1.00)
+    //    theme.font = UIFont(name: "GillSans", size: 17)
+    //    theme.emphasisFont = UIFont(name: "GillSans", size: 17)
+    
+    
+    
+    var settings: Settings {
+        let theme = STPTheme()
+        theme.primaryBackgroundColor = UIColor(red:0.16, green:0.23, blue:0.31, alpha:1.00)
+        theme.secondaryBackgroundColor = UIColor(red:0.22, green:0.29, blue:0.38, alpha:1.00)
+        theme.primaryForegroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
+        theme.secondaryForegroundColor = UIColor(red:0.60, green:0.64, blue:0.71, alpha:1.00)
+        theme.accentColor = UIColor(red:0.98, green:0.80, blue:0.00, alpha:1.00)
+        theme.errorColor = UIColor(red:0.85, green:0.48, blue:0.48, alpha:1.00)
+        theme.font = UIFont(name: "GillSans", size: 17)
+        theme.emphasisFont = UIFont(name: "GillSans", size: 17)
+        return Settings(theme: theme,
+                        additionalPaymentMethods: false ? .all : STPPaymentMethodType(),
+                        requiredBillingAddressFields: self.requiredBillingAddressFields.stpBillingAddressFields,
+                        smsAutofillEnabled: false)
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         STPPaymentConfiguration.shared().publishableKey = "pk_test_BfRm3UU2gsYRebGH6cMuwnl7"
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print(url.absoluteString)
+        //Below line is to distinguish Facebook from Stripe, can be improved in the future
+        if url.absoluteString[url.absoluteString.startIndex] != "s" {
+            return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        }
+        else{
+        print(url.host as String!)
+        print("New Hope")
+        //TODO fix Below
+        self.accessCode = (url.host as String!)
+        if let code = self.accessCode {
+            print(code)
+        }
+        let config = STPPaymentConfiguration.shared()
+        config.publishableKey = self.stripePublishableKey
+        config.appleMerchantIdentifier = self.appleMerchantID
+        //config.companyName = self.companyName
+        config.requiredBillingAddressFields = settings.requiredBillingAddressFields
+        config.additionalPaymentMethods = settings.additionalPaymentMethods
+        config.smsAutofillDisabled = !settings.smsAutofillEnabled
+        
+        let paymentContext = STPPaymentContext(apiAdapter: MyAPIClient.sharedClient,
+                                               configuration: config,
+                                               theme: settings.theme)
+        print("SUCCESS! Now to swap windows")
+        //let rootVC = self.window!.rootViewController! as! ViewController
+        //rootVC.swapWindows(accessCode: self.accessCode!, pc: paymentContext)
+        
+        //print(self.accessCode)
+        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let vc = storyboard.instantiateViewController(withIdentifier: "MainPage") as MainViewController
+        //        self.window?.pushViewController(mainVC, animated: true)
+            return true}
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -46,8 +142,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-    }
+//    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+//        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+//    }
     
 }
