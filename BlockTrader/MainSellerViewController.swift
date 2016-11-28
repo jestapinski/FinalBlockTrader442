@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ ViewController upon which a deliverer can see active orders
+ */
 class MainSellerViewController: UIViewController {
     
     var acctNumber: String = ""

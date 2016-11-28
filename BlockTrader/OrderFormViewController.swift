@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ View controller upon which a user can submit an order
+ */
 class OrderFormViewController: UIViewController {
     
     @IBOutlet weak var cust_id: UILabel!

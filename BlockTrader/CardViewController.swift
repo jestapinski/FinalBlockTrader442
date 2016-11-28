@@ -11,6 +11,7 @@ import UIKit
 import Stripe
 import SVProgressHUD
 
+//ViewController for creating user from Payment Method
 class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, CardIOPaymentViewControllerDelegate {
     
     var credentials: [String : Any] = [:]
@@ -54,7 +55,7 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         
     }
     
-    
+    //TODO need to check card authentication works as expected
     @IBAction func payButtonTapped(sender: AnyObject) {
         let card = paymentTextField.cardParams
         print(card)
@@ -69,6 +70,9 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         print(self.customerID)
     }
     
+    /**
+     Handles customer ID information once it is retrieved from the backend
+    */
     func handleCustomerID(){
         //Got customer ID back, now we can move to next page
         print("Actual ID")
@@ -76,7 +80,7 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
     }
     
     
-    
+    //TODO fix this method, it is broken but not needed right now
     func paymentCardTextFieldDidChange(textField: STPPaymentCardTextField) {
         payButton.isEnabled = true
         if textField.valid{

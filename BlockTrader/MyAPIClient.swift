@@ -19,6 +19,7 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
     var defaultSource: STPCard? = nil
     var sources: [STPCard] = []
     var customerID: String = ""
+    var stripeBackendURL: String = "http://stripetest67442.herokuapp.com"
     
     override init() {
         let configuration = URLSessionConfiguration.default
@@ -27,11 +28,16 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         super.init()
     }
     
+    /**
+     Produces a Stripe Token provided a Credit Card.
+     - parameter card: A Credit Card passed according to the STPCardParams Representation
+     - parameter parameters: User parameters to be passed along with creation of Stripe Account
+     - parameter inst: The current instance of the CardViewController class
+    */
     func getStripeToken(card:STPCardParams, parameters : [String : Any], inst: CardViewController) {
-        // get stripe token for current card
+        // Get stripe token for current card through Stripe method
         STPAPIClient.shared().createToken(withCard: card) { token, error in
             if let token = token {
-                print(token)
                 SVProgressHUD.showSuccess(withStatus: "Stripe token successfully received: \(token)")
                 self.postStripeToken(token: token, parameters: parameters, inst: inst)
             } else {
@@ -41,18 +47,28 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         }
     }
     
-    // charge money from backend
+    /**
+     Use the Stripe Backend to create a customer account given a CC token, and retrieve the customer ID.
+     - parameter token: Token of payment type
+     - parameter parameters: User info to be used in creating customer account
+     - parameter inst: The current instance of the CardViewController class
+    */
     func postStripeToken(token: STPToken, parameters: [String : Any], inst: CardViewController) {
         //Set up these params as your backend require
         //Remove hardcoding
+        
+        //Below line can now likely be removed from this function since purpose has changed and these are not in use
         let params: [String: NSObject] = ["stripeToken": token.tokenId as NSObject, "amount": 100 as NSObject, "acct" : "acct_19FdUmA1RWNbtIye" as NSObject, "email" : parameters["email"] as! NSObject]
-        //Fix below
-        let baseUrl = URL(string: "http://stripetest67442.herokuapp.com")
+
+        let baseUrl = URL(string: self.stripeBackendURL)
         let url = baseUrl?.appendingPathComponent("cust_new")
         let configuration = URLSessionConfiguration.default
+        
+        //Below line is optional
         configuration.timeoutIntervalForRequest = 5
         let session = URLSession(configuration: configuration)
-        //Actual Charge done below after passing to backend
+        
+        //Pass to backend
         let request = URLRequest.request(url!, method: .POST, params: params)
         let task = session.dataTask(with: request) { (data:Data?, urlResponse, error) in
             //DispatchQueue.main.async {
@@ -60,14 +76,12 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
                 if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
                     return
                 } else {
-                    print("Success, but will figure out in the future")
-                    print(urlResponse)
                     let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                    
                     //ResponseString! is the customer ID, this should be returned with the backend changed to be making a new customer
                     print(responseString!)
                     inst.customerID = responseString as! String
                     inst.handleCustomerID()
-//                    return (responseString!)
                 }
             }
         task.resume()

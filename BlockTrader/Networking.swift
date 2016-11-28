@@ -4,7 +4,8 @@
 //
 //  Created by Jordan Stapinski on 11/15/16.
 //  Copyright © 2016 Jordan Stapinski. All rights reserved.
-//  Taken from Stripe iOS example at https://github.com/stripe/stripe-ios
+
+//  File Taken from Stripe iOS example at https://github.com/stripe/stripe-ios
 
 import Foundation
 

@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import Stripe
 
+// RequiredBillingAddressFields Code pulled from Stripe iOS integration example
 fileprivate enum RequiredBillingAddressFields: String {
     case None = "None"
     case Zip = "Zip"
@@ -41,23 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let appleMerchantID: String? = nil
     fileprivate var requiredBillingAddressFields: RequiredBillingAddressFields = .None
     
+    //Settings code pulled from Stripe-iOS-master REPO on GitHub
     struct Settings {
         let theme: STPTheme
         let additionalPaymentMethods: STPPaymentMethodType
         let requiredBillingAddressFields: STPBillingAddressFields
         let smsAutofillEnabled: Bool
     }
-    
-    //    let theme = STPTheme()
-    //    theme.primaryBackgroundColor = UIColor(red:0.16, green:0.23, blue:0.31, alpha:1.00)
-    //    theme.secondaryBackgroundColor = UIColor(red:0.22, green:0.29, blue:0.38, alpha:1.00)
-    //    theme.primaryForegroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
-    //    theme.secondaryForegroundColor = UIColor(red:0.60, green:0.64, blue:0.71, alpha:1.00)
-    //    theme.accentColor = UIColor(red:0.98, green:0.80, blue:0.00, alpha:1.00)
-    //    theme.errorColor = UIColor(red:0.85, green:0.48, blue:0.48, alpha:1.00)
-    //    theme.font = UIFont(name: "GillSans", size: 17)
-    //    theme.emphasisFont = UIFont(name: "GillSans", size: 17)
-    
     
     
     var settings: Settings {
@@ -82,6 +73,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
+    /**
+     Recursively gets the current view controller being displayed
+     - parameter rootViewController: The current view controller for the app
+    */
     func getVisibleViewController(_ rootViewController: UIViewController?) -> UIViewController? {
         
         var rootVC = rootViewController
@@ -109,20 +104,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return nil
     }
     
+    /**
+     This function is called upon returning to the app from either a WebView or some URL
+     Used for Facebook and Stripe authentications
+    */
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        print(url.absoluteString)
+        
         //Below line is to distinguish Facebook from Stripe, can be improved in the future
         if url.absoluteString[url.absoluteString.startIndex] != "s" {
             return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
         }
         else{
-        print(url.host as String!)
-        print("New Hope")
-        //TODO fix Below
-        self.accessCode = (url.host as String!)
-        if let code = self.accessCode {
-            print(code)
-        }
+            self.accessCode = (url.host as String!)
+            if let code = self.accessCode {
+                let rootVC = self.getVisibleViewController(self.window!.rootViewController) as! StripeAccountViewController
+                rootVC.swapWindows(accessCode: code)
+            } else {
+                //TODO raise some error
+                print("Stripe Failed")
+            }
+        /**
+             
+        Info used for payment contexts, to be deleated later
+             
         let config = STPPaymentConfiguration.shared()
         config.publishableKey = self.stripePublishableKey
         config.appleMerchantIdentifier = self.appleMerchantID
@@ -135,18 +139,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                configuration: config,
                                                theme: settings.theme)
         print("SUCCESS! Now to swap windows")
-            
-//        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        let vc : MainSellerViewController = mainStoryboard.instantiateViewController(withIdentifier: "openorderstable") as! MainSellerViewController
-//        self.present(vc, animated: true, completion: nil)
-        let rootVC = self.getVisibleViewController(self.window!.rootViewController) as! StripeAccountViewController //self.window!.rootViewController!.presentedViewController! as! StripeAccountViewController
-        rootVC.swapWindows(accessCode: self.accessCode!)
-        
-        //print(self.accessCode)
-        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let vc = storyboard.instantiateViewController(withIdentifier: "MainPage") as MainViewController
-        //        self.window?.pushViewController(mainVC, animated: true)
-            return true}
+        */
+            return true
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
