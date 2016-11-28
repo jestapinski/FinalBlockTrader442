@@ -12,6 +12,7 @@
 		7B271BAA1DE9E8290078C097 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BA91DE9E8290078C097 /* Networking.swift */; };
 		7B271BAE1DE9F94D0078C097 /* OrderFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */; };
 		7B271BB01DEB486A0078C097 /* MainSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */; };
+		7B271BB61DECBBD80078C097 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */; };
 		7B9F058F1DE8DC1F00E98C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */; };
 		7B9F05911DE8DC1F00E98C5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05901DE8DC1F00E98C5C /* ViewController.swift */; };
 		7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9F05921DE8DC1F00E98C5C /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		7B271BA91DE9E8290078C097 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderFormViewController.swift; sourceTree = "<group>"; };
 		7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSellerViewController.swift; sourceTree = "<group>"; };
+		7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		7B9F058B1DE8DC1F00E98C5C /* BlockTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9F05901DE8DC1F00E98C5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				7B271BA91DE9E8290078C097 /* Networking.swift */,
 				7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */,
 				7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */,
+				7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */,
 			);
 			path = BlockTrader;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				7B271BA81DE9E6B10078C097 /* MyAPIClient.swift in Sources */,
 				7B9F05C31DE9E38D00E98C5C /* CardViewController.swift in Sources */,
 				7B9F058F1DE8DC1F00E98C5C /* AppDelegate.swift in Sources */,
+				7B271BB61DECBBD80078C097 /* OrderConfirmationViewController.swift in Sources */,
 				7B9F05C51DE9E3F900E98C5C /* StripeAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

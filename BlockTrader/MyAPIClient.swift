@@ -71,8 +71,8 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         //Pass to backend
         let request = URLRequest.request(url!, method: .POST, params: params)
         let task = session.dataTask(with: request) { (data:Data?, urlResponse, error) in
-            //DispatchQueue.main.async {
-            //{
+            DispatchQueue.main.async {
+            
                 if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
                     return
                 } else {
@@ -82,8 +82,8 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
                     print(responseString!)
                     inst.customerID = responseString as! String
                     inst.handleCustomerID()
-                }
-            }
+                
+                }}}
         task.resume()
         
     }

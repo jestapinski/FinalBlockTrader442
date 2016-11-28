@@ -77,6 +77,15 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         //Got customer ID back, now we can move to next page
         print("Actual ID")
         print(self.customerID)
+        performSegue(withIdentifier: "readyToOrder", sender: self.customerID)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "readyToOrder") {
+            let finalDestination = segue.destination as? OrderFormViewController
+            finalDestination?.customer = self.customerID
+        }
     }
     
     
