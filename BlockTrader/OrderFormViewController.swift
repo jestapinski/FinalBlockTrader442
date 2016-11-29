@@ -26,8 +26,8 @@ class OrderFormViewController: UIViewController {
     //Change below to have better UX
     @IBOutlet weak var desired_price: UITextField!
     
+    // MARK: Submitting Forms
     @IBAction func submitForm(sender: AnyObject){
-        //Check if fields are valid
         if self.checkValidFields(){
             //Submit order
             let orderNumber = self.submitOrder()
@@ -39,6 +39,9 @@ class OrderFormViewController: UIViewController {
         
     }
     
+    /**
+     Checks that the form fields are valid for entering an order
+    */
     func checkValidFields() -> Bool{
         if let food = self.food_choice.text,
            let location = self.customer_location.text,
@@ -48,6 +51,9 @@ class OrderFormViewController: UIViewController {
         return false
     }
     
+    /**
+     Checks that the desired price field is a valid amount
+    */
     func priceIsValid() -> Bool{
         return (self.desired_price.text != nil)
     }
@@ -57,6 +63,8 @@ class OrderFormViewController: UIViewController {
         //Some API call to post order to DB, be sure to use cust_id
         return 1
     }
+    
+    // MARK: - Navigation
     
     func moveToConfirmation(orderNumber: OrderNumber){
         performSegue(withIdentifier: "confirmation", sender: orderNumber)
@@ -72,6 +80,7 @@ class OrderFormViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Checking Stripe call, can remove when deployed
         self.cust_id.text = customer
         // Do any additional setup after loading the view.
     }
@@ -81,15 +90,5 @@ class OrderFormViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

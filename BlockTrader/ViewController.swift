@@ -19,7 +19,10 @@ class ViewController: UIViewController {
         
         view.addSubview(loginButton)
     }
-
+    
+    /**
+     If authenticated through FaceBook, move on
+    */
     override func viewDidAppear(_ animated: Bool) {
         print(AccessToken.current)
         if let accessToken = AccessToken.current{

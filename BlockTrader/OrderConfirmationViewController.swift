@@ -19,6 +19,7 @@ class OrderConfirmationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(custID)
+        //Update labels with ID and OrderNumber to present to user
         self.customer.text = custID
         self.order.text = String(orderNumber)
         // Do any additional setup after loading the view.

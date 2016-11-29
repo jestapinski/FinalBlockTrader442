@@ -23,6 +23,9 @@ class StripeAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     Prompts user to authorize their account through Stripe
+    */
     @IBAction func findAcct(sender: AnyObject){
         let authURL = self.baseURL + "/authorize"
         if let requestUrl = NSURL(string: authURL) {
@@ -31,6 +34,8 @@ class StripeAccountViewController: UIViewController {
         }
     }
     
+    // MARK: - Navigation
+
     /**
      Performs the intended Segue to the MainSellerViewController given the account number
      - parameter accessCode: The account id provided by Stripe
@@ -53,15 +58,5 @@ class StripeAccountViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

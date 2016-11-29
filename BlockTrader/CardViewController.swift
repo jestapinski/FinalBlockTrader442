@@ -90,7 +90,7 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
     
     
     //TODO fix this method, it is broken but not needed right now
-    func paymentCardTextFieldDidChange(textField: STPPaymentCardTextField) {
+    func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
         payButton.isEnabled = true
         if textField.valid{
             payButton.isEnabled = true
