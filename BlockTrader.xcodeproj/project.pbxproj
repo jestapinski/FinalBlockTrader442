@@ -14,6 +14,10 @@
 		7B271BB01DEB486A0078C097 /* MainSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */; };
 		7B271BB61DECBBD80078C097 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */; };
 		7B271BB81DECD5E50078C097 /* OpenOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */; };
+		7B271BBB1DEE19DA0078C097 /* loading_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B271BBA1DEE19DA0078C097 /* loading_screen.png */; };
+		7B271BBD1DEE1D670078C097 /* main_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B271BBC1DEE1D670078C097 /* main_screen.png */; };
+		7B271BBF1DEE24230078C097 /* BT_short.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B271BBE1DEE24230078C097 /* BT_short.png */; };
+		7B271BC11DEE27F10078C097 /* main_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B271BC01DEE27F10078C097 /* main_page.png */; };
 		7B9F058F1DE8DC1F00E98C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */; };
 		7B9F05911DE8DC1F00E98C5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05901DE8DC1F00E98C5C /* ViewController.swift */; };
 		7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9F05921DE8DC1F00E98C5C /* Main.storyboard */; };
@@ -52,6 +56,10 @@
 		7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSellerViewController.swift; sourceTree = "<group>"; };
 		7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenOrdersTableViewController.swift; sourceTree = "<group>"; };
+		7B271BBA1DEE19DA0078C097 /* loading_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_screen.png; sourceTree = "<group>"; };
+		7B271BBC1DEE1D670078C097 /* main_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_screen.png; sourceTree = "<group>"; };
+		7B271BBE1DEE24230078C097 /* BT_short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BT_short.png; sourceTree = "<group>"; };
+		7B271BC01DEE27F10078C097 /* main_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_page.png; path = ../../../../logo/main_page.png; sourceTree = "<group>"; };
 		7B9F058B1DE8DC1F00E98C5C /* BlockTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9F05901DE8DC1F00E98C5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +116,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7B271BB91DEE194A0078C097 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		7B9F05821DE8DC1F00E98C5C = {
 			isa = PBXGroup;
 			children = (
@@ -133,13 +148,18 @@
 		7B9F058D1DE8DC1F00E98C5C /* BlockTrader */ = {
 			isa = PBXGroup;
 			children = (
+				7B271BBE1DEE24230078C097 /* BT_short.png */,
+				7B271BBC1DEE1D670078C097 /* main_screen.png */,
+				7B271BB91DEE194A0078C097 /* Supporting Files */,
 				7B9F05C11DE8E6DE00E98C5C /* BlockTrader.entitlements */,
 				7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */,
 				7B9F05901DE8DC1F00E98C5C /* ViewController.swift */,
 				7B9F05BF1DE8DE5200E98C5C /* MainPageViewController.swift */,
 				7B9F05921DE8DC1F00E98C5C /* Main.storyboard */,
+				7B271BC01DEE27F10078C097 /* main_page.png */,
 				7B9F05981DE8DC1F00E98C5C /* Assets.xcassets */,
 				7B9F059A1DE8DC1F00E98C5C /* LaunchScreen.storyboard */,
+				7B271BBA1DEE19DA0078C097 /* loading_screen.png */,
 				7B9F059D1DE8DC1F00E98C5C /* Info.plist */,
 				7B9F05951DE8DC1F00E98C5C /* BlockTrader.xcdatamodeld */,
 				7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */,
@@ -299,7 +319,11 @@
 			files = (
 				7B9F059C1DE8DC1F00E98C5C /* LaunchScreen.storyboard in Resources */,
 				7B9F05991DE8DC1F00E98C5C /* Assets.xcassets in Resources */,
+				7B271BBB1DEE19DA0078C097 /* loading_screen.png in Resources */,
 				7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */,
+				7B271BC11DEE27F10078C097 /* main_page.png in Resources */,
+				7B271BBF1DEE24230078C097 /* BT_short.png in Resources */,
+				7B271BBD1DEE1D670078C097 /* main_screen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

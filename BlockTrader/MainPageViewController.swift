@@ -16,11 +16,28 @@ class MainPageViewController: UIViewController {
     var credentials: [String: Any] = [:]
     
     @IBOutlet weak var welcomename: UILabel!
+    @IBOutlet weak var navBar: UINavigationItem!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(accessToken)
-//        print("Loaded!")
+        //let logo = UIImage(named: "BT_short.png")
+        //let logo = UIBarButtonItem(barButtonSystemItem: UIImage (named: "BT_short.png"), target: self, action: UIBarButtonItemStyle)
+        
+        //self.navigationItem.leftBarButtonItem = logo
+//        let imageView = UIImageView(image:logo)
+//        //imageView.frame = CGRectMake(-40, 0, 150, 25)
+//        imageView.contentMode = .scaleAspectFit
+//        let imageItem = UIBarButtonItem.init(customView: imageView)
+//        let negativeSpacer = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+//        negativeSpacer.width = -25
+//        navigationItem.leftBarButtonItems = [negativeSpacer, imageItem]
+        //imageView.contentMode = .scaleAspectFit // set imageview's content mode
+        //self.navigationItem.titleView = imageView
+        //self.navBar.topItem?.titleView = imageView
+//        self.welcomename.text = credentials["first_name"] as! String?
+        print(accessToken)
+        print("Loaded!")
         self.processToken()
 
         // Do any additional setup after loading the view.

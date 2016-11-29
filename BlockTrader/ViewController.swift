@@ -21,13 +21,17 @@ class ViewController: UIViewController {
     }
     
     /**
-     If authenticated through FaceBook, move on
+     If authenticated through FaceBook, move on.
+     
+     TODO fix so first-time works
     */
     override func viewDidAppear(_ animated: Bool) {
         print(AccessToken.current)
         if let accessToken = AccessToken.current{
             print("HERE!")
             self.moveToMainPage(accessToken: accessToken)
+        } else {
+            //self.viewDidAppear(true)
         }
     }
 

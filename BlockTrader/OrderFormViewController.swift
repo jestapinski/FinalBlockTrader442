@@ -41,12 +41,14 @@ class OrderFormViewController: UIViewController {
     
     /**
      Checks that the form fields are valid for entering an order
+     
+     TODO check ""
     */
     func checkValidFields() -> Bool{
         if let food = self.food_choice.text,
            let location = self.customer_location.text,
            let resturaunt = self.resturaunt_choice.text{
-            return priceIsValid()
+            return food != "" && location != "" && resturaunt != "" && priceIsValid()
         }
         return false
     }
@@ -55,7 +57,7 @@ class OrderFormViewController: UIViewController {
      Checks that the desired price field is a valid amount
     */
     func priceIsValid() -> Bool{
-        return (self.desired_price.text != nil)
+        return (self.desired_price.text != "")
     }
     
     //TODO

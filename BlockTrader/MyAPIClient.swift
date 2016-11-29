@@ -82,6 +82,7 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
                     print(responseString!)
                     inst.customerID = responseString as! String
                     inst.handleCustomerID()
+                    inst.handleCustomerID()
                 
                 }}}
         task.resume()

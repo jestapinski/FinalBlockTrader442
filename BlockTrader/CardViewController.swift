@@ -76,6 +76,7 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
     func handleCustomerID(){
         //Got customer ID back, now we can move to next page
         print("Actual ID")
+        //Below needs to be saved to API
         print(self.customerID)
         performSegue(withIdentifier: "readyToOrder", sender: self.customerID)
 
