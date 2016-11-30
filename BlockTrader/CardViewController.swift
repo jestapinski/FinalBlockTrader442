@@ -86,6 +86,7 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         if (segue.identifier == "readyToOrder") {
             let finalDestination = segue.destination as? OrderFormViewController
             finalDestination?.customer = self.customerID
+            finalDestination?.credentials = self.credentials
         }
     }
     

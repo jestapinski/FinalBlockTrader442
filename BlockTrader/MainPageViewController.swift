@@ -13,6 +13,7 @@ import FacebookCore
 class MainPageViewController: UIViewController {
     
     var accessToken: AccessToken?
+    var apiToken: Any?
     var credentials: [String: Any] = [:]
     
     @IBOutlet weak var welcomename: UILabel!
@@ -156,7 +157,7 @@ class MainPageViewController: UIViewController {
         self.credentials["last_name"] = userLastName
         self.credentials["fb_id"] = userID
         self.credentials["phone"] = userPhone
-        print("responseString = \(ourAUTH)")
+        print("responseString2 = \(ourAUTH)")
         self.welcomename.text = userFirstName as? String
     }
     

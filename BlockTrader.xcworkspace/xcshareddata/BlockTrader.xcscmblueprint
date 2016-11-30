@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ED0D542BBD4900E1C9771E62D1249A4BD9998DFE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ED0D542BBD4900E1C9771E62D1249A4BD9998DFE" : 9223372036854775807,
+    "412EF987619AAD9ACEF056267451D7C880174D00" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5BFF0885-2AF6-4DF5-9704-4E9D9D00D2DC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ED0D542BBD4900E1C9771E62D1249A4BD9998DFE" : "FinalBlockTrader442\/",
+    "412EF987619AAD9ACEF056267451D7C880174D00" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BlockTrader",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BlockTrader.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:jestapinski\/67442BlockTrader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "412EF987619AAD9ACEF056267451D7C880174D00"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jestapinski\/FinalBlockTrader442.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED0D542BBD4900E1C9771E62D1249A4BD9998DFE"
+    }
+  ]
+}

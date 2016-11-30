@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,7 +44,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-FBLogin.xcscheme</key>
+		<key>Pods-BlockTrader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Stripe-Stripe.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Stripe.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,6 +77,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4AF9442A95EA091AB06E7FD588D938CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>593E9479C06FB200807D11AB29EB50BD</key>
 		<dict>
 			<key>primary</key>
@@ -67,17 +92,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5EC46D43051D575A0015F9255459AF3E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9ADBEA6FF7C0211D0E4BA3E06D3EC4F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A7FEAA14E89971698ACA148F7F7202F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5E4C561E2CF64CEC935F523C3349F6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DB5D8DF6BCB59C012FFDD448CF6B652E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 typealias OrderNumber = Int
 
@@ -16,6 +17,7 @@ typealias OrderNumber = Int
 class OrderFormViewController: UIViewController {
     
     var customer: String = ""
+    var credentials: [String : Any] = [:]
     
     @IBOutlet weak var cust_id: UILabel!
     
@@ -77,6 +79,7 @@ class OrderFormViewController: UIViewController {
             let finalDestination = segue.destination as? OrderConfirmationViewController
             finalDestination?.orderNumber = sender as! OrderNumber
             finalDestination?.custID = self.cust_id.text!
+
         }
     }
 
@@ -85,6 +88,15 @@ class OrderFormViewController: UIViewController {
         //Checking Stripe call, can remove when deployed
         self.cust_id.text = customer
         // Do any additional setup after loading the view.
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        Alamofire.request("http://germy.tk:3000/restaurants.json", headers: headers).responseJSON { response in
+           
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

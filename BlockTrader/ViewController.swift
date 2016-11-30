@@ -26,7 +26,6 @@ class ViewController: UIViewController {
      TODO fix so first-time works
     */
     override func viewDidAppear(_ animated: Bool) {
-        print(AccessToken.current)
         if let accessToken = AccessToken.current{
             print("HERE!")
             self.moveToMainPage(accessToken: accessToken)
@@ -43,7 +42,9 @@ class ViewController: UIViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc : MainPageViewController = mainStoryboard.instantiateViewController(withIdentifier: "loggedin") as! MainPageViewController
         vc.accessToken = accessToken
+        
         self.present(vc, animated: true, completion: nil)
+
     }
 
     override func didReceiveMemoryWarning() {

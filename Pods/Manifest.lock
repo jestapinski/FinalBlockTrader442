@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.2.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -29,6 +30,7 @@ PODS:
   - SVProgressHUD (2.0.4)
 
 DEPENDENCIES:
+  - Alamofire
   - CardIO
   - FacebookCore
   - FacebookLogin
@@ -37,6 +39,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
@@ -48,6 +51,6 @@ SPEC CHECKSUMS:
   Stripe: a47770e82db059d0e7e160f9aabc2997055ee911
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
 
-PODFILE CHECKSUM: 5f87992279e3942b09411cc331a3373308b2e026
+PODFILE CHECKSUM: e0f09af8f5c304209af341e09ce0ac497890b818
 
 COCOAPODS: 1.1.1

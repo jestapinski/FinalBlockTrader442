@@ -14,5 +14,7 @@ target ‘BlockTrader’ do
   pod 'Stripe'
   pod 'CardIO'
   pod 'SVProgressHUD'
+  
+  pod 'Alamofire'
 
 end
