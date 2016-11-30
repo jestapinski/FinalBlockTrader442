@@ -9,6 +9,7 @@
 import Foundation
 import Stripe
 import SVProgressHUD
+import Alamofire
 
 
 class MyAPIClient: NSObject, STPBackendAPIAdapter {
@@ -69,23 +70,36 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         let session = URLSession(configuration: configuration)
         
         //Pass to backend
-        let request = URLRequest.request(url!, method: .POST, params: params)
-        let task = session.dataTask(with: request) { (data:Data?, urlResponse, error) in
-            DispatchQueue.main.async {
-            
-                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
-                    return
-                } else {
-                    let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                    
-                    //ResponseString! is the customer ID, this should be returned with the backend changed to be making a new customer
-                    print(responseString!)
-                    inst.customerID = responseString as! String
-                    inst.handleCustomerID()
-                    inst.handleCustomerID()
-                
-                }}}
-        task.resume()
+        Alamofire.request(stripeBackendURL + "/cust_new", method: .post, parameters: params).response { response in
+            if let error = response.error {
+                print("Error fetching repositories: \(error)")
+                inst.handleCustomerID()
+                return
+            }
+            print("Got something")
+            let responseString = NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue)
+            print(response.data!)
+            print(responseString!)
+            inst.customerID = responseString as! String
+            inst.handleCustomerID()
+        }
+//        let request = URLRequest.request(url!, method: .POST, params: params)
+//        let task = session.dataTask(with: request) { (data:Data?, urlResponse, error) in
+//            DispatchQueue.main.async {
+//            
+//                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
+//                    return
+//                } else {
+//                    let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+//                    
+//                    //ResponseString! is the customer ID, this should be returned with the backend changed to be making a new customer
+//                    print(responseString!)
+//                    inst.customerID = responseString as! String
+//                    inst.handleCustomerID()
+//                    inst.handleCustomerID()
+//                
+//                }}}
+//        task.resume()
         
     }
     
