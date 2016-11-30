@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		238E09284C63B69666709B25 /* Pods_BlockTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F28637A781D397010DA945 /* Pods_BlockTrader.framework */; };
+		7B18C7A41DEF223E006FD068 /* main_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A31DEF223E006FD068 /* main_page.png */; };
 		7B271BA81DE9E6B10078C097 /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */; };
 		7B271BAA1DE9E8290078C097 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BA91DE9E8290078C097 /* Networking.swift */; };
 		7B271BAE1DE9F94D0078C097 /* OrderFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		67F28637A781D397010DA945 /* Pods_BlockTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B18C7A31DEF223E006FD068 /* main_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page.png; sourceTree = "<group>"; };
 		7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
 		7B271BA91DE9E8290078C097 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderFormViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				7B9F05901DE8DC1F00E98C5C /* ViewController.swift */,
 				7B9F05BF1DE8DE5200E98C5C /* MainPageViewController.swift */,
 				7B9F05921DE8DC1F00E98C5C /* Main.storyboard */,
+				7B18C7A31DEF223E006FD068 /* main_page.png */,
 				7B271BC01DEE27F10078C097 /* loading_screen.png */,
 				7B9F05981DE8DC1F00E98C5C /* Assets.xcassets */,
 				7B9F059A1DE8DC1F00E98C5C /* LaunchScreen.storyboard */,
@@ -318,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B9F059C1DE8DC1F00E98C5C /* LaunchScreen.storyboard in Resources */,
+				7B18C7A41DEF223E006FD068 /* main_page.png in Resources */,
 				7B9F05991DE8DC1F00E98C5C /* Assets.xcassets in Resources */,
 				7B271BBB1DEE19DA0078C097 /* loading_screen.png in Resources */,
 				7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */,
