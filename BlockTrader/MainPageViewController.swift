@@ -22,28 +22,14 @@ class MainPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let logo = UIImage(named: "BT_short.png")
-        //let logo = UIBarButtonItem(barButtonSystemItem: UIImage (named: "BT_short.png"), target: self, action: UIBarButtonItemStyle)
-        
-        //self.navigationItem.leftBarButtonItem = logo
-//        let imageView = UIImageView(image:logo)
-//        //imageView.frame = CGRectMake(-40, 0, 150, 25)
-//        imageView.contentMode = .scaleAspectFit
-//        let imageItem = UIBarButtonItem.init(customView: imageView)
-//        let negativeSpacer = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-//        negativeSpacer.width = -25
-//        navigationItem.leftBarButtonItems = [negativeSpacer, imageItem]
-        //imageView.contentMode = .scaleAspectFit // set imageview's content mode
-        //self.navigationItem.titleView = imageView
-        //self.navBar.topItem?.titleView = imageView
-//        self.welcomename.text = credentials["first_name"] as! String?
-        print(accessToken)
-        print("Loaded!")
         self.processToken()
 
         // Do any additional setup after loading the view.
     }
     
+    /**
+     Processes the Facebook API token and requests information from Facebook graph
+    */
     func processToken(){
         if let accessToken = self.accessToken{
         let params = ["fields" : "email, name, id"]
@@ -80,6 +66,7 @@ class MainPageViewController: UIViewController {
         print("error in graph request:", error)
     }
     
+    
     /**
      Continues to execute Facebook actions given a Graph Success and some response
      - parameter graphResponse: The Graph Response from the Facebook API.
@@ -91,16 +78,11 @@ class MainPageViewController: UIViewController {
             //Here is the data we get back
             print(responseDictionary)
             
-            //print("\(type(of: test))")
-            //print(String(test)!)
-            
             var request = URLRequest(url: URL(string: "http://germy.tk:3000/api/signin")!)
             request.httpMethod = "POST"
             let postString = "name=\(responseDictionary["name"]!)&email=\(responseDictionary["email"]!)&fb_id=\(responseDictionary["id"]!)&accessToken=\(accessToken.authenticationToken)"
             request.httpBody = postString.data(using: .utf8)
             self.handleAuthenticationRequest(request: request) //Maybe in another module?
-            
-            //task.resume()
         }
         
     }
@@ -137,7 +119,7 @@ class MainPageViewController: UIViewController {
         task.resume()
     }
     
-    // MARK: UserData
+    // MARK: UserData Functions
 
     /**
      Handles User Data given a JSONDictionary from Facebook API and our Authentication
@@ -167,23 +149,6 @@ class MainPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Buy Food
-    
-    //@IBAction func
-        //First, check to see if CustomerID has been created
-            //If not, have them enter Credit Card and get credentials, make customer before proceeding
-    
-        //Next, go to some menu where you can pick out food, price, location
-        //Submit request
-    
-    // MARK: Deliver Food
-        //First, check to see if AccountID is known
-            //If not, have them sign into Stripe and get it back through backend
-
-        //Next, go to some menu where all active requests are shown
-        //...
-    
-    
 
     // MARK: - Navigation
 
@@ -191,8 +156,8 @@ class MainPageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if (segue.identifier == "insertcard"){
-            let finalDestination = segue.destination as? CardViewController
+        if (segue.identifier == "customer_branch"){
+            let finalDestination = segue.destination as? GatheringInfoViewController
             finalDestination?.credentials = self.credentials
         }
     }

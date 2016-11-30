@@ -26,7 +26,9 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         super.viewDidLoad()
         print(credentials)
         
-        //Refactor below
+        //Refactor below?
+        
+        //Create credit card entry point
         let frame1 = CGRect(x: 20, y: 150, width: self.view.frame.size.width - 40, height: 40)
         paymentTextField = STPPaymentCardTextField(frame: frame1)
         paymentTextField.center = view.center
@@ -55,19 +57,23 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         
     }
     
-    //TODO need to check card authentication works as expected
+    /**
+     Checks if credit card is valid and, if so, assigns a Stripe token and tries to create a customer
+    */
     @IBAction func payButtonTapped(sender: AnyObject) {
-        let card = paymentTextField.cardParams
-        print(card)
-        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
-        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
+        if paymentTextField.valid{
+            let card = paymentTextField.cardParams
+            print(card)
+            SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
+            SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
+            
         //send card information to stripe to get back a token
-        self.API.getStripeToken(card: card, parameters: credentials, inst: self)
-//        while (self.API.customerID == "") {
-//            
-//        }
-        print("DONE")
-        print(self.customerID)
+            self.API.getStripeToken(card: card, parameters: credentials, inst: self)
+            print("DONE")
+            print(self.customerID)
+        } else {
+            print("Invalid card")
+        }
     }
     
     /**
@@ -80,14 +86,6 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         print(self.customerID)
         performSegue(withIdentifier: "readyToOrder", sender: self.customerID)
 
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "readyToOrder") {
-            let finalDestination = segue.destination as? OrderFormViewController
-            finalDestination?.customer = self.customerID
-            finalDestination?.credentials = self.credentials
-        }
     }
     
     
@@ -129,16 +127,14 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         }
     }
 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "readyToOrder") {
+            let finalDestination = segue.destination as? OrderFormViewController
+            finalDestination?.customer = self.customerID
+            finalDestination?.credentials = self.credentials
+        }
     }
-    */
+
 
 }

@@ -46,7 +46,6 @@ class StripeAccountViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        print("HERE")
         if (segue.identifier == "hasbeenauthenticated") {
             let secondViewController = segue.destination as? MainSellerViewController
             let acctNumber = sender as! String

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		238E09284C63B69666709B25 /* Pods_BlockTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F28637A781D397010DA945 /* Pods_BlockTrader.framework */; };
 		7B18C7A41DEF223E006FD068 /* main_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A31DEF223E006FD068 /* main_page.png */; };
+		7B18C7A61DEF5113006FD068 /* checking_customer_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A51DEF5113006FD068 /* checking_customer_info.png */; };
+		7B18C7A81DEF51E6006FD068 /* GatheringInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */; };
+		7B18C7AA1DEF55F3006FD068 /* cc_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A91DEF55F3006FD068 /* cc_input.png */; };
+		7B18C7AC1DEF57CC006FD068 /* gathering_deliverer_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7AB1DEF57CC006FD068 /* gathering_deliverer_info.png */; };
 		7B271BA81DE9E6B10078C097 /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */; };
 		7B271BAA1DE9E8290078C097 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BA91DE9E8290078C097 /* Networking.swift */; };
 		7B271BAE1DE9F94D0078C097 /* OrderFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */; };
@@ -52,6 +56,10 @@
 /* Begin PBXFileReference section */
 		67F28637A781D397010DA945 /* Pods_BlockTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B18C7A31DEF223E006FD068 /* main_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page.png; sourceTree = "<group>"; };
+		7B18C7A51DEF5113006FD068 /* checking_customer_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checking_customer_info.png; sourceTree = "<group>"; };
+		7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringInfoViewController.swift; sourceTree = "<group>"; };
+		7B18C7A91DEF55F3006FD068 /* cc_input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cc_input.png; sourceTree = "<group>"; };
+		7B18C7AB1DEF57CC006FD068 /* gathering_deliverer_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gathering_deliverer_info.png; sourceTree = "<group>"; };
 		7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
 		7B271BA91DE9E8290078C097 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderFormViewController.swift; sourceTree = "<group>"; };
@@ -118,11 +126,60 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7B271BB91DEE194A0078C097 /* Supporting Files */ = {
+		7B18C7AD1DEF58DC006FD068 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7B271BBA1DEE19DA0078C097 /* loading_screen.png */,
+				7B271BBC1DEE1D670078C097 /* main_screen.png */,
+				7B271BBE1DEE24230078C097 /* BT_short.png */,
+				7B18C7AB1DEF57CC006FD068 /* gathering_deliverer_info.png */,
+				7B18C7A91DEF55F3006FD068 /* cc_input.png */,
+				7B18C7A51DEF5113006FD068 /* checking_customer_info.png */,
+				7B18C7A31DEF223E006FD068 /* main_page.png */,
+				7B271BC01DEE27F10078C097 /* loading_screen.png */,
 			);
-			name = "Supporting Files";
+			name = Images;
+			sourceTree = "<group>";
+		};
+		7B18C7AE1DEF58FD006FD068 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B9F05901DE8DC1F00E98C5C /* ViewController.swift */,
+				7B9F05BF1DE8DE5200E98C5C /* MainPageViewController.swift */,
+				7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */,
+				7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */,
+				7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */,
+				7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */,
+				7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */,
+				7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */,
+				7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7B18C7AF1DEF5927006FD068 /* API Clients */ = {
+			isa = PBXGroup;
+			children = (
+				7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */,
+			);
+			name = "API Clients";
+			sourceTree = "<group>";
+		};
+		7B18C7B01DEF5934006FD068 /* Network Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7B271BA91DE9E8290078C097 /* Networking.swift */,
+			);
+			name = "Network Extensions";
+			sourceTree = "<group>";
+		};
+		7B18C7B11DEF594A006FD068 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7B9F05921DE8DC1F00E98C5C /* Main.storyboard */,
+				7B9F059A1DE8DC1F00E98C5C /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		7B9F05821DE8DC1F00E98C5C = {
@@ -150,29 +207,16 @@
 		7B9F058D1DE8DC1F00E98C5C /* BlockTrader */ = {
 			isa = PBXGroup;
 			children = (
-				7B271BBE1DEE24230078C097 /* BT_short.png */,
-				7B271BBC1DEE1D670078C097 /* main_screen.png */,
-				7B271BB91DEE194A0078C097 /* Supporting Files */,
+				7B18C7AF1DEF5927006FD068 /* API Clients */,
+				7B18C7AD1DEF58DC006FD068 /* Images */,
+				7B18C7B01DEF5934006FD068 /* Network Extensions */,
+				7B18C7B11DEF594A006FD068 /* Storyboards */,
+				7B18C7AE1DEF58FD006FD068 /* ViewControllers */,
 				7B9F05C11DE8E6DE00E98C5C /* BlockTrader.entitlements */,
 				7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */,
-				7B9F05901DE8DC1F00E98C5C /* ViewController.swift */,
-				7B9F05BF1DE8DE5200E98C5C /* MainPageViewController.swift */,
-				7B9F05921DE8DC1F00E98C5C /* Main.storyboard */,
-				7B18C7A31DEF223E006FD068 /* main_page.png */,
-				7B271BC01DEE27F10078C097 /* loading_screen.png */,
 				7B9F05981DE8DC1F00E98C5C /* Assets.xcassets */,
-				7B9F059A1DE8DC1F00E98C5C /* LaunchScreen.storyboard */,
-				7B271BBA1DEE19DA0078C097 /* loading_screen.png */,
 				7B9F059D1DE8DC1F00E98C5C /* Info.plist */,
 				7B9F05951DE8DC1F00E98C5C /* BlockTrader.xcdatamodeld */,
-				7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */,
-				7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */,
-				7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */,
-				7B271BA91DE9E8290078C097 /* Networking.swift */,
-				7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */,
-				7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */,
-				7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */,
-				7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */,
 			);
 			path = BlockTrader;
 			sourceTree = "<group>";
@@ -322,12 +366,15 @@
 			files = (
 				7B9F059C1DE8DC1F00E98C5C /* LaunchScreen.storyboard in Resources */,
 				7B18C7A41DEF223E006FD068 /* main_page.png in Resources */,
+				7B18C7AA1DEF55F3006FD068 /* cc_input.png in Resources */,
 				7B9F05991DE8DC1F00E98C5C /* Assets.xcassets in Resources */,
 				7B271BBB1DEE19DA0078C097 /* loading_screen.png in Resources */,
+				7B18C7AC1DEF57CC006FD068 /* gathering_deliverer_info.png in Resources */,
 				7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */,
 				7B271BC11DEE27F10078C097 /* loading_screen.png in Resources */,
 				7B271BBF1DEE24230078C097 /* BT_short.png in Resources */,
 				7B271BBD1DEE1D670078C097 /* main_screen.png in Resources */,
+				7B18C7A61DEF5113006FD068 /* checking_customer_info.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B18C7A81DEF51E6006FD068 /* GatheringInfoViewController.swift in Sources */,
 				7B9F05C01DE8DE5200E98C5C /* MainPageViewController.swift in Sources */,
 				7B271BAE1DE9F94D0078C097 /* OrderFormViewController.swift in Sources */,
 				7B9F05971DE8DC1F00E98C5C /* BlockTrader.xcdatamodeld in Sources */,

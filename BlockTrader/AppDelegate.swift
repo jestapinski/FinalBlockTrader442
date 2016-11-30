@@ -115,6 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
         }
         else{
+            //Handle some silly entry pt
             self.accessCode = (url.host as String!)
             if let code = self.accessCode {
                 let rootVC = self.getVisibleViewController(self.window!.rootViewController) as! StripeAccountViewController

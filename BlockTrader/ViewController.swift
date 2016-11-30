@@ -12,6 +12,7 @@ import FacebookCore
 
 class ViewController: UIViewController {
 
+    // Create FaceBook login button using module and place in center
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
     }
     
     /**
-     If authenticated through FaceBook, move on.
+     Function checks if authenticated through FaceBook, if so, move on.
      
      TODO fix so first-time works
     */
