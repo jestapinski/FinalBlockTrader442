@@ -16,5 +16,6 @@ target ‘BlockTrader’ do
   pod 'SVProgressHUD'
   
   pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end

@@ -130,7 +130,7 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "readyToOrder") {
-            let finalDestination = segue.destination as? OrderFormViewController
+            let finalDestination = segue.destination as? PickRestarauntViewController
             finalDestination?.customer = self.customerID
             finalDestination?.credentials = self.credentials
         }

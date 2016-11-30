@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04AD4A4B1DEF6B0400204E19 /* PickRestarauntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */; };
+		04ED30CC1DEF9382001150BE /* PickFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */; };
 		238E09284C63B69666709B25 /* Pods_BlockTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F28637A781D397010DA945 /* Pods_BlockTrader.framework */; };
 		7B18C7A41DEF223E006FD068 /* main_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A31DEF223E006FD068 /* main_page.png */; };
 		7B18C7A61DEF5113006FD068 /* checking_customer_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A51DEF5113006FD068 /* checking_customer_info.png */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickRestarauntViewController.swift; sourceTree = "<group>"; };
+		04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickFoodViewController.swift; sourceTree = "<group>"; };
 		67F28637A781D397010DA945 /* Pods_BlockTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B18C7A31DEF223E006FD068 /* main_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page.png; sourceTree = "<group>"; };
 		7B18C7A51DEF5113006FD068 /* checking_customer_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checking_customer_info.png; sourceTree = "<group>"; };
@@ -150,9 +154,11 @@
 				7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */,
 				7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */,
 				7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */,
+				04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */,
 				7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */,
 				7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */,
 				7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */,
+				04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -447,7 +453,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04AD4A4B1DEF6B0400204E19 /* PickRestarauntViewController.swift in Sources */,
 				7B18C7A81DEF51E6006FD068 /* GatheringInfoViewController.swift in Sources */,
+				04ED30CC1DEF9382001150BE /* PickFoodViewController.swift in Sources */,
 				7B9F05C01DE8DE5200E98C5C /* MainPageViewController.swift in Sources */,
 				7B271BAE1DE9F94D0078C097 /* OrderFormViewController.swift in Sources */,
 				7B9F05971DE8DC1F00E98C5C /* BlockTrader.xcdatamodeld in Sources */,

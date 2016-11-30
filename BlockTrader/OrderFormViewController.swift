@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-typealias OrderNumber = Int
+
 
 /**
  View controller upon which a user can submit an order
@@ -76,8 +76,8 @@ class OrderFormViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "confirmation") {
-            let finalDestination = segue.destination as? OrderConfirmationViewController
-            finalDestination?.orderNumber = sender as! OrderNumber
+            let finalDestination = segue.destination as? PickRestarauntViewController
+            //finalDestination?.orderNumber = sender as! OrderNumber
             finalDestination?.custID = self.cust_id.text!
 
         }
@@ -88,15 +88,6 @@ class OrderFormViewController: UIViewController {
         //Checking Stripe call, can remove when deployed
         self.cust_id.text = customer
         // Do any additional setup after loading the view.
-        let headers = [
-            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
-        ]
-        Alamofire.request("http://germy.tk:3000/restaurants.json", headers: headers).responseJSON { response in
-           
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
