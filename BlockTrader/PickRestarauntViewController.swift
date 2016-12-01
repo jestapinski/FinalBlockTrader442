@@ -52,6 +52,8 @@ class PickRestarauntViewController: UITableViewController {
         self.moveToConfirmation()
     }
     
+
+    
     func do_table_refresh()
     {
         self.tableView.reloadData()
@@ -66,11 +68,6 @@ class PickRestarauntViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "pickfood") {
             let finalDestination = segue.destination as? PickFoodViewController
-<<<<<<< HEAD
-            //finalDestination?.custID = self.cust_id.text!
-=======
-            finalDestination?.custID = self.custID
->>>>>>> 8b29b69c403ab9780fc0d17afa73783e7ef4c657
             finalDestination?.row = self.indexRow
             finalDestination?.credentials = self.credentials
             

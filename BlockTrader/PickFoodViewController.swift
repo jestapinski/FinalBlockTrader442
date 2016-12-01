@@ -38,12 +38,21 @@ class PickFoodViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+        cell.accessoryType = cell.isSelected ? .checkmark : .none
         cell.textLabel?.text = TableData[indexPath.row]
         print("cell \(TableData)")
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        print("You selected cell #\(indexPath.row)")
+    }
     
     func do_table_refresh()
     {
@@ -54,9 +63,7 @@ class PickFoodViewController: UITableViewController {
     
     // MARK: - Navigation
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.row)")
-    }
+
     
     func moveToConfirmation(orderNumber: OrderNumber){
       //performSegue(withIdentifier: "confirmation", sender: orderNumber)
@@ -79,6 +86,9 @@ class PickFoodViewController: UITableViewController {
         super.viewDidLoad()
         //Checking Stripe call, can remove when deployed
         // Do any additional setup after loading the view.
+        
+        self.tableView.allowsMultipleSelection = true
+
         
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
