@@ -18,7 +18,6 @@ typealias row = Int
  */
 class PickRestarauntViewController: UITableViewController {
     
-    var custID: String = ""
     var customer: String = ""
     var credentials: [String : Any] = [:]
     var TableData:Array< String > = Array < String >()
@@ -70,6 +69,7 @@ class PickRestarauntViewController: UITableViewController {
             let finalDestination = segue.destination as? PickFoodViewController
             finalDestination?.row = self.indexRow
             finalDestination?.credentials = self.credentials
+            finalDestination?.customer = self.customer
             
         }
     }

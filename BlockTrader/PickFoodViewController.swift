@@ -15,7 +15,6 @@ import SwiftyJSON
  */
 class PickFoodViewController: UITableViewController {
     
-    var custID: String = ""
     var customer: String = ""
     var credentials: [String : Any] = [:]
     
@@ -73,11 +72,12 @@ class PickFoodViewController: UITableViewController {
             finalDestination?.credentials =	 self.credentials
             finalDestination?.items = self.items
             finalDestination?.row = self.row
+            finalDestination?.customer = self.customer
             
         } else if (segue.identifier == "back_to_resturaunt") {
             let finalDestination = segue.destination as? PickRestarauntViewController
             finalDestination?.credentials = self.credentials
-            finalDestination?.custID = self.custID
+            finalDestination?.customer = self.customer
         }
     }
     

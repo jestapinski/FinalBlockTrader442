@@ -19,7 +19,6 @@ class OrderFormViewController: UIViewController {
     var customer: String = ""
     var credentials: [String : Any] = [:]
     var items = [Int]()
-    var custID: String = ""
     var orderNumber: Int = 0
     var row: Int = 0
     var price: Float = 0.0
@@ -104,9 +103,9 @@ class OrderFormViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "confirmation") {
-            let finalDestination = segue.destination as? PickRestarauntViewController
+            let finalDestination = segue.destination as? OrderConfirmationViewController
             //finalDestination?.orderNumber = sender as! OrderNumber
-            finalDestination?.custID = self.cust_id.text!
+            finalDestination?.custID = self.customer
 
         }
     }
