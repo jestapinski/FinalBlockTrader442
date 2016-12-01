@@ -82,6 +82,8 @@ class MainPageViewController: UIViewController {
             request.httpMethod = "POST"
             let postString = "name=\(responseDictionary["name"]!)&email=\(responseDictionary["email"]!)&fb_id=\(responseDictionary["id"]!)&accessToken=\(accessToken.authenticationToken)"
             request.httpBody = postString.data(using: .utf8)
+            print("thing")
+            print("\(responseDictionary)")
             self.handleAuthenticationRequest(request: request) //Maybe in another module?
         }
         

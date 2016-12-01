@@ -10,12 +10,15 @@ import Foundation
 import UIKit
 import Stripe
 import SVProgressHUD
+import Alamofire
+import SwiftyJSON
 
 //ViewController for creating user from Payment Method
 class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, CardIOPaymentViewControllerDelegate {
     
     var credentials: [String : Any] = [:]
     var customerID: String = ""
+    var userID: String = ""
     
     @IBOutlet weak var payButton: UIButton!
     var paymentTextField: STPPaymentCardTextField!
@@ -69,7 +72,6 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
             
         //send card information to stripe to get back a token
             self.API.getStripeToken(card: card, parameters: credentials, inst: self)
-            print("DONE")
             print(self.customerID)
         } else {
             print("Invalid card")
@@ -84,6 +86,37 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         print("Actual ID")
         //Below needs to be saved to API
         print(self.customerID)
+        
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        
+        let parameters: Parameters = [
+            "commit": "Update User",
+            "id": "5",
+            "user":[
+                "custID": "\(self.customerID)"
+            ]
+        ]
+        let url_email = "http://germy.tk:3000/users.json?email=\(self.credentials["email"]!)"
+        print("\(url_email)")
+        Alamofire.request(url_email, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                for item in jsonarr.array!{
+                    print("111JSONemail: \(item["id"].stringValue)")
+                    let edit_url = "http://germy.tk:3000/users/\(item["id"].stringValue)"
+                    print("edit: \(edit_url)")
+                    // All three of these calls are equivalent
+                    Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
+                }
+                
+            }
+        }
+        
+
+
+        
         performSegue(withIdentifier: "readyToOrder", sender: self.customerID)
 
     }
