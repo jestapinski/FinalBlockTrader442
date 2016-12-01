@@ -47,8 +47,8 @@ class PickRestarauntViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.row)")
-        self.indexRow = indexPath.row
+        print("You selected cell #\(indexPath.row + 1	)")
+        self.indexRow = indexPath.row + 1
         self.moveToConfirmation()
     }
     

@@ -18,10 +18,13 @@ class PickFoodViewController: UITableViewController {
     var custID: String = ""
     var customer: String = ""
     var credentials: [String : Any] = [:]
-    var TableData:Array< String > = Array < String >()
+    
+    var TableData = [String: String]()
+    
     var Rests = [String : Any]()
     var tableTitle = [String]()
     var row: Int = 0
+    var items = [Int]()
 
     
     @IBOutlet weak var cust_id: UILabel!
@@ -39,41 +42,37 @@ class PickFoodViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.accessoryType = cell.isSelected ? .checkmark : .none
-        cell.textLabel?.text = TableData[indexPath.row]
-        print("cell \(TableData)")
+        cell.textLabel?.text = TableData[Array(TableData.keys)[indexPath.row]]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-
+        items.remove(at: items.index(of: Int(Array(TableData.keys)[indexPath.row])!)!)
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        print("You selected cell #\(indexPath.row)")
+        items.append(Int(Array(TableData.keys)[indexPath.row])!)
     }
     
     func do_table_refresh()
     {
-        
         self.tableView.reloadData()
-
     }
     
     // MARK: - Navigation
-    
 
-    
     func moveToConfirmation(orderNumber: OrderNumber){
       //performSegue(withIdentifier: "confirmation", sender: orderNumber)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "confirmation") {
-            let finalDestination = segue.destination as? OrderConfirmationViewController
-            finalDestination?.orderNumber = sender as! OrderNumber
-            finalDestination?.custID = self.cust_id.text!
+        if (segue.identifier == "submitorder") {
+            let finalDestination = segue.destination as? OrderFormViewController
+            finalDestination?.credentials =	 self.credentials
+            print("itessss: \(self.items)")
+            finalDestination?.items = self.items
             
         } else if (segue.identifier == "back_to_resturaunt") {
             let finalDestination = segue.destination as? PickRestarauntViewController
@@ -88,8 +87,6 @@ class PickFoodViewController: UITableViewController {
         // Do any additional setup after loading the view.
         
         self.tableView.allowsMultipleSelection = true
-
-        
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -100,20 +97,18 @@ class PickFoodViewController: UITableViewController {
                 for item in jsonarr.array!{
                     print("JSON1: \(item["name"].stringValue)")
                     let title: String? = item["name"].stringValue
-                    self.TableData.append(title!)
+                    let id: String? = item["id"].stringValue
+                    self.TableData[id!] = title!
                 }
                 self.do_table_refresh()
                 
             }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
 }

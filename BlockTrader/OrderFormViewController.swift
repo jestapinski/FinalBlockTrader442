@@ -18,13 +18,16 @@ class OrderFormViewController: UIViewController {
     
     var customer: String = ""
     var credentials: [String : Any] = [:]
+    var items = [Int]()
+    var custID: String = ""
+    var orderNumber: Int = 0
     
     @IBOutlet weak var cust_id: UILabel!
-    
-    @IBOutlet weak var food_choice: UITextField!
-    @IBOutlet weak var resturaunt_choice: UITextField!
-    @IBOutlet weak var customer_location: UITextField!
-    
+    @IBOutlet weak var restaurantName: UILabel!
+    @IBOutlet weak var suggestedPrice: UILabel!
+    @IBOutlet weak var latitude: UITextField!
+    @IBOutlet weak var longitude: UITextField!
+
     //Change below to have better UX
     @IBOutlet weak var desired_price: UITextField!
     
@@ -47,12 +50,12 @@ class OrderFormViewController: UIViewController {
      TODO check ""
     */
     func checkValidFields() -> Bool{
-        if let food = self.food_choice.text,
-           let location = self.customer_location.text,
-           let resturaunt = self.resturaunt_choice.text{
-            return food != "" && location != "" && resturaunt != "" && priceIsValid()
-        }
-        return false
+//        if let food = self.food_choice.text,
+//           let location = self.customer_location.text,
+//           let resturaunt = self.resturaunt_choice.text{
+//            return food != "" && location != "" && resturaunt != "" && priceIsValid()
+//        }
+        return true
     }
     
     /**
@@ -88,6 +91,7 @@ class OrderFormViewController: UIViewController {
         //Checking Stripe call, can remove when deployed
         self.cust_id.text = customer
         // Do any additional setup after loading the view.
+        print("itemszzz: \(items)")
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,9 +12,13 @@ class OrderConfirmationViewController: UIViewController {
     
     var custID: String = ""
     var orderNumber: Int = 0
+    var items = [Int]()
+    var credentials: [String : Any] = [:]
+    
     
     @IBOutlet weak var customer: UILabel!
     @IBOutlet weak var order: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
