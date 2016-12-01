@@ -34,7 +34,6 @@ class OrderFormViewController: UIViewController {
     
     // MARK: Submitting Forms
     @IBAction func submitForm(sender: AnyObject){
-        print("custID222: \(self.credentials["id"]!)")
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -55,8 +54,25 @@ class OrderFormViewController: UIViewController {
         ]
         
         // All three of these calls are equivalent
-        Alamofire.request("http://germy.tk:3000/orders", method: .post, parameters: parameters, headers: headers)
+        Alamofire.request("http://germy.tk:3000/orders.json", method: .post, parameters: parameters, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                for item in self.items{
+                    var food_order_parm: Parameters = [
+                    "food_order":[
+                        "food_id":"\(item)",
+                        "order_id":"\(jsonarr["id"])"
+                    ],
+                    "commit": "Create Food order"
+                    ]
+                    Alamofire.request("http://germy.tk:3000/food_orders", method: .post, parameters: food_order_parm, headers: headers)
+                    print("\(jsonarr["id"]) item#: \(item)")
+                }
+            }
+        }
+
         
+
         
         if self.checkValidFields(){
             //Submit order

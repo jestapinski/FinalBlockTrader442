@@ -42,6 +42,7 @@ class StripeAccountViewController: UIViewController {
     */
     func swapWindows(accessCode: String){
         performSegue(withIdentifier: "hasbeenauthenticated", sender: accessCode)
+        // need to add to a user
         return
     }
     
