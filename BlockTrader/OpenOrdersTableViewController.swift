@@ -7,11 +7,35 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class OpenOrdersTableViewController: UITableViewController {
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var TableData = [String]()
+    var indexRow: Int = 0
+    var credentials: [String: Any] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.credentials = appDelegate.credentials
+        print(self.credentials)
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        Alamofire.request("http://germy.tk:3000/orders.json", headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                for item in jsonarr.array!{
+                    print("JSON1: \(item["name"].stringValue)")
+                    let title: String? = item["name"].stringValue
+                    self.TableData.append(title!)
+                }
+                self.do_table_refresh()
+                
+            }
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +53,36 @@ class OpenOrdersTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return TableData.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        //cell.accessoryType = cell.isSelected ? .checkmark : .none
+        cell.textLabel?.text = TableData[indexPath.row]
+        return cell
 
         // Configure the cell...
 
-        return cell
+        // return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You selected cell #\(indexPath.row + 1	)")
+        self.indexRow = indexPath.row + 1
+        //self.moveToConfirmation()
+    }
+    
+    func do_table_refresh()
+    {
+        self.tableView.reloadData()
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

@@ -106,6 +106,10 @@ class OrderFormViewController: UIViewController {
             let finalDestination = segue.destination as? OrderConfirmationViewController
             //finalDestination?.orderNumber = sender as! OrderNumber
             finalDestination?.custID = self.customer
+        } else if (segue.identifier == "backToFood") {
+            let finalDestination = segue.destination as? PickFoodViewController
+            finalDestination?.customer = self.customer
+            finalDestination?.credentials = self.credentials
 
         }
     }

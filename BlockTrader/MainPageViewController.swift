@@ -19,6 +19,8 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var welcomename: UILabel!
     @IBOutlet weak var navBar: UINavigationItem!
 
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,8 +158,12 @@ class MainPageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        appDelegate.credentials = self.credentials
         if (segue.identifier == "customer_branch"){
             let finalDestination = segue.destination as? GatheringInfoViewController
+            finalDestination?.credentials = self.credentials
+        } else if (segue.identifier == "deliverer_branch") {
+            let finalDestination = segue.destination as? GatheringDelivererViewController
             finalDestination?.credentials = self.credentials
         }
     }

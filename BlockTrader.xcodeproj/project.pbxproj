@@ -10,6 +10,8 @@
 		04AD4A4B1DEF6B0400204E19 /* PickRestarauntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */; };
 		04ED30CC1DEF9382001150BE /* PickFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */; };
 		238E09284C63B69666709B25 /* Pods_BlockTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F28637A781D397010DA945 /* Pods_BlockTrader.framework */; };
+		7B07808D1DF093FD00AC4EE5 /* account_landing.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B07808C1DF093FD00AC4EE5 /* account_landing.png */; };
+		7B07808F1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */; };
 		7B18C7A41DEF223E006FD068 /* main_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A31DEF223E006FD068 /* main_page.png */; };
 		7B18C7A61DEF5113006FD068 /* checking_customer_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A51DEF5113006FD068 /* checking_customer_info.png */; };
 		7B18C7A81DEF51E6006FD068 /* GatheringInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */; };
@@ -60,6 +62,8 @@
 		04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickRestarauntViewController.swift; sourceTree = "<group>"; };
 		04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickFoodViewController.swift; sourceTree = "<group>"; };
 		67F28637A781D397010DA945 /* Pods_BlockTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B07808C1DF093FD00AC4EE5 /* account_landing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_landing.png; sourceTree = "<group>"; };
+		7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringDelivererViewController.swift; sourceTree = "<group>"; };
 		7B18C7A31DEF223E006FD068 /* main_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page.png; sourceTree = "<group>"; };
 		7B18C7A51DEF5113006FD068 /* checking_customer_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checking_customer_info.png; sourceTree = "<group>"; };
 		7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringInfoViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		7B18C7AD1DEF58DC006FD068 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7B07808C1DF093FD00AC4EE5 /* account_landing.png */,
 				7B18C7B51DEFAEB1006FD068 /* auth_stripe_page.png */,
 				7B271BBA1DEE19DA0078C097 /* loading_screen.png */,
 				7B271BBC1DEE1D670078C097 /* main_screen.png */,
@@ -203,6 +208,7 @@
 				7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */,
 				7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */,
 				7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */,
+				7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */,
 			);
 			name = "Seller View Controllers";
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 				7B271BC11DEE27F10078C097 /* loading_screen.png in Resources */,
 				7B271BBF1DEE24230078C097 /* BT_short.png in Resources */,
 				7B271BBD1DEE1D670078C097 /* main_screen.png in Resources */,
+				7B07808D1DF093FD00AC4EE5 /* account_landing.png in Resources */,
 				7B18C7A61DEF5113006FD068 /* checking_customer_info.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +491,7 @@
 				7B271BAA1DE9E8290078C097 /* Networking.swift in Sources */,
 				7B271BA81DE9E6B10078C097 /* MyAPIClient.swift in Sources */,
 				7B9F05C31DE9E38D00E98C5C /* CardViewController.swift in Sources */,
+				7B07808F1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift in Sources */,
 				7B9F058F1DE8DC1F00E98C5C /* AppDelegate.swift in Sources */,
 				7B271BB61DECBBD80078C097 /* OrderConfirmationViewController.swift in Sources */,
 				7B271BB81DECD5E50078C097 /* OpenOrdersTableViewController.swift in Sources */,
