@@ -6,15 +6,6 @@
 //  Copyright © 2016 Jordan Stapinski. All rights reserved.
 //
 
-import Foundation
-//
-//  OrderFormViewController.swift
-//  BlockTrader
-//
-//  Created by Jordan Stapinski on 11/26/16.
-//  Copyright © 2016 Jordan Stapinski. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -75,8 +66,9 @@ class PickRestarauntViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "pickfood") {
             let finalDestination = segue.destination as? PickFoodViewController
-            finalDestination?.custID = self.cust_id.text!
+            //finalDestination?.custID = self.cust_id.text!
             finalDestination?.row = self.indexRow
+            finalDestination?.credentials = self.credentials
             
         }
     }

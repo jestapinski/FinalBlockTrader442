@@ -291,16 +291,16 @@
             </objects>
             <point key="canvasLocation" x="3957.5999999999999" y="760.56971514242889"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Pick Food View Controller-->
         <scene sceneID="U7G-Lk-lwz">
             <objects>
-                <tableViewController storyboardIdentifier="pick food vc" id="tkw-Ma-omB" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="pick food vc" id="tkw-Ma-omB" customClass="PickFoodViewController" customModule="BlockTrader" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vdl-mg-JW4" customClass="PIckFoodViewController">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hye-Tn-Q6a">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hye-Tn-Q6a">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hye-Tn-Q6a" id="yt5-fM-S0N">

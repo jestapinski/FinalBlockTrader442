@@ -1,14 +1,5 @@
 //
-//  PickRestaurantViewController.swift
-//  BlockTrader
-//
-//  Created by Jeremy Lee on 11/30/16.
-//  Copyright © 2016 Jordan Stapinski. All rights reserved.
-//
-
-import Foundation
-//
-//  OrderFormViewController.swift
+//  PickFoodViewController.swift
 //  BlockTrader
 //
 //  Created by Jordan Stapinski on 11/26/16.
@@ -63,8 +54,12 @@ class PickFoodViewController: UITableViewController {
     
     // MARK: - Navigation
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You selected cell #\(indexPath.row)")
+    }
+    
     func moveToConfirmation(orderNumber: OrderNumber){
-        performSegue(withIdentifier: "confirmation", sender: orderNumber)
+      //performSegue(withIdentifier: "confirmation", sender: orderNumber)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,7 +79,8 @@ class PickFoodViewController: UITableViewController {
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
-        Alamofire.request("http://germy.tk:3000/restaurants.json", headers: headers).responseJSON { response in
+        let url = "http://germy.tk:3000/foods.json?rest_id=\( self.row)"
+        Alamofire.request(url, headers: headers).responseJSON { response in
             if let json = response.result.value{
                 let jsonarr = JSON(json)
                 for item in jsonarr.array!{
