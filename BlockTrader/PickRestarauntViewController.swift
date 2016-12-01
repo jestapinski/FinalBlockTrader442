@@ -75,8 +75,9 @@ class PickRestarauntViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "pickfood") {
             let finalDestination = segue.destination as? PickFoodViewController
-            finalDestination?.custID = self.cust_id.text!
+            finalDestination?.custID = self.custID
             finalDestination?.row = self.indexRow
+            finalDestination?.credentials = self.credentials
             
         }
     }

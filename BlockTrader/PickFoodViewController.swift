@@ -73,6 +73,10 @@ class PickFoodViewController: UITableViewController {
             finalDestination?.orderNumber = sender as! OrderNumber
             finalDestination?.custID = self.cust_id.text!
             
+        } else if (segue.identifier == "back_to_resturaunt") {
+            let finalDestination = segue.destination as? PickRestarauntViewController
+            finalDestination?.credentials = self.credentials
+            finalDestination?.custID = self.custID
         }
     }
     
