@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>BlockTrader.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7B9F058A1DE8DC1F00E98C5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7B9F05A11DE8DC2000E98C5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7B9F05AC1DE8DC2000E98C5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

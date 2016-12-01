@@ -54,7 +54,7 @@ class OrderFormViewController: UIViewController {
         ]
         
         // All three of these calls are equivalent
-        Alamofire.request("http://germy.tk:3000/orders/new", parameters: parameters, headers: headers)
+        Alamofire.request("http://germy.tk:3000/orders/new", method: .post, parameters: parameters, headers: headers)
         
         
         if self.checkValidFields(){
