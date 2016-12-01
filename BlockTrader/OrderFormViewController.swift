@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import SwiftyJSON
 
 
 /**
@@ -21,6 +21,8 @@ class OrderFormViewController: UIViewController {
     var items = [Int]()
     var custID: String = ""
     var orderNumber: Int = 0
+    var row: Int = 0
+    var price: Float = 0.0
     
     @IBOutlet weak var cust_id: UILabel!
     @IBOutlet weak var restaurantName: UILabel!
@@ -33,6 +35,29 @@ class OrderFormViewController: UIViewController {
     
     // MARK: Submitting Forms
     @IBAction func submitForm(sender: AnyObject){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        
+        let parameters: Parameters = [
+            "order": [
+                "food_order_id": "",
+                "customer_id": 2,
+                "provider_id": 3,
+                "address": "123",
+                "latitude": 32.1,
+                "longitude": 33.2,
+                "delivery_status": "",
+                "payment_id_user": "",
+                "payment_id_reciever": ""
+            ],
+            "commit":"Create Order"
+        ]
+        
+        // All three of these calls are equivalent
+        Alamofire.request("http://germy.tk:3000/orders/new", parameters: parameters, headers: headers)
+        
+        
         if self.checkValidFields(){
             //Submit order
             let orderNumber = self.submitOrder()
@@ -91,7 +116,35 @@ class OrderFormViewController: UIViewController {
         //Checking Stripe call, can remove when deployed
         self.cust_id.text = customer
         // Do any additional setup after loading the view.
-        print("itemszzz: \(items)")
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/restaurants.json?rest_id=\(self.row)"
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                for item in jsonarr.array!{
+                    print("JSON1: \(item["name"].stringValue)")
+                    self.restaurantName.text = item["name"].stringValue
+                }
+                
+            }
+        }
+
+        let url2 = "http://germy.tk:3000/foods.json?rest_id=\(self.row)"
+        Alamofire.request(url2, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                for item in jsonarr.array!{
+                    if self.items.contains(Int(item["id"].stringValue)!){
+                    print("JSONthing: \(item["original_price"].stringValue)")
+                    self.price = self.price + Float(item["original_price"].stringValue)!
+                }
+                
+            }
+        }
+        self.suggestedPrice.text = self.price.description
+        }
     }
 
     override func didReceiveMemoryWarning() {

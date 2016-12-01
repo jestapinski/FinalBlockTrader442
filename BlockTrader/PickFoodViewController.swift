@@ -71,8 +71,8 @@ class PickFoodViewController: UITableViewController {
         if (segue.identifier == "submitorder") {
             let finalDestination = segue.destination as? OrderFormViewController
             finalDestination?.credentials =	 self.credentials
-            print("itessss: \(self.items)")
             finalDestination?.items = self.items
+            finalDestination?.row = self.row
             
         } else if (segue.identifier == "back_to_resturaunt") {
             let finalDestination = segue.destination as? PickRestarauntViewController
