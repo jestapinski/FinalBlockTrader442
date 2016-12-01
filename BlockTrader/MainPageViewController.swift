@@ -9,6 +9,8 @@
 import UIKit
 import FacebookLogin
 import FacebookCore
+import Alamofire
+import SwiftyJSON
 
 class MainPageViewController: UIViewController {
     
@@ -128,6 +130,7 @@ class MainPageViewController: UIViewController {
      - parameter jsonResult: The Dictionary to be parsed.
      */
     func extractAndHandleUserInfo(jsonResult: [String: Any]?){
+
         let ourAUTH = jsonResult!["api_authtoken"]!
         let userEmail = jsonResult!["email"]!
         let userFirstName = jsonResult!["first_name"]!
@@ -143,6 +146,23 @@ class MainPageViewController: UIViewController {
         self.credentials["phone"] = userPhone
         print("responseString2 = \(ourAUTH)")
         self.welcomename.text = userFirstName as? String
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        
+        
+        let url_email = "http://germy.tk:3000/users.json?email=\(self.credentials["email"]!)"
+        print("\(url_email)")
+        Alamofire.request(url_email, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                for item in jsonarr.array!{
+                    self.credentials["id"] = item["id"].stringValue
+                }
+                
+            }
+        }
+        
     }
     
     

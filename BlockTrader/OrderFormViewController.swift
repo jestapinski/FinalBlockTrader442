@@ -34,6 +34,7 @@ class OrderFormViewController: UIViewController {
     
     // MARK: Submitting Forms
     @IBAction func submitForm(sender: AnyObject){
+        print("custID222: \(self.credentials["id"]!)")
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -41,11 +42,11 @@ class OrderFormViewController: UIViewController {
         let parameters: Parameters = [
             "order": [
                 "food_order_id": "",
-                "customer_id": 2,
-                "provider_id": 3,
+                "customer_id": self.credentials["id"]!,
+                "provider_id": 0,
                 "address": "123",
-                "latitude": 32.1,
-                "longitude": 33.2,
+                "latitude": latitude,
+                "longitude": longitude,
                 "delivery_status": "",
                 "payment_id_user": "",
                 "payment_id_reciever": ""
@@ -54,7 +55,7 @@ class OrderFormViewController: UIViewController {
         ]
         
         // All three of these calls are equivalent
-        Alamofire.request("http://germy.tk:3000/orders/new", method: .post, parameters: parameters, headers: headers)
+        Alamofire.request("http://germy.tk:3000/orders", method: .post, parameters: parameters, headers: headers)
         
         
         if self.checkValidFields(){

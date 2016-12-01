@@ -91,32 +91,17 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
         
-        let parameters: Parameters = [
+
+        var parameters: Parameters = [
             "commit": "Update User",
-            "id": "5",
+            "id": "\(self.credentials["id"]!)",
             "user":[
                 "custID": "\(self.customerID)"
             ]
         ]
-        let url_email = "http://germy.tk:3000/users.json?email=\(self.credentials["email"]!)"
-        print("\(url_email)")
-        Alamofire.request(url_email, headers: headers).responseJSON { response in
-            if let json = response.result.value{
-                let jsonarr = JSON(json)
-                for item in jsonarr.array!{
-                    print("111JSONemail: \(item["id"].stringValue)")
-                    let edit_url = "http://germy.tk:3000/users/\(item["id"].stringValue)"
-                    print("edit: \(edit_url)")
-                    // All three of these calls are equivalent
-                    Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
-                }
-                
-            }
-        }
-        
+        let edit_url = "http://germy.tk:3000/users/\(self.credentials["id"]!)"
+        Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
 
-
-        
         performSegue(withIdentifier: "readyToOrder", sender: self.customerID)
 
     }

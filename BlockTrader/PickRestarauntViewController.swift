@@ -86,7 +86,6 @@ class PickRestarauntViewController: UITableViewController {
             if let json = response.result.value{
                 let jsonarr = JSON(json)
                 for item in jsonarr.array!{
-                    print("JSON1: \(item["name"].stringValue)")
                     let title: String? = item["name"].stringValue
                     self.TableData.append(title!)
                 }
