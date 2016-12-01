@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -190,23 +190,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwL-Pc-RNp">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Auth"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth_stripe_page.png" translatesAutoresizingMaskIntoConstraints="NO" id="134-Pz-ArQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwL-Pc-RNp">
+                                <rect key="frame" x="129.5" y="528" width="116" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="vV0-K4-MLj"/>
+                                </constraints>
                                 <connections>
                                     <action selector="findAcctWithSender:" destination="cwd-IF-jJ1" eventType="touchUpInside" id="xdA-B4-jd7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's Authenticate With Stripe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-4D-lTr">
-                                <rect key="frame" x="66" y="167" width="243" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="baI-gO-j46" firstAttribute="top" secondItem="SwL-Pc-RNp" secondAttribute="bottom" constant="21" id="2pY-bc-0hL"/>
+                            <constraint firstItem="SwL-Pc-RNp" firstAttribute="centerX" secondItem="134-Pz-ArQ" secondAttribute="centerX" id="4gP-IT-3b3"/>
+                            <constraint firstItem="134-Pz-ArQ" firstAttribute="top" secondItem="Eja-l3-7zJ" secondAttribute="top" id="J9m-JR-YuY"/>
+                            <constraint firstItem="SwL-Pc-RNp" firstAttribute="top" secondItem="Tnu-E2-WwX" secondAttribute="bottom" constant="508" id="JFd-rA-XEC"/>
+                            <constraint firstItem="SwL-Pc-RNp" firstAttribute="top" secondItem="134-Pz-ArQ" secondAttribute="bottom" constant="-139" id="Mzf-5c-k8q"/>
+                            <constraint firstItem="134-Pz-ArQ" firstAttribute="leading" secondItem="Eja-l3-7zJ" secondAttribute="leading" id="Uez-Sr-JVX"/>
+                            <constraint firstAttribute="trailing" secondItem="134-Pz-ArQ" secondAttribute="trailing" id="W65-s2-fYe"/>
+                            <constraint firstItem="baI-gO-j46" firstAttribute="top" secondItem="134-Pz-ArQ" secondAttribute="bottom" id="f0V-C3-mPs"/>
+                            <constraint firstItem="SwL-Pc-RNp" firstAttribute="leading" secondItem="Eja-l3-7zJ" secondAttribute="leading" constant="128" id="gPE-zr-cGh"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="NdR-sx-LPg" kind="show" identifier="hasbeenauthenticated" id="P94-8m-qZQ"/>
@@ -267,7 +275,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uM8-0Q-r0P" id="3Kr-Fc-B1C">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resturaunt - Food Item (To Location)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxv-RQ-rxE">
@@ -294,14 +302,39 @@
         <!--Pick Food View Controller-->
         <scene sceneID="U7G-Lk-lwz">
             <objects>
+<<<<<<< HEAD
                 <tableViewController storyboardIdentifier="pick food vc" id="tkw-Ma-omB" customClass="PickFoodViewController" customModule="BlockTrader" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vdl-mg-JW4" customClass="PIckFoodViewController">
+=======
+                <tableViewController storyboardIdentifier="pick food vc" id="tkw-Ma-omB" customClass="PickFoodViewController" customModule="BlockTrader" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vdl-mg-JW4">
+>>>>>>> 8b29b69c403ab9780fc0d17afa73783e7ef4c657
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="lWJ-Zw-BZR">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Choose Food For Resturaunt" id="vLH-ph-1fA">
+                                    <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Z2s-FP-2WW">
+                                        <connections>
+                                            <segue destination="Cl6-KJ-Rqi" kind="popoverPresentation" identifier="back_to_resturaunt" popoverAnchorBarButtonItem="Z2s-FP-2WW" id="bIC-FB-YnA">
+                                                <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
+<<<<<<< HEAD
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hye-Tn-Q6a">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hye-Tn-Q6a">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+>>>>>>> 8b29b69c403ab9780fc0d17afa73783e7ef4c657
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hye-Tn-Q6a" id="yt5-fM-S0N">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -436,16 +469,23 @@
         <scene sceneID="tSR-4O-1dO">
             <objects>
                 <tableViewController storyboardIdentifier="restauarant vc" id="Cl6-KJ-Rqi" customClass="PickRestarauntViewController" customModule="BlockTrader" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zxa-HI-G1t" customClass="PIckRestaurantViewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="28" sectionFooterHeight="28" id="zxa-HI-G1t" customClass="PickRestaurantViewController">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="xgC-cU-PY5">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Choose a Resturaunt" id="FxM-dF-baQ"/>
+                            </items>
+                        </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="q6o-Sn-GHe">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="42" id="q6o-Sn-GHe">
+                                <rect key="frame" x="0.0" y="72" width="375" height="42"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q6o-Sn-GHe" id="xMP-zf-oRD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -461,7 +501,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8r-cX-1Nn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2988" y="-621"/>
+            <point key="canvasLocation" x="2988" y="-621.13943028485767"/>
         </scene>
         <!--Order Confirmation View Controller-->
         <scene sceneID="G7Y-5g-H6y">
@@ -526,8 +566,7 @@
                                     <constraint firstAttribute="width" constant="124" id="sKC-5P-07M"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="payButtonTappedWithSender:" destination="jRn-ey-w2V" eventType="touchUpInside" id="heD-ec-59g"/>
-                                    <segue destination="Cl6-KJ-Rqi" kind="show" identifier="readyToOrder" id="P7m-KL-VV1"/>
+                                    <action selector="payButtonTappedWithSender:" destination="jRn-ey-w2V" eventType="touchUpInside" id="KzE-iE-W4I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -545,6 +584,7 @@
                     </view>
                     <connections>
                         <outlet property="payButton" destination="kD7-fb-Tv6" id="qtl-a8-9gO"/>
+                        <segue destination="Cl6-KJ-Rqi" kind="show" identifier="readyToOrder" id="5xJ-fw-u7Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5A-6H-ZMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -553,10 +593,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="auth_stripe_page.png" width="3122" height="5559"/>
         <image name="cc_input.png" width="3121" height="5559"/>
         <image name="checking_customer_info.png" width="3121" height="5559"/>
         <image name="gathering_deliverer_info.png" width="3122" height="5559"/>
         <image name="main_page.png" width="3121" height="5559"/>
         <image name="main_screen.png" width="3121" height="5559"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5xJ-fw-u7Z"/>
+    </inferredMetricsTieBreakers>
 </document>
