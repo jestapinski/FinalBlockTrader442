@@ -37,6 +37,7 @@ fileprivate enum RequiredBillingAddressFields: String {
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var credentials: [String : Any] = [:]
     var accessCode: String?
     let stripePublishableKey = "pk_test_BfRm3UU2gsYRebGH6cMuwnl7"
     let appleMerchantID: String? = nil

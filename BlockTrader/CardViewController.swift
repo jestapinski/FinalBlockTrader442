@@ -36,6 +36,7 @@ class CardViewController: UIViewController, STPPaymentCardTextFieldDelegate, Car
         paymentTextField = STPPaymentCardTextField(frame: frame1)
         paymentTextField.center = view.center
         paymentTextField.delegate = self
+        paymentTextField.backgroundColor = .white
         view.addSubview(paymentTextField)
         //disable payButton if there is no card information
         //payButton.isEnabled = false
