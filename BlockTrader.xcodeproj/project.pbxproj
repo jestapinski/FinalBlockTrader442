@@ -152,16 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				7B9F05901DE8DC1F00E98C5C /* ViewController.swift */,
+				7B18C7B71DF06D5C006FD068 /* Buyer View Controllers */,
+				7B18C7B81DF06DC6006FD068 /* Seller View Controllers */,
 				7B9F05BF1DE8DE5200E98C5C /* MainPageViewController.swift */,
-				7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */,
-				7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */,
-				7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */,
-				7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */,
-				04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */,
-				7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */,
-				7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */,
-				7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */,
-				04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -189,6 +182,29 @@
 				7B9F059A1DE8DC1F00E98C5C /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		7B18C7B71DF06D5C006FD068 /* Buyer View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */,
+				7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */,
+				04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */,
+				7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */,
+				04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */,
+				7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */,
+			);
+			name = "Buyer View Controllers";
+			sourceTree = "<group>";
+		};
+		7B18C7B81DF06DC6006FD068 /* Seller View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B271BAF1DEB486A0078C097 /* MainSellerViewController.swift */,
+				7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */,
+				7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */,
+			);
+			name = "Seller View Controllers";
 			sourceTree = "<group>";
 		};
 		7B9F05821DE8DC1F00E98C5C = {
