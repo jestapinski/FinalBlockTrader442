@@ -19,6 +19,7 @@ class OpenOrdersTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.credentials = appDelegate.credentials
         print(self.credentials)
         let headers = [
@@ -28,10 +29,11 @@ class OpenOrdersTableViewController: UITableViewController {
             if let json = response.result.value{
                 let jsonarr = JSON(json)
                 for item in jsonarr.array!{
-                    print("JSON1: \(item["name"].stringValue)")
-                    let title: String? = item["name"].stringValue
+                    print("JSON1: \(item["id"].stringValue)")
+                    let title: String? = item["id"].stringValue
                     self.TableData.append(title!)
                 }
+                //Perform a map to food using food_orders
                 self.do_table_refresh()
                 
             }
