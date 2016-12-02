@@ -13,9 +13,17 @@ import SwiftyJSON
 class OpenOrdersTableViewController: UITableViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    //Data that is shown
     var TableData = [String]()
+    var TableDisplay = [String]()
+    //Data that is actually behind the scenes
+    var TableActual : [[String : Any]] = []
+    var TableJSONs : [[[String : Any]]] = []
     var indexRow: Int = 0
     var credentials: [String: Any] = [:]
+    let backendClient = BackendClient()
+    var selectedOrderInfo: [[String: Any]] = []
+    var foodIDs: [[String]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,19 +39,85 @@ class OpenOrdersTableViewController: UITableViewController {
                 for item in jsonarr.array!{
                     print("JSON1: \(item["id"].stringValue)")
                     let title: String? = item["id"].stringValue
+                    //Map below to food and resturaunt TODO
                     self.TableData.append(title!)
+                    //ID below which we will pull from
+                    //self.TableActual.append(title!)
                 }
                 //Perform a map to food using food_orders
+                //self.TableDisplay = self.TableData.map({self.backendClient.jsonsToNiceDisplay(jsonFoods: (self.backendClient.getFoodModelFromOrder(orderID: $0)))})
+                
+                //self.TableActual = self.TableData.map({self.backendClient.getFoodModelFromOrder(orderID: $0)})
+                for id in self.TableData{
+                    self.backendClient.getFoodModelFromOrder(orderID: id, completion: self.aggregateFoodItems)
+                }
+                print(self.foodIDs)
+//                for foodList in self.foodIDs{
+//                    self.backendClient.mapToFoodJSONs(foodIDList: foodList, completion: self.aggregateFoodJsons)
+//                }
+//                print(self.TableActual)
                 self.do_table_refresh()
                 
             }
         }
+        
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    func aggregateFoodItems(_ listOfFoodIds: [String]){
+        self.foodIDs.append(listOfFoodIds)
+        self.backendClient.mapToFoodJSONs(foodIDList: listOfFoodIds, completion: self.aggregateFoodJsons)
+    }
+    
+    func aggregateFoodJsons(_ listOfFoodJsons: JSON){
+        var finalJSON = backendClient.JSONtoDictionary(JSONelement: listOfFoodJsons)
+        self.TableActual.append(finalJSON)
+        //Need to convert below to dictionary
+        
+        self.TableDisplay.append(finalJSON["name"] as! String)
+        print(self.TableDisplay)
+        // IF this size is the expected size then we donzo
+//        print(self.TableActual)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("FINAL")
+        print(self.foodIDs)
+        print(self.TableDisplay)
+        //Map to count and group
+        var countIDs = self.foodIDs.map({$0.count})
+        var finalNames: [[String]] = []
+        var finalJSONs: [[[String : Any]]] = []
+        var currentIndex = 0
+        var filteredForNames = self.TableDisplay.filter({$0 != ""})
+        for countNum in countIDs {
+            var newArray: [String] = []
+            var newJSONArray: [[String : Any]] = []
+            for i in currentIndex..<(currentIndex + countNum) {
+                print(i)
+                newArray.append(filteredForNames[i])
+                newJSONArray.append(self.TableActual[i])
+            }
+            currentIndex = currentIndex + countNum
+            finalNames.append(newArray)
+            finalJSONs.append(newJSONArray)
+            
+        }
+        print(self.TableDisplay)
+        print("FinalNames")
+        print(finalNames)
+        //Fix below later
+        let finalNameMapping = finalNames.map({ (x : [String]) -> String in  if x.count == 0 {return "Not Active"} else {return x.joined(separator: " & ")}})
+        print(finalNameMapping)
+        self.TableDisplay = finalNameMapping
+        self.TableJSONs = finalJSONs
+        self.do_table_refresh()
+//        self.TableDisplay
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,8 +139,15 @@ class OpenOrdersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if (self.TableDisplay.count == 0){
+            for i in 0..<(TableData.count){
+                print(i)
+                self.TableDisplay.append("")
+            }
+        }
         //cell.accessoryType = cell.isSelected ? .checkmark : .none
-        cell.textLabel?.text = TableData[indexPath.row]
+        cell.textLabel?.text = TableDisplay[indexPath.row]
+        
         return cell
 
         // Configure the cell...
@@ -77,8 +158,33 @@ class OpenOrdersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row + 1	)")
         self.indexRow = indexPath.row + 1
+        print(self.TableData[indexPath.row])
+        self.moveToInfoPage(rowNum: indexPath.row)
         //self.moveToConfirmation()
     }
+    
+    func moveToInfoPage(rowNum: Int){
+        //let orderID = self.TableData[rowNum]
+        print("Moving to info page")
+        print(self.TableData[rowNum])
+        print(self.TableJSONs[rowNum])
+        self.selectedOrderInfo = self.TableJSONs[rowNum]
+        //JSON list of foods
+        performSegue(withIdentifier: "ViewOrderInfo", sender: "")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "ViewOrderInfo") {
+            let secondViewController = segue.destination as? OrderInfoViewController
+//            let acctNumber = sender as! String
+            secondViewController?.orderFoods = self.selectedOrderInfo
+//            print("Userinfo")
+//            print(acctNumber)
+            //At this point we can save it to DB, changing segue to only run on setup i.e. once per user
+            
+        }
+    }
+
     
     func do_table_refresh()
     {

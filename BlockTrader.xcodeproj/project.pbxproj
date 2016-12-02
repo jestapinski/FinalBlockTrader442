@@ -12,6 +12,9 @@
 		238E09284C63B69666709B25 /* Pods_BlockTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F28637A781D397010DA945 /* Pods_BlockTrader.framework */; };
 		7B07808D1DF093FD00AC4EE5 /* account_landing.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B07808C1DF093FD00AC4EE5 /* account_landing.png */; };
 		7B07808F1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */; };
+		7B0780911DF113C900AC4EE5 /* SellerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0780901DF113C900AC4EE5 /* SellerViewTableViewCell.swift */; };
+		7B0780931DF134D800AC4EE5 /* BackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0780921DF134D800AC4EE5 /* BackendClient.swift */; };
+		7B0780951DF1CD5900AC4EE5 /* OrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0780941DF1CD5900AC4EE5 /* OrderInfoViewController.swift */; };
 		7B18C7A41DEF223E006FD068 /* main_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A31DEF223E006FD068 /* main_page.png */; };
 		7B18C7A61DEF5113006FD068 /* checking_customer_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A51DEF5113006FD068 /* checking_customer_info.png */; };
 		7B18C7A81DEF51E6006FD068 /* GatheringInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */; };
@@ -64,6 +67,10 @@
 		67F28637A781D397010DA945 /* Pods_BlockTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B07808C1DF093FD00AC4EE5 /* account_landing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_landing.png; sourceTree = "<group>"; };
 		7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringDelivererViewController.swift; sourceTree = "<group>"; };
+		7B0780901DF113C900AC4EE5 /* SellerViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerViewTableViewCell.swift; sourceTree = "<group>"; };
+		7B0780921DF134D800AC4EE5 /* BackendClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendClient.swift; sourceTree = "<group>"; };
+		7B0780941DF1CD5900AC4EE5 /* OrderInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderInfoViewController.swift; sourceTree = "<group>"; };
+		7B0780961DF1E28100AC4EE5 /* alamofireTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = alamofireTest.playground; sourceTree = "<group>"; };
 		7B18C7A31DEF223E006FD068 /* main_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page.png; sourceTree = "<group>"; };
 		7B18C7A51DEF5113006FD068 /* checking_customer_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checking_customer_info.png; sourceTree = "<group>"; };
 		7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringInfoViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				7B271BA71DE9E6B10078C097 /* MyAPIClient.swift */,
+				7B0780921DF134D800AC4EE5 /* BackendClient.swift */,
 			);
 			name = "API Clients";
 			sourceTree = "<group>";
@@ -209,6 +217,8 @@
 				7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */,
 				7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */,
 				7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */,
+				7B0780901DF113C900AC4EE5 /* SellerViewTableViewCell.swift */,
+				7B0780941DF1CD5900AC4EE5 /* OrderInfoViewController.swift */,
 			);
 			name = "Seller View Controllers";
 			sourceTree = "<group>";
@@ -248,6 +258,7 @@
 				7B9F05981DE8DC1F00E98C5C /* Assets.xcassets */,
 				7B9F059D1DE8DC1F00E98C5C /* Info.plist */,
 				7B9F05951DE8DC1F00E98C5C /* BlockTrader.xcdatamodeld */,
+				7B0780961DF1E28100AC4EE5 /* alamofireTest.playground */,
 			);
 			path = BlockTrader;
 			sourceTree = "<group>";
@@ -485,9 +496,11 @@
 				04ED30CC1DEF9382001150BE /* PickFoodViewController.swift in Sources */,
 				7B9F05C01DE8DE5200E98C5C /* MainPageViewController.swift in Sources */,
 				7B271BAE1DE9F94D0078C097 /* OrderFormViewController.swift in Sources */,
+				7B0780911DF113C900AC4EE5 /* SellerViewTableViewCell.swift in Sources */,
 				7B9F05971DE8DC1F00E98C5C /* BlockTrader.xcdatamodeld in Sources */,
 				7B9F05911DE8DC1F00E98C5C /* ViewController.swift in Sources */,
 				7B271BB01DEB486A0078C097 /* MainSellerViewController.swift in Sources */,
+				7B0780931DF134D800AC4EE5 /* BackendClient.swift in Sources */,
 				7B271BAA1DE9E8290078C097 /* Networking.swift in Sources */,
 				7B271BA81DE9E6B10078C097 /* MyAPIClient.swift in Sources */,
 				7B9F05C31DE9E38D00E98C5C /* CardViewController.swift in Sources */,
@@ -495,6 +508,7 @@
 				7B9F058F1DE8DC1F00E98C5C /* AppDelegate.swift in Sources */,
 				7B271BB61DECBBD80078C097 /* OrderConfirmationViewController.swift in Sources */,
 				7B271BB81DECD5E50078C097 /* OpenOrdersTableViewController.swift in Sources */,
+				7B0780951DF1CD5900AC4EE5 /* OrderInfoViewController.swift in Sources */,
 				7B9F05C51DE9E3F900E98C5C /* StripeAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
