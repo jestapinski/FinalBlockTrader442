@@ -116,10 +116,26 @@ class BackendClient {
             if let json = response.result.value{
                 let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["customer_id"] as! String
                 //Here I would simply get the customer ID and pass completion along
-                completion(jsonarr)
+                self.getCustomerNameFromID(customerID: jsonarr, completion: completion)
             }
         }
 
+    }
+    
+    func getResturauntIDFromOrder(orderID: String, completion: @escaping (String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/restaurants/\(orderID).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["name"] as! String
+                //Here I would simply get the customer ID and pass completion along
+                completion(jsonarr)
+            }
+        }
+        
     }
     
     //Need to fix DB fields before can finish
@@ -131,13 +147,31 @@ class BackendClient {
         print(url)
         Alamofire.request(url, headers: headers).responseJSON { response in
             if let json = response.result.value{
-                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["name"] as! String
+                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))
+                var finalString: String = (jsonarr["first_name"] as! String)
+                finalString = finalString + " " + (jsonarr["last_name"] as! String)
+                //Here I would simply get the customer ID and pass completion along
+                completion(finalString)
+            }
+        }
+        
+    }
+    
+    /*func getCustomers(customerID: String, completion: @escaping (String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/users/4.json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json)) as! String
                 //Here I would simply get the customer ID and pass completion along
                 completion(jsonarr)
             }
         }
         
-    }
+    }*/
     
 
 

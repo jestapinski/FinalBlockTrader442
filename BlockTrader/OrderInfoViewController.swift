@@ -15,6 +15,9 @@ class OrderInfoViewController: UIViewController {
     let backendClient = BackendClient()
     var orderID: String = "0"
     
+    var custName: String = ""
+    var restName: String = ""
+    
     //Define Outlets
     @IBOutlet weak var custNameLocationLabel: UILabel!
     @IBOutlet weak var restNameLabel: UILabel!
@@ -30,9 +33,18 @@ class OrderInfoViewController: UIViewController {
     
     func assignCustomer(_ id: String){
         self.custNameLocationLabel.text = id
-        self.restNameLabel.text = self.orderFoods.first?["resturant_id"] as! String?
-        self.foodsLabel.text = self.getFoods()
+        self.custName = id
+        let restID = self.orderFoods.first?["resturant_id"] as! String
+        self.backendClient.getResturauntIDFromOrder(orderID: restID, completion: self.setRestLabel)
+//        self.restNameLabel.text =
+//        self.foodsLabel.text = self.getFoods()
         //self.backendClient.getPriceFromOrder(orderID: self.orderID, completion: self.assignPrice)
+    }
+    
+    func setRestLabel(_ name: String){
+        self.restNameLabel.text = name
+        self.restName = name
+        self.foodsLabel.text = self.getFoods()
     }
     
     func assignPrice(_ price: String){
@@ -44,7 +56,7 @@ class OrderInfoViewController: UIViewController {
         for foodItem in self.orderFoods{
             finalArray.append(foodItem["name"] as! String)
         }
-        return finalArray.joined(separator: ", ")
+        return finalArray.joined(separator: "\n")
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +65,7 @@ class OrderInfoViewController: UIViewController {
     }
     
     @IBAction func moveToConfirm(sender: AnyObject){
+        //POST request
         performSegue(withIdentifier: "sellerconfirmed", sender: "")
     }
     
@@ -62,7 +75,9 @@ class OrderInfoViewController: UIViewController {
         if (segue.identifier == "sellerconfirmed"){
             //POST REQUEST SOMEWHERE, make this an IBAction from the button later
             let secondViewController = segue.destination as? SellerGoingViewController
-            secondViewController?.resturaunt = self.restNameLabel.text!
+            secondViewController?.resturaunt = self.restName
+            secondViewController?.custName = self.custName
+            secondViewController?.orderFoods = self.orderFoods
             print(secondViewController?.resturaunt)
         }
     }

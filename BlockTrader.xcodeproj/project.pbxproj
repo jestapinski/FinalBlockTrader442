@@ -43,6 +43,7 @@
 		7B9F05C31DE9E38D00E98C5C /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */; };
 		7B9F05C51DE9E3F900E98C5C /* StripeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */; };
 		7BBA83621DF2153400B71EDA /* SellerGoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA83611DF2153400B71EDA /* SellerGoingViewController.swift */; };
+		7BBA836A1DF363F500B71EDA /* GoingToCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA83691DF363F500B71EDA /* GoingToCustomerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeAccountViewController.swift; sourceTree = "<group>"; };
 		7BBA83611DF2153400B71EDA /* SellerGoingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerGoingViewController.swift; sourceTree = "<group>"; };
+		7BBA83691DF363F500B71EDA /* GoingToCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoingToCustomerViewController.swift; sourceTree = "<group>"; };
 		ABCA6FAE95BD0BF9547C1188 /* Pods-BlockTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.release.xcconfig"; sourceTree = "<group>"; };
 		FD7BF3B1C780988A5672A68E /* Pods-BlockTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +224,7 @@
 				7B0780901DF113C900AC4EE5 /* SellerViewTableViewCell.swift */,
 				7B0780941DF1CD5900AC4EE5 /* OrderInfoViewController.swift */,
 				7BBA83611DF2153400B71EDA /* SellerGoingViewController.swift */,
+				7BBA83691DF363F500B71EDA /* GoingToCustomerViewController.swift */,
 			);
 			name = "Seller View Controllers";
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				04AD4A4B1DEF6B0400204E19 /* PickRestarauntViewController.swift in Sources */,
 				7B18C7A81DEF51E6006FD068 /* GatheringInfoViewController.swift in Sources */,
 				04ED30CC1DEF9382001150BE /* PickFoodViewController.swift in Sources */,
+				7BBA836A1DF363F500B71EDA /* GoingToCustomerViewController.swift in Sources */,
 				7B9F05C01DE8DE5200E98C5C /* MainPageViewController.swift in Sources */,
 				7B271BAE1DE9F94D0078C097 /* OrderFormViewController.swift in Sources */,
 				7B0780911DF113C900AC4EE5 /* SellerViewTableViewCell.swift in Sources */,
