@@ -19,19 +19,19 @@ class BackendClient {
         self.credentials = appDelegate.credentials
     }
     
-    func mapToFoodJSONs(foodIDList: [String], completion: @escaping (JSON) -> Void){
+    func mapToFoodJSONs(foodID: String, index: Int, originalArray: [String], completion: @escaping ([String], Int, [String : Any]) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
-        for id in foodIDList{
-            let url = "http://germy.tk:3000/foods/\(Int(id)!).json"
+//        for id in foodIDList{
+            let url = "http://germy.tk:3000/foods/\(Int(foodID)!).json"
             print(url)
             Alamofire.request(url, headers: headers).responseJSON { response in
                 if let json = response.result.value{
                     let jsonarr = JSON(json)
-                    completion(jsonarr)
+                    completion(originalArray, index + 1, self.JSONtoDictionary(JSONelement: jsonarr))
                 }
-            }
+//            }
 //    Alamofire.request("http://germy.tk:3000/food_orders.json", headers: headers).responseJSON { response in
 //            if let json = response.result.value{
 //                let jsonarr = JSON(json)
@@ -61,10 +61,88 @@ class BackendClient {
         }
         return finalDictionary
     }
+    
+    //Price is not in schema yet
+    func getPriceFromOrder(orderID: String, completion: @escaping (String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/orders/\(Int(orderID)!).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["price"] as! String
+                //Here I would simply get the customer ID and pass completion along
+                completion(jsonarr)
+            }
+        }
+
+    }
+    
+    func getOrders(completion: @escaping ([[String : Any]]) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/orders.json"
+        print(url)
+        var finalArray = [[String : Any]]()
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                //                var foodArray = [String]()
+                for item in jsonarr.array!{
+                    //                    print("JSON3: \(item["food_id"].stringValue)")
+                    //let title: String? = item["order_id"].stringValue
+                    //if (title == String(orderID)){
+                    //Get the array of food ids
+                    finalArray.append(self.JSONtoDictionary(JSONelement: item))
+                    //  print(foodArray)
+                    //}
+                }
+                
+            }
+            completion(finalArray)
+        }
+    }
+
+    
+    func getCustomerNameFromOrder(orderID: String, completion: @escaping (String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/orders/\(Int(orderID)!).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["customer_id"] as! String
+                //Here I would simply get the customer ID and pass completion along
+                completion(jsonarr)
+            }
+        }
+
+    }
+    
+    //Need to fix DB fields before can finish
+    func getCustomerNameFromID(customerID: String, completion: @escaping (String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/users/\(Int(customerID)!).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["name"] as! String
+                //Here I would simply get the customer ID and pass completion along
+                completion(jsonarr)
+            }
+        }
+        
+    }
+    
 
 
 
-    func getFoodModelFromOrder(orderID: String, completion: @escaping ([String]) -> Void) {//-> [JSON]{
+    func getFoodModelFromOrder(orderID: String, index: Int, numsArray: [String],  completion: @escaping ([String], Int, [String]) -> Void) {//-> [JSON]{
         var foodArray = [String]()
         var finalArray = [JSON]()
         let headers = [
@@ -87,7 +165,7 @@ class BackendClient {
                     //ID below which we will pull from
                     //self.TableActual.append(title!)
                 }
-                completion(foodArray)
+                completion(numsArray, index + 1, foodArray)
 
 
     }

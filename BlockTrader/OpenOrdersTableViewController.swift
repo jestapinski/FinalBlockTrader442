@@ -24,42 +24,64 @@ class OpenOrdersTableViewController: UITableViewController {
     let backendClient = BackendClient()
     var selectedOrderInfo: [[String: Any]] = []
     var foodIDs: [[String]] = []
+    var allJSONs: [[String : Any]] = []
+    
+    func getFoodOrders(_ listOfOrders: [[String : Any]]){
+        let newlistOfOrders = listOfOrders.filter({$0["provider_id"] as! String != ""})
+        self.TableData = newlistOfOrders.map({return $0["id"] as! String})
+        self.foodOrdersLoop(self.TableData.map({$0}), 0, [])
+    }
+    
+    //Find corresponding food orders by calling backend function on each one and agg. results
+    func foodOrdersLoop(_ arr: [String], _ index: Int, _ lastBack: [String]){
+        if (index != 0) {
+            foodIDs.append(lastBack)
+        }
+        if (index == arr.count) {self.aggregateFoodItems(Array(self.foodIDs.joined()), 0, [:])
+                                return}
+        self.backendClient.getFoodModelFromOrder(orderID: arr[index], index: index, numsArray: arr ,completion: self.foodOrdersLoop)
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.credentials = appDelegate.credentials
         print(self.credentials)
-        let headers = [
-            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
-        ]
-        Alamofire.request("http://germy.tk:3000/orders.json", headers: headers).responseJSON { response in
-            if let json = response.result.value{
-                let jsonarr = JSON(json)
-                for item in jsonarr.array!{
-                    print("JSON1: \(item["id"].stringValue)")
-                    let title: String? = item["id"].stringValue
-                    //Map below to food and resturaunt TODO
-                    self.TableData.append(title!)
-                    //ID below which we will pull from
-                    //self.TableActual.append(title!)
-                }
-                //Perform a map to food using food_orders
-                //self.TableDisplay = self.TableData.map({self.backendClient.jsonsToNiceDisplay(jsonFoods: (self.backendClient.getFoodModelFromOrder(orderID: $0)))})
-                
-                //self.TableActual = self.TableData.map({self.backendClient.getFoodModelFromOrder(orderID: $0)})
-                for id in self.TableData{
-                    self.backendClient.getFoodModelFromOrder(orderID: id, completion: self.aggregateFoodItems)
-                }
-                print(self.foodIDs)
-//                for foodList in self.foodIDs{
-//                    self.backendClient.mapToFoodJSONs(foodIDList: foodList, completion: self.aggregateFoodJsons)
+        self.backendClient.getOrders(completion: self.getFoodOrders)
+//        let headers = [
+//            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+//        ]
+//        Alamofire.request("http://germy.tk:3000/orders.json", headers: headers).responseJSON { response in
+//            if let json = response.result.value{
+//                let jsonarr = JSON(json)
+//                for item in jsonarr.array!{
+//                    print("JSON1: \(item["id"].stringValue)")
+//                    let title: String? = item["id"].stringValue
+//                    let provider = item["provider"].stringValue
+//                    //Map below to food and resturaunt TODO
+//                    if provider == "" {
+//                        self.TableData.append(title!)
+//                    }
+//                    //ID below which we will pull from
+//                    //self.TableActual.append(title!)
 //                }
-//                print(self.TableActual)
-                self.do_table_refresh()
-                
-            }
-        }
+//                //Perform a map to food using food_orders
+//                //self.TableDisplay = self.TableData.map({self.backendClient.jsonsToNiceDisplay(jsonFoods: (self.backendClient.getFoodModelFromOrder(orderID: $0)))})
+//                
+//                //self.TableActual = self.TableData.map({self.backendClient.getFoodModelFromOrder(orderID: $0)})
+////                for id in self.TableData{
+////                    self.backendClient.getFoodModelFromOrder(orderID: id, completion: self.aggregateFoodItems)
+////                }
+//                print(self.foodIDs)
+////                for foodList in self.foodIDs{
+////                    self.backendClient.mapToFoodJSONs(foodIDList: foodList, completion: self.aggregateFoodJsons)
+////                }
+////                print(self.TableActual)
+//                //self.do_table_refresh()
+//                
+            //}
+        //}
         
 
 
@@ -69,9 +91,16 @@ class OpenOrdersTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    func aggregateFoodItems(_ listOfFoodIds: [String]){
-        self.foodIDs.append(listOfFoodIds)
-        self.backendClient.mapToFoodJSONs(foodIDList: listOfFoodIds, completion: self.aggregateFoodJsons)
+    func aggregateFoodItems(_ listOfFoodIds: [String], _ index: Int, _ lastOne: [String : Any]){
+//        self.foodIDs.append(listOfFoodIds)
+        //Takes in flattened ids, now to loop
+        if (index != 0) {
+            allJSONs.append(lastOne)
+        }
+        if (index == listOfFoodIds.count) {self.combineBack()
+            return}
+        //Fix below and function in client
+        self.backendClient.mapToFoodJSONs(foodID: listOfFoodIds[index], index: index, originalArray: listOfFoodIds , completion: self.aggregateFoodItems)
     }
     
     func aggregateFoodJsons(_ listOfFoodJsons: JSON){
@@ -85,38 +114,70 @@ class OpenOrdersTableViewController: UITableViewController {
 //        print(self.TableActual)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("FINAL")
-        print(self.foodIDs)
-        print(self.TableDisplay)
-        //Map to count and group
+    func setUpTables(){
+        
+    }
+    
+    func combineBack(){
         var countIDs = self.foodIDs.map({$0.count})
         var finalNames: [[String]] = []
         var finalJSONs: [[[String : Any]]] = []
         var currentIndex = 0
-        var filteredForNames = self.TableDisplay.filter({$0 != ""})
+        //        var filteredForNames = self.TableDisplay.filter({$0 != ""})
         for countNum in countIDs {
             var newArray: [String] = []
             var newJSONArray: [[String : Any]] = []
             for i in currentIndex..<(currentIndex + countNum) {
                 print(i)
-                newArray.append(filteredForNames[i])
-                newJSONArray.append(self.TableActual[i])
+                newArray.append(allJSONs[i]["name"] as! String)
+                newJSONArray.append(allJSONs[i])
             }
             currentIndex = currentIndex + countNum
             finalNames.append(newArray)
             finalJSONs.append(newJSONArray)
-            
+
         }
-        print(self.TableDisplay)
-        print("FinalNames")
-        print(finalNames)
-        //Fix below later
         let finalNameMapping = finalNames.map({ (x : [String]) -> String in  if x.count == 0 {return "Not Active"} else {return x.joined(separator: " & ")}})
-        print(finalNameMapping)
         self.TableDisplay = finalNameMapping
         self.TableJSONs = finalJSONs
         self.do_table_refresh()
+//        self.TableDisplay
+        return
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        print("FINAL")
+//        print(self.foodIDs)
+//        print(self.TableDisplay)
+//        print(self.TableActual)
+//        //Map to count and group
+//        var countIDs = self.foodIDs.map({$0.count})
+//        var finalNames: [[String]] = []
+//        var finalJSONs: [[[String : Any]]] = []
+//        var currentIndex = 0
+//        var filteredForNames = self.TableDisplay.filter({$0 != ""})
+//        for countNum in countIDs {
+//            var newArray: [String] = []
+//            var newJSONArray: [[String : Any]] = []
+//            for i in currentIndex..<(currentIndex + countNum) {
+//                print(i)
+//                newArray.append(filteredForNames[i])
+//                newJSONArray.append(self.TableActual[i])
+//            }
+//            currentIndex = currentIndex + countNum
+//            finalNames.append(newArray)
+//            finalJSONs.append(newJSONArray)
+//            
+//        }
+//        print(self.TableDisplay)
+//        print("FinalNames")
+//        print(finalNames)
+//        //Fix below later
+//        let finalNameMapping = finalNames.map({ (x : [String]) -> String in  if x.count == 0 {return "Not Active"} else {return x.joined(separator: " & ")}})
+//        print(finalNameMapping)
+//        self.TableDisplay = finalNameMapping
+//        self.TableJSONs = finalJSONs
+//        self.do_table_refresh()
 //        self.TableDisplay
     }
 
@@ -170,7 +231,7 @@ class OpenOrdersTableViewController: UITableViewController {
         print(self.TableJSONs[rowNum])
         self.selectedOrderInfo = self.TableJSONs[rowNum]
         //JSON list of foods
-        performSegue(withIdentifier: "ViewOrderInfo", sender: "")
+        performSegue(withIdentifier: "ViewOrderInfo", sender: rowNum)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
@@ -178,6 +239,7 @@ class OpenOrdersTableViewController: UITableViewController {
             let secondViewController = segue.destination as? OrderInfoViewController
 //            let acctNumber = sender as! String
             secondViewController?.orderFoods = self.selectedOrderInfo
+            secondViewController?.orderID = self.TableData[sender as! Int]
 //            print("Userinfo")
 //            print(acctNumber)
             //At this point we can save it to DB, changing segue to only run on setup i.e. once per user
