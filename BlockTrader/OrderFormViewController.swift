@@ -44,8 +44,8 @@ class OrderFormViewController: UIViewController {
                 "customer_id": self.credentials["id"]!,
                 "provider_id": 0,
                 "address": "123",
-                "latitude": latitude,
-                "longitude": longitude,
+                "latitude": latitude.text!,
+                "longitude": longitude.text!,
                 "delivery_status": "",
                 "payment_id_user": "",
                 "payment_id_reciever": ""
