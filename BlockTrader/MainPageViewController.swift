@@ -154,6 +154,7 @@ class MainPageViewController: UIViewController {
         self.credentials["last_name"] = userLastName
         self.credentials["fb_id"] = userID
         self.credentials["phone"] = userPhone
+        self.appDelegate.credentials = self.credentials
         print("responseString2 = \(ourAUTH)")
         self.welcomename.text = userFirstName as? String
         let headers = [
@@ -169,7 +170,7 @@ class MainPageViewController: UIViewController {
                 for item in jsonarr.array!{
                     self.credentials["id"] = item["id"].stringValue
                 }
-                
+                self.appDelegate.credentials = self.credentials
             }
         }
         

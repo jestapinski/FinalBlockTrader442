@@ -11,11 +11,20 @@ import UIKit
 class GatheringDelivererViewController: UIViewController {
     
     var credentials: [String : Any] = [:]
+    let backendClient = BackendClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.backendClient.getAccountForUser(userID: self.credentials["id"] as! String, completion: self.checkForAccountID)
         // Do any additional setup after loading the view.
+    }
+    
+    func checkForAccountID(isInSystem: Bool){
+        if isInSystem {
+            performSegue(withIdentifier: "sellerDirect", sender: "")
+        } else {
+            performSegue(withIdentifier: "newAuthSeller", sender: "")
+        }
     }
 
     override func didReceiveMemoryWarning() {

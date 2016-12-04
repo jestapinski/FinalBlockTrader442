@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Alamofire
 
 /**
  ViewController upon which a deliverer can see active orders
  */
 class MainSellerViewController: UIViewController {
-    
+
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var acctNumber: String = ""
     
     @IBOutlet weak var acctLabel: UILabel!
@@ -20,8 +22,21 @@ class MainSellerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         acctLabel.text = "Welcome, " + acctNumber
+        let headers = [
+            "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
+        ]
+        var parameters: Parameters = [
+            "commit": "Update User",
+            "id": "\(appDelegate.credentials["id"]!)",
+            "user":[
+                "account_id": acctNumber
+            ]
+        ]
+        let edit_url = "http://germy.tk:3000/users/\(self.appDelegate.credentials["id"]!)"
+        Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
