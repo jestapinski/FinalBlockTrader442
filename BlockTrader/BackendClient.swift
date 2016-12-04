@@ -122,7 +122,7 @@ class BackendClient {
 
     }
     
-    func getResturauntIDFromOrder(orderID: String, completion: @escaping (String) -> Void){
+    func getResturauntIDFromOrder(orderID: String, completion: @escaping (String, String, String) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -131,8 +131,10 @@ class BackendClient {
         Alamofire.request(url, headers: headers).responseJSON { response in
             if let json = response.result.value{
                 let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["name"] as! String
+                let lat = self.JSONtoDictionary(JSONelement: JSON(json))["latitude"] as! String
+                let long = self.JSONtoDictionary(JSONelement: JSON(json))["longitude"] as! String
                 //Here I would simply get the customer ID and pass completion along
-                completion(jsonarr)
+                completion(jsonarr, lat, long)
             }
         }
         

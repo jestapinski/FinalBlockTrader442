@@ -401,7 +401,7 @@
                                     <segue destination="PIF-Nh-XtC" kind="show" id="Ghk-D4-m5t"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="o89-aW-mh9">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o89-aW-mh9">
                                 <rect key="frame" x="0.0" y="58" width="375" height="336"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="336" id="Al0-Ak-kWp"/>
@@ -450,6 +450,7 @@
                     <connections>
                         <outlet property="custNameLocationLabel" destination="TvO-WY-Igi" id="TJ5-sB-ld8"/>
                         <outlet property="foodsLabel" destination="ddC-cA-N2R" id="0le-YI-6cu"/>
+                        <outlet property="mapView" destination="o89-aW-mh9" id="nLU-kg-pYS"/>
                         <outlet property="priceLabel" destination="SJP-ln-IpK" id="fvm-pq-BaE"/>
                         <outlet property="restNameLabel" destination="t20-Q5-SKW" id="ud6-r5-dVn"/>
                         <segue destination="r6A-3b-SHW" kind="show" identifier="sellerconfirmed" id="td6-Oi-yW6"/>
@@ -590,10 +591,10 @@
             </objects>
             <point key="canvasLocation" x="5837.6000000000004" y="762.36881559220399"/>
         </scene>
-        <!--View Controller-->
+        <!--Going To Customer View Controller-->
         <scene sceneID="91P-5A-qKs">
             <objects>
-                <viewController id="H2j-b2-fe6" sceneMemberID="viewController">
+                <viewController id="H2j-b2-fe6" customClass="GoingToCustomerViewController" customModule="BlockTrader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BGy-Pd-m4v"/>
                         <viewControllerLayoutGuide type="bottom" id="Y2r-cj-ZPA"/>
@@ -651,6 +652,9 @@
                                     <constraint firstAttribute="width" constant="57" id="CJU-Hu-6AN"/>
                                 </constraints>
                                 <state key="normal" title="Deliver"/>
+                                <connections>
+                                    <action selector="customerHasFoodWithSender:" destination="H2j-b2-fe6" eventType="touchUpInside" id="mdL-sM-zYT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foods" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbN-Dq-JbZ">
                                 <rect key="frame" x="144" y="520" width="215" height="68"/>
@@ -694,15 +698,18 @@
                             <constraint firstItem="i9p-c5-adv" firstAttribute="leading" secondItem="bVy-3y-qH3" secondAttribute="trailing" constant="41" id="zp3-DF-EbX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="rzt-qg-yGw" kind="show" identifier="deliveredFood" id="uUM-su-gJJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wza-AH-C1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6817" y="762"/>
         </scene>
-        <!--View Controller-->
+        <!--Processing Payment View Controller-->
         <scene sceneID="GTI-D6-hpO">
             <objects>
-                <viewController id="rzt-qg-yGw" sceneMemberID="viewController">
+                <viewController id="rzt-qg-yGw" customClass="ProcessingPaymentViewController" customModule="BlockTrader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eiM-rl-iAJ"/>
                         <viewControllerLayoutGuide type="bottom" id="aJo-3W-F95"/>
@@ -718,6 +725,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gd-Ea-NWt">
+                                <rect key="frame" x="172" y="387" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <segue destination="0Q6-TD-PV6" kind="show" id="AaF-pv-XHV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -745,13 +760,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVs-yQ-6zL">
+                                <rect key="frame" x="78" y="395" width="218" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="XP7-E7-X2M" kind="show" id="2he-nz-bA7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvC-NR-zH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8609" y="761"/>
+            <point key="canvasLocation" x="8608.7999999999993" y="760.56971514242889"/>
         </scene>
         <!--Pick Food View Controller-->
         <scene sceneID="U7G-Lk-lwz">

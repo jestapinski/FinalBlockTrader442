@@ -8,7 +8,12 @@
 
 import UIKit
 
-class GoingToCustomerViewController: UITabBarController {
+class GoingToCustomerViewController: UIViewController {
+    
+    @IBAction func customerHasFood(sender: AnyObject){
+        //Some API call
+        performSegue(withIdentifier: "deliveredFood", sender: "")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,20 @@ class GoingToCustomerViewController: UITabBarController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if (segue.identifier == "deliveredFood"){
+        //POST REQUEST SOMEWHERE, make this an IBAction from the button later
+        let secondViewController = segue.destination as? ProcessingPaymentViewController
+        //            secondViewController?.resturaunt = self.restName
+        //            secondViewController?.custName = self.custName
+        //            secondViewController?.orderFoods = self.orderFoods
+        //            print(secondViewController?.resturaunt)
+        }
+    }
+
     
 
     /*

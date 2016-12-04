@@ -25,9 +25,11 @@ class OpenOrdersTableViewController: UITableViewController {
     var selectedOrderInfo: [[String: Any]] = []
     var foodIDs: [[String]] = []
     var allJSONs: [[String : Any]] = []
+    var orderDicts: [[String : Any]] = []
     
     func getFoodOrders(_ listOfOrders: [[String : Any]]){
         let newlistOfOrders = listOfOrders.filter({$0["provider_id"] as! String != ""})
+        self.orderDicts = newlistOfOrders
         self.TableData = newlistOfOrders.map({return $0["id"] as! String})
         self.foodOrdersLoop(self.TableData.map({$0}), 0, [])
     }
@@ -240,6 +242,7 @@ class OpenOrdersTableViewController: UITableViewController {
 //            let acctNumber = sender as! String
             secondViewController?.orderFoods = self.selectedOrderInfo
             secondViewController?.orderID = self.TableData[sender as! Int]
+            secondViewController?.orderDict = self.orderDicts[sender as! Int]
 //            print("Userinfo")
 //            print(acctNumber)
             //At this point we can save it to DB, changing segue to only run on setup i.e. once per user
