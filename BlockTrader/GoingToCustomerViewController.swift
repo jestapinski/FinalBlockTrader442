@@ -7,8 +7,23 @@
 //
 
 import UIKit
+import MapKit
 
-class GoingToCustomerViewController: UIViewController {
+class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    var restName: String = ""
+    var custName: String = ""
+    var orderFoods : [[String : Any]] = []
+    
+    var custLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
+    var restLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
+    
+    @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
+    
+    @IBOutlet weak var custNameLabel: UILabel!
+    @IBOutlet weak var custLocationLabel: UILabel!
+    @IBOutlet weak var foodLabel: UILabel!
     
     @IBAction func customerHasFood(sender: AnyObject){
         //Some API call
@@ -17,8 +32,33 @@ class GoingToCustomerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        self.mapView.showsUserLocation = true
+        
+        let Litzman = MKPointAnnotation()
+        Litzman.coordinate = self.custLocation
+        Litzman.title = self.custName
+        Litzman.subtitle = "Location Description"
+        mapView.addAnnotation(Litzman)
+        
+        mapView.userTrackingMode = .follow
 
         // Do any additional setup after loading the view.
+        self.foodLabel.text = self.getFoods()
+        self.custNameLabel.text = self.custName
+        self.custLocationLabel.text = "Customer Location"
+    }
+
+    func getFoods()-> String{
+        var finalArray = [String]()
+        for foodItem in self.orderFoods{
+            finalArray.append(foodItem["name"] as! String)
+        }
+        return finalArray.joined(separator: "\n")
     }
 
     override func didReceiveMemoryWarning() {

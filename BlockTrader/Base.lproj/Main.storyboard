@@ -515,7 +515,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jub-9W-dwd">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jub-9W-dwd">
                                 <rect key="frame" x="0.0" y="58" width="375" height="339"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14J-ei-RlG">
@@ -583,6 +583,7 @@
                     <connections>
                         <outlet property="custNameLocationLabel" destination="U9T-aK-MoR" id="Rjf-Bl-crA"/>
                         <outlet property="foodsLabel" destination="7Qz-OP-R3I" id="1Tz-29-IRX"/>
+                        <outlet property="mapView" destination="Jub-9W-dwd" id="M9A-KW-qaA"/>
                         <outlet property="restNameLabel" destination="jpT-4b-bp1" id="nOm-n6-Rcy"/>
                         <segue destination="H2j-b2-fe6" kind="show" identifier="goToCustomer" id="7CY-Ft-9u0"/>
                     </connections>
@@ -665,7 +666,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kQS-D8-dVV">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQS-D8-dVV">
                                 <rect key="frame" x="0.0" y="58" width="375" height="376"/>
                             </mapView>
                         </subviews>
@@ -699,6 +700,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="custLocationLabel" destination="04i-Q7-Nyc" id="1yU-Rj-sEw"/>
+                        <outlet property="custNameLabel" destination="i9p-c5-adv" id="la0-Va-Hhj"/>
+                        <outlet property="foodLabel" destination="kbN-Dq-JbZ" id="aou-ZK-aBA"/>
+                        <outlet property="mapView" destination="kQS-D8-dVV" id="c5J-ZZ-A1F"/>
                         <segue destination="rzt-qg-yGw" kind="show" identifier="deliveredFood" id="uUM-su-gJJ"/>
                     </connections>
                 </viewController>

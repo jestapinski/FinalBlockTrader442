@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import MapKit
 
-class SellerGoingViewController: UIViewController {
+class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var resturaunt: String = ""
     var custName: String = ""
     var orderFoods : [[String : Any]] = []
+    
+    var customerLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
+    var restLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
 
     
     @IBOutlet weak var custNameLocationLabel: UILabel!
     @IBOutlet weak var restNameLabel: UILabel!
     @IBOutlet weak var foodsLabel: UILabel!
+    
+    @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
     
     func getFoods()-> String{
         var finalArray = [String]()
@@ -33,6 +40,27 @@ class SellerGoingViewController: UIViewController {
         self.restNameLabel.text = resturaunt
         self.custNameLocationLabel.text = custName
         self.foodsLabel.text = self.getFoods()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        self.mapView.showsUserLocation = true
+        
+        let Litzman = MKPointAnnotation()
+        Litzman.coordinate = self.customerLocation
+        Litzman.title = self.custName
+        Litzman.subtitle = "Location Description"
+        mapView.addAnnotation(Litzman)
+        
+        let restPin = MKPointAnnotation()
+        restPin.coordinate = self.restLocation
+        restPin.title = self.resturaunt
+        restPin.subtitle = "A tasty venue"
+        mapView.userTrackingMode = .follow
+//        self.centerMapOnLocation(location: self.restLocation)
+        //restPin.color = MKPinAnnotationColor.Green
+        mapView.addAnnotation(restPin)
+
         // Do any additional setup after loading the view.
     }
 
@@ -48,14 +76,16 @@ class SellerGoingViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        //if (segue.identifier == "goToCustomer"){
+        if (segue.identifier == "goToCustomer"){
             //POST REQUEST SOMEWHERE, make this an IBAction from the button later
-            //let secondViewController = segue.destination as? GoingToCustomerViewController
-//            secondViewController?.resturaunt = self.restName
-//            secondViewController?.custName = self.custName
-//            secondViewController?.orderFoods = self.orderFoods
+            let secondViewController = segue.destination as? GoingToCustomerViewController
+            secondViewController?.restName = self.resturaunt
+            secondViewController?.custName = self.custName
+            secondViewController?.orderFoods = self.orderFoods
+            secondViewController?.restLocation = self.restLocation
+            secondViewController?.custLocation = self.customerLocation
 //            print(secondViewController?.resturaunt)
-        //}
+        }
     }
 
     /*

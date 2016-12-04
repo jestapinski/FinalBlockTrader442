@@ -6,6 +6,7 @@
 //  Copyright © 2016 Jordan Stapinski. All rights reserved.
 //
 
+//Put buttons to cener on different things
 import UIKit
 import SwiftyJSON
 import MapKit
@@ -87,9 +88,9 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         }
     }*/
     
-    let regionRadius: CLLocationDistance = 1000
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+    let regionRadius: CLLocationDistance = 20
+    func centerMapOnLocation(location: CLLocationCoordinate2D) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location,
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
@@ -119,22 +120,25 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         restPin.coordinate = self.restLocation
         restPin.title = self.restName
         restPin.subtitle = "A tasty venue"
+        self.centerMapOnLocation(location: self.restLocation)
         //restPin.color = MKPinAnnotationColor.Green
         mapView.addAnnotation(restPin)
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        // simple and inefficient example
-        
-        let annotationView = MKPinAnnotationView()
-        if annotation.subtitle! == "A tasty venue"{
-            annotationView.pinTintColor = UIColor.purple
-        } else {
-            annotationView.pinTintColor = UIColor.red
-        }
-        return annotationView
-    }
-    
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        // simple and inefficient example
+//        
+//        let annotationView = MKPinAnnotationView()
+//        annotationView.title = annotation.title
+//        annotationView.subtitle = annotation.subtitle
+//        if annotation.subtitle! == "A tasty venue"{
+//            annotationView.pinTintColor = UIColor.purple
+//        } else {
+//            annotationView.pinTintColor = UIColor.red
+//        }
+//        return annotationView
+//    }
+//    
     func assignPrice(_ price: String){
         self.priceLabel.text = price
     }
@@ -166,6 +170,8 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             secondViewController?.resturaunt = self.restName
             secondViewController?.custName = self.custName
             secondViewController?.orderFoods = self.orderFoods
+            secondViewController?.restLocation = self.restLocation
+            secondViewController?.customerLocation = self.customerLocation
             print(secondViewController?.resturaunt)
         }
     }
