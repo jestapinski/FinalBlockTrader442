@@ -14,6 +14,9 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
     var resturaunt: String = ""
     var custName: String = ""
     var orderFoods : [[String : Any]] = []
+    var custFBId: String = ""
+    
+    let backendClient = BackendClient()
     
     var customerLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
     var restLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
@@ -24,6 +27,8 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
     @IBOutlet weak var foodsLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var profPic: UIImageView!
+
     let locationManager = CLLocationManager()
     
     func getFoods()-> String{
@@ -60,6 +65,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
 //        self.centerMapOnLocation(location: self.restLocation)
         //restPin.color = MKPinAnnotationColor.Green
         mapView.addAnnotation(restPin)
+        self.profPic.image = self.backendClient.getProfilePicture(id: self.custFBId)
 
         // Do any additional setup after loading the view.
     }
@@ -84,6 +90,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
             secondViewController?.orderFoods = self.orderFoods
             secondViewController?.restLocation = self.restLocation
             secondViewController?.custLocation = self.customerLocation
+            secondViewController?.custFBId = self.custFBId
 //            print(secondViewController?.resturaunt)
         }
     }

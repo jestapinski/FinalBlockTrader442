@@ -24,6 +24,11 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     @IBOutlet weak var custNameLabel: UILabel!
     @IBOutlet weak var custLocationLabel: UILabel!
     @IBOutlet weak var foodLabel: UILabel!
+    @IBOutlet weak var profPic: UIImageView!
+    
+    let backendClient = BackendClient()
+    
+    var custFBId: String = ""
     
     @IBAction func customerHasFood(sender: AnyObject){
         //Some API call
@@ -51,6 +56,8 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
         self.foodLabel.text = self.getFoods()
         self.custNameLabel.text = self.custName
         self.custLocationLabel.text = "Customer Location"
+        self.profPic.image = self.backendClient.getProfilePicture(id: self.custFBId)
+
     }
 
     func getFoods()-> String{

@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
+import AlamofireImage
 
 class BackendClient {
 
@@ -18,6 +19,35 @@ class BackendClient {
     init(){
         self.credentials = appDelegate.credentials
     }
+    
+    func getProfilePicture(id: String) -> UIImage{
+        let imgURLString = "http://graph.facebook.com/" + "v2.8/" + id + "/picture?type=large" //type=normal
+        let imgURL = NSURL(string: imgURLString)
+        let imageData = NSData(contentsOf: imgURL! as URL)
+        let image = UIImage(data: imageData! as Data)
+        return image!
+    }
+    
+    func getFacebookIDFromUserID(userID: String, completion: @escaping (String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/users/\(Int(userID)!).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                completion(self.JSONtoDictionary(JSONelement: jsonarr)["fb_id"] as! String)
+            }
+        }
+    }
+    
+//    func getFacebookPicFromID(facebookID: String, request: URLRequest, completion: @escaping (UIImage, URLRequest) -> Void){
+//    Alamofire.request("graph.facebook.com/v2.8/696776167167123/image").responseImage {
+//        response in
+//        completion(UIImage(response.result.value, scale:1)!, request)
+//        }
+//    }
     
     func mapToFoodJSONs(foodID: String, index: Int, originalArray: [String], completion: @escaping ([String], Int, [String : Any]) -> Void){
         let headers = [
@@ -106,7 +136,7 @@ class BackendClient {
     }
 
     
-    func getCustomerNameFromOrder(orderID: String, completion: @escaping (String) -> Void){
+    func getCustomerNameFromOrder(orderID: String, completion: @escaping (String, String) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -116,7 +146,7 @@ class BackendClient {
             if let json = response.result.value{
                 let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["customer_id"] as! String
                 //Here I would simply get the customer ID and pass completion along
-                self.getCustomerNameFromID(customerID: jsonarr, completion: completion)
+                self.getCustomerNameFromID(customerID: jsonarr,completion: completion)
             }
         }
 
@@ -141,7 +171,7 @@ class BackendClient {
     }
     
     //Need to fix DB fields before can finish
-    func getCustomerNameFromID(customerID: String, completion: @escaping (String) -> Void){
+    func getCustomerNameFromID(customerID: String, completion: @escaping (String, String) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -153,7 +183,7 @@ class BackendClient {
                 var finalString: String = (jsonarr["first_name"] as! String)
                 finalString = finalString + " " + (jsonarr["last_name"] as! String)
                 //Here I would simply get the customer ID and pass completion along
-                completion(finalString)
+                completion(finalString, customerID)
             }
         }
         

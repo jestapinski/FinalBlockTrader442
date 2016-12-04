@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.2.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -32,6 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage (~> 3.1)
   - CardIO
   - FacebookCore
   - FacebookLogin
@@ -42,6 +45,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
@@ -54,6 +58,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 292c43aead396dba2b9901927499f4982a344a8a
+PODFILE CHECKSUM: 4db58faac6653535be2fea836d9b3725b0bdb0ef
 
 COCOAPODS: 1.1.1

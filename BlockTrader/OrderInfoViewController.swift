@@ -16,9 +16,11 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var orderFoods : [[String : Any]] = []
     let backendClient = BackendClient()
     var orderID: String = "0"
+    var custID: String = "0"
     
     var custName: String = ""
     var restName: String = ""
+    var custFBID: String = ""
     
     var orderDict : [String : Any] = [:]
     var customerLocation = CLLocationCoordinate2D(latitude: 10, longitude: 10)
@@ -33,6 +35,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var priceLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var profPic: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,9 +98,10 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    func assignCustomer(_ id: String){
+    func assignCustomer(_ id: String, _ userID: String){
         self.custNameLocationLabel.text = id
         self.custName = id
+        self.custID = userID
         let restID = self.orderFoods.first?["resturant_id"] as! String
         self.backendClient.getResturauntIDFromOrder(orderID: restID, completion: self.setRestLabel)
 //        self.restNameLabel.text =
@@ -123,6 +127,13 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.centerMapOnLocation(location: self.restLocation)
         //restPin.color = MKPinAnnotationColor.Green
         mapView.addAnnotation(restPin)
+        self.backendClient.getFacebookIDFromUserID(userID: self.custID, completion: self.setProfPic)
+    }
+    
+    func setProfPic(fb_id: String){
+        print(fb_id)
+        self.custFBID = fb_id
+        self.profPic.image = self.backendClient.getProfilePicture(id: fb_id)
     }
     
 //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -169,6 +180,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             let secondViewController = segue.destination as? SellerGoingViewController
             secondViewController?.resturaunt = self.restName
             secondViewController?.custName = self.custName
+            secondViewController?.custFBId = self.custFBID
             secondViewController?.orderFoods = self.orderFoods
             secondViewController?.restLocation = self.restLocation
             secondViewController?.customerLocation = self.customerLocation

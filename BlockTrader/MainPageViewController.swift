@@ -18,19 +18,24 @@ class MainPageViewController: UIViewController {
     var apiToken: Any?
     var credentials: [String: Any] = [:]
     
+    let backendClient = BackendClient()
+    
     @IBOutlet weak var welcomename: UILabel!
     @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet weak var profPic: UIImageView!
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.getProfilePicture()
         self.processToken()
 
         // Do any additional setup after loading the view.
     }
     
+
     /**
      Processes the Facebook API token and requests information from Facebook graph
     */
@@ -88,6 +93,8 @@ class MainPageViewController: UIViewController {
             request.httpBody = postString.data(using: .utf8)
             print("thing")
             print("\(responseDictionary)")
+            let img = self.backendClient.getProfilePicture(id: responseDictionary["id"] as! String)
+            self.profPic.image = img
             self.handleAuthenticationRequest(request: request) //Maybe in another module?
         }
         
@@ -100,6 +107,7 @@ class MainPageViewController: UIViewController {
      - parameter request: The URL request to be executed.
      */
     func handleAuthenticationRequest(request: URLRequest){
+//        self.profPic.image = img
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
