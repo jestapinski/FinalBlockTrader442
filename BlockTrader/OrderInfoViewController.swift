@@ -168,7 +168,9 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     @IBAction func moveToConfirm(sender: AnyObject){
-        //POST request
+        //POST request HERE
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.backendClient.postProviderID(userID: appDelegate.credentials["id"] as! String, orderID: orderID)
         performSegue(withIdentifier: "sellerconfirmed", sender: "")
     }
     

@@ -28,7 +28,7 @@ class OpenOrdersTableViewController: UITableViewController {
     var orderDicts: [[String : Any]] = []
     
     func getFoodOrders(_ listOfOrders: [[String : Any]]){
-        let newlistOfOrders = listOfOrders.filter({$0["provider_id"] as! String != ""})
+        let newlistOfOrders = listOfOrders.filter({$0["provider_id"] as! String == "0"})
         self.orderDicts = newlistOfOrders
         self.TableData = newlistOfOrders.map({return $0["id"] as! String})
         self.foodOrdersLoop(self.TableData.map({$0}), 0, [])

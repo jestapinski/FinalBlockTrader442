@@ -65,6 +65,24 @@ class BackendClient {
         }
     }
     
+    func postProviderID(userID: String, orderID: String){
+        let headers = [
+            "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
+        ]
+        
+        
+        var parameters: Parameters = [
+            "commit": "Update Order",
+            "id": orderID,
+            "order":[
+                "provider_id": userID
+            ]
+        ]
+        let edit_url = "http://germy.tk:3000/orders/" + orderID
+        Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
+
+    }
+    
     func mapToFoodJSONs(foodID: String, index: Int, originalArray: [String], completion: @escaping ([String], Int, [String : Any]) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
