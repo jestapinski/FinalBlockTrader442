@@ -29,6 +29,7 @@ class BackendClient {
     }
     
     func getFacebookIDFromUserID(userID: String, completion: @escaping (String) -> Void){
+        self.credentials = appDelegate.credentials
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -48,6 +49,21 @@ class BackendClient {
 //        completion(UIImage(response.result.value, scale:1)!, request)
 //        }
 //    }
+    
+    func getAccountForUser(userID: String, completion: @escaping (Bool) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/users/\(Int(userID)!).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                let acct = self.JSONtoDictionary(JSONelement: jsonarr)["account_id"] as! String
+                completion(acct != "")
+            }
+        }
+    }
     
     func mapToFoodJSONs(foodID: String, index: Int, originalArray: [String], completion: @escaping ([String], Int, [String : Any]) -> Void){
         let headers = [
