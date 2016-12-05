@@ -171,6 +171,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         //POST request HERE
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.backendClient.postProviderID(userID: appDelegate.credentials["id"] as! String, orderID: orderID)
+//        appDelegate.credentials["custID"]
         performSegue(withIdentifier: "sellerconfirmed", sender: "")
     }
     
@@ -186,6 +187,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             secondViewController?.orderFoods = self.orderFoods
             secondViewController?.restLocation = self.restLocation
             secondViewController?.customerLocation = self.customerLocation
+            secondViewController?.orderID = self.orderID
             print(secondViewController?.resturaunt)
         }
     }

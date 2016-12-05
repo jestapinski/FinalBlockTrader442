@@ -21,6 +21,8 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
     var sources: [STPCard] = []
     var customerID: String = ""
     var stripeBackendURL: String = "http://stripetest67442.herokuapp.com"
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     
     override init() {
         let configuration = URLSessionConfiguration.default
@@ -110,6 +112,53 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
             return error //?? NSError.networkingError(httpResponse.statusCode)
         }
         return error
+    }
+    
+    func performCharge(providerID: String, customerID: String, cost: String, completion: @escaping () -> Void){
+//        let headers = [
+//            "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
+//        ]
+//        
+//        
+//        var parameters: Parameters = [
+//            "commit": "Charge User",
+//            "payment_id_receiever": providerID,
+//            "payment_id_user": customerID,
+//            "cost": cost
+//            //"id": "\(self.credentials["id"]!)",
+//        ]
+//        let edit_url = stripeBackendURL + "/charge"
+//        let final = Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers).responseJSON { response in
+//            completion()
+//        }
+//        print(final)
+        
+        guard let baseURL = URL(string: stripeBackendURL) else {
+            let error = NSError(domain: StripeDomain, code: 50, userInfo: [
+                NSLocalizedDescriptionKey: "Please set baseURLString to your Heroku URL in CheckoutViewController.swift"
+                ])
+            completion()
+            return
+        }
+        let path = "charge"
+        let url = baseURL.appendingPathComponent(path)
+        let params: [String: Any] = [
+            "payment_id_receiever": providerID,
+            "payment_id_user": customerID,
+            "cost": "500"
+        ]
+        let request = URLRequest.request(url, method: .POST, params: params as [String : AnyObject])
+        let task = self.session.dataTask(with: request) { (data, urlResponse, error) in
+            DispatchQueue.main.async {
+                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
+                    completion()
+                    return
+                }
+                completion()
+            }
+        }
+        task.resume()
+
     }
     
     func completeCharge(_ result: STPPaymentResult, amount: Int, completion: @escaping STPErrorBlock) {

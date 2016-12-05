@@ -14,6 +14,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     var restName: String = ""
     var custName: String = ""
     var orderFoods : [[String : Any]] = []
+    var orderID = ""
     
     var custLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
     var restLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
@@ -27,12 +28,26 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     @IBOutlet weak var profPic: UIImageView!
     
     let backendClient = BackendClient()
+    let stripeAPIClient = MyAPIClient()
     
     var custFBId: String = ""
     
     @IBAction func customerHasFood(sender: AnyObject){
         //Some API call
-        performSegue(withIdentifier: "deliveredFood", sender: "")
+        self.backendClient.getIDsFromOrder(orderID: self.orderID, completion: self.handleOurIDs)
+        //performSegue(withIdentifier: "deliveredFood", sender: "")
+    }
+    
+    func handleOurIDs (custID: String, acctID: String, price: String) {
+        self.backendClient.getCustAndAcct(custID: custID, acctID: acctID, price: price, completion: self.completeCharge)
+    }
+    
+    func completeCharge(actualCustID: String, actualAcctID: String, cost: String){
+        self.stripeAPIClient.performCharge(providerID: actualAcctID, customerID: actualCustID, cost: cost, completion: self.moveOn)
+    }
+    
+    func moveOn(){
+       performSegue(withIdentifier: "deliveredFood", sender: "")
     }
 
     override func viewDidLoad() {

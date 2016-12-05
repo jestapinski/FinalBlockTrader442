@@ -186,6 +186,52 @@ class BackendClient {
 
     }
     
+    func getIDsFromOrder(orderID: String, completion: @escaping (String, String, String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/orders/\(Int(orderID)!).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["customer_id"] as! String
+                let provID = self.JSONtoDictionary(JSONelement: JSON(json))["provider_id"] as! String
+                let price = self.JSONtoDictionary(JSONelement: JSON(json))["price"] as! String
+                //Here I would simply get the customer ID and pass completion along
+                completion(jsonarr, provID, price)
+            }
+        }
+        
+    }
+    
+    func getCustAndAcct(custID: String, acctID: String, price: String, completion: @escaping (String, String, String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/users/\(Int(custID)!).json"
+        let url2 = "http://germy.tk:3000/users/\(Int(acctID)!).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))
+                var finalString: String = (jsonarr["custID"] as! String)
+                Alamofire.request(url2, headers: headers).responseJSON { response in
+                    if let json = response.result.value{
+                        let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))
+                        var finalString2: String = (jsonarr["account_id"] as! String)
+                        //finalString = finalString + " " + (jsonarr["last_name"] as! String)
+                        //Here I would simply get the customer ID and pass completion along
+                        completion(finalString, finalString2, price)
+                    }
+                }
+            }
+                //finalString = finalString + " " + (jsonarr["last_name"] as! String)
+                //Here I would simply get the customer ID and pass completion along
+                //completion(finalString, customerID)
+        }
+    }
+    
+    
     func getResturauntIDFromOrder(orderID: String, completion: @escaping (String, String, String) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
@@ -220,7 +266,7 @@ class BackendClient {
                 completion(finalString, customerID)
             }
         }
-        
+
     }
     
     /*func getCustomers(customerID: String, completion: @escaping (String) -> Void){

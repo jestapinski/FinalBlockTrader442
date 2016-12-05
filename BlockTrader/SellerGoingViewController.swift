@@ -15,6 +15,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
     var custName: String = ""
     var orderFoods : [[String : Any]] = []
     var custFBId: String = ""
+    var orderID: String = ""
     
     let backendClient = BackendClient()
     
@@ -91,6 +92,8 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
             secondViewController?.restLocation = self.restLocation
             secondViewController?.custLocation = self.customerLocation
             secondViewController?.custFBId = self.custFBId
+            secondViewController?.orderID = self.orderID
+
 //            print(secondViewController?.resturaunt)
         }
     }
