@@ -16,6 +16,7 @@ target ‘BlockTrader’ do
   pod 'SVProgressHUD'
   
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'AlamofireImage', '~> 3.1'
 

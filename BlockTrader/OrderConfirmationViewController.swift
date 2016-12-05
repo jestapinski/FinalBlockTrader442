@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import FacebookLogin
 import FacebookCore
+import AlamofireImage
 
 class OrderConfirmationViewController: UIViewController {
     
@@ -47,9 +48,12 @@ class OrderConfirmationViewController: UIViewController {
                         let jsonarr1 = JSON(json)
 
                         self.name.text! = jsonarr1["first_name"].stringValue
-                        print("fb \(jsonarr1["fb_id"])")
-                        let img = self.backendClient.getProfilePicture(id: jsonarr1["fb_id"] as! String)
-                        //self.profPic.image = img
+                        Alamofire.request("https://graph.facebook.com/v2.8/\(jsonarr1["fb_id"])/picture?width=500&height=500").responseImage { response in
+                            if let image = response.result.value {
+                               self.profPic.image = image
+                            }
+                        }
+                    
                         }
                     }
                     
