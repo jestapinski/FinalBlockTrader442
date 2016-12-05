@@ -16,6 +16,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
     var orderFoods : [[String : Any]] = []
     var custFBId: String = ""
     var orderID: String = ""
+    var ourTimer: Timer?
     
     let backendClient = BackendClient()
     
@@ -39,10 +40,18 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
         }
         return finalArray.joined(separator: "\n")
     }
+    
+    func execute(){
+        let currentLocation = locationManager.location
+        let lat = String(describing: currentLocation!.coordinate.latitude)
+        let long = String(describing: currentLocation!.coordinate.longitude)
+        self.backendClient.updateLocation(orderID: self.orderID, latitude: lat, longitude: long)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print(resturaunt)
+        self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(SellerGoingViewController.execute), userInfo: nil, repeats: true)
         self.restNameLabel.text = resturaunt
         self.custNameLocationLabel.text = custName
         self.foodsLabel.text = self.getFoods()
@@ -84,6 +93,8 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "goToCustomer"){
+            self.ourTimer?.invalidate()
+            self.ourTimer = nil
             //POST REQUEST SOMEWHERE, make this an IBAction from the button later
             let secondViewController = segue.destination as? GoingToCustomerViewController
             secondViewController?.restName = self.resturaunt
@@ -93,6 +104,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
             secondViewController?.custLocation = self.customerLocation
             secondViewController?.custFBId = self.custFBId
             secondViewController?.orderID = self.orderID
+            self.backendClient.updateStatus(orderID: self.orderID, message: "Got Food")
 
 //            print(secondViewController?.resturaunt)
         }

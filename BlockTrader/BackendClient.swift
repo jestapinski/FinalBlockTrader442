@@ -71,11 +71,47 @@ class BackendClient {
         ]
         
         
-        var parameters: Parameters = [
+        let parameters: Parameters = [
             "commit": "Update Order",
             "id": orderID,
             "order":[
                 "provider_id": userID
+            ]
+        ]
+        let edit_url = "http://germy.tk:3000/orders/" + orderID
+        Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
+
+    }
+    
+    func updateStatus(orderID: String, message: String){
+        let headers = [
+            "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
+        ]
+        
+        
+        let parameters: Parameters = [
+            "commit": "Update Order",
+            "id": orderID,
+            "order":[
+                "delivery_status": message
+            ]
+        ]
+        let edit_url = "http://germy.tk:3000/orders/" + orderID
+        Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
+
+    }
+    
+    func updateLocation(orderID: String, latitude: String, longitude: String){
+        let headers = [
+            "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
+        ]
+        
+        
+        let parameters: Parameters = [
+            "commit": "Update Order",
+            "id": orderID,
+            "order":[
+                "address": latitude + "," + longitude
             ]
         ]
         let edit_url = "http://germy.tk:3000/orders/" + orderID

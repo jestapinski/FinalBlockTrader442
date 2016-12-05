@@ -15,6 +15,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     var custName: String = ""
     var orderFoods : [[String : Any]] = []
     var orderID = ""
+    var ourTimer: Timer?
     
     var custLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
     var restLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
@@ -49,10 +50,19 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     func moveOn(){
        performSegue(withIdentifier: "deliveredFood", sender: "")
     }
+    
+    func execute(){
+        let currentLocation = locationManager.location
+        let lat = String(describing: currentLocation!.coordinate.latitude)
+        let long = String(describing: currentLocation!.coordinate.longitude)
+        self.backendClient.updateLocation(orderID: self.orderID, latitude: lat, longitude: long)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(GoingToCustomerViewController.execute), userInfo: nil, repeats: true)
+
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
@@ -94,6 +104,9 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
         if (segue.identifier == "deliveredFood"){
         //POST REQUEST SOMEWHERE, make this an IBAction from the button later
         let secondViewController = segue.destination as? ProcessingPaymentViewController
+        self.ourTimer?.invalidate()
+        self.ourTimer = nil
+        self.backendClient.updateStatus(orderID: self.orderID, message: "Delivered")
         //            secondViewController?.resturaunt = self.restName
         //            secondViewController?.custName = self.custName
         //            secondViewController?.orderFoods = self.orderFoods

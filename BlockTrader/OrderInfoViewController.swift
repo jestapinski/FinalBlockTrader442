@@ -171,6 +171,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         //POST request HERE
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.backendClient.postProviderID(userID: appDelegate.credentials["id"] as! String, orderID: orderID)
+        self.backendClient.updateStatus(orderID: self.orderID, message: "Going to Get Food")
 //        appDelegate.credentials["custID"]
         performSegue(withIdentifier: "sellerconfirmed", sender: "")
     }
