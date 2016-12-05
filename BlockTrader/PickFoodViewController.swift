@@ -17,17 +17,13 @@ class PickFoodViewController: UITableViewController {
     
     var customer: String = ""
     var credentials: [String : Any] = [:]
-    
     var TableData = [String: String]()
-    
     var Rests = [String : Any]()
     var tableTitle = [String]()
     var row: Int = 0
     var items = [Int]()
-
     
     @IBOutlet weak var cust_id: UILabel!
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -40,8 +36,14 @@ class PickFoodViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.accessoryType = cell.isSelected ? .checkmark : .none
+
         cell.textLabel?.text = TableData[Array(TableData.keys)[indexPath.row]]
+        if(items.contains(Int(Array(TableData.keys)[indexPath.row])!)){
+            cell.accessoryType = cell.isSelected ? .checkmark : .checkmark
+        }else{
+            cell.accessoryType = cell.isSelected ? .checkmark : .none
+        }
+
         return cell
     }
     

@@ -122,7 +122,6 @@ class MainPageViewController: UIViewController {
             do{
                 
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]
-                print(jsonResult)
                 self.extractAndHandleUserInfo(jsonResult: jsonResult)
                 
             }catch{

@@ -9,12 +9,13 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import CoreLocation
+import MapKit
 
 /**
  View controller upon which a user can submit an order
  */
-class OrderFormViewController: UIViewController {
+class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
     
     var customer: String = ""
     var credentials: [String : Any] = [:]
@@ -22,6 +23,9 @@ class OrderFormViewController: UIViewController {
     var orderNumber: Int = 0
     var row: Int = 0
     var price: Float = 0.0
+    var lat: Float = 0.0
+    var long: Float = 0.0
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var cust_id: UILabel!
     @IBOutlet weak var restaurantName: UILabel!
@@ -32,57 +36,60 @@ class OrderFormViewController: UIViewController {
     //Change below to have better UX
     @IBOutlet weak var desired_price: UITextField!
     
-    // MARK: Submitting Forms
-    @IBAction func submitForm(sender: AnyObject){
+    func request(credentials: [String: Any], items: [Int], lat: Float, long: Float, completion: @escaping(_ num: Int) -> ())
+    {
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
-        
+        print("des price: \(desired_price.text!)")
         let parameters: Parameters = [
             "order": [
                 "food_order_id": "",
                 "customer_id": self.credentials["id"]!,
                 "provider_id": 0,
-                "address": "123",
+                "address": "",
                 "latitude": latitude.text!,
                 "longitude": longitude.text!,
                 "delivery_status": "",
                 "payment_id_user": "",
-                "payment_id_reciever": ""
+                "payment_id_reciever": "",
+                "price": desired_price.text!
             ],
             "commit":"Create Order"
         ]
         
-        // All three of these calls are equivalent
         Alamofire.request("http://germy.tk:3000/orders.json", method: .post, parameters: parameters, headers: headers).responseJSON { response in
             if let json = response.result.value{
                 let jsonarr = JSON(json)
                 for item in self.items{
+                    self.orderNumber = jsonarr["id"].intValue
                     var food_order_parm: Parameters = [
-                    "food_order":[
-                        "food_id":"\(item)",
-                        "order_id":"\(jsonarr["id"])"
-                    ],
-                    "commit": "Create Food order"
+                        "food_order":[
+                            "food_id":"\(item)",
+                            "order_id":"\(jsonarr["id"])"
+                        ],
+                        "commit": "Create Food order"
                     ]
                     Alamofire.request("http://germy.tk:3000/food_orders", method: .post, parameters: food_order_parm, headers: headers)
-                    print("\(jsonarr["id"]) item#: \(item)")
                 }
             }
-        }
-
-        
-
-        
-        if self.checkValidFields(){
-            //Submit order
-            let orderNumber = self.submitOrder()
-            //Move to next page
-            self.moveToConfirmation(orderNumber: orderNumber)
-        } else {
-            print("Fields are not correct")
+            completion(self.orderNumber)
         }
         
+    }
+    
+    // MARK: Submitting Forms
+    @IBAction func submitForm(sender: AnyObject){
+        request(credentials: self.credentials, items: self.items, lat: self.lat, long: self.long){(ku) -> () in
+            self.orderNumber = ku
+            if self.checkValidFields(){
+                //Move to next page
+                self.moveToConfirmation(orderNumber: ku)
+            } else {
+                print("Fields are not correct")
+            }
+
+        }
     }
     
     /**
@@ -105,12 +112,7 @@ class OrderFormViewController: UIViewController {
     func priceIsValid() -> Bool{
         return (self.desired_price.text != "")
     }
-    
-    //TODO
-    func submitOrder() -> OrderNumber{
-        //Some API call to post order to DB, be sure to use cust_id
-        return 1
-    }
+
     
     // MARK: - Navigation
     
@@ -121,18 +123,39 @@ class OrderFormViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "confirmation") {
             let finalDestination = segue.destination as? OrderConfirmationViewController
-            //finalDestination?.orderNumber = sender as! OrderNumber
+            finalDestination?.orderNumber = self.orderNumber
+            print("orderform \(self.orderNumber)")
             finalDestination?.custID = self.customer
         } else if (segue.identifier == "backToFood") {
             let finalDestination = segue.destination as? PickFoodViewController
+            finalDestination?.credentials =	 self.credentials
+            finalDestination?.items = self.items
+            finalDestination?.row = self.row
             finalDestination?.customer = self.customer
-            finalDestination?.credentials = self.credentials
-
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+
+        if let currLocation = locationManager.location{
+            self.lat = Float(currLocation.coordinate.latitude)
+            self.long = Float(currLocation.coordinate.longitude)
+            self.latitude.text = String(self.lat)
+            self.longitude.text = String(self.long)
+        }
+
         //Checking Stripe call, can remove when deployed
         self.cust_id.text = customer
         // Do any additional setup after loading the view.
@@ -157,13 +180,13 @@ class OrderFormViewController: UIViewController {
                 let jsonarr = JSON(json)
                 for item in jsonarr.array!{
                     if self.items.contains(Int(item["id"].stringValue)!){
-                    print("JSONthing: \(item["original_price"].stringValue)")
                     self.price = self.price + Float(item["original_price"].stringValue)!
                 }
                 
             }
         }
         self.suggestedPrice.text = self.price.description
+        self.desired_price.text = self.price.description
         }
     }
 

@@ -90,7 +90,6 @@ class PickRestarauntViewController: UITableViewController {
                     self.TableData.append(title!)
                 }
                 self.do_table_refresh()
-
             }
         }
 
