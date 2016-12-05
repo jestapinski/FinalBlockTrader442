@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class OrderConfirmationViewController: UIViewController {
     
@@ -14,16 +16,32 @@ class OrderConfirmationViewController: UIViewController {
     var orderNumber: Int = 0
     var items = [Int]()
     var credentials: [String : Any] = [:]
-    
+    var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var customer: UILabel!
     @IBOutlet weak var order: UILabel!
+    @IBOutlet weak var orderStatus: UILabel!
 
-
+    func execute() {
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/orders.json?\( self.orderNumber)"
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = JSON(json)
+                for item in jsonarr.array!{
+                    print("JSON2: \(item["delivery_status"].stringValue)")
+                    self.order.text! = item["delivery_status"].stringValue
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("order number: \(orderNumber)")
-        print(custID)
+        var timer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(OrderConfirmationViewController.execute), userInfo: nil, repeats: true)
+
         //Update labels with ID and OrderNumber to present to user
         self.customer.text = custID
         self.order.text = String(orderNumber)

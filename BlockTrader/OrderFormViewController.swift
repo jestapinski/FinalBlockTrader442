@@ -41,7 +41,6 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
-        print("des price: \(desired_price.text!)")
         let parameters: Parameters = [
             "order": [
                 "food_order_id": "",
@@ -124,8 +123,8 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
         if (segue.identifier == "confirmation") {
             let finalDestination = segue.destination as? OrderConfirmationViewController
             finalDestination?.orderNumber = self.orderNumber
-            print("orderform \(self.orderNumber)")
             finalDestination?.custID = self.customer
+            finalDestination?.credentials =	 self.credentials
         } else if (segue.identifier == "backToFood") {
             let finalDestination = segue.destination as? PickFoodViewController
             finalDestination?.credentials =	 self.credentials
@@ -167,7 +166,6 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
             if let json = response.result.value{
                 let jsonarr = JSON(json)
                 for item in jsonarr.array!{
-                    print("JSON1: \(item["name"].stringValue)")
                     self.restaurantName.text = item["name"].stringValue
                 }
                 
