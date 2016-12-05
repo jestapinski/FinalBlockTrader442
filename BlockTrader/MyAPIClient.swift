@@ -114,6 +114,19 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         return error
     }
     
+    func getCents(cost: String) -> String{
+        var newArr = cost.components(separatedBy: ".")
+        if (newArr[1].characters.count == 0){
+            newArr[1] = "00"
+            return newArr.joined(separator: "")
+        } else if (newArr[1].characters.count == 1) {
+            newArr[1] = newArr[1] + "0"
+            return newArr.joined(separator: "")
+        } else {
+            return newArr.joined(separator: "")
+        }
+    }
+    
     func performCharge(providerID: String, customerID: String, cost: String, completion: @escaping () -> Void){
 //        let headers = [
 //            "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
@@ -141,11 +154,12 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
             return
         }
         let path = "charge"
+        let finalCost = self.getCents(cost: cost)
         let url = baseURL.appendingPathComponent(path)
         let params: [String: Any] = [
             "payment_id_receiever": providerID,
             "payment_id_user": customerID,
-            "cost": "500"
+            "cost": finalCost
         ]
         let request = URLRequest.request(url, method: .POST, params: params as [String : AnyObject])
         let task = self.session.dataTask(with: request) { (data, urlResponse, error) in

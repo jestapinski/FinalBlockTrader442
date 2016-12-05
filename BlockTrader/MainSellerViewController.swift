@@ -16,25 +16,38 @@ class MainSellerViewController: UIViewController {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var acctNumber: String = ""
+    let backendClient = BackendClient()
     
     @IBOutlet weak var acctLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        acctLabel.text = "Welcome, " + acctNumber
-        let headers = [
-            "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
-        ]
-        var parameters: Parameters = [
-            "commit": "Update User",
-            "id": "\(appDelegate.credentials["id"]!)",
-            "user":[
-                "account_id": acctNumber
-            ]
-        ]
-        let edit_url = "http://germy.tk:3000/users/\(self.appDelegate.credentials["id"]!)"
-        Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
+        //IF is empty
+        self.backendClient.getAccountId(userID: self.appDelegate.credentials["id"]! as! String, completion: self.handleAcctNumber)
+
         // Do any additional setup after loading the view.
+    }
+    
+    func handleAcctNumber(acctNum: String){
+        if (acctNum == ""){
+            acctLabel.text = "Welcome, " + acctNumber
+            let headers = [
+                "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
+            ]
+            var parameters: Parameters = [
+                "commit": "Update User",
+                "id": "\(appDelegate.credentials["id"]!)",
+                "user":[
+                    "account_id": acctNumber
+                ]
+            ]
+            let edit_url = "http://germy.tk:3000/users/\(self.appDelegate.credentials["id"]!)"
+            Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
+        } else {
+            self.acctNumber = acctNum
+            acctLabel.text = "Welcome, " + acctNumber
+
+        }
     }
     
 

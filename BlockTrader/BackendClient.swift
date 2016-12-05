@@ -204,6 +204,23 @@ class BackendClient {
         
     }
     
+    func getAccountId(userID: String, completion: @escaping (String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/users/\(Int(userID)!).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if let json = response.result.value{
+                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))
+                let finalString: String = (jsonarr["account_id"] as! String)
+                //finalString = finalString + " " + (jsonarr["last_name"] as! String)
+                //Here I would simply get the customer ID and pass completion along
+                completion(finalString)
+            }
+        }
+    }
+    
     func getCustAndAcct(custID: String, acctID: String, price: String, completion: @escaping (String, String, String) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
