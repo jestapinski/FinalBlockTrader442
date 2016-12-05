@@ -91,8 +91,6 @@ class MainPageViewController: UIViewController {
             request.httpMethod = "POST"
             let postString = "name=\(responseDictionary["name"]!)&email=\(responseDictionary["email"]!)&fb_id=\(responseDictionary["id"]!)&accessToken=\(accessToken.authenticationToken)"
             request.httpBody = postString.data(using: .utf8)
-            print("thing")
-            print("\(responseDictionary)")
             let img = self.backendClient.getProfilePicture(id: responseDictionary["id"] as! String)
             self.profPic.image = img
             self.handleAuthenticationRequest(request: request) //Maybe in another module?
