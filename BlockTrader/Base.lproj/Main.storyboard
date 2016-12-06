@@ -74,13 +74,20 @@
                                     <segue destination="jkO-bg-rzk" kind="presentation" identifier="deliverer_branch" id="ooN-94-jAh"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QT1-NS-2nw">
-                                <rect key="frame" x="79" y="194" width="216" height="195"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QT1-NS-2nw">
+                                <rect key="frame" x="16" y="187" width="167" height="160"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hb8-q3-WaT">
-                                <rect key="frame" x="76" y="397" width="222" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What would you like to do today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ar9-am-Yz3">
+                                <rect key="frame" x="35" y="375" width="305" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hb8-q3-WaT">
+                                <rect key="frame" x="191" y="297" width="163" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xD8-bC-acO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,14 +96,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kQj-va-PXb" firstAttribute="leading" secondItem="BNQ-By-VeA" secondAttribute="trailing" constant="-173" id="2A7-vp-pyF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hb8-q3-WaT" secondAttribute="trailing" constant="5" id="5c9-EA-YWc"/>
+                            <constraint firstItem="QT1-NS-2nw" firstAttribute="leading" secondItem="hsn-f9-rFD" secondAttribute="leadingMargin" id="7ZN-5y-bOC"/>
+                            <constraint firstItem="ar9-am-Yz3" firstAttribute="leading" secondItem="hsn-f9-rFD" secondAttribute="leadingMargin" constant="19" id="9Yn-io-ohB"/>
                             <constraint firstItem="cDt-cj-0yT" firstAttribute="leading" secondItem="kQj-va-PXb" secondAttribute="trailing" constant="-172" id="BGC-HA-rfa"/>
+                            <constraint firstItem="ar9-am-Yz3" firstAttribute="top" secondItem="Hb8-q3-WaT" secondAttribute="bottom" constant="28" id="Dib-2P-XsR"/>
+                            <constraint firstItem="Hb8-q3-WaT" firstAttribute="leading" secondItem="QT1-NS-2nw" secondAttribute="trailing" constant="8" symbolic="YES" id="Iwg-dO-j7d"/>
+                            <constraint firstItem="Hb8-q3-WaT" firstAttribute="leading" secondItem="kQj-va-PXb" secondAttribute="trailing" constant="-184" id="QZg-p8-ftD"/>
+                            <constraint firstItem="QT1-NS-2nw" firstAttribute="top" secondItem="28X-kD-eQK" secondAttribute="bottom" constant="167" id="UNW-bf-y1d"/>
+                            <constraint firstItem="Hb8-q3-WaT" firstAttribute="bottom" secondItem="QT1-NS-2nw" secondAttribute="bottom" id="UvA-n5-nAn"/>
+                            <constraint firstItem="Hb8-q3-WaT" firstAttribute="leading" secondItem="QT1-NS-2nw" secondAttribute="trailing" constant="8" id="d7O-fy-CO1"/>
+                            <constraint firstItem="cDt-cj-0yT" firstAttribute="top" secondItem="ar9-am-Yz3" secondAttribute="bottom" constant="59" id="eUc-Bl-6wh"/>
                             <constraint firstItem="kQj-va-PXb" firstAttribute="leading" secondItem="hsn-f9-rFD" secondAttribute="leading" id="evR-Mp-5EV"/>
+                            <constraint firstItem="Hb8-q3-WaT" firstAttribute="top" secondItem="28X-kD-eQK" secondAttribute="bottom" constant="277" id="fZS-eN-hDt"/>
                             <constraint firstItem="BNQ-By-VeA" firstAttribute="leading" secondItem="hsn-f9-rFD" secondAttribute="leadingMargin" constant="27" id="mYa-rQ-N9d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cDt-cj-0yT" secondAttribute="trailing" constant="14" id="rbh-lX-Da4"/>
                             <constraint firstItem="517-Oc-69x" firstAttribute="top" secondItem="BNQ-By-VeA" secondAttribute="bottom" constant="60" id="rhc-RA-sf6"/>
                             <constraint firstItem="517-Oc-69x" firstAttribute="top" secondItem="kQj-va-PXb" secondAttribute="bottom" id="tFQ-jD-cc6"/>
                             <constraint firstItem="cDt-cj-0yT" firstAttribute="leading" secondItem="BNQ-By-VeA" secondAttribute="trailing" constant="30" id="tT2-ur-BZv"/>
                             <constraint firstItem="517-Oc-69x" firstAttribute="top" secondItem="cDt-cj-0yT" secondAttribute="bottom" constant="57" id="uNk-jh-r5j"/>
+                            <constraint firstItem="ar9-am-Yz3" firstAttribute="centerX" secondItem="kQj-va-PXb" secondAttribute="centerX" id="uuK-a0-qBE"/>
                             <constraint firstItem="kQj-va-PXb" firstAttribute="top" secondItem="hsn-f9-rFD" secondAttribute="top" id="vQB-Em-7d2"/>
                             <constraint firstAttribute="trailing" secondItem="kQj-va-PXb" secondAttribute="trailing" id="znX-wF-3ys"/>
                         </constraints>
@@ -163,9 +182,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xr-PQ-WKL">
-                                <rect key="frame" x="33" y="472" width="309" height="100"/>
+                                <rect key="frame" x="325" y="629" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Normally this would auto-trigger, click here"/>
                                 <connections>
                                     <segue destination="cwd-IF-jJ1" kind="presentation" identifier="newAuthSeller" id="FmO-Lg-uyD"/>
                                 </connections>
@@ -185,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKL-BL-fUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="743"/>
+            <point key="canvasLocation" x="1176.8" y="742.5787106446777"/>
         </scene>
         <!--Get Stripe Account VC-->
         <scene sceneID="4pd-gs-hZa">
@@ -254,7 +272,7 @@
                                     <segue destination="PIF-Nh-XtC" kind="show" identifier="vieworders" id="QR8-Op-AqX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome, user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCy-in-v2k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCy-in-v2k">
                                 <rect key="frame" x="16" y="232" width="343" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -302,7 +320,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uM8-0Q-r0P" id="3Kr-Fc-B1C">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="cell"/>
@@ -811,7 +829,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hye-Tn-Q6a" id="yt5-fM-S0N">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -982,7 +1000,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q6o-Sn-GHe" id="xMP-zf-oRD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.26016270829999999" green="0.46965990320000001" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -1155,19 +1173,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account_landing.png" width="3121" height="5559"/>
-        <image name="auth_stripe_page.png" width="3122" height="5559"/>
-        <image name="cc_input.png" width="3121" height="5559"/>
-        <image name="checking_customer_info.png" width="3121" height="5559"/>
-        <image name="gathering_deliverer_info.png" width="3122" height="5559"/>
-        <image name="main_page.png" width="3121" height="5559"/>
-        <image name="main_screen.png" width="3121" height="5559"/>
+        <image name="account_landing.png" width="3130" height="5555"/>
+        <image name="auth_stripe_page.png" width="3131" height="5555"/>
+        <image name="cc_input.png" width="3130" height="5555"/>
+        <image name="checking_customer_info.png" width="3130" height="5555"/>
+        <image name="gathering_deliverer_info.png" width="3130" height="5555"/>
+        <image name="main_page.png" width="3131" height="5555"/>
+        <image name="main_screen.png" width="3130" height="5555"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="QR8-Op-AqX"/>
+        <segue reference="3HF-6u-Fii"/>
         <segue reference="8B2-Gt-aOn"/>
         <segue reference="kf1-ce-q9Z"/>
         <segue reference="bIC-FB-YnA"/>
-        <segue reference="3HF-6u-Fii"/>
-        <segue reference="Kt5-zG-BfW"/>
     </inferredMetricsTieBreakers>
 </document>

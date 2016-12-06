@@ -14,6 +14,7 @@ class OpenOrdersTableViewController: UITableViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var TableData = [String]()
+    let API = MyAPIClient.sharedClient
     //Data that is shown
 
     var TableDisplay = [String]()
@@ -27,10 +28,13 @@ class OpenOrdersTableViewController: UITableViewController {
     var foodIDs: [[String]] = []
     var allJSONs: [[String : Any]] = []
     var orderDicts: [[String : Any]] = []
+    var TableOrders: [[String : Any]] = []
+    var TableRests: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell1")
+        self.tableView.register(UINib(nibName: "SellerViewCellTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.credentials = appDelegate.credentials
         self.backendClient.getOrders(completion: self.getFoodOrders)
     }
@@ -42,6 +46,7 @@ class OpenOrdersTableViewController: UITableViewController {
     func getFoodOrders(_ listOfOrders: [[String : Any]]){
         let newlistOfOrders = listOfOrders.filter({$0["provider_id"] as! String == "0"})
         self.orderDicts = newlistOfOrders
+        self.TableOrders = newlistOfOrders
         self.TableData = newlistOfOrders.map({return $0["id"] as! String})
         self.foodOrdersLoop(self.TableData.map({$0}), 0, [])
     }
@@ -71,6 +76,8 @@ class OpenOrdersTableViewController: UITableViewController {
     func aggregateFoodItems(_ listOfFoodIds: [String], _ index: Int, _ lastOne: [String : Any]){
         //Takes in flattened ids, now to loop
         if (index != 0) {
+            //self.TableRests.append(lastOne["name"] as! String)
+            self.backendClient.getResturauntIDFromOrder(orderID: lastOne["resturant_id"] as! String, completion: self.appendRName)
             allJSONs.append(lastOne)
         }
         if (index == listOfFoodIds.count) {self.combineBack()
@@ -89,6 +96,15 @@ class OpenOrdersTableViewController: UITableViewController {
         self.TableDisplay.append(finalJSON["name"] as! String)
     }
     
+    func appendRName(name : String, _ : String, _ : String){
+        if (self.TableRests[0] == ""){
+            self.TableRests[0] = name
+        } else {
+            self.TableRests.append(name)
+        }
+        self.do_table_refresh()
+    }
+    
     /**
      Maps the food JSONs to be the "Form" of the orders they should be in, organizes by order
     */
@@ -104,6 +120,7 @@ class OpenOrdersTableViewController: UITableViewController {
                 //print(i)
                 newArray.append(allJSONs[i]["name"] as! String)
                 newJSONArray.append(allJSONs[i])
+                //self.TableRests.append(allJSONs[i]["restID"])
             }
             currentIndex = currentIndex + countNum
             finalNames.append(newArray)
@@ -133,15 +150,34 @@ class OpenOrdersTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return TableData.count
     }
+    
+    /**
+     Sets the price label to be the price according to the price returned from the API call for price
+     - parameter price: The price passed back from the API call
+     */
+    func setPriceLabel(price: String) -> String{
+        let newPrice = self.API.getCents(cost: price)
+        let dollars = newPrice[0..<(newPrice.characters.count - 3)]
+        let cents = newPrice[(newPrice.characters.count - 2)..<(newPrice.characters.count - 1)]
+        let finalPrice = "$" + dollars + "." + cents
+        return finalPrice
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SellerViewCellTableViewCell
         if (self.TableDisplay.count == 0){
             for _ in 0..<(TableData.count){
                 self.TableDisplay.append("")
+                self.TableRests.append("")
             }
         }
-        cell.textLabel?.text = TableDisplay[indexPath.row]
+        if (self.TableRests.count == 0){
+            self.TableRests.append("")
+        }
+        cell.restName?.text = self.TableRests[indexPath.row]
+        //cell.minLeft.text =
+        cell.price?.text = setPriceLabel(price: self.TableOrders[indexPath.row]["price"] as! String)
+//        cell.textLabel?.text = TableDisplay[indexPath.row]
         
         return cell
     }

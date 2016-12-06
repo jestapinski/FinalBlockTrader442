@@ -28,7 +28,7 @@ class MainSellerViewController: UIViewController {
     */
     func handleAcctNumber(acctNum: String){
         if (acctNum == ""){
-            acctLabel.text = "Welcome, " + acctNumber
+//            acctLabel.text = "Welcome, " + acctNumber
             let headers = [
                 "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
             ]
@@ -43,7 +43,7 @@ class MainSellerViewController: UIViewController {
             let _ = Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
         } else {
             self.acctNumber = acctNum
-            acctLabel.text = "Welcome, " + acctNumber
+//            acctLabel.text = "Welcome, " + acctNumber
 
         }
     }
