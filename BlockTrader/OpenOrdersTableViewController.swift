@@ -168,7 +168,7 @@ class OpenOrdersTableViewController: UITableViewController {
         if (self.TableDisplay.count == 0){
             for _ in 0..<(TableData.count){
                 self.TableDisplay.append("")
-                self.TableRests.append("")
+//                self.TableRests.append("")
             }
         }
         if (self.TableRests.count == 0){
