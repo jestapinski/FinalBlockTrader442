@@ -10,6 +10,7 @@
 		04AD4A4B1DEF6B0400204E19 /* PickRestarauntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */; };
 		04ED30CC1DEF9382001150BE /* PickFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */; };
 		238E09284C63B69666709B25 /* Pods_BlockTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F28637A781D397010DA945 /* Pods_BlockTrader.framework */; };
+		3BCE2837C25906420FB9BBA9 /* Pods_BlockTraderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9D0B04138B53537F4B8420 /* Pods_BlockTraderTests.framework */; };
 		7B07808D1DF093FD00AC4EE5 /* account_landing.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B07808C1DF093FD00AC4EE5 /* account_landing.png */; };
 		7B07808F1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */; };
 		7B0780911DF113C900AC4EE5 /* SellerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0780901DF113C900AC4EE5 /* SellerViewTableViewCell.swift */; };
@@ -69,6 +70,7 @@
 		04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickRestarauntViewController.swift; sourceTree = "<group>"; };
 		04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickFoodViewController.swift; sourceTree = "<group>"; };
 		67F28637A781D397010DA945 /* Pods_BlockTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A9D0B04138B53537F4B8420 /* Pods_BlockTraderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTraderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B07808C1DF093FD00AC4EE5 /* account_landing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_landing.png; sourceTree = "<group>"; };
 		7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringDelivererViewController.swift; sourceTree = "<group>"; };
 		7B0780901DF113C900AC4EE5 /* SellerViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -114,6 +116,8 @@
 		7BBA836B1DF3C3B400B71EDA /* ProcessingPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingPaymentViewController.swift; sourceTree = "<group>"; };
 		7BBA83711DF669B900B71EDA /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		ABCA6FAE95BD0BF9547C1188 /* Pods-BlockTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.release.xcconfig"; sourceTree = "<group>"; };
+		C29CBDCE01DE0631373040EE /* Pods-BlockTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests.release.xcconfig"; sourceTree = "<group>"; };
+		D2FFF05053B9EE10CCD45D86 /* Pods-BlockTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTraderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD7BF3B1C780988A5672A68E /* Pods-BlockTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCE2837C25906420FB9BBA9 /* Pods_BlockTraderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				67F28637A781D397010DA945 /* Pods_BlockTrader.framework */,
+				7A9D0B04138B53537F4B8420 /* Pods_BlockTraderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -298,6 +304,8 @@
 			children = (
 				FD7BF3B1C780988A5672A68E /* Pods-BlockTrader.debug.xcconfig */,
 				ABCA6FAE95BD0BF9547C1188 /* Pods-BlockTrader.release.xcconfig */,
+				D2FFF05053B9EE10CCD45D86 /* Pods-BlockTraderTests.debug.xcconfig */,
+				C29CBDCE01DE0631373040EE /* Pods-BlockTraderTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -329,9 +337,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B9F05B91DE8DC2000E98C5C /* Build configuration list for PBXNativeTarget "BlockTraderTests" */;
 			buildPhases = (
+				DC731EBD9DF45547A0BDB9A0 /* [CP] Check Pods Manifest.lock */,
 				7B9F059E1DE8DC2000E98C5C /* Sources */,
 				7B9F059F1DE8DC2000E98C5C /* Frameworks */,
 				7B9F05A01DE8DC2000E98C5C /* Resources */,
+				4851FD55F9632714698A4826 /* [CP] Embed Pods Frameworks */,
+				CEF5B9E5CB7B288D81DD6B31 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -451,6 +462,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4851FD55F9632714698A4826 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BEF9EC00B7733833F291178F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,6 +520,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEF5B9E5CB7B288D81DD6B31 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC731EBD9DF45547A0BDB9A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -707,6 +763,7 @@
 		};
 		7B9F05BA1DE8DC2000E98C5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2FFF05053B9EE10CCD45D86 /* Pods-BlockTraderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -721,6 +778,7 @@
 		};
 		7B9F05BB1DE8DC2000E98C5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C29CBDCE01DE0631373040EE /* Pods-BlockTraderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -30,6 +30,7 @@
 		0768564B64EC026E7118B6B7D5D2B3DC /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C089F3BB106A9E29AB6E1FD353B451 /* Video.swift */; };
 		078409A3196BBD80410F3A05685728EA /* FBSDKShareDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E7D325A0C38CFD923A16E1A0460E8CB7 /* FBSDKShareDefines.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		07B86774062227CCF1CFF18D22D9E515 /* UIViewController+Stripe_Promises.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC85F93C44F4B5ADEEA0CE3ED4E0956 /* UIViewController+Stripe_Promises.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		07C7A2C79339FA434EA761EC78B6BDAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B47378739327E76EA25EBC55F9A6D8 /* Foundation.framework */; };
 		07E1F63E40A6706C30FFCB04B99B7826 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB302E2930E183AA48D39DB24DD2BF /* UserProfile.swift */; };
 		082EE9A94C65A53DD39576DF4C8F634D /* FBSDKGraphRequestConnection+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 896B9A56159EE603E525F14E2ABFA9C5 /* FBSDKGraphRequestConnection+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		08BDA2EAC03A433966A161AACDC08F3A /* NSMutableURLRequest+Stripe.m in Sources */ = {isa = PBXBuildFile; fileRef = 10036B679523A628587221ECE5036F98 /* NSMutableURLRequest+Stripe.m */; };
@@ -153,7 +154,7 @@
 		30D417F49791AF9C20221CE449F2DAE1 /* FBSDKLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 333C732BFCD1C3356F593FF711F02D5C /* FBSDKLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		30EF37271680B97DB2C563DF1578BC84 /* FBSDKDialogConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F3FEBE338B0D542C4BC9F47229688 /* FBSDKDialogConfiguration.m */; };
 		3106CB3B7FB393BCE581FC00DA6C0963 /* FBSDKAudioResourceLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D37B493B532D849CDD3C170733E8FF5 /* FBSDKAudioResourceLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3109BB20B763225CFEE0806143818D89 /* Stripe.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0C3047DC360E502C45F57DB27F82110A /* Stripe.bundle */; };
+		3109BB20B763225CFEE0806143818D89 /* Stripe.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0C260D24A14B69594A53CCAD5258E6C1 /* Stripe.bundle */; };
 		31704166D7599BAD4DC8E06D0BFE5842 /* stp_card_jcb_template.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF22094689D712A40E492A8A5317BD /* stp_card_jcb_template.png */; };
 		318334A076D1F39D3635BA28ECAD40C7 /* stp_card_form_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D28A4705E32CBAA5E3D2198FE519DD4 /* stp_card_form_back.png */; };
 		3352F3F4988B281631F795C0A00CCED7 /* FBSDKBoltsMeasurementEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A5EBCB2EA9933A752CCD914E6C933F3 /* FBSDKBoltsMeasurementEventListener.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -190,6 +191,7 @@
 		3E672921120AD36CD02D13AF94D72B7E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC594F3ED093B551C1A6D6F84233C88 /* Bolts.framework */; };
 		3E840EA2CAAF8C94D914DB168E28E644 /* FBSDKButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 78C2FE6193475DD3490759C60F13552A /* FBSDKButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F2942775920B8B40EE8BC7BD3DC7292 /* stp_card_cvc_amex@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F67242D95ECEAF5EBF564E16866C49E0 /* stp_card_cvc_amex@3x.png */; };
+		3FF372E252B9AE19DEBDE68E687F3DFA /* Pods-BlockTraderTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72B026F653A5D8E757D11BB419B762B3 /* Pods-BlockTraderTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40042F539443016D524430354F7138EA /* FBSDKErrorConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C84DE73C7F5FBD06264589BFE46B37 /* FBSDKErrorConfiguration.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4058A7AB2359BC34F0AB3C4B072CB852 /* FBSDKServerConfigurationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CD61CB79F101EFF3650E17CE16AC333 /* FBSDKServerConfigurationManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		409F5BE5BDBB1D3850F4D62D5504D662 /* BFTaskCompletionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 361A38E48E8CA93679B34883D6E587C7 /* BFTaskCompletionSource.m */; };
@@ -323,6 +325,7 @@
 		6A389C6C0B4B1D0DC3534E2E163A7F22 /* FBSDKGraphRequestMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C4A893DB3FB304B248A72BECB7FAC2 /* FBSDKGraphRequestMetadata.m */; };
 		6A40C01F2D8713A20F22BADA0D553732 /* STPAPIClient+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A238451B1D37E92F43FB32A17A02E1D /* STPAPIClient+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6A8B92B5BDFBEE6BD3F70901FB71A0B1 /* BFTask+Exceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = B9179489F587B93CC3C7A3E901AF30FC /* BFTask+Exceptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A8FF77D264CB3D237C6AD873EFC3D18 /* Pods-BlockTraderTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B11005D0D8F38F486E07451D409F3D /* Pods-BlockTraderTests-dummy.m */; };
 		6AD6F1CD27D5C6F001696E1FF8124E35 /* FBSDKAccessTokenCacheV3.m in Sources */ = {isa = PBXBuildFile; fileRef = 509943EF3F2827FF8786044F21EDC522 /* FBSDKAccessTokenCacheV3.m */; };
 		6AFC4BF4C8CDB1FD14C7ED1CB6F29C3D /* STPPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = A319300FEAFDEFAB5017958F2121B88C /* STPPromise.m */; };
 		6B86DE344B77B875E86B7AE015BA3700 /* FBSDKDynamicFrameworkLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 699B0AD7D3B63C051FE07C4B1D103DCC /* FBSDKDynamicFrameworkLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -578,7 +581,7 @@
 		BD24077EA3796C3E58FE626F9E1DF5EB /* STPPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9826B553B7DDEC3B20066C9D0294A90E /* STPPromise.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BD25A0F2AC25A108D31FEC43FB1504E0 /* STPLocalizationUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D59CEA1A79C586F2AB158A738016B69E /* STPLocalizationUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BD42F653EACC43DD37499884250AA241 /* LikableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C6E171B85866F74627EF51C83081EC /* LikableObject.swift */; };
-		BD7A6788F8412652A1321970A2DD89E6 /* Pods-BlockTrader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFA8670010DB520E7ED3580F75E22A6D /* Pods-BlockTrader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD7A6788F8412652A1321970A2DD89E6 /* Pods-BlockTrader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 198868F55707CA08B65D80FEF4004E47 /* Pods-BlockTrader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C05225EA8ACCF663097C4EC96E8E9887 /* BFAppLinkReturnToRefererView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1090478959E3D335BDF5163650177278 /* BFAppLinkReturnToRefererView.m */; };
 		C06003C7BB6651A475BDF4ED8181645C /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07BE88952312CCB6D890D04AD745477B /* FacebookSDKStrings.bundle */; };
 		C0AEA97E7684DDAD56998C0AE198A433 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0C9EC93CE3ADC73D7912CE35EEE9A0 /* ServerTrustPolicy.swift */; };
@@ -698,7 +701,7 @@
 		EB659DFCECA0CC5D86F7E25FD7AA60A7 /* stp_card_form_applepay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFF1125EBB6470EC53AF8948F69D373E /* stp_card_form_applepay@2x.png */; };
 		EB66C861A02F10142E4459F8F77B17AF /* FBSDKServerConfiguration+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 13AFE7B37109FB4DFC23391CEEDA1BA8 /* FBSDKServerConfiguration+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		EBAD5F388F4EA10F9DAB40DAFCE100F6 /* FBSDKProfilePictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49609D9693BCB96BCCC545CD5A0D94FC /* FBSDKProfilePictureView.m */; };
-		EBD6FA733E1D88A1BE702F0E950C8706 /* Pods-BlockTrader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A63C012B327109C5F2AAEE1F0DB058 /* Pods-BlockTrader-dummy.m */; };
+		EBD6FA733E1D88A1BE702F0E950C8706 /* Pods-BlockTrader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A4A73BA6900394C743087D6912A52 /* Pods-BlockTrader-dummy.m */; };
 		EBE13158F6046B97A5DD3A5BACA7D63F /* stp_card_placeholder_template@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A309AED368CE1CAD9F0C061A4D2A03E /* stp_card_placeholder_template@2x.png */; };
 		EC089C653ACC60DA85FB524E2BE6C472 /* ShareError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E3BAFD82937BBDB5AF4106D051C9DD /* ShareError.swift */; };
 		EC5A5A232968C37D7BC16CA86341B3F5 /* FBSDKErrorRecoveryConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = AF91301D6A62F244614808676B1E69A7 /* FBSDKErrorRecoveryConfiguration.m */; };
@@ -766,6 +769,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		017D5F5125C3FBA76946507B657CAFD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D0F2E5EA1B46A5D72FFD42B0B39DBBC;
+			remoteInfo = Bolts;
+		};
 		09DE262375AA5DD1887D3E8CAEF661D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -815,6 +825,13 @@
 			remoteGlobalIDString = 8329B4DD82B7A073B34A61C9527865D0;
 			remoteInfo = FBSDKLoginKit;
 		};
+		340D3C064C48ADAF0F536678F7E78466 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 333E47F1004946B94926B19979768D18;
+			remoteInfo = AlamofireImage;
+		};
 		35875E2BC057BA8FADF04544A78A335C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -835,6 +852,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = F3ED1D1575AF9560E115561F6C10D547;
 			remoteInfo = "Stripe-Stripe";
+		};
+		4C730E1A9F4B776F7C178C6BB49A721B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 533607A808BC64912197562E016B6085;
+			remoteInfo = FBSDKCoreKit;
+		};
+		5B3B941270ADC24D68277D69DF19218B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD707E469C8D0BEA816D740155A3B629;
+			remoteInfo = FBSDKShareKit;
+		};
+		5C09B2083C2FC148CD796E2E739B0EBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8329B4DD82B7A073B34A61C9527865D0;
+			remoteInfo = FBSDKLoginKit;
+		};
+		66B9D1F45576FE0541A331D33B6600E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8F77DC39F7D0CFE46DAA5C135D96A80;
+			remoteInfo = FacebookShare;
 		};
 		673451F0639F19AA2404D62DD3271930 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -871,6 +916,20 @@
 			remoteGlobalIDString = 79C040AFDDCE1BCBF6D8B5EB0B85887F;
 			remoteInfo = Alamofire;
 		};
+		85C3A27975E54FC630001DFAFEF6E136 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94EEF6A05D99F50D047E4489AB9158B6;
+			remoteInfo = SVProgressHUD;
+		};
+		8A1B1D3D47AB15AEA76F47CAD6BFC3D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31418D425B97E292FFAFC566D79FC144;
+			remoteInfo = FacebookCore;
+		};
 		93DF2007896FD620A26CE5950D673E3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -884,6 +943,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 533607A808BC64912197562E016B6085;
 			remoteInfo = FBSDKCoreKit;
+		};
+		9C93B7873B1F7F0B975F73969F5F03FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 711EB5F58027B760C97478A1BF8DE01E;
+			remoteInfo = Stripe;
+		};
+		A58D82731320242E43EF685B78DE372F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79C040AFDDCE1BCBF6D8B5EB0B85887F;
+			remoteInfo = Alamofire;
 		};
 		AF6CDE1672B326F61A5225164304404C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -927,6 +1000,13 @@
 			remoteGlobalIDString = 9D0F2E5EA1B46A5D72FFD42B0B39DBBC;
 			remoteInfo = Bolts;
 		};
+		D8C9D0081C0C1367221DE960A6983966 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 333121AD23522557D4C3DA6AA8465F87;
+			remoteInfo = SwiftyJSON;
+		};
 		DA568F25CC7AE2ED9A1327B1EBAE91DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -962,6 +1042,13 @@
 			remoteGlobalIDString = 31418D425B97E292FFAFC566D79FC144;
 			remoteInfo = FacebookCore;
 		};
+		F29042C652ECF7A0E6A585111C0A16A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A0A28913A1212C2D1EACECBA1E58AC0;
+			remoteInfo = FacebookLogin;
+		};
 		FDE40715654A79FF932B38EABAF08D3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -982,7 +1069,6 @@
 		05303E2D2DA156519884C8C439A192F3 /* STPAddress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPAddress.h; path = Stripe/PublicHeaders/STPAddress.h; sourceTree = "<group>"; };
 		0577A4DC98976D1A54BBF22F5050C3BD /* _FBSDKTemporaryErrorRecoveryAttempter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _FBSDKTemporaryErrorRecoveryAttempter.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ErrorRecovery/_FBSDKTemporaryErrorRecoveryAttempter.m; sourceTree = "<group>"; };
 		05A63A8EEC261D9E15BFFEF7F2078149 /* Stripe.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Stripe.xcconfig; sourceTree = "<group>"; };
-		05D766CFEAA5E8678DBF707AA02BC7D1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684ADBD4E32205ECC79A4F75CEDC8FE /* UIViewController+Stripe_KeyboardAvoiding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Stripe_KeyboardAvoiding.m"; path = "Stripe/UIViewController+Stripe_KeyboardAvoiding.m"; sourceTree = "<group>"; };
 		068947A92D04E733DB66AD63EB02FC85 /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+AlamofireImage.swift"; path = "Source/UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
 		06A3770EA7EB0EBC39DE1FE7B70B2F85 /* STPTheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPTheme.h; path = Stripe/PublicHeaders/STPTheme.h; sourceTree = "<group>"; };
@@ -1005,9 +1091,10 @@
 		0A6F687ACB44F8073AD27E5E878F5403 /* STPWeakStrongMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPWeakStrongMacros.h; path = Stripe/STPWeakStrongMacros.h; sourceTree = "<group>"; };
 		0A7B828A5620689AB4EB0A77AC5BB00A /* FBSDKGraphRequestDataAttachment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestDataAttachment.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestDataAttachment.m; sourceTree = "<group>"; };
 		0AAE7E0A9ECBB08E5329AD787903C161 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/PassKit.framework; sourceTree = DEVELOPER_DIR; };
+		0AC48E104E4CEDC1D399302F3AB33893 /* Pods-BlockTrader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlockTrader.modulemap"; sourceTree = "<group>"; };
 		0ADCD3B2DF5A1571E33C1857C5F47D14 /* FBSDKShareVideoContent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareVideoContent.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareVideoContent.m; sourceTree = "<group>"; };
 		0B681CB06B005C113037F4EF27791382 /* BFAppLinkReturnToRefererController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkReturnToRefererController.h; path = Bolts/iOS/BFAppLinkReturnToRefererController.h; sourceTree = "<group>"; };
-		0C3047DC360E502C45F57DB27F82110A /* Stripe.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Stripe.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C260D24A14B69594A53CCAD5258E6C1 /* Stripe.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Stripe.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDA8A66FCCBB18AC0EA1579E9DCABC7 /* STPDelegateProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPDelegateProxy.h; path = Stripe/STPDelegateProxy.h; sourceTree = "<group>"; };
 		0D380112D6E837F7CD31CF0DD6C2A89E /* FBSDKBridgeAPIProtocolWebV1.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIProtocolWebV1.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV1.m; sourceTree = "<group>"; };
 		0F4F90DDC7CEB32A093C194FF33F4BB5 /* FBSDKShareVideo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareVideo.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareVideo.m; sourceTree = "<group>"; };
@@ -1038,6 +1125,7 @@
 		17C4A2DC587333D90C77652D3A27B55B /* SDKLoggingBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDKLoggingBehavior.swift; path = Sources/Core/Common/SDKLoggingBehavior.swift; sourceTree = "<group>"; };
 		18D8AC542208200277C819CFFBF9FF56 /* FBSDKLikeButtonPopWAV.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLikeButtonPopWAV.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeButtonPopWAV.m; sourceTree = "<group>"; };
 		18F44013B4E21371286BD889BE47D51B /* LoginButton.Tooltip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginButton.Tooltip.swift; path = Sources/Login/LoginButton.Tooltip.swift; sourceTree = "<group>"; };
+		198868F55707CA08B65D80FEF4004E47 /* Pods-BlockTrader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlockTrader-umbrella.h"; sourceTree = "<group>"; };
 		19C95464226E79DA8AC8800B16082297 /* FBSDKLikeObjectType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLikeObjectType.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKLikeObjectType.h; sourceTree = "<group>"; };
 		19FC90DCB851B358AD02410920E95D3D /* FacebookShare-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FacebookShare-umbrella.h"; sourceTree = "<group>"; };
 		1A02CD8F3368D1AF5EC0732A38B3A66D /* FBSDKDynamicFrameworkLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKDynamicFrameworkLoader.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKDynamicFrameworkLoader.h; sourceTree = "<group>"; };
@@ -1081,8 +1169,9 @@
 		256B1C1D7DBCAD7295E71D8BE95E16B2 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		25CF6CEE440B03FC15C1EB62220CE365 /* STPLocalizationUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPLocalizationUtils.m; path = Stripe/STPLocalizationUtils.m; sourceTree = "<group>"; };
 		2672B539AA714F19044F6A977E2F0122 /* BFCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenRegistration.h; path = Bolts/Common/BFCancellationTokenRegistration.h; sourceTree = "<group>"; };
-		26A63C012B327109C5F2AAEE1F0DB058 /* Pods-BlockTrader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlockTrader-dummy.m"; sourceTree = "<group>"; };
+		271DA3488F737F2672A0B59B20F13668 /* Pods-BlockTraderTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockTraderTests-resources.sh"; sourceTree = "<group>"; };
 		279F7047EBD21A3F651AD28E9561EB34 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		281369D504C76733E94F6EED137F17E7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2835BCEAD8D2C5F8E56FEF4586B3EB0A /* stp_card_form_back@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_form_back@3x.png"; path = "Stripe/Resources/Images/stp_card_form_back@3x.png"; sourceTree = "<group>"; };
 		28A73705D99D2DA52F737D44AE0203BF /* STPCheckoutAPIVerification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCheckoutAPIVerification.m; path = Stripe/STPCheckoutAPIVerification.m; sourceTree = "<group>"; };
 		28B7D42C4E469773636DBDAF7DAC5548 /* FBSDKShareError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareError.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKShareError.m; sourceTree = "<group>"; };
@@ -1106,9 +1195,8 @@
 		2E77AEBB25E82BF4349ED0394A0FEC28 /* FBSDKPaymentObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKPaymentObserver.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKPaymentObserver.h; sourceTree = "<group>"; };
 		2E8923DA0CF2AEAEC24D4323E1241F8B /* FBSDKAppEventsStateManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEventsStateManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsStateManager.h; sourceTree = "<group>"; };
 		2EBFF8B6EF8DA4A4095236C971CEB5BE /* AppEventsLogger.FlushBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppEventsLogger.FlushBehavior.swift; path = Sources/Core/AppEvents/AppEventsLogger.FlushBehavior.swift; sourceTree = "<group>"; };
-		2F2A3135CBFCD34F5D20ECBA2D86F2CD /* Stripe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stripe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F580F9F6D0545AC0EBD61810D187B03 /* FBSDKTypeUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTypeUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTypeUtility.m; sourceTree = "<group>"; };
-		2F914376FABFDB5BA70B1E96333DCB98 /* Pods-BlockTrader-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlockTrader-acknowledgements.plist"; sourceTree = "<group>"; };
+		301F55F7840097D01F7CE457914D7DB6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A2DC7E6B3AB2BF3B46A587DE0DAA8D /* FBSDKKeychainStoreViaBundleID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKKeychainStoreViaBundleID.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStoreViaBundleID.h; sourceTree = "<group>"; };
 		30C23303BBB204372C0C0C71EB0E24CA /* FBSDKAppLinkUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppLinkUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkUtility.m; sourceTree = "<group>"; };
 		30D3A032F858B173D1D4CC57E144AF70 /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = CardIO/CardIOView.h; sourceTree = "<group>"; };
@@ -1151,26 +1239,30 @@
 		3A35195585BF99C6E5A89EA6EAF36164 /* STPFormEncoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPFormEncoder.m; path = Stripe/STPFormEncoder.m; sourceTree = "<group>"; };
 		3A55C2B5D779D6A218C107E54BF90F7B /* SDKSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDKSettings.swift; path = Sources/Core/Common/SDKSettings.swift; sourceTree = "<group>"; };
 		3A6E7AD0389435AA01C030C475EC5897 /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = CardIO/CardIOUtilities.h; sourceTree = "<group>"; };
+		3AFC1A4581E6584210E1ABA2BCC0068E /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5B0A1CD34D37536B05C29BFB194F3A /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
 		3BBCD7BD240B3C7FAEA96934BEEE2227 /* STPAddressViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPAddressViewModel.m; path = Stripe/STPAddressViewModel.m; sourceTree = "<group>"; };
 		3C14F8545E2C372F8A8EBA8A6EF5266B /* UIViewController+Stripe_NavigationItemProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Stripe_NavigationItemProxy.h"; path = "Stripe/UIViewController+Stripe_NavigationItemProxy.h"; sourceTree = "<group>"; };
 		3C6CDB65B96D18AEF817586C0B605EAE /* FBSDKBridgeAPIProtocolNativeV1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocolNativeV1.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolNativeV1.h; sourceTree = "<group>"; };
+		3CECAF15ECF9D7ABAE52A1CAC598C477 /* Stripe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stripe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0634B413C7CC5B0CF2E5F3A329A688 /* Pods-BlockTraderTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlockTraderTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3D555324E67200C8BDBEE62105D7D5A0 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		3D97EE20711F5A467166D9926B159939 /* ReadPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReadPermission.swift; path = Sources/Core/Permissions/ReadPermission.swift; sourceTree = "<group>"; };
 		3DC772B0A4F25F260C7B46C057A594B4 /* STPPhoneNumberValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPPhoneNumberValidator.m; path = Stripe/STPPhoneNumberValidator.m; sourceTree = "<group>"; };
 		3DF093CF7D55B41882BFE7137CFEFD87 /* FBSDKBridgeAPICrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPICrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPICrypto.m; sourceTree = "<group>"; };
-		3E78156D936C9CED96D633862E238624 /* Pods-BlockTrader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlockTrader.modulemap"; sourceTree = "<group>"; };
 		3E8A584E8A4AA63094C9825D0AECE19B /* STPAPIResponseDecodable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPAPIResponseDecodable.h; path = Stripe/PublicHeaders/STPAPIResponseDecodable.h; sourceTree = "<group>"; };
 		3EC6BDF89F6976996C8F20BE82A2C1B3 /* PKPayment+Stripe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PKPayment+Stripe.h"; path = "Stripe/PKPayment+Stripe.h"; sourceTree = "<group>"; };
 		3ED5CD6A33C1661D736594F71B20AC16 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = CardIO/CardIOViewDelegate.h; sourceTree = "<group>"; };
 		3ED8CBA486F393E0539A55D6547AE494 /* FBSDKSystemAccountStoreAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKSystemAccountStoreAdapter.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSystemAccountStoreAdapter.m; sourceTree = "<group>"; };
 		3EF149C953C6D2DEAA72849D3C28838D /* FBSDKProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKProfile.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKProfile.h; sourceTree = "<group>"; };
+		3FFD9D73AEC3B5A8AA9DC357216387B7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40456B1C76767CF256DB8917C5F2FAF8 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		40975C7FA57E754758A2671BB35BE350 /* FBSDKLoginKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSDKLoginKit.xcconfig; sourceTree = "<group>"; };
 		4117DF3FF05C8F262C7154FD59317B1D /* FBSDKGameRequestDialog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGameRequestDialog.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKGameRequestDialog.m; sourceTree = "<group>"; };
 		41BABA48879DA409BC173A028744340E /* FBSDKGameRequestDialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGameRequestDialog.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKGameRequestDialog.h; sourceTree = "<group>"; };
 		435F44829C6A6E2F0F2899E9F155A602 /* FBSDKLogo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLogo.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKLogo.h; sourceTree = "<group>"; };
 		44398CA9FE33AFAE12DFCF9E7A69027E /* FBSDKShareOpenGraphValueContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareOpenGraphValueContainer.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareOpenGraphValueContainer.m; sourceTree = "<group>"; };
+		44400A8C018FEE933274C367E0CA81F4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4461E4FAFE7E4B6588887F400B9CF35F /* stp_card_jcb_template@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_jcb_template@3x.png"; path = "Stripe/Resources/Images/stp_card_jcb_template@3x.png"; sourceTree = "<group>"; };
 		4479504AA614950C86AE43E3B004E3A6 /* BFAppLinkNavigation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFAppLinkNavigation.m; path = Bolts/iOS/BFAppLinkNavigation.m; sourceTree = "<group>"; };
 		44BB7B628C6FC6EAC7484591786F2475 /* OpenGraphPropertyValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenGraphPropertyValue.swift; path = Sources/Share/Content/OpenGraph/OpenGraphPropertyValue.swift; sourceTree = "<group>"; };
@@ -1178,7 +1270,6 @@
 		4514FF76184D6F39E8CB08200C754406 /* stp_icon_add@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_icon_add@2x.png"; path = "Stripe/Resources/Images/stp_icon_add@2x.png"; sourceTree = "<group>"; };
 		45204F12CEAEE03690665A1AE937CE4F /* FBSDKSharePhoto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKSharePhoto.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKSharePhoto.m; sourceTree = "<group>"; };
 		453B1DAFDBBE0E4C4EB3532151914FB5 /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
-		45FFDAFB636C66F2F293BFAA4829ADFA /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4648DFC7A8CE46222C9D46086D16D8D6 /* STPTheme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPTheme.m; path = Stripe/STPTheme.m; sourceTree = "<group>"; };
 		468674172EB885C5FF47112B1E2DA838 /* FBSDKBridgeAPICrypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPICrypto.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPICrypto.h; sourceTree = "<group>"; };
 		46B47378739327E76EA25EBC55F9A6D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -1187,6 +1278,7 @@
 		476A5C1AA0170764C586B83FD5436570 /* FBSDKGraphRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequest.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequest.h; sourceTree = "<group>"; };
 		47F165F6F64F1D517195575431162D89 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = Stripe/Fabric.h; sourceTree = "<group>"; };
 		48588F400CA123A5551D7EB54B75D139 /* OpenGraphPropertyName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenGraphPropertyName.swift; path = Sources/Share/Content/OpenGraph/OpenGraphPropertyName.swift; sourceTree = "<group>"; };
+		48A1CAC4AE6F81DDD270A79E96FF7AE1 /* Pods-BlockTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockTrader.release.xcconfig"; sourceTree = "<group>"; };
 		48B6810C27390DA2FE1D253C73C5C631 /* FBSDKLoginTooltipView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginTooltipView.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginTooltipView.m; sourceTree = "<group>"; };
 		491E1275F3BD23320C04AACD8EA26CD3 /* FBSDKLoginKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLoginKit.h; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginKit.h; sourceTree = "<group>"; };
 		4942297F582DFA10999F5D0060F49890 /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = CardIO/CardIO.h; sourceTree = "<group>"; };
@@ -1199,7 +1291,6 @@
 		4AC23D61FB496F4594D8A59428AEC95E /* FBSDKTooltipView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTooltipView.m; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKTooltipView.m; sourceTree = "<group>"; };
 		4AC57745E0AB8A325B780576ED81391B /* FBSDKSharePhotoContent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKSharePhotoContent.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKSharePhotoContent.m; sourceTree = "<group>"; };
 		4AC5DBDC428418344E675A60825F1C8F /* FBSDKGraphRequestBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestBody.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestBody.h; sourceTree = "<group>"; };
-		4AF6A0FB66657850793BDCBB43BA722C /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B51EFB5214633725018112F92463304 /* stp_card_discover.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = stp_card_discover.png; path = Stripe/Resources/Images/stp_card_discover.png; sourceTree = "<group>"; };
 		4B7A8C67277516D015D5D5DF4A2109ED /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
 		4B9A8183D25836EB01A197B7459CD8E9 /* FBSDKBridgeAPIRequest+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKBridgeAPIRequest+Private.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIRequest+Private.h"; sourceTree = "<group>"; };
@@ -1215,6 +1306,7 @@
 		4DE84B381BF6294561EC53CBC201DD05 /* FBSDKCoreKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSDKCoreKit-dummy.m"; sourceTree = "<group>"; };
 		4DF663F6F30A25018227DCDF99F16D34 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E432A8ECC4C4755F2C94C86A7ACCE7B /* AppEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppEvent.swift; path = Sources/Core/AppEvents/AppEvent.swift; sourceTree = "<group>"; };
+		4E97AF8C6DC8A5B77046D4F5088BB7CF /* Pods-BlockTrader-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlockTrader-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4F9C68510FCDFC528BB7C8A359A4CD76 /* STPAPIPostRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPAPIPostRequest.h; path = Stripe/STPAPIPostRequest.h; sourceTree = "<group>"; };
 		4FD7B48DB281D1A40D8E28E2C97E7AD4 /* FBSDKAccessTokenCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCache.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCache.h; sourceTree = "<group>"; };
 		4FE3DDBDFD247C032F77462B77F49F91 /* stp_icon_chevron_right_small.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = stp_icon_chevron_right_small.png; path = Stripe/Resources/Images/stp_icon_chevron_right_small.png; sourceTree = "<group>"; };
@@ -1222,7 +1314,6 @@
 		509943EF3F2827FF8786044F21EDC522 /* FBSDKAccessTokenCacheV3.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessTokenCacheV3.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3.m; sourceTree = "<group>"; };
 		50BB5159AE6AC48C57D7848078C517E6 /* STPCardValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCardValidator.h; path = Stripe/PublicHeaders/STPCardValidator.h; sourceTree = "<group>"; };
 		511A55BFADE411B05E6990174CF61301 /* FBSDKShareButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareButton.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareButton.h; sourceTree = "<group>"; };
-		51BBD16D98161536650769246AB2BA7D /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52000142A8F921C43EB953AE4136DA52 /* ShareButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareButton.swift; path = Sources/Share/Views/ShareButton.swift; sourceTree = "<group>"; };
 		5210582A98F2E5589DC0B1B3B992C481 /* UIViewController+Stripe_KeyboardAvoiding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Stripe_KeyboardAvoiding.h"; path = "Stripe/UIViewController+Stripe_KeyboardAvoiding.h"; sourceTree = "<group>"; };
 		52C091E7A942058C4AE3802C6C5CED6A /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
@@ -1264,7 +1355,6 @@
 		5E09DB41FAA638D5D5B80F4DA551FDD2 /* FBSDKTimeSpentData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTimeSpentData.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKTimeSpentData.h; sourceTree = "<group>"; };
 		5E4AD439F8F67D2DB9C9DBF9DA3793CD /* STPSwitchTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPSwitchTableViewCell.h; path = Stripe/STPSwitchTableViewCell.h; sourceTree = "<group>"; };
 		5EDCD2A761E04F04F521EA862835545E /* stp_card_diners.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = stp_card_diners.png; path = Stripe/Resources/Images/stp_card_diners.png; sourceTree = "<group>"; };
-		5EFD4DF54BF55CC2AA18388A41F02C9E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F3ECF193215DB4FE07C03F51C2BEB11 /* FBSDKLoginError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginError.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginError.m; sourceTree = "<group>"; };
 		5F4E107B1F2F8CFD446DD99DA187856A /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		5F6CF81B6D6FDA76569AED3B2367AEBC /* BFAppLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLink.h; path = Bolts/iOS/BFAppLink.h; sourceTree = "<group>"; };
@@ -1289,6 +1379,7 @@
 		655ABF4B9A2E1A72C8CC1BF8FC716DDD /* OpenGraphShareContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenGraphShareContent.swift; path = Sources/Share/Content/OpenGraph/OpenGraphShareContent.swift; sourceTree = "<group>"; };
 		6600F2E97C9BF4C182C19072536B99C7 /* FBSDKAppLinkResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppLinkResolver.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkResolver.m; sourceTree = "<group>"; };
 		661942B089E9BF8B9AD636528BC2A819 /* STPAPIPostRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPAPIPostRequest.m; path = Stripe/STPAPIPostRequest.m; sourceTree = "<group>"; };
+		666FB5450C137547A4FA04896F020083 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66741929EF11565A4450470A7C76488C /* FBSDKLikeActionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLikeActionController.h; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeActionController.h; sourceTree = "<group>"; };
 		667D14CB901AB41BDA0D32695C5EF95E /* FBSDKLoginKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FBSDKLoginKit.modulemap; sourceTree = "<group>"; };
 		66961D384F4B3A5777653F8E3576EEAB /* FBSDKAccessTokenCacheV4.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessTokenCacheV4.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV4.m; sourceTree = "<group>"; };
@@ -1302,6 +1393,7 @@
 		687C0060786542000D115B9008C86C64 /* STPPaymentMethodsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPPaymentMethodsViewController.m; path = Stripe/STPPaymentMethodsViewController.m; sourceTree = "<group>"; };
 		68AF0E2A02A0D738EEAFB0911906E774 /* FBSDKCopying.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCopying.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKCopying.h; sourceTree = "<group>"; };
 		69213C41A5029617CD2CBD2158879566 /* FBSDKShareOpenGraphContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareOpenGraphContent.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareOpenGraphContent.h; sourceTree = "<group>"; };
+		694FE32EA574F6C37FE50AE032B78920 /* Pods-BlockTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockTraderTests.release.xcconfig"; sourceTree = "<group>"; };
 		699B0AD7D3B63C051FE07C4B1D103DCC /* FBSDKDynamicFrameworkLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKDynamicFrameworkLoader.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal_NoARC/FBSDKDynamicFrameworkLoader.m; sourceTree = "<group>"; };
 		69AE66BD7AE294946FBEF7C33D610C78 /* STPPaymentMethodsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPPaymentMethodsViewController.h; path = Stripe/PublicHeaders/STPPaymentMethodsViewController.h; sourceTree = "<group>"; };
 		69FACE3977BFBC5471640F43B2E54D7A /* FBSDKGameRequestFrictionlessRecipientCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGameRequestFrictionlessRecipientCache.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKGameRequestFrictionlessRecipientCache.m; sourceTree = "<group>"; };
@@ -1310,6 +1402,8 @@
 		6AA001947FA7E344DBB49D22E1972BD7 /* FBSDKVideoUploader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKVideoUploader.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKVideoUploader.m; sourceTree = "<group>"; };
 		6AE439B846C09690ADB3E855BB3C7292 /* stp_icon_chevron_left@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_icon_chevron_left@2x.png"; path = "Stripe/Resources/Images/stp_icon_chevron_left@2x.png"; sourceTree = "<group>"; };
 		6B4F45A1CD4211152F624DC6DA0D9CFD /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		6BAC21F3677C695A2EC449CE295853D1 /* Pods-BlockTrader-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockTrader-resources.sh"; sourceTree = "<group>"; };
+		6C54844FFF43BEB3B9FBAD27A8D6BE6C /* Pods-BlockTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockTrader.debug.xcconfig"; sourceTree = "<group>"; };
 		6C892F1F84A2DA185A992A59BB8AD38C /* Bolts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bolts.xcconfig; sourceTree = "<group>"; };
 		6C90AF195C93E85B72C09DA2D053F37D /* STPShippingAddressViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPShippingAddressViewController.m; path = Stripe/STPShippingAddressViewController.m; sourceTree = "<group>"; };
 		6C9E877495D81C58A78876F9ED4E129D /* AppInvite.SDKDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppInvite.SDKDelegate.swift; path = Sources/Share/Dialogs/AppInvite/AppInvite.SDKDelegate.swift; sourceTree = "<group>"; };
@@ -1318,6 +1412,7 @@
 		6D638F9F31F20381D867FE3B55217060 /* STPCardParams.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCardParams.m; path = Stripe/STPCardParams.m; sourceTree = "<group>"; };
 		6D6706060CA744780DEBB40932EFE6DD /* FBSDKLoginManager+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKLoginManager+Internal.h"; path = "FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginManager+Internal.h"; sourceTree = "<group>"; };
 		6DAC01936D84021F69CFBB23929515B3 /* _FBSDKLoginRecoveryAttempter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _FBSDKLoginRecoveryAttempter.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/_FBSDKLoginRecoveryAttempter.m; sourceTree = "<group>"; };
+		6E4A4A73BA6900394C743087D6912A52 /* Pods-BlockTrader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlockTrader-dummy.m"; sourceTree = "<group>"; };
 		6E7C46B84E3EB6AABACD564F9E958403 /* FBSDKBridgeAPIResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIResponse.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIResponse.m; sourceTree = "<group>"; };
 		6EAA3F8D7B2C4081FFE740413D5043FE /* STPPaymentResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPPaymentResult.m; path = Stripe/STPPaymentResult.m; sourceTree = "<group>"; };
 		6F09822D1039D0750006E4F678AD67E1 /* FBSDKCloseIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCloseIcon.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKCloseIcon.h; sourceTree = "<group>"; };
@@ -1326,6 +1421,9 @@
 		7105E127389A4CF4EF706962DEE512CB /* FBSDKLikeButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLikeButton.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKLikeButton.m; sourceTree = "<group>"; };
 		712FB95FD11648664BFF9579282BEBBE /* GraphResponseProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphResponseProtocol.swift; path = Sources/Core/GraphRequest/GraphResponseProtocol.swift; sourceTree = "<group>"; };
 		725AC598D8CF2C79B586586790393FE3 /* FBSDKShareMediaContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareMediaContent.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareMediaContent.h; sourceTree = "<group>"; };
+		72B026F653A5D8E757D11BB419B762B3 /* Pods-BlockTraderTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlockTraderTests-umbrella.h"; sourceTree = "<group>"; };
+		734238DE9660219F1C6B2C124F886449 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73595D643A75235D117DF602986F13BB /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73918D0D5B5584B422B9B736C3B83CCE /* FBSDKAccessTokenCacheV3_21.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAccessTokenCacheV3_21.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3_21.h; sourceTree = "<group>"; };
 		73B960CBAC8C33BCC8E32E878C3C9068 /* stp_card_jcb_template@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_jcb_template@2x.png"; path = "Stripe/Resources/Images/stp_card_jcb_template@2x.png"; sourceTree = "<group>"; };
 		73CE92205472E90EE00A37BD8037DE51 /* FBSDKMessageDialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKMessageDialog.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKMessageDialog.h; sourceTree = "<group>"; };
@@ -1341,7 +1439,6 @@
 		75524AE7E49D3C3F6EE8FCC5A4E09145 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75AAE2995B01F77A55EBBFEE9ACAD3FE /* STPBundleLocator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPBundleLocator.m; path = Stripe/STPBundleLocator.m; sourceTree = "<group>"; };
 		75F2379AF7D6410E71F3337B76F581A1 /* FBSDKAppEventsUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEventsUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsUtility.h; sourceTree = "<group>"; };
-		76991A99D111F07F6A038C14CFE6706C /* Pods-BlockTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockTrader.debug.xcconfig"; sourceTree = "<group>"; };
 		76A32945F836579159C24853731C8DF3 /* STPSwitchTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPSwitchTableViewCell.m; path = Stripe/STPSwitchTableViewCell.m; sourceTree = "<group>"; };
 		76DB3E24773217E4B51139E72874756B /* FBSDKAppEventsUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppEventsUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsUtility.m; sourceTree = "<group>"; };
 		76DF2B4684FF80FB4B59C4CFDA1D6DF1 /* BFAppLinkTarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkTarget.h; path = Bolts/iOS/BFAppLinkTarget.h; sourceTree = "<group>"; };
@@ -1349,6 +1446,7 @@
 		7706C2293DC1D4CF1AF4317EA4454155 /* FBSDKShareLinkContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareLinkContent.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareLinkContent.h; sourceTree = "<group>"; };
 		775E1D423F882EFC9D49163F982B2255 /* stp_card_visa_template@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_visa_template@3x.png"; path = "Stripe/Resources/Images/stp_card_visa_template@3x.png"; sourceTree = "<group>"; };
 		77785F21DEC7AE29D82D7324F7066D35 /* STPRememberMeTermsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPRememberMeTermsView.h; path = Stripe/STPRememberMeTermsView.h; sourceTree = "<group>"; };
+		784D3D933A94592DF7B4457EB81EBA17 /* Pods-BlockTraderTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlockTraderTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		78B9B3872BFB1A216F9A96E7869C0B78 /* FacebookLogin-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FacebookLogin-prefix.pch"; sourceTree = "<group>"; };
 		78C2FE6193475DD3490759C60F13552A /* FBSDKButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKButton.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKButton.h; sourceTree = "<group>"; };
 		7935E27D540B7DEEDED414FD84117C27 /* stp_card_placeholder_template@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_placeholder_template@3x.png"; path = "Stripe/Resources/Images/stp_card_placeholder_template@3x.png"; sourceTree = "<group>"; };
@@ -1385,6 +1483,7 @@
 		7E3FE0D6114F3033F7BBE1B8FFEB122A /* STPShippingMethodsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPShippingMethodsViewController.h; path = Stripe/STPShippingMethodsViewController.h; sourceTree = "<group>"; };
 		7F6154B619D58FFFA88F3E397BAFED10 /* STPShippingAddressViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPShippingAddressViewController.h; path = Stripe/PublicHeaders/STPShippingAddressViewController.h; sourceTree = "<group>"; };
 		7F6EAC13E75FDFAD1D9AB16DD4DC6BCD /* STPCheckoutAccountLookup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCheckoutAccountLookup.m; path = Stripe/STPCheckoutAccountLookup.m; sourceTree = "<group>"; };
+		7F782A97982D7A7934B9A23D1FFC742D /* Pods-BlockTraderTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlockTraderTests.modulemap"; sourceTree = "<group>"; };
 		7FA18228DCB4F1A990E81121431806B1 /* FBSDKIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKIcon.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKIcon.h; sourceTree = "<group>"; };
 		7FD9A7D7C4564203AEB5D85FD798E2E7 /* FBSDKServerConfigurationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKServerConfigurationManager.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfigurationManager.m; sourceTree = "<group>"; };
 		7FDA76D593FEF0F612AC8567F1EA1247 /* ContentSharingDialogProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentSharingDialogProtocol.swift; path = Sources/Share/Dialogs/ContentSharingDialogProtocol.swift; sourceTree = "<group>"; };
@@ -1396,6 +1495,7 @@
 		81D13F0865B9999649843ED6C2F831F6 /* FacebookCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FacebookCore-prefix.pch"; sourceTree = "<group>"; };
 		8232B1B0AA19C1F96611B9D58E623A77 /* FBSDKError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKError.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKError.h; sourceTree = "<group>"; };
 		82385DF282A96370C7FE881BBCD0D40D /* FBSDKColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKColor.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKColor.h; sourceTree = "<group>"; };
+		833246606E634605CF09B88B8DA30405 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83811B7508A644992CEF2DB70BEC5D39 /* FBSDKImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKImageDownloader.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKImageDownloader.m; sourceTree = "<group>"; };
 		8385DD4EFA1DD6A79CBEFEE8829E4502 /* FBSDKShareUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareUtility.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKShareUtility.m; sourceTree = "<group>"; };
 		846A1235DF91C28202D08D49D0A4748D /* FBSDKAppEventsDeviceInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEventsDeviceInfo.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/AppEvents/FBSDKAppEventsDeviceInfo.h; sourceTree = "<group>"; };
@@ -1417,8 +1517,10 @@
 		896CBA76CE9F9FA2088E21492802F6F6 /* UINavigationBar+Stripe_Theme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+Stripe_Theme.h"; path = "Stripe/PublicHeaders/UINavigationBar+Stripe_Theme.h"; sourceTree = "<group>"; };
 		8982FE24ECD6EC93D931CEC0D052FF3B /* STPPaymentMethodTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPPaymentMethodTuple.h; path = Stripe/STPPaymentMethodTuple.h; sourceTree = "<group>"; };
 		89AF200F7357944157FD0E4D5A4FE1E7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89B11005D0D8F38F486E07451D409F3D /* Pods-BlockTraderTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlockTraderTests-dummy.m"; sourceTree = "<group>"; };
 		8AB55A32C02CEEDE4A3F21FF6405D0F6 /* FBSDKShareOpenGraphContent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareOpenGraphContent.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareOpenGraphContent.m; sourceTree = "<group>"; };
 		8AB59EB59C66B92592DDE43C282E7469 /* Fabric+FABKits.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Fabric+FABKits.h"; path = "Stripe/Fabric+FABKits.h"; sourceTree = "<group>"; };
+		8B33FE1348D572CE0A39EF0CEE2EACE6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B3F453D838121538A10634A3F30372E /* Optional+OnSome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Optional+OnSome.swift"; path = "Sources/Core/Internal/Extensions/Optional+OnSome.swift"; sourceTree = "<group>"; };
 		8B42E0743F5B16EF06DCF215C38DD881 /* BFCancellationTokenSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenSource.h; path = Bolts/Common/BFCancellationTokenSource.h; sourceTree = "<group>"; };
 		8B89D2144A074BC5C1E81D14AB8BE7EF /* FBSDKInternalUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKInternalUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKInternalUtility.m; sourceTree = "<group>"; };
@@ -1431,7 +1533,6 @@
 		8D7C1A2003BA3E58B7BE1D2692B95711 /* AppInvite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppInvite.swift; path = Sources/Share/Dialogs/AppInvite/AppInvite.swift; sourceTree = "<group>"; };
 		8DFAB4E050AE3CEA80D464CB838A4CDD /* stp_shipping_form@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_shipping_form@2x.png"; path = "Stripe/Resources/Images/stp_shipping_form@2x.png"; sourceTree = "<group>"; };
 		8EFE91E84F58ACF2ADCBBD954185DAC1 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		8F8486106187AABC003B5D1135056D1B /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD3FEEF2389D5772C0E49A31F1952AD /* AppInvite.Dialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppInvite.Dialog.swift; path = Sources/Share/Dialogs/AppInvite/AppInvite.Dialog.swift; sourceTree = "<group>"; };
 		908243B6675A41A7EE891501F593FAC0 /* stp_icon_chevron_right_small@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_icon_chevron_right_small@3x.png"; path = "Stripe/Resources/Images/stp_icon_chevron_right_small@3x.png"; sourceTree = "<group>"; };
 		91009A0794BFE06C5B7679439E054737 /* STPPaymentContextAmountModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPPaymentContextAmountModel.m; path = Stripe/STPPaymentContextAmountModel.m; sourceTree = "<group>"; };
@@ -1444,7 +1545,6 @@
 		933361B3A0D4AC75B2C642B5E05C53F3 /* AccessToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessToken.swift; path = Sources/Core/Common/AccessToken.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93D956CBC48D65B49D06FE5FA3E2C336 /* STPPaymentMethodsViewController+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "STPPaymentMethodsViewController+Private.h"; path = "Stripe/STPPaymentMethodsViewController+Private.h"; sourceTree = "<group>"; };
-		93FB31283DDC12BF93C8513F0DBD47D8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		940B64D52FC9B331495E343E132753F4 /* BFWebViewAppLinkResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFWebViewAppLinkResolver.m; path = Bolts/iOS/BFWebViewAppLinkResolver.m; sourceTree = "<group>"; };
 		948C155873E7149B51BF93B879021BB3 /* FBSDKLogo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLogo.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKLogo.m; sourceTree = "<group>"; };
 		94A23A3D46593DD796F632253CF230DF /* FBSDKLikeBoxBorderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLikeBoxBorderView.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeBoxBorderView.m; sourceTree = "<group>"; };
@@ -1453,6 +1553,7 @@
 		94E3626021125451FDFB8829AFD67AA3 /* STPAddCardViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPAddCardViewController.h; path = Stripe/PublicHeaders/STPAddCardViewController.h; sourceTree = "<group>"; };
 		958D66D5B101A0D879D1E274E0ED2BA6 /* STPToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPToken.h; path = Stripe/PublicHeaders/STPToken.h; sourceTree = "<group>"; };
 		961D22ABD5843AD85075662385AB7E09 /* stp_card_jcb@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_jcb@2x.png"; path = "Stripe/Resources/Images/stp_card_jcb@2x.png"; sourceTree = "<group>"; };
+		9686705AAABC865CD626DCA73332F6F7 /* Pods-BlockTraderTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockTraderTests-frameworks.sh"; sourceTree = "<group>"; };
 		969C2ABA65DBEB019EF7EE8ABCF62F73 /* AlamofireImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AlamofireImage.modulemap; sourceTree = "<group>"; };
 		970178CC365F6441686F1AF81A729295 /* GraphRequestProtocol.Bridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphRequestProtocol.Bridge.swift; path = Sources/Core/GraphRequest/GraphRequestProtocol.Bridge.swift; sourceTree = "<group>"; };
 		974E197BFBAE850A31499E03EC7842D5 /* stp_card_diners_template@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_diners_template@3x.png"; path = "Stripe/Resources/Images/stp_card_diners_template@3x.png"; sourceTree = "<group>"; };
@@ -1462,6 +1563,7 @@
 		97CEF1B1C065F4272D063436EC7D2F7E /* STPPaymentConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPPaymentConfiguration.m; path = Stripe/STPPaymentConfiguration.m; sourceTree = "<group>"; };
 		98232FE0B5585BB87DB45D3A5D78D185 /* SDKApplicationDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDKApplicationDelegate.swift; path = Sources/Core/Common/SDKApplicationDelegate.swift; sourceTree = "<group>"; };
 		9826B553B7DDEC3B20066C9D0294A90E /* STPPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPPromise.h; path = Stripe/STPPromise.h; sourceTree = "<group>"; };
+		9907A29C57584D38FDE331049D8BC6C4 /* Pods_BlockTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		990E532F61E48DBE67FC4E9D463D5E35 /* STPPaymentCardTextFieldViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPPaymentCardTextFieldViewModel.m; path = Stripe/STPPaymentCardTextFieldViewModel.m; sourceTree = "<group>"; };
 		998BD06E2FAE317DC3DDCDB3E789D8CE /* FBSDKAppEvents.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppEvents.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKAppEvents.h; sourceTree = "<group>"; };
 		99B40887288F7BEA1D708037ADFC2361 /* SendButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SendButton.swift; path = Sources/Share/Views/SendButton.swift; sourceTree = "<group>"; };
@@ -1470,7 +1572,6 @@
 		9A185531CC356617696D20909518E03F /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
 		9A418627B997A9619AC7B1CB468E1E53 /* NSDecimalNumber+Stripe_Currency.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDecimalNumber+Stripe_Currency.m"; path = "Stripe/NSDecimalNumber+Stripe_Currency.m"; sourceTree = "<group>"; };
 		9A4E8D30D714E5F0D690CC72A83C4867 /* FBSDKSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKSettings.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKSettings.h; sourceTree = "<group>"; };
-		9AF19AA578C51EF1AA9503B137807054 /* Pods-BlockTrader-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlockTrader-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9C20C410FF1342C241E42EFB5A6DE7C3 /* UIToolbar+Stripe_InputAccessory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIToolbar+Stripe_InputAccessory.h"; path = "Stripe/UIToolbar+Stripe_InputAccessory.h"; sourceTree = "<group>"; };
 		9C7151A1E97B9854B33077549B48E0D0 /* STPAddCardViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPAddCardViewController.m; path = Stripe/STPAddCardViewController.m; sourceTree = "<group>"; };
 		9C863A4BD8B648CC0CC1B158D89B8C07 /* FBSDKDeviceRequestsHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKDeviceRequestsHelper.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKDeviceRequestsHelper.h; sourceTree = "<group>"; };
@@ -1479,7 +1580,6 @@
 		9D0BB121C4A999921EA00694610FEF64 /* stp_card_placeholder_template.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = stp_card_placeholder_template.png; path = Stripe/Resources/Images/stp_card_placeholder_template.png; sourceTree = "<group>"; };
 		9D28A4705E32CBAA5E3D2198FE519DD4 /* stp_card_form_back.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = stp_card_form_back.png; path = Stripe/Resources/Images/stp_card_form_back.png; sourceTree = "<group>"; };
 		9D37B493B532D849CDD3C170733E8FF5 /* FBSDKAudioResourceLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAudioResourceLoader.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKAudioResourceLoader.h; sourceTree = "<group>"; };
-		9D60058117A42FFE3A963BEA73AE8841 /* Pods-BlockTrader-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockTrader-frameworks.sh"; sourceTree = "<group>"; };
 		9D787763B44D19637DD4B29F0C825C8A /* GraphSharer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphSharer.swift; path = "Sources/Share/Content Sharing/GraphSharer.swift"; sourceTree = "<group>"; };
 		9D8333CE0AB9E62A2A965008E4574947 /* FBSDKBridgeAPIProtocolWebV2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocolWebV2.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV2.h; sourceTree = "<group>"; };
 		9E00A7A7A9D975B6DE131EA977AB6224 /* FBSDKLikeDialog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLikeDialog.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeDialog.m; sourceTree = "<group>"; };
@@ -1493,6 +1593,7 @@
 		9FB02A17F66814711B4666B9F460FBDC /* FBSDKLikeActionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLikeActionController.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeActionController.m; sourceTree = "<group>"; };
 		A0119C7FFEA2992E7566B55C70D318D9 /* GraphResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphResponse.swift; path = Sources/Core/GraphRequest/GraphResponse.swift; sourceTree = "<group>"; };
 		A07A959438F44B8962E17A9D31377118 /* FBSDKLoginConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLoginConstants.h; path = FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginConstants.h; sourceTree = "<group>"; };
+		A0CA34C7C765AA001358682E66B79B8E /* Pods_BlockTraderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTraderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CB8201A68A7A2BB040A22D05A1E977 /* FacebookShare.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FacebookShare.modulemap; sourceTree = "<group>"; };
 		A15C4C6B18500DD835DDAB1ACF729D2F /* FBSDKBridgeAPIProtocolType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBridgeAPIProtocolType.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIProtocolType.h; sourceTree = "<group>"; };
 		A298C78E082D58F9293E66765988CCC7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
@@ -1507,7 +1608,6 @@
 		A42919FBADD6ED082BA904B457DE1592 /* LoginButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = Sources/Login/LoginButton.swift; sourceTree = "<group>"; };
 		A429B4C3261354F1A407FC7CC54F2EE9 /* LoginDefaultAudience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginDefaultAudience.swift; path = Sources/Login/LoginDefaultAudience.swift; sourceTree = "<group>"; };
 		A461623D22331CC24C5B8C9254261451 /* LinkShareContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinkShareContent.swift; path = Sources/Share/Content/Link/LinkShareContent.swift; sourceTree = "<group>"; };
-		A46E2CD332681823471799AA00D5913B /* FacebookShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacebookShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4991B471EB9D84CDC6FFA3A33B606FC /* BFAppLink_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLink_Internal.h; path = Bolts/iOS/Internal/BFAppLink_Internal.h; sourceTree = "<group>"; };
 		A513AE503FB0E115C0F8978C5FDC94EF /* FacebookLogin.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FacebookLogin.xcconfig; sourceTree = "<group>"; };
 		A57AE27847914A00E867072E67065EEC /* BFAppLinkNavigation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLinkNavigation.h; path = Bolts/iOS/BFAppLinkNavigation.h; sourceTree = "<group>"; };
@@ -1558,6 +1658,7 @@
 		B39828C723DDB780169C756C8F273BDB /* FBSDKTriStateBOOL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTriStateBOOL.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTriStateBOOL.m; sourceTree = "<group>"; };
 		B42115F45E431D03C30E32920E14473D /* StripeError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StripeError.m; path = Stripe/StripeError.m; sourceTree = "<group>"; };
 		B48C91E065D2478182BE97EA883A0A7B /* FBSDKLoginUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginUtility.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginUtility.m; sourceTree = "<group>"; };
+		B4935054F806E020A920A11916F50773 /* FacebookShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacebookShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F1CC0847F8071403E97CAA7A15C5B8 /* BFURL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFURL.h; path = Bolts/iOS/BFURL.h; sourceTree = "<group>"; };
 		B519BC163E629BAE7F26D5ECA7A06314 /* stp_card_discover_template@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_discover_template@2x.png"; path = "Stripe/Resources/Images/stp_card_discover_template@2x.png"; sourceTree = "<group>"; };
 		B5BA5A54B3D537DE0554CAC1401C8326 /* stp_card_visa@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_visa@2x.png"; path = "Stripe/Resources/Images/stp_card_visa@2x.png"; sourceTree = "<group>"; };
@@ -1592,13 +1693,13 @@
 		BFB6C15911C2AB02EFF2CC048D40B0BF /* PostSharingResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostSharingResult.swift; path = Sources/Share/Content/Common/PostSharingResult.swift; sourceTree = "<group>"; };
 		BFD53076995E92C37EAFFD02EFE659B4 /* STPAddress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPAddress.m; path = Stripe/STPAddress.m; sourceTree = "<group>"; };
 		C0110FC26B122D022B0A65EE1B6B0238 /* UIBarButtonItem+Stripe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+Stripe.m"; path = "Stripe/UIBarButtonItem+Stripe.m"; sourceTree = "<group>"; };
-		C103963F27CC000E0CEE6C7049F86684 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1433934600B81CE7998C02ACD6FB1CF /* FBSDKCoreKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSDKCoreKit-prefix.pch"; sourceTree = "<group>"; };
 		C14EFF277E3D53DAA84EFBEFE69EF4D2 /* stp_card_cvc@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_cvc@3x.png"; path = "Stripe/Resources/Images/stp_card_cvc@3x.png"; sourceTree = "<group>"; };
 		C1962105864BE52786691017BF671903 /* FBSDKWebDialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKWebDialog.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/WebDialog/FBSDKWebDialog.h; sourceTree = "<group>"; };
 		C1F19A8ED29679E03A9969474BFD9834 /* BFAppLinkTarget.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFAppLinkTarget.m; path = Bolts/iOS/BFAppLinkTarget.m; sourceTree = "<group>"; };
 		C1FF3A1F02EB7E2B9FF82BB3FE7B85F8 /* FBSDKGraphRequestConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestConnection.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestConnection.h; sourceTree = "<group>"; };
 		C238BC9C89022F038022D4C8B1992E03 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		C23B042FA4DC6558AFAB31C05ED1B71E /* Pods-BlockTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C24BDD3D6497BF75FCC33120AE8CAAB0 /* FBSDKLiking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLiking.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKLiking.h; sourceTree = "<group>"; };
 		C34DFA20CF16F95FFD4786727A75463D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		C3507B92CE76769F6C71558416E27BA4 /* FBSDKGameRequestFrictionlessRecipientCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGameRequestFrictionlessRecipientCache.h; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKGameRequestFrictionlessRecipientCache.h; sourceTree = "<group>"; };
@@ -1626,7 +1727,6 @@
 		CBDDC1CB35BD9D889FBB5A9DF070A0C9 /* STPRememberMeTermsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPRememberMeTermsView.m; path = Stripe/STPRememberMeTermsView.m; sourceTree = "<group>"; };
 		CC5A5CF36415622E0C95790018FCA024 /* FBSDKLoginCompletion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLoginCompletion.m; path = FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKLoginCompletion.m; sourceTree = "<group>"; };
 		CC70585E950E196F75D71653AE597396 /* FBSDKSharePhoto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKSharePhoto.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKSharePhoto.h; sourceTree = "<group>"; };
-		CCC86C5D3206D3B1281499FEAD281868 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD141B57A22C716DC1CB7648E2B78B54 /* FBSDKAppInviteDialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAppInviteDialog.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKAppInviteDialog.h; sourceTree = "<group>"; };
 		CD1AF56B1CBD9AC0CB860A1C9DF821BE /* NSString+Stripe_CardBrands.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Stripe_CardBrands.h"; path = "Stripe/NSString+Stripe_CardBrands.h"; sourceTree = "<group>"; };
 		CD28607CB5E2BE21E45582F40406B0AA /* STPBINRange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPBINRange.m; path = Stripe/STPBINRange.m; sourceTree = "<group>"; };
@@ -1659,7 +1759,7 @@
 		D5BA02531F288AFB57FD21B705EAD8AB /* STPShippingMethodTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPShippingMethodTableViewCell.h; path = Stripe/STPShippingMethodTableViewCell.h; sourceTree = "<group>"; };
 		D625E9078BD2F0235FF9C0AEA3135B15 /* BFURL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFURL.m; path = Bolts/iOS/BFURL.m; sourceTree = "<group>"; };
 		D7223AB388FFE9FCE73CC9558649151E /* FBSDKGraphRequestPiggybackManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestPiggybackManager.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestPiggybackManager.m; sourceTree = "<group>"; };
-		D7A4A05F51C70C54752EA1DCC02E69CA /* Pods-BlockTrader-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockTrader-resources.sh"; sourceTree = "<group>"; };
+		D75A9FEBA37557D0039D3DD6B9BAE8A6 /* Pods-BlockTrader-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlockTrader-frameworks.sh"; sourceTree = "<group>"; };
 		D7B7EF10DB80C8BA7BC113DBF684602D /* GameRequest.SDKDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameRequest.SDKDelegate.swift; path = Sources/Share/Dialogs/GameRequest/GameRequest.SDKDelegate.swift; sourceTree = "<group>"; };
 		D7EFC6D19CE8C134A3A1BF4740931BD5 /* FBSDKCoreKit+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKCoreKit+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKCoreKit+Internal.h"; sourceTree = "<group>"; };
 		D8076F48702D1C587C21CE62782A1DAB /* STPStringUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPStringUtils.h; path = Stripe/STPStringUtils.h; sourceTree = "<group>"; };
@@ -1668,6 +1768,7 @@
 		D868B8D2D90A95D32FF297BB839BE11B /* FBSDKAppGroupJoinDialog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAppGroupJoinDialog.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKAppGroupJoinDialog.m; sourceTree = "<group>"; };
 		D8DDF22F499FDB303A9DD39A6FC67FE7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D900559B94F51A61A5D0B2C48809B71C /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		D937222D25297F6F76A1197EFE1488CB /* Pods-BlockTrader-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlockTrader-acknowledgements.plist"; sourceTree = "<group>"; };
 		D9C5A4491CFB1B04DDDC1B9D794C2D5D /* stp_card_applepay@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_applepay@3x.png"; path = "Stripe/Resources/Images/stp_card_applepay@3x.png"; sourceTree = "<group>"; };
 		DA68B0A7A4550A5FAB27F7D0C68953B2 /* STPBINRange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPBINRange.h; path = Stripe/STPBINRange.h; sourceTree = "<group>"; };
 		DADE71ABD6F0639114A415E3EB23DFD0 /* FBSDKAccessTokenCacheV3_21.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKAccessTokenCacheV3_21.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCacheV3_21.m; sourceTree = "<group>"; };
@@ -1689,7 +1790,6 @@
 		DD5372CD9005F968D67F06F699CFDED4 /* FBSDKErrorRecoveryAttempter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKErrorRecoveryAttempter.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ErrorRecovery/FBSDKErrorRecoveryAttempter.h; sourceTree = "<group>"; };
 		DD578FAEC99401F0DC8A6965FBC8D645 /* GameRequest.Dialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameRequest.Dialog.swift; path = Sources/Share/Dialogs/GameRequest/GameRequest.Dialog.swift; sourceTree = "<group>"; };
 		DD81407EA2619A942D7056CC8979CEAC /* stp_icon_chevron_right_small@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_icon_chevron_right_small@2x.png"; path = "Stripe/Resources/Images/stp_icon_chevron_right_small@2x.png"; sourceTree = "<group>"; };
-		DE29EE9252525CAB11E6EC431035A9F8 /* Pods_BlockTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5E3C01992B22B1810E5C36BE84654F /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		DE94412C94038123DBEBF07176D9008B /* FBSDKShareDialogMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareDialogMode.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareDialogMode.m; sourceTree = "<group>"; };
 		DF1A79C5471D328E94D583D93DB33806 /* FBSDKCloseIcon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCloseIcon.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKCloseIcon.m; sourceTree = "<group>"; };
@@ -1723,8 +1823,8 @@
 		E6E791625F328A2D9967DE6BE4391906 /* UIToolbar+Stripe_InputAccessory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIToolbar+Stripe_InputAccessory.m"; path = "Stripe/UIToolbar+Stripe_InputAccessory.m"; sourceTree = "<group>"; };
 		E703B22A112C9B49366AE4640F8CE057 /* STPCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCard.m; path = Stripe/STPCard.m; sourceTree = "<group>"; };
 		E77CE8FEA7941E08EDBA1CBF517D740C /* AppInvite.DeliveryMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppInvite.DeliveryMethod.swift; path = Sources/Share/Dialogs/AppInvite/AppInvite.DeliveryMethod.swift; sourceTree = "<group>"; };
+		E77E84681F631A109FBCFADC7B4D1909 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A6D14237E2AD986A55E593DC51A1FB /* FBSDKButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKButton.m; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKButton.m; sourceTree = "<group>"; };
-		E7C3FA03A0FB97C7C824343D12D82EF7 /* Pods-BlockTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlockTrader.release.xcconfig"; sourceTree = "<group>"; };
 		E7D325A0C38CFD923A16E1A0460E8CB7 /* FBSDKShareDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareDefines.h; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKShareDefines.h; sourceTree = "<group>"; };
 		E7FF3DD8A296768CF8E9B2204145DF1D /* FBSDKViewImpressionTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKViewImpressionTracker.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKViewImpressionTracker.h; sourceTree = "<group>"; };
 		E8577F21E3CB59FCF1FAD11F52114163 /* STPPhoneNumberValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPPhoneNumberValidator.h; path = Stripe/STPPhoneNumberValidator.h; sourceTree = "<group>"; };
@@ -1736,6 +1836,7 @@
 		EABB92740E4917B33AAE82305B0F07E7 /* AlamofireImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireImage.xcconfig; sourceTree = "<group>"; };
 		EBED2BBE528E80155281207E8721AF04 /* Stripe-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Stripe-prefix.pch"; sourceTree = "<group>"; };
 		EC3C5DAF8830CF1A354077988112A5FB /* STPWebViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPWebViewController.h; path = Stripe/STPWebViewController.h; sourceTree = "<group>"; };
+		EC94FA0E59EEE33A6EDF9677AAFDED99 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECDB93CC2CFCE824061785D4683F9BB3 /* FBSDKShareDialogMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareDialogMode.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareDialogMode.h; sourceTree = "<group>"; };
 		ED01E69F18A88AC5C7EFC6316FE95927 /* FBSDKShareOpenGraphAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareOpenGraphAction.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareOpenGraphAction.h; sourceTree = "<group>"; };
 		ED0903DA327B3122CD0326B66296E78F /* AFIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFIError.swift; path = Source/AFIError.swift; sourceTree = "<group>"; };
@@ -1759,7 +1860,6 @@
 		F3034FCEC0E04AE8E716E83BD4D1F266 /* SDKSharingDelegateBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDKSharingDelegateBridge.swift; path = Sources/Share/Internal/SDKSharingDelegateBridge.swift; sourceTree = "<group>"; };
 		F3B9A3C92518D66292C1F2B9031572F1 /* GraphRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphRequest.swift; path = Sources/Core/GraphRequest/GraphRequest.swift; sourceTree = "<group>"; };
 		F3F7FFC94BC33C487596E496D534B21A /* NSDecimalNumber+Stripe_Currency.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDecimalNumber+Stripe_Currency.h"; path = "Stripe/NSDecimalNumber+Stripe_Currency.h"; sourceTree = "<group>"; };
-		F42CDBC012B2DDC17486D1DF14ACDD32 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F518C05745BBA985D1790ADE48556CFA /* FBSDKShareDialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareDialog.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareDialog.h; sourceTree = "<group>"; };
 		F67242D95ECEAF5EBF564E16866C49E0 /* stp_card_cvc_amex@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_cvc_amex@3x.png"; path = "Stripe/Resources/Images/stp_card_cvc_amex@3x.png"; sourceTree = "<group>"; };
 		F721DA1715757FBDD8E3FEF06E87C653 /* FBSDKShareKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSDKShareKit-prefix.pch"; sourceTree = "<group>"; };
@@ -1774,7 +1874,6 @@
 		F9D88382B4A6C3C89F17C21900F731FD /* Localizations */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = Localizations; path = Stripe/Resources/Localizations; sourceTree = "<group>"; };
 		F9DB964BAB13E9ADF58F5E00F93F130E /* stp_card_cvc_amex.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = stp_card_cvc_amex.png; path = Stripe/Resources/Images/stp_card_cvc_amex.png; sourceTree = "<group>"; };
 		FA30468EFD44D14C51E95EBE15021FBB /* GameRequest.RecipientsFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GameRequest.RecipientsFilter.swift; path = Sources/Share/Dialogs/GameRequest/GameRequest.RecipientsFilter.swift; sourceTree = "<group>"; };
-		FAC4A15B348C8D9DBD22AF6AD12873C1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEF28E8A0192CE55CE0465F4AB35AB7 /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
 		FAFBC6832DCCA95BF2419964B59F3390 /* NSString+Stripe_CardBrands.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Stripe_CardBrands.m"; path = "Stripe/NSString+Stripe_CardBrands.m"; sourceTree = "<group>"; };
 		FB4C0F99A19AF61B1A4C077DBAB16B2C /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1792,7 +1891,6 @@
 		FF409CD8F51B743661EB0EF23A2746D7 /* STPCardTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCardTuple.m; path = Stripe/STPCardTuple.m; sourceTree = "<group>"; };
 		FF58F356D3D633A7F2D5304180932E03 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
 		FF6821904F02CCE2D756126DE6C103FB /* ContentBridger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentBridger.swift; path = Sources/Share/Internal/ContentBridger.swift; sourceTree = "<group>"; };
-		FFA8670010DB520E7ED3580F75E22A6D /* Pods-BlockTrader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlockTrader-umbrella.h"; sourceTree = "<group>"; };
 		FFEC3DF834F2344474E012CC379D57A7 /* FBSDKLikeActionControllerCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLikeActionControllerCache.m; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeActionControllerCache.m; sourceTree = "<group>"; };
 		FFF1125EBB6470EC53AF8948F69D373E /* stp_card_form_applepay@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stp_card_form_applepay@2x.png"; path = "Stripe/Resources/Images/stp_card_form_applepay@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1803,6 +1901,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C06E7B94DEF6343B950D19EED948DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A3EED85E8534F208471E404959BB169 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07C7A2C79339FA434EA761EC78B6BDAE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2335,6 +2441,28 @@
 			path = FacebookShare;
 			sourceTree = "<group>";
 		};
+		28F8FFFD0FB1CB2CE132C283FF2B28BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				281369D504C76733E94F6EED137F17E7 /* Alamofire.framework */,
+				833246606E634605CF09B88B8DA30405 /* AlamofireImage.framework */,
+				EC94FA0E59EEE33A6EDF9677AAFDED99 /* Bolts.framework */,
+				3AFC1A4581E6584210E1ABA2BCC0068E /* FacebookCore.framework */,
+				666FB5450C137547A4FA04896F020083 /* FacebookLogin.framework */,
+				B4935054F806E020A920A11916F50773 /* FacebookShare.framework */,
+				3FFD9D73AEC3B5A8AA9DC357216387B7 /* FBSDKCoreKit.framework */,
+				44400A8C018FEE933274C367E0CA81F4 /* FBSDKLoginKit.framework */,
+				E77E84681F631A109FBCFADC7B4D1909 /* FBSDKShareKit.framework */,
+				9907A29C57584D38FDE331049D8BC6C4 /* Pods_BlockTrader.framework */,
+				A0CA34C7C765AA001358682E66B79B8E /* Pods_BlockTraderTests.framework */,
+				0C260D24A14B69594A53CCAD5258E6C1 /* Stripe.bundle */,
+				3CECAF15ECF9D7ABAE52A1CAC598C477 /* Stripe.framework */,
+				73595D643A75235D117DF602986F13BB /* SVProgressHUD.framework */,
+				734238DE9660219F1C6B2C124F886449 /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2AB6293F84F977DABD2C971CCEB3F29B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2343,6 +2471,15 @@
 				5C77AEF83AAC8A9B92ADE44815631357 /* libopencv_imgproc.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3044EF7E1588B06001B4AF8FA02E2D9C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				91E5A0349F9FD3CF35E08B405D778092 /* Pods-BlockTrader */,
+				417FB856D3BB9D4C367D07FCBC698604 /* Pods-BlockTraderTests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		35CE70F637859D12DDBDAC44B649588D /* Support Files */ = {
@@ -2357,6 +2494,24 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FBSDKCoreKit";
+			sourceTree = "<group>";
+		};
+		417FB856D3BB9D4C367D07FCBC698604 /* Pods-BlockTraderTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B33FE1348D572CE0A39EF0CEE2EACE6 /* Info.plist */,
+				7F782A97982D7A7934B9A23D1FFC742D /* Pods-BlockTraderTests.modulemap */,
+				3D0634B413C7CC5B0CF2E5F3A329A688 /* Pods-BlockTraderTests-acknowledgements.markdown */,
+				784D3D933A94592DF7B4457EB81EBA17 /* Pods-BlockTraderTests-acknowledgements.plist */,
+				89B11005D0D8F38F486E07451D409F3D /* Pods-BlockTraderTests-dummy.m */,
+				9686705AAABC865CD626DCA73332F6F7 /* Pods-BlockTraderTests-frameworks.sh */,
+				271DA3488F737F2672A0B59B20F13668 /* Pods-BlockTraderTests-resources.sh */,
+				72B026F653A5D8E757D11BB419B762B3 /* Pods-BlockTraderTests-umbrella.h */,
+				C23B042FA4DC6558AFAB31C05ED1B71E /* Pods-BlockTraderTests.debug.xcconfig */,
+				694FE32EA574F6C37FE50AE032B78920 /* Pods-BlockTraderTests.release.xcconfig */,
+			);
+			name = "Pods-BlockTraderTests";
+			path = "Target Support Files/Pods-BlockTraderTests";
 			sourceTree = "<group>";
 		};
 		42B70ECE010E5F8DA289CBA7335677E6 /* Resources */ = {
@@ -2411,32 +2566,6 @@
 			path = "../Target Support Files/AlamofireImage";
 			sourceTree = "<group>";
 		};
-		66E1AA6DF0147560E07CB1D86CD8175A /* Pods-BlockTrader */ = {
-			isa = PBXGroup;
-			children = (
-				F42CDBC012B2DDC17486D1DF14ACDD32 /* Info.plist */,
-				3E78156D936C9CED96D633862E238624 /* Pods-BlockTrader.modulemap */,
-				9AF19AA578C51EF1AA9503B137807054 /* Pods-BlockTrader-acknowledgements.markdown */,
-				2F914376FABFDB5BA70B1E96333DCB98 /* Pods-BlockTrader-acknowledgements.plist */,
-				26A63C012B327109C5F2AAEE1F0DB058 /* Pods-BlockTrader-dummy.m */,
-				9D60058117A42FFE3A963BEA73AE8841 /* Pods-BlockTrader-frameworks.sh */,
-				D7A4A05F51C70C54752EA1DCC02E69CA /* Pods-BlockTrader-resources.sh */,
-				FFA8670010DB520E7ED3580F75E22A6D /* Pods-BlockTrader-umbrella.h */,
-				76991A99D111F07F6A038C14CFE6706C /* Pods-BlockTrader.debug.xcconfig */,
-				E7C3FA03A0FB97C7C824343D12D82EF7 /* Pods-BlockTrader.release.xcconfig */,
-			);
-			name = "Pods-BlockTrader";
-			path = "Target Support Files/Pods-BlockTrader";
-			sourceTree = "<group>";
-		};
-		69B86ADBBAC1B0ECE13B5B155CD66D6A /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				66E1AA6DF0147560E07CB1D86CD8175A /* Pods-BlockTrader */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		6FB75645025C7DB3D27AE0966995BEC8 /* AppLinks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2485,8 +2614,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				713C6519097BDF93EEA7EF8E081D3CC9 /* Frameworks */,
 				90E6EB3638882BA250C0B567928C3C86 /* Pods */,
-				B485C59437EDEAFE39012AF456039820 /* Products */,
-				69B86ADBBAC1B0ECE13B5B155CD66D6A /* Targets Support Files */,
+				28F8FFFD0FB1CB2CE132C283FF2B28BC /* Products */,
+				3044EF7E1588B06001B4AF8FA02E2D9C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2684,6 +2813,24 @@
 				198EECA881A1A4F2550B97A2423AC4AD /* SwiftyJSON */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		91E5A0349F9FD3CF35E08B405D778092 /* Pods-BlockTrader */ = {
+			isa = PBXGroup;
+			children = (
+				301F55F7840097D01F7CE457914D7DB6 /* Info.plist */,
+				0AC48E104E4CEDC1D399302F3AB33893 /* Pods-BlockTrader.modulemap */,
+				4E97AF8C6DC8A5B77046D4F5088BB7CF /* Pods-BlockTrader-acknowledgements.markdown */,
+				D937222D25297F6F76A1197EFE1488CB /* Pods-BlockTrader-acknowledgements.plist */,
+				6E4A4A73BA6900394C743087D6912A52 /* Pods-BlockTrader-dummy.m */,
+				D75A9FEBA37557D0039D3DD6B9BAE8A6 /* Pods-BlockTrader-frameworks.sh */,
+				6BAC21F3677C695A2EC449CE295853D1 /* Pods-BlockTrader-resources.sh */,
+				198868F55707CA08B65D80FEF4004E47 /* Pods-BlockTrader-umbrella.h */,
+				6C54844FFF43BEB3B9FBAD27A8D6BE6C /* Pods-BlockTrader.debug.xcconfig */,
+				48A1CAC4AE6F81DDD270A79E96FF7AE1 /* Pods-BlockTrader.release.xcconfig */,
+			);
+			name = "Pods-BlockTrader";
+			path = "Target Support Files/Pods-BlockTrader";
 			sourceTree = "<group>";
 		};
 		942D2AD4FFF79D786B76AA0D9F09404C /* Stripe */ = {
@@ -2899,27 +3046,6 @@
 				F28B60222D4A5058C0E8A06878A10736 /* Bolts.m */,
 			);
 			name = Tasks;
-			sourceTree = "<group>";
-		};
-		B485C59437EDEAFE39012AF456039820 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				93FB31283DDC12BF93C8513F0DBD47D8 /* Alamofire.framework */,
-				8F8486106187AABC003B5D1135056D1B /* AlamofireImage.framework */,
-				45FFDAFB636C66F2F293BFAA4829ADFA /* Bolts.framework */,
-				C103963F27CC000E0CEE6C7049F86684 /* FacebookCore.framework */,
-				51BBD16D98161536650769246AB2BA7D /* FacebookLogin.framework */,
-				A46E2CD332681823471799AA00D5913B /* FacebookShare.framework */,
-				CCC86C5D3206D3B1281499FEAD281868 /* FBSDKCoreKit.framework */,
-				FAC4A15B348C8D9DBD22AF6AD12873C1 /* FBSDKLoginKit.framework */,
-				5EFD4DF54BF55CC2AA18388A41F02C9E /* FBSDKShareKit.framework */,
-				DE29EE9252525CAB11E6EC431035A9F8 /* Pods_BlockTrader.framework */,
-				0C3047DC360E502C45F57DB27F82110A /* Stripe.bundle */,
-				2F2A3135CBFCD34F5D20ECBA2D86F2CD /* Stripe.framework */,
-				4AF6A0FB66657850793BDCBB43BA722C /* SVProgressHUD.framework */,
-				05D766CFEAA5E8678DBF707AA02BC7D1 /* SwiftyJSON.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C71552DC2A43FDC708874A2B716CF910 /* Support Files */ = {
@@ -3415,6 +3541,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AAE3C2375A0CEB2B9E7C1314FC5A4310 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF372E252B9AE19DEBDE68E687F3DFA /* Pods-BlockTraderTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C278594D185C7CDA0D3CBEFF3CC4480E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -3458,6 +3592,35 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0E40B1DBAB85C1EED3BA6C19198B44DD /* Pods-BlockTraderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A458A4A185B18F4536BCB51A06D35C19 /* Build configuration list for PBXNativeTarget "Pods-BlockTraderTests" */;
+			buildPhases = (
+				817336D61150DDE62EDE047FE197F30A /* Sources */,
+				0A3EED85E8534F208471E404959BB169 /* Frameworks */,
+				AAE3C2375A0CEB2B9E7C1314FC5A4310 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC839AD69001267BC426268701DF9661 /* PBXTargetDependency */,
+				BD4189CEBB74EB36506261FA2B9592D2 /* PBXTargetDependency */,
+				0DE0FE91CF727A2D652C1A1C5EF78C4A /* PBXTargetDependency */,
+				B2AD10CD35B6E7B60E9B9B49B2A8CAEF /* PBXTargetDependency */,
+				38D32E5DAB3E2F4B00EE29AAB76F13F7 /* PBXTargetDependency */,
+				29D37B5E4A0C60DB9AF0F3D68C45E121 /* PBXTargetDependency */,
+				371A65E22D9B8A739FFA35EEFAC44265 /* PBXTargetDependency */,
+				15C29E79834C4E7A9A04FC3E3842CAAC /* PBXTargetDependency */,
+				A8E2B8D230B37956E0FE10DE9CB0D204 /* PBXTargetDependency */,
+				8828D6104C49F8881CB57677D1C47A95 /* PBXTargetDependency */,
+				B763226DACC8E5F0B6AB7507FF778325 /* PBXTargetDependency */,
+				855F9169D1940400D600993F98F4FEC2 /* PBXTargetDependency */,
+			);
+			name = "Pods-BlockTraderTests";
+			productName = "Pods-BlockTraderTests";
+			productReference = A0CA34C7C765AA001358682E66B79B8E /* Pods_BlockTraderTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		31418D425B97E292FFAFC566D79FC144 /* FacebookCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6D2B18346C04D94042AC5B90B571763 /* Build configuration list for PBXNativeTarget "FacebookCore" */;
@@ -3474,7 +3637,7 @@
 			);
 			name = FacebookCore;
 			productName = FacebookCore;
-			productReference = C103963F27CC000E0CEE6C7049F86684 /* FacebookCore.framework */;
+			productReference = 3AFC1A4581E6584210E1ABA2BCC0068E /* FacebookCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		333121AD23522557D4C3DA6AA8465F87 /* SwiftyJSON */ = {
@@ -3491,7 +3654,7 @@
 			);
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
-			productReference = 05D766CFEAA5E8678DBF707AA02BC7D1 /* SwiftyJSON.framework */;
+			productReference = 734238DE9660219F1C6B2C124F886449 /* SwiftyJSON.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		333E47F1004946B94926B19979768D18 /* AlamofireImage */ = {
@@ -3509,7 +3672,7 @@
 			);
 			name = AlamofireImage;
 			productName = AlamofireImage;
-			productReference = 8F8486106187AABC003B5D1135056D1B /* AlamofireImage.framework */;
+			productReference = 833246606E634605CF09B88B8DA30405 /* AlamofireImage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		533607A808BC64912197562E016B6085 /* FBSDKCoreKit */ = {
@@ -3528,7 +3691,7 @@
 			);
 			name = FBSDKCoreKit;
 			productName = FBSDKCoreKit;
-			productReference = CCC86C5D3206D3B1281499FEAD281868 /* FBSDKCoreKit.framework */;
+			productReference = 3FFD9D73AEC3B5A8AA9DC357216387B7 /* FBSDKCoreKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5A0A28913A1212C2D1EACECBA1E58AC0 /* FacebookLogin */ = {
@@ -3549,7 +3712,7 @@
 			);
 			name = FacebookLogin;
 			productName = FacebookLogin;
-			productReference = 51BBD16D98161536650769246AB2BA7D /* FacebookLogin.framework */;
+			productReference = 666FB5450C137547A4FA04896F020083 /* FacebookLogin.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		711EB5F58027B760C97478A1BF8DE01E /* Stripe */ = {
@@ -3568,7 +3731,7 @@
 			);
 			name = Stripe;
 			productName = Stripe;
-			productReference = 2F2A3135CBFCD34F5D20ECBA2D86F2CD /* Stripe.framework */;
+			productReference = 3CECAF15ECF9D7ABAE52A1CAC598C477 /* Stripe.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */ = {
@@ -3585,7 +3748,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 93FB31283DDC12BF93C8513F0DBD47D8 /* Alamofire.framework */;
+			productReference = 281369D504C76733E94F6EED137F17E7 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8329B4DD82B7A073B34A61C9527865D0 /* FBSDKLoginKit */ = {
@@ -3604,7 +3767,7 @@
 			);
 			name = FBSDKLoginKit;
 			productName = FBSDKLoginKit;
-			productReference = FAC4A15B348C8D9DBD22AF6AD12873C1 /* FBSDKLoginKit.framework */;
+			productReference = 44400A8C018FEE933274C367E0CA81F4 /* FBSDKLoginKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		94EEF6A05D99F50D047E4489AB9158B6 /* SVProgressHUD */ = {
@@ -3622,7 +3785,7 @@
 			);
 			name = SVProgressHUD;
 			productName = SVProgressHUD;
-			productReference = 4AF6A0FB66657850793BDCBB43BA722C /* SVProgressHUD.framework */;
+			productReference = 73595D643A75235D117DF602986F13BB /* SVProgressHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9D0F2E5EA1B46A5D72FFD42B0B39DBBC /* Bolts */ = {
@@ -3639,7 +3802,7 @@
 			);
 			name = Bolts;
 			productName = Bolts;
-			productReference = 45FFDAFB636C66F2F293BFAA4829ADFA /* Bolts.framework */;
+			productReference = EC94FA0E59EEE33A6EDF9677AAFDED99 /* Bolts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A8F77DC39F7D0CFE46DAA5C135D96A80 /* FacebookShare */ = {
@@ -3660,7 +3823,7 @@
 			);
 			name = FacebookShare;
 			productName = FacebookShare;
-			productReference = A46E2CD332681823471799AA00D5913B /* FacebookShare.framework */;
+			productReference = B4935054F806E020A920A11916F50773 /* FacebookShare.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BBA31E54EBEB7C1313D3F962F31EE93D /* Pods-BlockTrader */ = {
@@ -3689,7 +3852,7 @@
 			);
 			name = "Pods-BlockTrader";
 			productName = "Pods-BlockTrader";
-			productReference = DE29EE9252525CAB11E6EC431035A9F8 /* Pods_BlockTrader.framework */;
+			productReference = 9907A29C57584D38FDE331049D8BC6C4 /* Pods_BlockTrader.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DD707E469C8D0BEA816D740155A3B629 /* FBSDKShareKit */ = {
@@ -3708,7 +3871,7 @@
 			);
 			name = FBSDKShareKit;
 			productName = FBSDKShareKit;
-			productReference = 5EFD4DF54BF55CC2AA18388A41F02C9E /* FBSDKShareKit.framework */;
+			productReference = E77E84681F631A109FBCFADC7B4D1909 /* FBSDKShareKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F3ED1D1575AF9560E115561F6C10D547 /* Stripe-Stripe */ = {
@@ -3725,7 +3888,7 @@
 			);
 			name = "Stripe-Stripe";
 			productName = "Stripe-Stripe";
-			productReference = 0C3047DC360E502C45F57DB27F82110A /* Stripe.bundle */;
+			productReference = 0C260D24A14B69594A53CCAD5258E6C1 /* Stripe.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -3745,7 +3908,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B485C59437EDEAFE39012AF456039820 /* Products */;
+			productRefGroup = 28F8FFFD0FB1CB2CE132C283FF2B28BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -3759,6 +3922,7 @@
 				8329B4DD82B7A073B34A61C9527865D0 /* FBSDKLoginKit */,
 				DD707E469C8D0BEA816D740155A3B629 /* FBSDKShareKit */,
 				BBA31E54EBEB7C1313D3F962F31EE93D /* Pods-BlockTrader */,
+				0E40B1DBAB85C1EED3BA6C19198B44DD /* Pods-BlockTraderTests */,
 				711EB5F58027B760C97478A1BF8DE01E /* Stripe */,
 				F3ED1D1575AF9560E115561F6C10D547 /* Stripe-Stripe */,
 				94EEF6A05D99F50D047E4489AB9158B6 /* SVProgressHUD */,
@@ -3982,6 +4146,14 @@
 			files = (
 				888B79AFA8660EE2C81AD57C4F8FC5D6 /* SwiftyJSON-dummy.m in Sources */,
 				F78EC5FA25811EC5BBD2B05CBE01C597 /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		817336D61150DDE62EDE047FE197F30A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A8FF77D264CB3D237C6AD873EFC3D18 /* Pods-BlockTraderTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4325,11 +4497,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0DE0FE91CF727A2D652C1A1C5EF78C4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bolts;
+			target = 9D0F2E5EA1B46A5D72FFD42B0B39DBBC /* Bolts */;
+			targetProxy = 017D5F5125C3FBA76946507B657CAFD8 /* PBXContainerItemProxy */;
+		};
 		0E19825DCCE06B30BFE93005C9FC2FC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SVProgressHUD;
 			target = 94EEF6A05D99F50D047E4489AB9158B6 /* SVProgressHUD */;
 			targetProxy = C8105742E0D2EAC26F0A7BCE68EC3ED6 /* PBXContainerItemProxy */;
+		};
+		15C29E79834C4E7A9A04FC3E3842CAAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FacebookLogin;
+			target = 5A0A28913A1212C2D1EACECBA1E58AC0 /* FacebookLogin */;
+			targetProxy = F29042C652ECF7A0E6A585111C0A16A4 /* PBXContainerItemProxy */;
 		};
 		19A4E253D96D7B91F1C702702124AF04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4342,6 +4526,24 @@
 			name = FacebookCore;
 			target = 31418D425B97E292FFAFC566D79FC144 /* FacebookCore */;
 			targetProxy = E6EEB94C2F56F8B6BF016FC3B1514449 /* PBXContainerItemProxy */;
+		};
+		29D37B5E4A0C60DB9AF0F3D68C45E121 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSDKShareKit;
+			target = DD707E469C8D0BEA816D740155A3B629 /* FBSDKShareKit */;
+			targetProxy = 5B3B941270ADC24D68277D69DF19218B /* PBXContainerItemProxy */;
+		};
+		371A65E22D9B8A739FFA35EEFAC44265 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FacebookCore;
+			target = 31418D425B97E292FFAFC566D79FC144 /* FacebookCore */;
+			targetProxy = 8A1B1D3D47AB15AEA76F47CAD6BFC3D1 /* PBXContainerItemProxy */;
+		};
+		38D32E5DAB3E2F4B00EE29AAB76F13F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSDKLoginKit;
+			target = 8329B4DD82B7A073B34A61C9527865D0 /* FBSDKLoginKit */;
+			targetProxy = 5C09B2083C2FC148CD796E2E739B0EBC /* PBXContainerItemProxy */;
 		};
 		3A785E518E79F7BAA4F8FC75743D9E37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4391,6 +4593,18 @@
 			target = 533607A808BC64912197562E016B6085 /* FBSDKCoreKit */;
 			targetProxy = E5BF2D73D3C152D31A1C429B302BF9A8 /* PBXContainerItemProxy */;
 		};
+		855F9169D1940400D600993F98F4FEC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = 333121AD23522557D4C3DA6AA8465F87 /* SwiftyJSON */;
+			targetProxy = D8C9D0081C0C1367221DE960A6983966 /* PBXContainerItemProxy */;
+		};
+		8828D6104C49F8881CB57677D1C47A95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 94EEF6A05D99F50D047E4489AB9158B6 /* SVProgressHUD */;
+			targetProxy = 85C3A27975E54FC630001DFAFEF6E136 /* PBXContainerItemProxy */;
+		};
 		8DFC2D7B2827E9A5D657AD35FCF12684 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FacebookLogin;
@@ -4427,6 +4641,12 @@
 			target = A8F77DC39F7D0CFE46DAA5C135D96A80 /* FacebookShare */;
 			targetProxy = 35875E2BC057BA8FADF04544A78A335C /* PBXContainerItemProxy */;
 		};
+		A8E2B8D230B37956E0FE10DE9CB0D204 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FacebookShare;
+			target = A8F77DC39F7D0CFE46DAA5C135D96A80 /* FacebookShare */;
+			targetProxy = 66B9D1F45576FE0541A331D33B6600E5 /* PBXContainerItemProxy */;
+		};
 		AB1425AD8378959508765E25A9362826 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
@@ -4438,6 +4658,24 @@
 			name = FBSDKShareKit;
 			target = DD707E469C8D0BEA816D740155A3B629 /* FBSDKShareKit */;
 			targetProxy = 16B9D7AEE10DBBABE2EB39F948C56F88 /* PBXContainerItemProxy */;
+		};
+		B2AD10CD35B6E7B60E9B9B49B2A8CAEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSDKCoreKit;
+			target = 533607A808BC64912197562E016B6085 /* FBSDKCoreKit */;
+			targetProxy = 4C730E1A9F4B776F7C178C6BB49A721B /* PBXContainerItemProxy */;
+		};
+		B763226DACC8E5F0B6AB7507FF778325 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Stripe;
+			target = 711EB5F58027B760C97478A1BF8DE01E /* Stripe */;
+			targetProxy = 9C93B7873B1F7F0B975F73969F5F03FC /* PBXContainerItemProxy */;
+		};
+		BD4189CEBB74EB36506261FA2B9592D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlamofireImage;
+			target = 333E47F1004946B94926B19979768D18 /* AlamofireImage */;
+			targetProxy = 340D3C064C48ADAF0F536678F7E78466 /* PBXContainerItemProxy */;
 		};
 		BF2842FEC61284E6116D1364A5219955 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4474,6 +4712,12 @@
 			name = FBSDKCoreKit;
 			target = 533607A808BC64912197562E016B6085 /* FBSDKCoreKit */;
 			targetProxy = 97B4F953FDB527A2862EE4C274887E97 /* PBXContainerItemProxy */;
+		};
+		DC839AD69001267BC426268701DF9661 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = 79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */;
+			targetProxy = A58D82731320242E43EF685B78DE372F /* PBXContainerItemProxy */;
 		};
 		DDC8422A1BC8D8ADCC40E35CD631D38B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4521,6 +4765,41 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		08564C224A19CF5BEE85257CF54C846E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 694FE32EA574F6C37FE50AE032B78920 /* Pods-BlockTraderTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BlockTraderTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BlockTraderTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		16FB5056C92C40B3A69F85415FB85661 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D80F0BCFA5F5CB3A096C448BAC8509A4 /* FBSDKCoreKit.xcconfig */;
@@ -4892,6 +5171,42 @@
 			};
 			name = Release;
 		};
+		6CC2B3B922D2CE1872198F1BAB08BB0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C23B042FA4DC6558AFAB31C05ED1B71E /* Pods-BlockTraderTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BlockTraderTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BlockTraderTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		80CC0FB2AACAC94F284E9098D8CE1604 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EDF33C93C4B85F08C43C444C3CFA1500 /* Alamofire.xcconfig */;
@@ -5197,7 +5512,7 @@
 		};
 		D03202258D8BE76468AC172E6E81EBA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76991A99D111F07F6A038C14CFE6706C /* Pods-BlockTrader.debug.xcconfig */;
+			baseConfigurationReference = 6C54844FFF43BEB3B9FBAD27A8D6BE6C /* Pods-BlockTrader.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5451,7 +5766,7 @@
 		};
 		FBAFACF3F1EA868952C910563270EEF4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7C3FA03A0FB97C7C824343D12D82EF7 /* Pods-BlockTrader.release.xcconfig */;
+			baseConfigurationReference = 48A1CAC4AE6F81DDD270A79E96FF7AE1 /* Pods-BlockTrader.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5573,6 +5888,15 @@
 			buildConfigurations = (
 				16FB5056C92C40B3A69F85415FB85661 /* Debug */,
 				E834527F7F54B9863330AD3F4A58278D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A458A4A185B18F4536BCB51A06D35C19 /* Build configuration list for PBXNativeTarget "Pods-BlockTraderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CC2B3B922D2CE1872198F1BAB08BB0F /* Debug */,
+				08564C224A19CF5BEE85257CF54C846E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

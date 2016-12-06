@@ -21,3 +21,21 @@ target ‘BlockTrader’ do
   pod 'AlamofireImage', '~> 3.1'
 
 end
+
+target ‘BlockTraderTests’ do
+  use_frameworks!
+	inherit! :search_paths
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+
+  # Pods for Stripe and Card Auth
+  pod 'Stripe'
+  pod 'CardIO'
+  pod 'SVProgressHUD'
+  
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'SwiftyJSON'
+  pod 'AlamofireImage', '~> 3.1'
+end

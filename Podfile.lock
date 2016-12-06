@@ -34,6 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - AlamofireImage (~> 3.1)
   - CardIO
   - FacebookCore
@@ -58,6 +59,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 4db58faac6653535be2fea836d9b3725b0bdb0ef
+PODFILE CHECKSUM: 6929a18a1aadea2c00d347e005a79a5c97fb24d0
 
 COCOAPODS: 1.1.1

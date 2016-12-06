@@ -43,13 +43,6 @@ class BackendClient {
         }
     }
     
-//    func getFacebookPicFromID(facebookID: String, request: URLRequest, completion: @escaping (UIImage, URLRequest) -> Void){
-//    Alamofire.request("graph.facebook.com/v2.8/696776167167123/image").responseImage {
-//        response in
-//        completion(UIImage(response.result.value, scale:1)!, request)
-//        }
-//    }
-    
     func getAccountForUser(userID: String, completion: @escaping (Bool) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
@@ -123,7 +116,6 @@ class BackendClient {
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
-//        for id in foodIDList{
             let url = "http://germy.tk:3000/foods/\(Int(foodID)!).json"
             print(url)
             Alamofire.request(url, headers: headers).responseJSON { response in
@@ -131,25 +123,7 @@ class BackendClient {
                     let jsonarr = JSON(json)
                     completion(originalArray, index + 1, self.JSONtoDictionary(JSONelement: jsonarr))
                 }
-//            }
-//    Alamofire.request("http://germy.tk:3000/food_orders.json", headers: headers).responseJSON { response in
-//            if let json = response.result.value{
-//                let jsonarr = JSON(json)
-//                var finalArray = [JSON]()
-//                for item in jsonarr.array!{
-//                    print("JSON4: \(item["id"].stringValue)")
-//    let title: String? = item["order_id"].stringValue
-//    if (title == String(orderID)){
-//    //Get the array of food ids
-//    foodArray.append(item["food_id"].stringValue)
-//    print(foodArray)
-//    }
-    //Map below to food and resturaunt TODO
-    //self.TableData.append(title!)
-    //ID below which we will pull from
-    //self.TableActual.append(title!)
     }
-    //completion(foodArray)
     
     
     }
@@ -162,23 +136,6 @@ class BackendClient {
         return finalDictionary
     }
     
-    //Price is not in schema yet
-//    func getPriceFromOrder(orderID: String, completion: @escaping (String) -> Void){
-//        let headers = [
-//            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
-//        ]
-//        let url = "http://germy.tk:3000/orders/\(Int(orderID)!).json"
-//        print(url)
-//        Alamofire.request(url, headers: headers).responseJSON { response in
-//            if let json = response.result.value{
-//                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["price"] as! String
-//                //Here I would simply get the customer ID and pass completion along
-//                completion(jsonarr)
-//            }
-//        }
-//
-//    }
-    
     func getOrders(completion: @escaping ([[String : Any]]) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
@@ -190,15 +147,8 @@ class BackendClient {
             DispatchQueue.main.async {
             if let json = response.result.value{
                 let jsonarr = JSON(json)
-                //                var foodArray = [String]()
                 for item in jsonarr.array!{
-                    //                    print("JSON3: \(item["food_id"].stringValue)")
-                    //let title: String? = item["order_id"].stringValue
-                    //if (title == String(orderID)){
-                    //Get the array of food ids
                     finalArray.append(self.JSONtoDictionary(JSONelement: item))
-                    //  print(foodArray)
-                    //}
                 }
                 
                 
@@ -236,7 +186,6 @@ class BackendClient {
             DispatchQueue.main.async {
                 if let json = response.result.value{
                     let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["price"] as! String
-                    //Here I would simply get the customer ID and pass completion along
                     completion(jsonarr)
                 }
             }
@@ -295,15 +244,10 @@ class BackendClient {
                     if let json = response.result.value{
                         let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))
                         var finalString2: String = (jsonarr["account_id"] as! String)
-                        //finalString = finalString + " " + (jsonarr["last_name"] as! String)
-                        //Here I would simply get the customer ID and pass completion along
                         completion(finalString, finalString2, price)
                     }
                 }
             }
-                //finalString = finalString + " " + (jsonarr["last_name"] as! String)
-                //Here I would simply get the customer ID and pass completion along
-                //completion(finalString, customerID)
         }
     }
     
@@ -326,7 +270,6 @@ class BackendClient {
         
     }
     
-    //Need to fix DB fields before can finish
     func getCustomerNameFromID(customerID: String, completion: @escaping (String, String) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
@@ -344,29 +287,10 @@ class BackendClient {
         }
 
     }
-    
-    /*func getCustomers(customerID: String, completion: @escaping (String) -> Void){
-        let headers = [
-            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
-        ]
-        let url = "http://germy.tk:3000/users/4.json"
-        print(url)
-        Alamofire.request(url, headers: headers).responseJSON { response in
-            if let json = response.result.value{
-                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json)) as! String
-                //Here I would simply get the customer ID and pass completion along
-                completion(jsonarr)
-            }
-        }
-        
-    }*/
-    
-
-
 
     func getFoodModelFromOrder(orderID: String, index: Int, numsArray: [String],  completion: @escaping ([String], Int, [String]) -> Void) {//-> [JSON]{
-        var foodArray = [String]()
-        var finalArray = [JSON]()
+//        var foodArray = [String]()
+//        var finalArray = [JSON]()
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -375,17 +299,12 @@ class BackendClient {
                 let jsonarr = JSON(json)
                 var foodArray = [String]()
                 for item in jsonarr.array!{
-//                    print("JSON3: \(item["food_id"].stringValue)")
                     let title: String? = item["order_id"].stringValue
                     if (title == String(orderID)){
                         //Get the array of food ids
                         foodArray.append(item["food_id"].stringValue)
                         print(foodArray)
                     }
-                    //Map below to food and resturaunt TODO
-                    //self.TableData.append(title!)
-                    //ID below which we will pull from
-                    //self.TableActual.append(title!)
                 }
                 completion(numsArray, index + 1, foodArray)
 
@@ -393,24 +312,8 @@ class BackendClient {
     }
     
         }
-        //After Alamofire 1
-//        for elem in foodArray{
-//        Alamofire.request("http://germy.tk:3000/food.json", headers: headers).responseJSON { response in
-//            if let json = response.result.value{
-//                let jsonarr = JSON(json)
-//                for item in jsonarr.array!{
-//                    print("JSON2: \(item)")
-//                    if (elem == item["id"].stringValue){
-//                        //Get the array of food ids
-//                        finalArray.append(item)
-//                    }
-//                }
-//            }
-//        }
         }
-        //return finalArray
-    //}
-    
+
     func jsonsToNiceDisplay(jsonFoods: [JSON]) -> String{
         if let firstFood = jsonFoods.first {
             let resturaunt = firstFood["resturaunt"].stringValue
