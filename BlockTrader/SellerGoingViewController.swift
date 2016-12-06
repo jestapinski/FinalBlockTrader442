@@ -54,6 +54,13 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
         self.backendClient.updateLocation(orderID: self.orderID, latitude: lat, longitude: long)
     }
     
+    @IBAction func cancelOrder(sender: AnyObject){
+        //PATCH API provider_id and delivery status
+        self.backendClient.cancelOrder(orderID: self.orderID)
+        //Go back to table view
+        performSegue(withIdentifier: "cancelPickUp", sender: "")
+    }
+    
     // MARK: - MapView Actions
     
     /**

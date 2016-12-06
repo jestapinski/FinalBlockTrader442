@@ -152,7 +152,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.restNameLabel.text = name
         self.restName = name
         self.restLocation = CLLocationCoordinate2D(latitude: CLLocationDegrees(Float(latitude)!), longitude: CLLocationDegrees(Float(longitude)!))
-        self.foodsLabel.text = self.getFoods()
+        //self.foodsLabel.text = self.getFoods()
         self.createCustomerPin()
         self.createRestPin()
         self.centerMapOnLocation(location: self.restLocation)
@@ -195,9 +195,9 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
      Updates the order in the db with the deliverer's ID, also updates the delivery status
      */
     @IBAction func moveToConfirm(sender: AnyObject){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.backendClient.postProviderID(userID: appDelegate.credentials["id"] as! String, orderID: orderID)
-        self.backendClient.updateStatus(orderID: self.orderID, message: "Going to Get Food")
+        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //self.backendClient.postProviderID(userID: appDelegate.credentials["id"] as! String, orderID: orderID)
+        //self.backendClient.updateStatus(orderID: self.orderID, message: "Going to Get Food")
         performSegue(withIdentifier: "sellerconfirmed", sender: "")
     }
     
