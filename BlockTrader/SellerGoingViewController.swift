@@ -33,6 +33,9 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
 
     let locationManager = CLLocationManager()
     
+    /**
+     Gets the names of all the food items ordered
+    */
     func getFoods()-> String{
         var finalArray = [String]()
         for foodItem in self.orderFoods{
@@ -41,51 +44,73 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
         return finalArray.joined(separator: "\n")
     }
     
+    /**
+     Timer function called to update user's location every five seconds in the DB
+    */
     func execute(){
         let currentLocation = locationManager.location
         let lat = String(describing: currentLocation!.coordinate.latitude)
         let long = String(describing: currentLocation!.coordinate.longitude)
         self.backendClient.updateLocation(orderID: self.orderID, latitude: lat, longitude: long)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print(resturaunt)
-        self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(SellerGoingViewController.execute), userInfo: nil, repeats: true)
-        self.restNameLabel.text = resturaunt
-        self.custNameLocationLabel.text = custName
-        self.foodsLabel.text = self.getFoods()
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
-        self.mapView.showsUserLocation = true
-        
-        let Litzman = MKPointAnnotation()
-        Litzman.coordinate = self.customerLocation
-        Litzman.title = self.custName
-        Litzman.subtitle = "Location Description"
-        mapView.addAnnotation(Litzman)
-        
+    
+    // MARK: - MapView Actions
+    
+    /**
+     Creates pin based on user location
+    */
+    func makeUserPin(){
+        let userPin = MKPointAnnotation()
+        userPin.coordinate = self.customerLocation
+        userPin.title = self.custName
+        userPin.subtitle = "Location Description"
+        mapView.addAnnotation(userPin)
+    }
+    
+    /**
+     Creates pin based on restaurant location
+    */
+    func makeRestPin(){
         let restPin = MKPointAnnotation()
         restPin.coordinate = self.restLocation
         restPin.title = self.resturaunt
         restPin.subtitle = "A tasty venue"
         mapView.userTrackingMode = .follow
-//        self.centerMapOnLocation(location: self.restLocation)
-        //restPin.color = MKPinAnnotationColor.Green
         mapView.addAnnotation(restPin)
+    }
+    
+    /**
+     Creates user location icon on mapView
+    */
+    func userLocationActions(){
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        self.mapView.showsUserLocation = true
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(SellerGoingViewController.execute), userInfo: nil, repeats: true)
+        self.restNameLabel.text = resturaunt
+        self.custNameLocationLabel.text = custName
+        self.foodsLabel.text = self.getFoods()
+        self.userLocationActions()
+        self.makeUserPin()
+        self.makeRestPin()
         self.profPic.image = self.backendClient.getProfilePicture(id: self.custFBId)
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    // MARK: - Navigation
+
+    /**
+     Moves on to next phase of delivery since food has been picked up. Updates status in DB.
+    */
     @IBAction func foodHasBeenPickedUp(sender: AnyObject){
+        self.backendClient.updateStatus(orderID: self.orderID, message: "Got Food")
         performSegue(withIdentifier: "goToCustomer", sender: "")
     }
     
@@ -95,7 +120,6 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
         if (segue.identifier == "goToCustomer"){
             self.ourTimer?.invalidate()
             self.ourTimer = nil
-            //POST REQUEST SOMEWHERE, make this an IBAction from the button later
             let secondViewController = segue.destination as? GoingToCustomerViewController
             secondViewController?.restName = self.resturaunt
             secondViewController?.custName = self.custName
@@ -104,20 +128,12 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
             secondViewController?.custLocation = self.customerLocation
             secondViewController?.custFBId = self.custFBId
             secondViewController?.orderID = self.orderID
-            self.backendClient.updateStatus(orderID: self.orderID, message: "Got Food")
-
-//            print(secondViewController?.resturaunt)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    */
 
 }

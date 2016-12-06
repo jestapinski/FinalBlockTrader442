@@ -29,6 +29,8 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var restLocation = CLLocationCoordinate2D(latitude: 10, longitude: 10)
     
     let locationManager = CLLocationManager()
+    let regionRadius: CLLocationDistance = 400
+
     
     //Define Outlets
     @IBOutlet weak var custNameLocationLabel: UILabel!
@@ -41,27 +43,23 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(orderDict)
         self.backendClient.getPriceFromOrder(orderID: self.orderID, completion: self.setPriceLabel)
-        self.mapView.delegate = self
         let latitude1 = self.orderDict["latitude"] as! String
         let longitude1 = self.orderDict["longitude"] as! String
         let lat : Float = Float(latitude1)!
         let long : Float = Float(longitude1)!
         self.customerLocation = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
-        self.mapView.showsUserLocation = true
+        self.userLocationHandler()
         
-        //let LitzmanLocation = CLLocationCoordinate2DMake(32.100668,34.775192)
-        // Drop a pin, this works
-        //        self.centerMapOnLocation(location: self.customerLocation)
         self.backendClient.getCustomerNameFromOrder(orderID: self.orderID, completion: self.assignCustomer)
         // Do any additional setup after loading the view.
     }
+
     
+    /**
+     Sets the price label to be the price according to the price returned from the API call for price
+     - parameter price: The price passed back from the API call
+    */
     func setPriceLabel(price: String){
         let newPrice = self.API.getCents(cost: price)
         let dollars = newPrice[0..<(newPrice.characters.count - 3)]
@@ -71,6 +69,9 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.priceLabel.text = finalPrice
     }
     
+    /**
+     Location Manager function which updates and sets location according to the user location
+    */
     private func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         let location = locations.last as! CLLocation
         
@@ -80,92 +81,106 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.mapView.setRegion(region, animated: true)
     }
     
-    /*func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        if (annotation is MKUserLocation) {
-            return nil
-        }
-        
-        if (annotation.isKindOfClass(CustomAnnotation)) {
-            let customAnnotation = annotation as? CustomAnnotation
-            mapView.translatesAutoresizingMaskIntoConstraints = false
-            var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("CustomAnnotation") as MKAnnotationView!
-            
-            if (annotationView == nil) {
-                annotationView = customAnnotation?.annotationView()
-            } else {
-                annotationView.annotation = annotation;
-            }
-            
-            self.addBounceAnimationToView(annotationView)
-            return annotationView
-        } else {
-            return nil
-        }
-    }*/
+    // MARK: - MapView Functions
     
-    let regionRadius: CLLocationDistance = 20
+    /**
+     Centers map on a certain location
+     - parameter location: The coordinates of the point to be centered on
+    */
     func centerMapOnLocation(location: CLLocationCoordinate2D) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location,
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    /**
+     Creates point of user's location on the mapview
+     */
+    func userLocationHandler(){
+        self.mapView.delegate = self
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        self.mapView.showsUserLocation = true
+    }
+    
+    /**
+     Assigns labels and variables based on the customer's name and ID
+     - parameter id: The user's name
+     - parameter userID: The user's id from the API
+    */
     func assignCustomer(_ id: String, _ userID: String){
         self.custNameLocationLabel.text = id
         self.custName = id
         self.custID = userID
         let restID = self.orderFoods.first?["resturant_id"] as! String
         self.backendClient.getResturauntIDFromOrder(orderID: restID, completion: self.setRestLabel)
-//        self.restNameLabel.text =
-//        self.foodsLabel.text = self.getFoods()
-        //self.backendClient.getPriceFromOrder(orderID: self.orderID, completion: self.assignPrice)
     }
     
+    /**
+     Create the customer pin based on location and drop on map
+     */
+    func createCustomerPin(){
+        let custPt = MKPointAnnotation()
+        custPt.coordinate = self.customerLocation
+        custPt.title = self.custName
+        custPt.subtitle = "Location Description"
+        mapView.addAnnotation(custPt)
+    }
+
+    /**
+     Create the restaurant pin based on location and drop on map
+     */
+    func createRestPin(){
+        let restPin = MKPointAnnotation()
+        restPin.coordinate = self.restLocation
+        restPin.title = self.restName
+        restPin.subtitle = "A tasty venue"
+        mapView.addAnnotation(restPin)
+    }
+    
+    // MARK: - UI Labels
+    
+    /**
+     Sets labels based on restaurant name, also creates the pin annotations
+     - parameter name: The restaurant name passed from the API
+     - parameter latitude: The latitude passed from the API
+     - parameter longitude: The longitude passed from the API
+     */
     func setRestLabel(_ name: String, _ latitude: String, _ longitude: String){
         self.restNameLabel.text = name
         self.restName = name
         self.restLocation = CLLocationCoordinate2D(latitude: CLLocationDegrees(Float(latitude)!), longitude: CLLocationDegrees(Float(longitude)!))
         self.foodsLabel.text = self.getFoods()
-        let Litzman = MKPointAnnotation()
-        Litzman.coordinate = self.customerLocation
-        Litzman.title = self.custName
-        Litzman.subtitle = "Location Description"
-        mapView.addAnnotation(Litzman)
-        
-        let restPin = MKPointAnnotation()
-        restPin.coordinate = self.restLocation
-        restPin.title = self.restName
-        restPin.subtitle = "A tasty venue"
+        self.createCustomerPin()
+        self.createRestPin()
         self.centerMapOnLocation(location: self.restLocation)
         //restPin.color = MKPinAnnotationColor.Green
-        mapView.addAnnotation(restPin)
         self.backendClient.getFacebookIDFromUserID(userID: self.custID, completion: self.setProfPic)
     }
     
+    /**
+     Sets the customer's profile pipc image on the ViewController
+     - parameter fb_id: The customer's Facebook id, passed from API
+    */
     func setProfPic(fb_id: String){
         print(fb_id)
         self.custFBID = fb_id
         self.profPic.image = self.backendClient.getProfilePicture(id: fb_id)
     }
     
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        // simple and inefficient example
-//        
-//        let annotationView = MKPinAnnotationView()
-//        annotationView.title = annotation.title
-//        annotationView.subtitle = annotation.subtitle
-//        if annotation.subtitle! == "A tasty venue"{
-//            annotationView.pinTintColor = UIColor.purple
-//        } else {
-//            annotationView.pinTintColor = UIColor.red
-//        }
-//        return annotationView
-//    }
-//    
+    /**
+     Assigns the price label based on the price of the order, passed from the API
+     - parameter price: The price of the order, passed from the API
+    */
     func assignPrice(_ price: String){
         self.priceLabel.text = price
     }
     
+    /**
+     Gets all of the foods from the orderFoods array and joins them neatly together for viewing
+    */
     func getFoods()-> String{
         var finalArray = [String]()
         for foodItem in self.orderFoods{
@@ -173,18 +188,16 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         }
         return finalArray.joined(separator: "\n")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    // MARK: - Navigation
+
+    /**
+     Updates the order in the db with the deliverer's ID, also updates the delivery status
+     */
     @IBAction func moveToConfirm(sender: AnyObject){
-        //POST request HERE
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.backendClient.postProviderID(userID: appDelegate.credentials["id"] as! String, orderID: orderID)
         self.backendClient.updateStatus(orderID: self.orderID, message: "Going to Get Food")
-//        appDelegate.credentials["custID"]
         performSegue(withIdentifier: "sellerconfirmed", sender: "")
     }
     
@@ -192,7 +205,6 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "sellerconfirmed"){
-            //POST REQUEST SOMEWHERE, make this an IBAction from the button later
             let secondViewController = segue.destination as? SellerGoingViewController
             secondViewController?.resturaunt = self.restName
             secondViewController?.custName = self.custName
@@ -201,13 +213,18 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             secondViewController?.restLocation = self.restLocation
             secondViewController?.customerLocation = self.customerLocation
             secondViewController?.orderID = self.orderID
-            print(secondViewController?.resturaunt)
         }
+    }
+    
+    // MARK: - Memory Functions
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
 
     /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -33,48 +33,81 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     
     var custFBId: String = ""
     
-    @IBAction func customerHasFood(sender: AnyObject){
-        //Some API call
-        self.backendClient.getIDsFromOrder(orderID: self.orderID, completion: self.handleOurIDs)
-        //performSegue(withIdentifier: "deliveredFood", sender: "")
-    }
-    
-    func handleOurIDs (custID: String, acctID: String, price: String) {
-        self.backendClient.getCustAndAcct(custID: custID, acctID: acctID, price: price, completion: self.completeCharge)
-    }
-    
-    func completeCharge(actualCustID: String, actualAcctID: String, cost: String){
-        self.stripeAPIClient.performCharge(providerID: actualAcctID, customerID: actualCustID, cost: cost, completion: self.moveOn)
-    }
-    
-    func moveOn(){
-       performSegue(withIdentifier: "deliveredFood", sender: "")
-    }
-    
+    /**
+     Function called by timer to update latitude and longitude in the DB
+    */
     func execute(){
         let currentLocation = locationManager.location
         let lat = String(describing: currentLocation!.coordinate.latitude)
         let long = String(describing: currentLocation!.coordinate.longitude)
         self.backendClient.updateLocation(orderID: self.orderID, latitude: lat, longitude: long)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(GoingToCustomerViewController.execute), userInfo: nil, repeats: true)
-
+    
+    // MARK: - Delivery functions
+    /**
+     Gets the customer and deliverer IDs from the order
+    */
+    @IBAction func customerHasFood(sender: AnyObject){
+        self.backendClient.getIDsFromOrder(orderID: self.orderID, completion: self.handleOurIDs)
+    }
+    
+    /**
+     Gets the customerID and accountID from the DB.
+     - parameter custID: The application ID of the customer
+     - parameter acctID: The application ID of the deliverer
+     - parameter price: The price of the order
+    */
+    func handleOurIDs (custID: String, acctID: String, price: String) {
+        self.backendClient.getCustAndAcct(custID: custID, acctID: acctID, price: price, completion: self.completeCharge)
+    }
+    
+    /**
+     Completes the charge using Stripe backend
+     - parameter actualCustID: The Stripe customer id of the customer
+     - parameter actualAcctID: The Stripe account id of the deliverer
+     - parameter cost: The price of the order
+    */
+    func completeCharge(actualCustID: String, actualAcctID: String, cost: String){
+        self.stripeAPIClient.performCharge(providerID: actualAcctID, customerID: actualCustID, cost: cost, completion: self.moveOn)
+    }
+    
+    /**
+     Callback function for completing the charge, updates the order to "Delivered" and proceeds to the next view controller
+    */
+    func moveOn(){
+        self.backendClient.updateStatus(orderID: self.orderID, message: "Delivered")
+        performSegue(withIdentifier: "deliveredFood", sender: "")
+    }
+    
+    // MARK: - MapView Functions
+    /**
+     Creates user location icon on mapView
+     */
+    func userLocationHandler(){
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
-        
-        let Litzman = MKPointAnnotation()
-        Litzman.coordinate = self.custLocation
-        Litzman.title = self.custName
-        Litzman.subtitle = "Location Description"
-        mapView.addAnnotation(Litzman)
-        
+    }
+    
+    /**
+     Creates pin based on user location
+     */
+    func dropCustomerPin(){
+        let custPin = MKPointAnnotation()
+        custPin.coordinate = self.custLocation
+        custPin.title = self.custName
+        custPin.subtitle = "Location Description"
+        mapView.addAnnotation(custPin)
+    }
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(GoingToCustomerViewController.execute), userInfo: nil, repeats: true)
+        self.userLocationHandler()
+        self.dropCustomerPin()
         mapView.userTrackingMode = .follow
 
         // Do any additional setup after loading the view.
@@ -85,6 +118,9 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
 
     }
 
+    /**
+     Gets the names of all the food items ordered
+     */
     func getFoods()-> String{
         var finalArray = [String]()
         for foodItem in self.orderFoods{
@@ -98,19 +134,15 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "deliveredFood"){
-        //POST REQUEST SOMEWHERE, make this an IBAction from the button later
-        let secondViewController = segue.destination as? ProcessingPaymentViewController
-        self.ourTimer?.invalidate()
-        self.ourTimer = nil
-        self.backendClient.updateStatus(orderID: self.orderID, message: "Delivered")
-        //            secondViewController?.resturaunt = self.restName
-        //            secondViewController?.custName = self.custName
-        //            secondViewController?.orderFoods = self.orderFoods
-        //            print(secondViewController?.resturaunt)
+            let secondViewController = segue.destination as? ProcessingPaymentViewController
+            self.ourTimer?.invalidate()
+            self.ourTimer = nil
         }
     }
 

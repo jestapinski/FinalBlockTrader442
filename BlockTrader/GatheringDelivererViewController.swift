@@ -19,6 +19,10 @@ class GatheringDelivererViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Navigation
+    /**
+     Check to see if the user has an accountID, if so we do not want to authenticate them again
+    */
     func checkForAccountID(isInSystem: Bool){
         if isInSystem {
             performSegue(withIdentifier: "sellerDirect", sender: "")
@@ -34,7 +38,6 @@ class GatheringDelivererViewController: UIViewController {
     
 
     /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

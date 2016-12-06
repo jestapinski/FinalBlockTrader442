@@ -9,9 +9,6 @@
 import UIKit
 import Alamofire
 
-/**
- ViewController upon which a deliverer can see active orders
- */
 class MainSellerViewController: UIViewController {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -22,19 +19,20 @@ class MainSellerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //IF is empty
         self.backendClient.getAccountId(userID: self.appDelegate.credentials["id"]! as! String, completion: self.handleAcctNumber)
-
-        // Do any additional setup after loading the view.
     }
     
+    /**
+     Checks account number and if it is empty, we authenticate, else we use it.
+     - parameter acctNum: The Account number from Stripe as recorded in the DB
+    */
     func handleAcctNumber(acctNum: String){
         if (acctNum == ""){
             acctLabel.text = "Welcome, " + acctNumber
             let headers = [
                 "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
             ]
-            var parameters: Parameters = [
+            let parameters: Parameters = [
                 "commit": "Update User",
                 "id": "\(appDelegate.credentials["id"]!)",
                 "user":[
@@ -42,7 +40,7 @@ class MainSellerViewController: UIViewController {
                 ]
             ]
             let edit_url = "http://germy.tk:3000/users/\(self.appDelegate.credentials["id"]!)"
-            Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
+            let _ = Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers)
         } else {
             self.acctNumber = acctNum
             acctLabel.text = "Welcome, " + acctNumber
