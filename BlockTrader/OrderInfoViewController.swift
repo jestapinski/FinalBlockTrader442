@@ -15,8 +15,10 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     
     var orderFoods : [[String : Any]] = []
     let backendClient = BackendClient()
+    let API = MyAPIClient.sharedClient
     var orderID: String = "0"
     var custID: String = "0"
+    var price: String = "0"
     
     var custName: String = ""
     var restName: String = ""
@@ -40,6 +42,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     override func viewDidLoad() {
         super.viewDidLoad()
         print(orderDict)
+        self.backendClient.getPriceFromOrder(orderID: self.orderID, completion: self.setPriceLabel)
         self.mapView.delegate = self
         let latitude1 = self.orderDict["latitude"] as! String
         let longitude1 = self.orderDict["longitude"] as! String
@@ -57,6 +60,15 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         //        self.centerMapOnLocation(location: self.customerLocation)
         self.backendClient.getCustomerNameFromOrder(orderID: self.orderID, completion: self.assignCustomer)
         // Do any additional setup after loading the view.
+    }
+    
+    func setPriceLabel(price: String){
+        let newPrice = self.API.getCents(cost: price)
+        let dollars = newPrice[0..<(newPrice.characters.count - 3)]
+        let cents = newPrice[(newPrice.characters.count - 2)..<(newPrice.characters.count - 1)]
+        let finalPrice = "$" + dollars + "." + cents
+        self.price = finalPrice
+        self.priceLabel.text = finalPrice
     }
     
     private func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {

@@ -163,21 +163,21 @@ class BackendClient {
     }
     
     //Price is not in schema yet
-    func getPriceFromOrder(orderID: String, completion: @escaping (String) -> Void){
-        let headers = [
-            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
-        ]
-        let url = "http://germy.tk:3000/orders/\(Int(orderID)!).json"
-        print(url)
-        Alamofire.request(url, headers: headers).responseJSON { response in
-            if let json = response.result.value{
-                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["price"] as! String
-                //Here I would simply get the customer ID and pass completion along
-                completion(jsonarr)
-            }
-        }
-
-    }
+//    func getPriceFromOrder(orderID: String, completion: @escaping (String) -> Void){
+//        let headers = [
+//            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+//        ]
+//        let url = "http://germy.tk:3000/orders/\(Int(orderID)!).json"
+//        print(url)
+//        Alamofire.request(url, headers: headers).responseJSON { response in
+//            if let json = response.result.value{
+//                let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["price"] as! String
+//                //Here I would simply get the customer ID and pass completion along
+//                completion(jsonarr)
+//            }
+//        }
+//
+//    }
     
     func getOrders(completion: @escaping ([[String : Any]]) -> Void){
         let headers = [
@@ -187,6 +187,7 @@ class BackendClient {
         print(url)
         var finalArray = [[String : Any]]()
         Alamofire.request(url, headers: headers).responseJSON { response in
+            DispatchQueue.main.async {
             if let json = response.result.value{
                 let jsonarr = JSON(json)
                 //                var foodArray = [String]()
@@ -200,8 +201,10 @@ class BackendClient {
                     //}
                 }
                 
+                
             }
             completion(finalArray)
+        }
         }
     }
 
@@ -213,13 +216,31 @@ class BackendClient {
         let url = "http://germy.tk:3000/orders/\(Int(orderID)!).json"
         print(url)
         Alamofire.request(url, headers: headers).responseJSON { response in
+            DispatchQueue.main.async {
             if let json = response.result.value{
                 let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["customer_id"] as! String
                 //Here I would simply get the customer ID and pass completion along
                 self.getCustomerNameFromID(customerID: jsonarr,completion: completion)
             }
         }
-
+        }
+    }
+    
+    func getPriceFromOrder(orderID: String, completion: @escaping (String) -> Void){
+        let headers = [
+            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
+        ]
+        let url = "http://germy.tk:3000/orders/\(Int(orderID)!).json"
+        print(url)
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            DispatchQueue.main.async {
+                if let json = response.result.value{
+                    let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["price"] as! String
+                    //Here I would simply get the customer ID and pass completion along
+                    completion(jsonarr)
+                }
+            }
+        }
     }
     
     func getIDsFromOrder(orderID: String, completion: @escaping (String, String, String) -> Void){
@@ -229,6 +250,7 @@ class BackendClient {
         let url = "http://germy.tk:3000/orders/\(Int(orderID)!).json"
         print(url)
         Alamofire.request(url, headers: headers).responseJSON { response in
+            DispatchQueue.main.async {
             if let json = response.result.value{
                 let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))["customer_id"] as! String
                 let provID = self.JSONtoDictionary(JSONelement: JSON(json))["provider_id"] as! String
@@ -236,6 +258,7 @@ class BackendClient {
                 //Here I would simply get the customer ID and pass completion along
                 completion(jsonarr, provID, price)
             }
+        }
         }
         
     }

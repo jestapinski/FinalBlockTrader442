@@ -49,7 +49,7 @@ class OpenOrdersTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.credentials = appDelegate.credentials
-        print(self.credentials)
+//        //print(self.credentials)
         self.backendClient.getOrders(completion: self.getFoodOrders)
 //        let headers = [
 //            "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
@@ -58,7 +58,7 @@ class OpenOrdersTableViewController: UITableViewController {
 //            if let json = response.result.value{
 //                let jsonarr = JSON(json)
 //                for item in jsonarr.array!{
-//                    print("JSON1: \(item["id"].stringValue)")
+//                    //////print("JSON1: \(item["id"].stringValue)")
 //                    let title: String? = item["id"].stringValue
 //                    let provider = item["provider"].stringValue
 //                    //Map below to food and resturaunt TODO
@@ -75,11 +75,11 @@ class OpenOrdersTableViewController: UITableViewController {
 ////                for id in self.TableData{
 ////                    self.backendClient.getFoodModelFromOrder(orderID: id, completion: self.aggregateFoodItems)
 ////                }
-//                print(self.foodIDs)
+//                //print(self.foodIDs)
 ////                for foodList in self.foodIDs{
 ////                    self.backendClient.mapToFoodJSONs(foodIDList: foodList, completion: self.aggregateFoodJsons)
 ////                }
-////                print(self.TableActual)
+////                //print(self.TableActual)
 //                //self.do_table_refresh()
 //                
             //}
@@ -111,9 +111,9 @@ class OpenOrdersTableViewController: UITableViewController {
         //Need to convert below to dictionary
         
         self.TableDisplay.append(finalJSON["name"] as! String)
-        print(self.TableDisplay)
+        //print(self.TableDisplay)
         // IF this size is the expected size then we donzo
-//        print(self.TableActual)
+//        //print(self.TableActual)
     }
     
     func setUpTables(){
@@ -130,7 +130,7 @@ class OpenOrdersTableViewController: UITableViewController {
             var newArray: [String] = []
             var newJSONArray: [[String : Any]] = []
             for i in currentIndex..<(currentIndex + countNum) {
-                print(i)
+                //print(i)
                 newArray.append(allJSONs[i]["name"] as! String)
                 newJSONArray.append(allJSONs[i])
             }
@@ -148,10 +148,10 @@ class OpenOrdersTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        print("FINAL")
-//        print(self.foodIDs)
-//        print(self.TableDisplay)
-//        print(self.TableActual)
+//        //print("FINAL")
+//        //print(self.foodIDs)
+//        //print(self.TableDisplay)
+//        //print(self.TableActual)
 //        //Map to count and group
 //        var countIDs = self.foodIDs.map({$0.count})
 //        var finalNames: [[String]] = []
@@ -162,7 +162,7 @@ class OpenOrdersTableViewController: UITableViewController {
 //            var newArray: [String] = []
 //            var newJSONArray: [[String : Any]] = []
 //            for i in currentIndex..<(currentIndex + countNum) {
-//                print(i)
+//                //print(i)
 //                newArray.append(filteredForNames[i])
 //                newJSONArray.append(self.TableActual[i])
 //            }
@@ -171,12 +171,12 @@ class OpenOrdersTableViewController: UITableViewController {
 //            finalJSONs.append(newJSONArray)
 //            
 //        }
-//        print(self.TableDisplay)
-//        print("FinalNames")
-//        print(finalNames)
+//        //print(self.TableDisplay)
+//        //print("FinalNames")
+//        //print(finalNames)
 //        //Fix below later
 //        let finalNameMapping = finalNames.map({ (x : [String]) -> String in  if x.count == 0 {return "Not Active"} else {return x.joined(separator: " & ")}})
-//        print(finalNameMapping)
+//        //print(finalNameMapping)
 //        self.TableDisplay = finalNameMapping
 //        self.TableJSONs = finalJSONs
 //        self.do_table_refresh()
@@ -204,7 +204,7 @@ class OpenOrdersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if (self.TableDisplay.count == 0){
             for i in 0..<(TableData.count){
-                print(i)
+                //print(i)
                 self.TableDisplay.append("")
             }
         }
@@ -219,18 +219,18 @@ class OpenOrdersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.row + 1	)")
+        //print("You selected cell #\(indexPath.row + 1	)")
         self.indexRow = indexPath.row + 1
-        print(self.TableData[indexPath.row])
+        //print(self.TableData[indexPath.row])
         self.moveToInfoPage(rowNum: indexPath.row)
         //self.moveToConfirmation()
     }
     
     func moveToInfoPage(rowNum: Int){
         //let orderID = self.TableData[rowNum]
-        print("Moving to info page")
-        print(self.TableData[rowNum])
-        print(self.TableJSONs[rowNum])
+        //print("Moving to info page")
+        //print(self.TableData[rowNum])
+        //print(self.TableJSONs[rowNum])
         self.selectedOrderInfo = self.TableJSONs[rowNum]
         //JSON list of foods
         performSegue(withIdentifier: "ViewOrderInfo", sender: rowNum)
@@ -243,8 +243,8 @@ class OpenOrdersTableViewController: UITableViewController {
             secondViewController?.orderFoods = self.selectedOrderInfo
             secondViewController?.orderID = self.TableData[sender as! Int]
             secondViewController?.orderDict = self.orderDicts[sender as! Int]
-//            print("Userinfo")
-//            print(acctNumber)
+//            //print("Userinfo")
+//            //print(acctNumber)
             //At this point we can save it to DB, changing segue to only run on setup i.e. once per user
             
         }
