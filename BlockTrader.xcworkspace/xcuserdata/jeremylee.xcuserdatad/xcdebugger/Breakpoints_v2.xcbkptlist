@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/OrderConfirmationViewController.swift"
-            timestampString = "502598144.741876"
+            timestampString = "502708749.026189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

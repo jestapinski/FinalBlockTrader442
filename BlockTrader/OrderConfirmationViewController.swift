@@ -20,6 +20,7 @@ class OrderConfirmationViewController: UIViewController {
     var orderNumber: Int = 0
     var items = [Int]()
     var credentials: [String : Any] = [:]
+    var fb_url: String = ""
     var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var customer: UILabel!
@@ -27,10 +28,15 @@ class OrderConfirmationViewController: UIViewController {
     @IBOutlet weak var orderStatus: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     @IBOutlet weak var name: UILabel!
-//
-//    @IBAction func didTapFB(sender: AnyObject) {
-//        UIApplication.sharedApplication().openURL(NSURL(string: "fb-messenger://user-thread/\(jsonarr1["fb_id"])")!)
-//    }
+
+    @IBAction func didTapFB(sender: AnyObject) {
+        if(fb_url != ""){
+            print(fb_url)
+            UIApplication.shared.openURL(NSURL(string: fb_url) as! URL)
+        }else{
+            print("no fb url")
+        }
+    }
     
     
     func execute(timer:Timer) {
@@ -48,16 +54,18 @@ class OrderConfirmationViewController: UIViewController {
                     
                     let url = "http://germy.tk:3000/users/\(jsonarr["provider_id"].stringValue).json"
                     Alamofire.request(url, headers: headers).responseJSON { response in
-                    if let json = response.result.value{
-                        let jsonarr1 = JSON(json)
+                        if let json = response.result.value{
+                            let jsonarr1 = JSON(json)
 
-                        self.name.text! = jsonarr1["first_name"].stringValue
-                        Alamofire.request("https://graph.facebook.com/v2.8/\(jsonarr1["fb_id"])/picture?width=500&height=500").responseImage { response in
-                            if let image = response.result.value {
-                               self.profPic.image = image
+                            self.name.text! = jsonarr1["first_name"].stringValue
+                            Alamofire.request("https://graph.facebook.com/v2.8/\(jsonarr1["fb_id"])/picture?width=500&height=500").responseImage { response in
+                                if let image = response.result.value {
+                                   self.profPic.image = image
+                                }
                             }
-                        }
-                    
+                            
+                            self.fb_url = "https://www.facebook.com/\(jsonarr1["fb_id"])"
+                        
                         }
                     }
                     

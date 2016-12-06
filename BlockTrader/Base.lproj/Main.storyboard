@@ -1080,6 +1080,9 @@
                                 <rect key="frame" x="27" y="570" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Messenger Link"/>
+                                <connections>
+                                    <action selector="didTapFBWithSender:" destination="lV0-ua-zR4" eventType="touchUpInside" id="g7j-kA-LGE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
