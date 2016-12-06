@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -302,7 +302,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uM8-0Q-r0P" id="3Kr-Fc-B1C">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="cell"/>
@@ -411,9 +411,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ol2-B0-wNL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ol2-B0-wNL">
                                 <rect key="frame" x="2" y="393" width="129" height="111"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="G6k-81-a20"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -423,10 +425,12 @@
                             <constraint firstAttribute="bottom" secondItem="SJP-ln-IpK" secondAttribute="bottom" constant="60" id="81T-66-khL"/>
                             <constraint firstItem="t20-Q5-SKW" firstAttribute="firstBaseline" secondItem="2R0-FL-PQ9" secondAttribute="firstBaseline" constant="-39" id="8ep-fB-BMY"/>
                             <constraint firstItem="ddC-cA-N2R" firstAttribute="firstBaseline" secondItem="t20-Q5-SKW" secondAttribute="baseline" id="Ddv-f0-9ZE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ol2-B0-wNL" secondAttribute="trailing" constant="228" id="INn-Qx-qNN"/>
                             <constraint firstItem="dCS-SH-k7w" firstAttribute="top" secondItem="Hlv-Xj-aFd" secondAttribute="top" id="KlL-uD-lvv"/>
                             <constraint firstItem="ddC-cA-N2R" firstAttribute="leading" secondItem="2R0-FL-PQ9" secondAttribute="trailing" constant="16" id="OnG-51-ip4"/>
                             <constraint firstItem="dCS-SH-k7w" firstAttribute="leading" secondItem="o89-aW-mh9" secondAttribute="leading" id="Qw6-2s-6HS"/>
                             <constraint firstItem="dCS-SH-k7w" firstAttribute="trailing" secondItem="o89-aW-mh9" secondAttribute="trailing" id="UBT-3m-awK"/>
+                            <constraint firstItem="ol2-B0-wNL" firstAttribute="centerX" secondItem="2R0-FL-PQ9" secondAttribute="centerX" id="VzJ-zi-XPT"/>
                             <constraint firstItem="P3Y-7Z-b0J" firstAttribute="top" secondItem="SJP-ln-IpK" secondAttribute="bottom" constant="11" id="Wpt-Ae-wJG"/>
                             <constraint firstItem="ddC-cA-N2R" firstAttribute="top" secondItem="TvO-WY-Igi" secondAttribute="bottom" constant="51" id="XCI-ED-ISK"/>
                             <constraint firstItem="ddC-cA-N2R" firstAttribute="firstBaseline" secondItem="2R0-FL-PQ9" secondAttribute="baseline" constant="-39.5" id="Zsl-8V-nPr"/>
@@ -439,6 +443,7 @@
                             <constraint firstItem="t20-Q5-SKW" firstAttribute="top" secondItem="o89-aW-mh9" secondAttribute="bottom" constant="56" id="k9s-Zt-tCW"/>
                             <constraint firstItem="P3Y-7Z-b0J" firstAttribute="baseline" secondItem="4yk-fq-CAw" secondAttribute="baseline" id="kwC-Tq-pQq"/>
                             <constraint firstAttribute="trailing" secondItem="o89-aW-mh9" secondAttribute="trailing" id="rwV-Cx-sYV"/>
+                            <constraint firstItem="SJP-ln-IpK" firstAttribute="top" secondItem="ol2-B0-wNL" secondAttribute="bottom" constant="72" id="swT-kL-UYj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="t20-Q5-SKW" secondAttribute="trailing" constant="86" id="vb2-oQ-qKw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4yk-fq-CAw" secondAttribute="trailing" constant="59" id="wNQ-9H-pJJ"/>
                             <constraint firstItem="t20-Q5-SKW" firstAttribute="leading" secondItem="2R0-FL-PQ9" secondAttribute="trailing" constant="15" id="wyA-eR-kH9"/>
@@ -806,7 +811,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hye-Tn-Q6a" id="yt5-fM-S0N">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -977,7 +982,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q6o-Sn-GHe" id="xMP-zf-oRD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.26016270829999999" green="0.46965990320000001" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
