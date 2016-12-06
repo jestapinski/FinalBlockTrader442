@@ -27,7 +27,11 @@ class OrderConfirmationViewController: UIViewController {
     @IBOutlet weak var orderStatus: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     @IBOutlet weak var name: UILabel!
-
+//
+//    @IBAction func didTapFB(sender: AnyObject) {
+//        UIApplication.sharedApplication().openURL(NSURL(string: "fb-messenger://user-thread/\(jsonarr1["fb_id"])")!)
+//    }
+    
     
     func execute(timer:Timer) {
         print("timer \(timer)")
@@ -80,6 +84,15 @@ class OrderConfirmationViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if (segue.identifier == "backHome"){
+            let finalDestination = segue.destination as? MainPageViewController
+            finalDestination?.credentials = self.credentials
+        }
     }
     
 
