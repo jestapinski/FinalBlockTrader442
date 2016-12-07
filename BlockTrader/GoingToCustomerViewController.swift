@@ -16,6 +16,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     var orderFoods : [[String : Any]] = []
     var orderID = ""
     var ourTimer: Timer?
+    var phoneNum: String = ""
     
     var custLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
     var restLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
@@ -26,6 +27,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     @IBOutlet weak var custNameLabel: UILabel!
     @IBOutlet weak var custLocationLabel: UILabel!
     @IBOutlet weak var foodLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     
     let backendClient = BackendClient()
@@ -112,6 +114,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.phoneLabel.text = self.phoneNum
         self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(GoingToCustomerViewController.execute), userInfo: nil, repeats: true)
         self.userLocationHandler()
         self.dropCustomerPin()

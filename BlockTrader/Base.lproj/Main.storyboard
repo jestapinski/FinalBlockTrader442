@@ -482,7 +482,7 @@
                                 <rect key="frame" x="28" y="617" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="foodHasBeenPickedUpWithSender:" destination="r6A-3b-SHW" eventType="touchUpInside" id="ABh-Yi-1AO"/>
+                                    <action selector="cancelOrderWithSender:" destination="r6A-3b-SHW" eventType="touchUpInside" id="AYW-gs-jph"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9T-aK-MoR">
@@ -573,10 +573,11 @@
                         <outlet property="custNameLocationLabel" destination="U9T-aK-MoR" id="Rjf-Bl-crA"/>
                         <outlet property="foodsLabel" destination="7Qz-OP-R3I" id="1Tz-29-IRX"/>
                         <outlet property="mapView" destination="Jub-9W-dwd" id="M9A-KW-qaA"/>
+                        <outlet property="phoneLabel" destination="30w-x9-FnQ" id="961-WM-x2j"/>
                         <outlet property="profPic" destination="4oS-Wk-ypF" id="SnK-M3-O1t"/>
                         <outlet property="restNameLabel" destination="jpT-4b-bp1" id="nOm-n6-Rcy"/>
                         <segue destination="H2j-b2-fe6" kind="show" identifier="goToCustomer" id="7CY-Ft-9u0"/>
-                        <segue destination="PIF-Nh-XtC" kind="show" id="PUq-pT-xYz"/>
+                        <segue destination="PIF-Nh-XtC" kind="show" identifier="cancelPickUp" id="PUq-pT-xYz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCX-Jm-RwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -623,7 +624,7 @@
                                 </constraints>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="customerHasFoodWithSender:" destination="H2j-b2-fe6" eventType="touchUpInside" id="maR-KA-AON"/>
+                                    <action selector="cancelOrderWithSender:" destination="H2j-b2-fe6" eventType="touchUpInside" id="ZUr-Zz-t8R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-uw-ftX">
@@ -696,6 +697,7 @@
                         <outlet property="custNameLabel" destination="i9p-c5-adv" id="la0-Va-Hhj"/>
                         <outlet property="foodLabel" destination="kbN-Dq-JbZ" id="aou-ZK-aBA"/>
                         <outlet property="mapView" destination="kQS-D8-dVV" id="c5J-ZZ-A1F"/>
+                        <outlet property="phoneLabel" destination="1yf-nV-7L4" id="Gdn-Tv-wl7"/>
                         <outlet property="profPic" destination="fUL-QB-bDp" id="tVB-Cm-95d"/>
                         <segue destination="rzt-qg-yGw" kind="show" identifier="deliveredFood" id="uUM-su-gJJ"/>
                         <segue destination="PIF-Nh-XtC" kind="show" identifier="cancelAfterFood" id="VcS-9u-z0R"/>

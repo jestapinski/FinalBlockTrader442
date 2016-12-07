@@ -15,8 +15,11 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
     var custName: String = ""
     var orderFoods : [[String : Any]] = []
     var custFBId: String = ""
+    var custID: String = ""
     var orderID: String = ""
     var ourTimer: Timer?
+    var phoneNum: String = ""
+    
     
     let backendClient = BackendClient()
     
@@ -27,6 +30,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
     @IBOutlet weak var custNameLocationLabel: UILabel!
     @IBOutlet weak var restNameLabel: UILabel!
     @IBOutlet weak var foodsLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var profPic: UIImageView!
@@ -106,9 +110,21 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
         self.userLocationActions()
         self.makeUserPin()
         self.makeRestPin()
+        self.getCustPhone()
         self.profPic.image = self.backendClient.getProfilePicture(id: self.custFBId)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func getCustPhone(){
+        self.backendClient.getCustomerPhoneFromID(customerID: self.custID, completion: self.setPhone)
+    }
+    
+    func setPhone(phone: String){
+        var newPhone = phone
+        if (newPhone == ""){newPhone = "No Phone"}
+        self.phoneLabel.text = newPhone
+        self.phoneNum = newPhone
     }
     
     // MARK: - Navigation
@@ -135,6 +151,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
             secondViewController?.custLocation = self.customerLocation
             secondViewController?.custFBId = self.custFBId
             secondViewController?.orderID = self.orderID
+            secondViewController?.phoneNum = self.phoneNum
         }
     }
     

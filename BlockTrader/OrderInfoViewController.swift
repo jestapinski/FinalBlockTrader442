@@ -213,6 +213,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             secondViewController?.restLocation = self.restLocation
             secondViewController?.customerLocation = self.customerLocation
             secondViewController?.orderID = self.orderID
+            secondViewController?.custID = self.custID
         }
     }
     
