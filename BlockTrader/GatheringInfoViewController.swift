@@ -14,7 +14,7 @@ class GatheringInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("cred1: \(self.credentials)")
         // Do any additional setup after loading the view.
     }
 
@@ -58,6 +58,7 @@ class GatheringInfoViewController: UIViewController {
         if (segue.identifier == "jumpToRest"){
             let finalDestination = segue.destination as? PickRestarauntViewController
             finalDestination?.credentials = self.credentials
+            print("cred3: \(self.credentials)")
         }
     }
 

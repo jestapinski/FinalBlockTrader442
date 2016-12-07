@@ -13,6 +13,7 @@ import FacebookLogin
 import FacebookCore
 import AlamofireImage
 
+
 class OrderConfirmationViewController: UIViewController {
     
     let backendClient = BackendClient()
@@ -27,6 +28,7 @@ class OrderConfirmationViewController: UIViewController {
     @IBOutlet weak var orderStatus: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var loading: UIImageView!
 
     @IBAction func didTapFB(sender: AnyObject) {
         if(fb_url != ""){
@@ -74,7 +76,8 @@ class OrderConfirmationViewController: UIViewController {
         super.viewDidLoad()
         self.customer.text = custID
         self.order.text = String(orderNumber)
-        
+        let imageView = UIImageView()
+        imageView.loadGif("loading")
         if(self.orderNumber != 0){
             Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(OrderConfirmationViewController.execute), userInfo: self.orderNumber, repeats: true)
         }
@@ -96,7 +99,6 @@ class OrderConfirmationViewController: UIViewController {
             finalDestination?.credentials = self.credentials
         }else if (segue.identifier == "orderLocation"){
             let finalDestination = segue.destination as? OrderLocationViewController
-            print("ooder: \(orderNumber)")
             finalDestination?.orderNumber = self.orderNumber
             finalDestination?.credentials =	 self.credentials
             finalDestination?.custID = self.custID

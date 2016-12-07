@@ -11,24 +11,26 @@ import FacebookLogin
 import FacebookCore
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var proceedButton: UIButton!
 
     // Create FaceBook login button using module and place in center
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
         loginButton.center = view.center
-        
         view.addSubview(loginButton)
+        self.proceedButton.layer.cornerRadius = 30
+        
     }
+    
     
     /**
      Function checks if authenticated through FaceBook, if so, move on.
      
-     TODO fix so first-time works
     */
     override func viewDidAppear(_ animated: Bool) {
         if let accessToken = AccessToken.current{
-            print("HERE!")
             self.moveToMainPage(accessToken: accessToken)
         } else {
             //self.viewDidAppear(true)
@@ -43,7 +45,6 @@ class ViewController: UIViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc : MainPageViewController = mainStoryboard.instantiateViewController(withIdentifier: "loggedin") as! MainPageViewController
         vc.accessToken = accessToken
-        
         self.present(vc, animated: true, completion: nil)
 
     }

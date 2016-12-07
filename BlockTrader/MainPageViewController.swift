@@ -23,15 +23,19 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var welcomename: UILabel!
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var profPic: UIImageView!
+    @IBOutlet weak var buyFood: UIButton!
+    @IBOutlet weak var deliverFood: UIButton!
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.getProfilePicture()
         self.processToken()
-
+        self.buyFood.layer.cornerRadius = 60
+        self.deliverFood.layer.cornerRadius = 60
+        self.profPic.layer.cornerRadius = self.profPic.frame.size.width / 2
+        self.profPic.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     
@@ -178,7 +182,6 @@ class MainPageViewController: UIViewController {
                 self.appDelegate.credentials = self.credentials
             }
         }
-        
     }
     
     
