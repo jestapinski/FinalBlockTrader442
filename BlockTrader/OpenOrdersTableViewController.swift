@@ -102,7 +102,9 @@ class OpenOrdersTableViewController: UITableViewController {
     }
     
     func appendRName(name : String, _ : String, _ : String){
-        if (self.TableRests[0] == ""){
+        if (self.TableRests.count == 0){
+            self.TableRests.append(name)
+        } else if (self.TableRests[0] == ""){
             self.TableRests[0] = name
         } else {
             self.TableRests.append(name)
