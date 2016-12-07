@@ -75,7 +75,6 @@ class PickFoodViewController: UITableViewController {
             finalDestination?.items = self.items
             finalDestination?.row = self.row
             finalDestination?.customer = self.customer
-            
         } else if (segue.identifier == "back_to_resturaunt") {
             let finalDestination = segue.destination as? PickRestarauntViewController
             finalDestination?.credentials = self.credentials

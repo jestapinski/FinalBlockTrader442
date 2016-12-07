@@ -144,6 +144,7 @@ class MainPageViewController: UIViewController {
         let userLastName = jsonResult!["last_name"]!
         let userID = jsonResult!["fb_id"]!
         let userPhone = jsonResult!["phone"]!
+        let custID = jsonResult!["custID"]
         //Phone may be null
         self.credentials["api_authtoken"] = ourAUTH
         self.credentials["email"] = userEmail
@@ -151,6 +152,7 @@ class MainPageViewController: UIViewController {
         self.credentials["last_name"] = userLastName
         self.credentials["fb_id"] = userID
         self.credentials["phone"] = userPhone
+        self.credentials["custID"] = custID
         self.appDelegate.credentials = self.credentials
         print("responseString2 = \(ourAUTH)")
         self.welcomename.text = userFirstName as? String

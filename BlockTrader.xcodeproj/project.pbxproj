@@ -49,6 +49,7 @@
 		7BBA836A1DF363F500B71EDA /* GoingToCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA83691DF363F500B71EDA /* GoingToCustomerViewController.swift */; };
 		7BBA836C1DF3C3B400B71EDA /* ProcessingPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA836B1DF3C3B400B71EDA /* ProcessingPaymentViewController.swift */; };
 		7BBA83721DF669B900B71EDA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA83711DF669B900B71EDA /* StringExtension.swift */; };
+		D9AF0A441DF7A0C0001A4887 /* OrderLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AF0A431DF7A0C0001A4887 /* OrderLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		ABCA6FAE95BD0BF9547C1188 /* Pods-BlockTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.release.xcconfig"; sourceTree = "<group>"; };
 		C29CBDCE01DE0631373040EE /* Pods-BlockTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2FFF05053B9EE10CCD45D86 /* Pods-BlockTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTraderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9AF0A431DF7A0C0001A4887 /* OrderLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderLocationViewController.swift; sourceTree = "<group>"; };
 		FD7BF3B1C780988A5672A68E /* Pods-BlockTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +226,7 @@
 				7B271BAD1DE9F94D0078C097 /* OrderFormViewController.swift */,
 				7B18C7A71DEF51E6006FD068 /* GatheringInfoViewController.swift */,
 				04ED30CB1DEF9382001150BE /* PickFoodViewController.swift */,
+				D9AF0A431DF7A0C0001A4887 /* OrderLocationViewController.swift */,
 				7B271BB51DECBBD80078C097 /* OrderConfirmationViewController.swift */,
 				04AD4A4A1DEF6B0400204E19 /* PickRestarauntViewController.swift */,
 				7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */,
@@ -579,6 +582,7 @@
 				7B0780931DF134D800AC4EE5 /* BackendClient.swift in Sources */,
 				7B3DC5841DF7594A008DC49A /* SellerViewCellTableViewCell.swift in Sources */,
 				7B271BAA1DE9E8290078C097 /* Networking.swift in Sources */,
+				D9AF0A441DF7A0C0001A4887 /* OrderLocationViewController.swift in Sources */,
 				7BBA836C1DF3C3B400B71EDA /* ProcessingPaymentViewController.swift in Sources */,
 				7B271BA81DE9E6B10078C097 /* MyAPIClient.swift in Sources */,
 				7BBA83621DF2153400B71EDA /* SellerGoingViewController.swift in Sources */,

@@ -122,9 +122,9 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "confirmation") {
             let finalDestination = segue.destination as? OrderConfirmationViewController
-            finalDestination?.orderNumber = self.orderNumber
-            finalDestination?.custID = self.customer
+            print("confirmed")
             finalDestination?.credentials =	 self.credentials
+            finalDestination?.orderNumber = self.orderNumber
         } else if (segue.identifier == "backToFood") {
             let finalDestination = segue.destination as? PickFoodViewController
             finalDestination?.credentials =	 self.credentials

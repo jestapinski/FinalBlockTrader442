@@ -14,10 +14,24 @@ class GatheringInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(credentials)
+
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool)  {
+        super.viewWillAppear(animated)
+        if(self.credentials["custID"] as? String == ""){
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "insertcard", sender: nil)
+            }
+        }else{
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "jumpToRest", sender: nil)
+            }
+            
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,6 +53,10 @@ class GatheringInfoViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if (segue.identifier == "insertcard"){
             let finalDestination = segue.destination as? CardViewController
+            finalDestination?.credentials = self.credentials
+        }
+        if (segue.identifier == "jumpToRest"){
+            let finalDestination = segue.destination as? PickRestarauntViewController
             finalDestination?.credentials = self.credentials
         }
     }
