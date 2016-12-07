@@ -21,7 +21,16 @@ class ViewController: UIViewController {
         loginButton.center = view.center
         view.addSubview(loginButton)
         self.proceedButton.layer.cornerRadius = 30
-        
+    }
+    
+    @IBAction func proceed(){
+        if let accessToken = AccessToken.current{
+            self.moveToMainPage(accessToken: accessToken)
+        } else {
+            let alert = UIAlertController(title: "Please Login", message: "Please login to Facebook to proceed", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     

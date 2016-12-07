@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/ViewController.swift"
-            timestampString = "502798282.652532"
+            timestampString = "502813139.014634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "moveToMainPage(accessToken:)"
             landmarkType = "7">
          </BreakpointContent>
