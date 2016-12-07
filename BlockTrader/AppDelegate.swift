@@ -9,6 +9,9 @@
 import UIKit
 import FBSDKLoginKit
 import Stripe
+import FacebookCore
+import FacebookLogin
+import FacebookShare
 
 // RequiredBillingAddressFields Code pulled from Stripe iOS integration example
 fileprivate enum RequiredBillingAddressFields: String {
@@ -39,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var credentials: [String : Any] = [:]
     var accessCode: String?
+    var accessToken: AccessToken?
     let stripePublishableKey = "pk_test_BfRm3UU2gsYRebGH6cMuwnl7"
     let appleMerchantID: String? = nil
     fileprivate var requiredBillingAddressFields: RequiredBillingAddressFields = .None

@@ -16,6 +16,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     var orderFoods : [[String : Any]] = []
     var orderID = ""
     var ourTimer: Timer?
+    var phoneNum: String = ""
     
     var custLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
     var restLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
@@ -26,6 +27,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     @IBOutlet weak var custNameLabel: UILabel!
     @IBOutlet weak var custLocationLabel: UILabel!
     @IBOutlet weak var foodLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     
     let backendClient = BackendClient()
@@ -48,7 +50,8 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
      Gets the customer and deliverer IDs from the order
     */
     @IBAction func customerHasFood(sender: AnyObject){
-        self.backendClient.getIDsFromOrder(orderID: self.orderID, completion: self.handleOurIDs)
+        //self.backendClient.getIDsFromOrder(orderID: self.orderID, completion: self.handleOurIDs)
+        self.moveOn()
     }
     
     /**
@@ -71,11 +74,17 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
         self.stripeAPIClient.performCharge(providerID: actualAcctID, customerID: actualCustID, cost: cost, completion: self.moveOn)
     }
     
+    @IBAction func cancelOrder(sender: AnyObject){
+        self.backendClient.cancelOrder(orderID: self.orderID)
+        //Go back to table view
+        performSegue(withIdentifier: "cancelAfterFood", sender: "")
+    }
+    
     /**
      Callback function for completing the charge, updates the order to "Delivered" and proceeds to the next view controller
     */
     func moveOn(){
-        self.backendClient.updateStatus(orderID: self.orderID, message: "Delivered")
+        //self.backendClient.updateStatus(orderID: self.orderID, message: "Delivered")
         performSegue(withIdentifier: "deliveredFood", sender: "")
     }
     
@@ -105,6 +114,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.phoneLabel.text = self.phoneNum
         self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(GoingToCustomerViewController.execute), userInfo: nil, repeats: true)
         self.userLocationHandler()
         self.dropCustomerPin()
