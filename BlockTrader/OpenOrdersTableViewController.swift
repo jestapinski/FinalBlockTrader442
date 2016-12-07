@@ -102,13 +102,7 @@ class OpenOrdersTableViewController: UITableViewController {
     }
     
     func appendRName(name : String, _ : String, _ : String){
-        if (self.TableRests.count == 0){
-            self.TableRests.append(name)
-        } else if (self.TableRests[0] == ""){
-            self.TableRests[0] = name
-        } else {
-            self.TableRests.append(name)
-        }
+        self.TableRests.append(name)
         self.do_table_refresh()
     }
     
@@ -173,12 +167,15 @@ class OpenOrdersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SellerViewCellTableViewCell
         if (self.TableDisplay.count == 0){
-            for _ in 0...(TableData.count + 1){
+            for _ in 0..<(TableData.count + 1){
                 self.TableDisplay.append("")
             }
         }
-        if (TableRests.count == 0){
-            self.TableRests.append("")
+        self.TableRests = self.TableRests.filter({ $0 != ""})
+        if (TableRests.count != TableData.count){
+            for _ in 0..<(TableData.count){
+                self.TableRests.append("")
+            }
         }
         cell.restName?.text = self.TableRests[indexPath.row]
         //cell.minLeft.text =
