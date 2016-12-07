@@ -83,16 +83,16 @@ class MainPageViewController: UIViewController {
      */
     func handleGraphSuccess(graphResponse: GraphRequest.Response, accessToken: AccessToken){
         if let responseDictionary = graphResponse.dictionaryValue {
-            
-            //Here is the data we get back
-            print(responseDictionary)
-            
             var request = URLRequest(url: URL(string: "http://germy.tk:3000/api/signin")!)
             request.httpMethod = "POST"
             let postString = "name=\(responseDictionary["name"]!)&email=\(responseDictionary["email"]!)&fb_id=\(responseDictionary["id"]!)&accessToken=\(accessToken.authenticationToken)"
             request.httpBody = postString.data(using: .utf8)
             let img = self.backendClient.getProfilePicture(id: responseDictionary["id"] as! String)
             self.profPic.image = img
+            self.profPic.layer.cornerRadius = self.profPic.frame.size.width / 2;
+            self.profPic.layer.borderWidth = 0;
+            self.profPic.layer.masksToBounds = false;
+            self.profPic.clipsToBounds = true;
             self.handleAuthenticationRequest(request: request) //Maybe in another module?
         }
         

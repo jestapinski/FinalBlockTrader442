@@ -54,6 +54,11 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>Pods-BlockTraderTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -78,6 +83,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>039100AC066B4BC97EC8149F7228182E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0E40B1DBAB85C1EED3BA6C19198B44DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
