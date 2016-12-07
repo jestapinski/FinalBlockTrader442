@@ -41,9 +41,15 @@ class MainPageViewController: UIViewController {
     */
     func processToken(){
         if let accessToken = self.accessToken{
-        let params = ["fields" : "email, name, id"]
-        let graphRequest = GraphRequest(graphPath: "me", parameters: params)
-        self.completeGraphRequest(graphRequest: graphRequest, accessToken: accessToken)
+            appDelegate.accessToken = accessToken
+            let params = ["fields" : "email, name, id"]
+            let graphRequest = GraphRequest(graphPath: "me", parameters: params)
+            self.completeGraphRequest(graphRequest: graphRequest, accessToken: accessToken)
+        } else {
+            self.accessToken = appDelegate.accessToken
+            let params = ["fields" : "email, name, id"]
+            let graphRequest = GraphRequest(graphPath: "me", parameters: params)
+            self.completeGraphRequest(graphRequest: graphRequest, accessToken: self.accessToken!)
         }
     }
     
