@@ -432,7 +432,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCS-SH-k7w">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="9n7-xM-OvY"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Order Info" id="QN4-hW-rxO">
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="vwN-Uw-LDm">
@@ -451,7 +454,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3Y-7Z-b0J">
-                                <rect key="frame" x="16" y="58" width="64" height="56"/>
+                                <rect key="frame" x="16" y="72" width="64" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="GRU-GV-euQ"/>
                                 </constraints>
@@ -486,7 +489,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o89-aW-mh9">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="58" width="320" height="510"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqN-Sj-4JM">
                                 <rect key="frame" x="236" y="492" width="68" height="68"/>
@@ -1495,9 +1498,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cc_input.png" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-CG-moU">
-                                <rect key="frame" x="0.0" y="-1" width="375" height="668"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kD7-fb-Tv6">
                                 <rect key="frame" x="304" y="551" width="1" height="1"/>
                             </button>
@@ -1510,6 +1510,9 @@
                                     <action selector="payButtonTappedWithSender:" destination="jRn-ey-w2V" eventType="touchUpInside" id="KzE-iE-W4I"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cc_input.png" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-CG-moU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1548,10 +1551,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2he-nz-bA7"/>
+        <segue reference="5xJ-fw-u7Z"/>
         <segue reference="P94-8m-qZQ"/>
-        <segue reference="VcS-9u-z0R"/>
+        <segue reference="Ghk-D4-m5t"/>
         <segue reference="kf1-ce-q9Z"/>
         <segue reference="bJm-Ts-YK8"/>
-        <segue reference="bIC-FB-YnA"/>
     </inferredMetricsTieBreakers>
 </document>

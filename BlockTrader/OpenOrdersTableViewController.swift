@@ -217,6 +217,8 @@ class OpenOrdersTableViewController: UITableViewController {
     
     func do_table_refresh()
     {
+        //Too slow
+        //self.backendClient.getOrders(completion: self.getFoodOrders)
         self.tableView.reloadData()
     }
 
