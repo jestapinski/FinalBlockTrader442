@@ -19,6 +19,7 @@ target ‘BlockTrader’ do
   pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'AlamofireImage', '~> 3.1'
+  pod 'SwiftGifOrigin', '~> 1.6.1'
 
 end
 

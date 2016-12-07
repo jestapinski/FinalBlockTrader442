@@ -32,6 +32,8 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var suggestedPrice: UILabel!
     @IBOutlet weak var latitude: UITextField!
     @IBOutlet weak var longitude: UITextField!
+    @IBOutlet weak var submit: UIButton!
+    @IBOutlet weak var review: UIButton!
 
     //Change below to have better UX
     @IBOutlet weak var desired_price: UITextField!
@@ -122,9 +124,9 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "confirmation") {
             let finalDestination = segue.destination as? OrderConfirmationViewController
-            finalDestination?.orderNumber = self.orderNumber
-            finalDestination?.custID = self.customer
+            print("confirmed")
             finalDestination?.credentials =	 self.credentials
+            finalDestination?.orderNumber = self.orderNumber
         } else if (segue.identifier == "backToFood") {
             let finalDestination = segue.destination as? PickFoodViewController
             finalDestination?.credentials =	 self.credentials
@@ -138,6 +140,9 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
+        self.submit.layer.cornerRadius = 60
+        self.review.layer.cornerRadius = 60
+        self.review.titleLabel?.textAlignment = NSTextAlignment.center
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()

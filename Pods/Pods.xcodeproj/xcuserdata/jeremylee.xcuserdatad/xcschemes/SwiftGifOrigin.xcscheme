@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DDBCFDE490CDFDABF6F16A26F346932D'
-               BlueprintName = 'FacebookCore'
+               BlueprintIdentifier = 'EB1CA86A49A63AB5AE7B7DB8D1354B00'
+               BlueprintName = 'SwiftGifOrigin'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FacebookCore.framework'>
+               BuildableName = 'SwiftGifOrigin.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -23,15 +23,19 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var welcomename: UILabel!
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var profPic: UIImageView!
+    @IBOutlet weak var buyFood: UIButton!
+    @IBOutlet weak var deliverFood: UIButton!
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.getProfilePicture()
         self.processToken()
-
+        self.buyFood.layer.cornerRadius = 60
+        self.deliverFood.layer.cornerRadius = 60
+        self.profPic.layer.cornerRadius = self.profPic.frame.size.width / 2
+        self.profPic.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     
@@ -150,6 +154,7 @@ class MainPageViewController: UIViewController {
         let userLastName = jsonResult!["last_name"]!
         let userID = jsonResult!["fb_id"]!
         let userPhone = jsonResult!["phone"]!
+        let custID = jsonResult!["custID"]
         //Phone may be null
         self.credentials["api_authtoken"] = ourAUTH
         self.credentials["email"] = userEmail
@@ -157,6 +162,7 @@ class MainPageViewController: UIViewController {
         self.credentials["last_name"] = userLastName
         self.credentials["fb_id"] = userID
         self.credentials["phone"] = userPhone
+        self.credentials["custID"] = custID
         self.appDelegate.credentials = self.credentials
         print("responseString2 = \(ourAUTH)")
         self.welcomename.text = userFirstName as? String
@@ -176,7 +182,6 @@ class MainPageViewController: UIViewController {
                 self.appDelegate.credentials = self.credentials
             }
         }
-        
     }
     
     

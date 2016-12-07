@@ -13,12 +13,12 @@ import FacebookLogin
 import FacebookCore
 import AlamofireImage
 
+
 class OrderConfirmationViewController: UIViewController {
     
     let backendClient = BackendClient()
     var custID: String = ""
     var orderNumber: Int = 0
-    var items = [Int]()
     var credentials: [String : Any] = [:]
     var fb_url: String = ""
     var refreshControl: UIRefreshControl!
@@ -28,10 +28,10 @@ class OrderConfirmationViewController: UIViewController {
     @IBOutlet weak var orderStatus: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var loading: UIImageView!
 
     @IBAction func didTapFB(sender: AnyObject) {
         if(fb_url != ""){
-            print(fb_url)
             UIApplication.shared.openURL(NSURL(string: fb_url) as! URL)
         }else{
             print("no fb url")
@@ -63,13 +63,9 @@ class OrderConfirmationViewController: UIViewController {
                                    self.profPic.image = image
                                 }
                             }
-                            
                             self.fb_url = "https://www.facebook.com/\(jsonarr1["fb_id"])"
-                        
                         }
                     }
-                    
-                    
                 }
             }
         }
@@ -80,7 +76,8 @@ class OrderConfirmationViewController: UIViewController {
         super.viewDidLoad()
         self.customer.text = custID
         self.order.text = String(orderNumber)
-        
+        self.profPic.layer.cornerRadius = self.profPic.frame.size.width / 2
+        self.profPic.clipsToBounds = true
         if(self.orderNumber != 0){
             Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(OrderConfirmationViewController.execute), userInfo: self.orderNumber, repeats: true)
         }
@@ -100,6 +97,12 @@ class OrderConfirmationViewController: UIViewController {
         if (segue.identifier == "backHome"){
             let finalDestination = segue.destination as? MainPageViewController
             finalDestination?.credentials = self.credentials
+        }else if (segue.identifier == "orderLocation"){
+            let finalDestination = segue.destination as? OrderLocationViewController
+            finalDestination?.orderNumber = self.orderNumber
+            finalDestination?.credentials =	 self.credentials
+            finalDestination?.custID = self.custID
+            finalDestination?.fb_url = self.fb_url
         }
     }
     
