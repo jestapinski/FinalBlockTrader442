@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate {
     
     var resturaunt: String = ""
     var custName: String = ""
@@ -19,7 +19,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
     var orderID: String = ""
     var ourTimer: Timer?
     var phoneNum: String = ""
-    
+    var price: String = ""
     
     let backendClient = BackendClient()
     
@@ -63,6 +63,30 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
         self.backendClient.cancelOrder(orderID: self.orderID)
         //Go back to table view
         performSegue(withIdentifier: "cancelPickUp", sender: "")
+    }
+    
+    @IBAction func showPopover(sender: AnyObject){
+        //performSegue(withIdentifier: "infoPopover", sender: "")
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "infoPop") as! CustInfoPopoverViewController
+        vc.modalPresentationStyle = .popover
+        let popover = vc.popoverPresentationController!
+        popover.delegate = self
+        popover.permittedArrowDirections = [.right, .down]
+        popover.sourceView = sender as? UIView
+        popover.sourceRect = sender.bounds
+        vc.resturaunt = self.resturaunt
+        vc.custName = self.custName
+        vc.custFBID = self.custFBId
+        vc.orderFoods = self.getFoods()
+        vc.price = self.price
+        vc.profPic = self.backendClient.getProfilePicture(id: custFBId)
+        vc.phone = self.phoneNum
+        present(vc, animated: true, completion:nil)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
     }
     
     // MARK: - MapView Actions
@@ -152,6 +176,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
             secondViewController?.custFBId = self.custFBId
             secondViewController?.orderID = self.orderID
             secondViewController?.phoneNum = self.phoneNum
+            secondViewController?.price = self.price
         }
     }
     

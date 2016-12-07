@@ -17,12 +17,14 @@ class CustInfoPopoverViewController: UIViewController {
     var orderFoods = ""
     var price = ""
     var profPic: UIImage?
+    var phone = ""
     
     @IBOutlet weak var custNameLocationLabel: UILabel!
     @IBOutlet weak var restNameLabel: UILabel!
     @IBOutlet weak var foodsLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var profPicImg: UIImageView!
+    @IBOutlet weak var phoneLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class CustInfoPopoverViewController: UIViewController {
         self.priceLabel.text = self.price
         self.profPicImg.image = self.profPic!
         self.foodsLabel.text = self.orderFoods
+        self.phoneLabel.text = self.phone
 
         // Do any additional setup after loading the view.
     }

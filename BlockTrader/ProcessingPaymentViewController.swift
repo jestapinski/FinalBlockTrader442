@@ -9,9 +9,14 @@
 import UIKit
 
 class ProcessingPaymentViewController: UIViewController {
+    
+    var price: String = ""
+    
+    @IBOutlet weak var priceLbl: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        priceLbl.text = "You earned \(price)"
 
         // Do any additional setup after loading the view.
     }

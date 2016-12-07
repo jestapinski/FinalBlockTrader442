@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate {
     
     var restName: String = ""
     var custName: String = ""
@@ -17,6 +17,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     var orderID = ""
     var ourTimer: Timer?
     var phoneNum: String = ""
+    var price: String = ""
     
     var custLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
     var restLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 10, longitude: 10)
@@ -43,6 +44,30 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
         let lat = String(describing: currentLocation!.coordinate.latitude)
         let long = String(describing: currentLocation!.coordinate.longitude)
         self.backendClient.updateLocation(orderID: self.orderID, latitude: lat, longitude: long)
+    }
+    
+    @IBAction func showPopover(sender: AnyObject){
+        //performSegue(withIdentifier: "infoPopover", sender: "")
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "infoPop") as! CustInfoPopoverViewController
+        vc.modalPresentationStyle = .popover
+        let popover = vc.popoverPresentationController!
+        popover.delegate = self
+        popover.permittedArrowDirections = [.right, .down]
+        popover.sourceView = sender as? UIView
+        popover.sourceRect = sender.bounds
+        vc.resturaunt = self.restName
+        vc.custName = self.custName
+        vc.custFBID = self.custFBId
+        vc.orderFoods = self.getFoods()
+        vc.price = self.price
+        vc.profPic = self.backendClient.getProfilePicture(id: custFBId)
+        vc.phone = self.phoneNum
+        present(vc, animated: true, completion:nil)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
     }
     
     // MARK: - Delivery functions
@@ -114,17 +139,17 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.phoneLabel.text = self.phoneNum
+//        self.phoneLabel.text = self.phoneNum
         self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(GoingToCustomerViewController.execute), userInfo: nil, repeats: true)
         self.userLocationHandler()
         self.dropCustomerPin()
         mapView.userTrackingMode = .follow
 
         // Do any additional setup after loading the view.
-        self.foodLabel.text = self.getFoods()
-        self.custNameLabel.text = self.custName
-        self.custLocationLabel.text = "Customer Location"
-        self.profPic.image = self.backendClient.getProfilePicture(id: self.custFBId)
+//        self.foodLabel.text = self.getFoods()
+//        self.custNameLabel.text = self.custName
+//        self.custLocationLabel.text = "Customer Location"
+//        self.profPic.image = self.backendClient.getProfilePicture(id: self.custFBId)
 
     }
 
@@ -153,6 +178,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
             let secondViewController = segue.destination as? ProcessingPaymentViewController
             self.ourTimer?.invalidate()
             self.ourTimer = nil
+            secondViewController?.price = self.price
         }
     }
 

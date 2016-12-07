@@ -206,6 +206,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         vc.custFBID = self.custFBID
         vc.orderFoods = self.getFoods()
         vc.price = self.price
+        vc.phone = ""
         vc.profPic = self.backendClient.getProfilePicture(id: custFBID)
         present(vc, animated: true, completion:nil)
     }
@@ -237,6 +238,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             secondViewController?.customerLocation = self.customerLocation
             secondViewController?.orderID = self.orderID
             secondViewController?.custID = self.custID
+            secondViewController?.price = self.price
         } else if (segue.identifier == "infoPopover"){
             let vc = segue.destination as! CustInfoPopoverViewController
             let controller = vc.popoverPresentationController
