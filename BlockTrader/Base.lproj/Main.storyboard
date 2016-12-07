@@ -46,7 +46,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XP7-E7-X2M" kind="show" identifier="pickfood" id="66C-Cx-PYd"/>
+                                    <action selector="proceed" destination="BYZ-38-t0r" eventType="touchUpInside" id="blK-9A-EjO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -154,6 +154,19 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="181-fs-rav">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Home" id="rjP-1B-yry">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="AkG-JK-EEb">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="tIY-tV-2KC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.72941176470588232" green="0.85490196078431369" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1510,5 +1523,10 @@
         <segue reference="bIC-FB-YnA"/>
         <segue reference="P94-8m-qZQ"/>
         <segue reference="Kt5-zG-BfW"/>
+        <segue reference="bJm-Ts-YK8"/>
+        <segue reference="8B2-Gt-aOn"/>
+        <segue reference="P94-8m-qZQ"/>
+        <segue reference="bIC-FB-YnA"/>
+        <segue reference="VcS-9u-z0R"/>
     </inferredMetricsTieBreakers>
 </document>
