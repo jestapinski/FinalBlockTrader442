@@ -30,6 +30,7 @@ class OpenOrdersTableViewController: UITableViewController {
     var orderDicts: [[String : Any]] = []
     var TableOrders: [[String : Any]] = []
     var TableRests: [String] = []
+    var timer: Timer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,10 @@ class OpenOrdersTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "SellerViewCellTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.credentials = appDelegate.credentials
         self.backendClient.getOrders(completion: self.getFoodOrders)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector:#selector(OpenOrdersTableViewController.do_table_refresh), userInfo: nil, repeats: true)
     }
     
     /**
@@ -168,7 +173,6 @@ class OpenOrdersTableViewController: UITableViewController {
         if (self.TableDisplay.count == 0){
             for _ in 0..<(TableData.count){
                 self.TableDisplay.append("")
-//                self.TableRests.append("")
             }
         }
         if (self.TableRests.count == 0){
@@ -198,6 +202,8 @@ class OpenOrdersTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "ViewOrderInfo") {
+            timer!.invalidate()
+            timer=nil
             let secondViewController = segue.destination as? OrderInfoViewController
             secondViewController?.orderFoods = self.selectedOrderInfo
             secondViewController?.orderID = self.TableData[sender as! Int]
