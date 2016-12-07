@@ -49,8 +49,8 @@
 		7BBA836A1DF363F500B71EDA /* GoingToCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA83691DF363F500B71EDA /* GoingToCustomerViewController.swift */; };
 		7BBA836C1DF3C3B400B71EDA /* ProcessingPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA836B1DF3C3B400B71EDA /* ProcessingPaymentViewController.swift */; };
 		7BBA83721DF669B900B71EDA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA83711DF669B900B71EDA /* StringExtension.swift */; };
-		D996A0321DF818B7003A1777 /* BT_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D996A0311DF818B7003A1777 /* BT_Logo.png */; };
 		D9AF0A441DF7A0C0001A4887 /* OrderLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AF0A431DF7A0C0001A4887 /* OrderLocationViewController.swift */; };
+		D9CF29121DF84B470079A3E5 /* BlockTraderLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CF29111DF84B470079A3E5 /* BlockTraderLogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,8 +124,8 @@
 		ABCA6FAE95BD0BF9547C1188 /* Pods-BlockTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.release.xcconfig"; sourceTree = "<group>"; };
 		C29CBDCE01DE0631373040EE /* Pods-BlockTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2FFF05053B9EE10CCD45D86 /* Pods-BlockTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTraderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTraderTests/Pods-BlockTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D996A0311DF818B7003A1777 /* BT_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BT_Logo.png; sourceTree = "<group>"; };
 		D9AF0A431DF7A0C0001A4887 /* OrderLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderLocationViewController.swift; sourceTree = "<group>"; };
+		D9CF29111DF84B470079A3E5 /* BlockTraderLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlockTraderLogo.png; sourceTree = "<group>"; };
 		FD7BF3B1C780988A5672A68E /* Pods-BlockTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockTrader/Pods-BlockTrader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,9 +171,9 @@
 				7B07808C1DF093FD00AC4EE5 /* account_landing.png */,
 				7B18C7B51DEFAEB1006FD068 /* auth_stripe_page.png */,
 				7B271BBA1DEE19DA0078C097 /* loading_screen.png */,
-				D996A0311DF818B7003A1777 /* BT_Logo.png */,
 				7B271BBC1DEE1D670078C097 /* main_screen.png */,
 				7B271BBE1DEE24230078C097 /* BT_short.png */,
+				D9CF29111DF84B470079A3E5 /* BlockTraderLogo.png */,
 				7B18C7AB1DEF57CC006FD068 /* gathering_deliverer_info.png */,
 				7B18C7A91DEF55F3006FD068 /* cc_input.png */,
 				7B18C7A51DEF5113006FD068 /* checking_customer_info.png */,
@@ -448,6 +448,7 @@
 				7B9F05991DE8DC1F00E98C5C /* Assets.xcassets in Resources */,
 				7B271BBB1DEE19DA0078C097 /* loading_screen.png in Resources */,
 				7B18C7AC1DEF57CC006FD068 /* gathering_deliverer_info.png in Resources */,
+				D9CF29121DF84B470079A3E5 /* BlockTraderLogo.png in Resources */,
 				7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */,
 				7B271BC11DEE27F10078C097 /* loading_screen.png in Resources */,
 				7B271BBF1DEE24230078C097 /* BT_short.png in Resources */,
@@ -455,7 +456,6 @@
 				7B07808D1DF093FD00AC4EE5 /* account_landing.png in Resources */,
 				7B18C7A61DEF5113006FD068 /* checking_customer_info.png in Resources */,
 				7B3DC5851DF7594A008DC49A /* SellerViewCellTableViewCell.xib in Resources */,
-				D996A0321DF818B7003A1777 /* BT_Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

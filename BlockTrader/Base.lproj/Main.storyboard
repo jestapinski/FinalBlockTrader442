@@ -111,9 +111,8 @@
                                     <segue destination="mob-eP-ShZ" kind="show" identifier="customer_branch" id="jaO-SR-uOn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BT_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gn1-4f-pAM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BlockTraderLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gn1-4f-pAM">
                                 <rect key="frame" x="16" y="67" width="343" height="46"/>
-                                <color key="backgroundColor" red="0.9137254901960784" green="0.0085540746724186174" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="KSz-O9-8FJ"/>
                                     <constraint firstAttribute="height" constant="50" id="L3b-wM-UEe"/>
@@ -1374,7 +1373,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BT_Logo.png" width="2205" height="294"/>
+        <image name="BlockTraderLogo.png" width="2205" height="294"/>
         <image name="account_landing.png" width="3130" height="5555"/>
         <image name="auth_stripe_page.png" width="3131" height="5555"/>
         <image name="cc_input.png" width="3130" height="5555"/>
