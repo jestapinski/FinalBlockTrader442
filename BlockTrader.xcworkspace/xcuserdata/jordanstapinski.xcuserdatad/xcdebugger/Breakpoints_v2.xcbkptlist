@@ -202,7 +202,7 @@
                   moduleName = "BlockTrader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanstapinski/Desktop/67442/Project/Final/FINALREPO/FinalBlockTrader442/BlockTrader/BackendClient.swift"
-                  timestampString = "502780331.924575"
+                  timestampString = "502820407.19251"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
@@ -217,7 +217,7 @@
                   moduleName = "BlockTrader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanstapinski/Desktop/67442/Project/Final/FINALREPO/FinalBlockTrader442/BlockTrader/BackendClient.swift"
-                  timestampString = "502780331.926786"
+                  timestampString = "502820407.194177"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "39"
@@ -265,28 +265,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BlockTrader/OpenOrdersTableViewController.swift"
-            timestampString = "502810712.483845"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BlockTrader/OrderInfoViewController.swift"
-            timestampString = "502729663.790815"
+            timestampString = "502819870.419304"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "moveToConfirm(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,7 +442,7 @@
                   moduleName = "BlockTrader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanstapinski/Desktop/67442/Project/Final/FINALREPO/FinalBlockTrader442/BlockTrader/MyAPIClient.swift"
-                  timestampString = "502780331.988238"
+                  timestampString = "502820407.236031"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"
@@ -473,7 +457,7 @@
                   moduleName = "BlockTrader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanstapinski/Desktop/67442/Project/Final/FINALREPO/FinalBlockTrader442/BlockTrader/MyAPIClient.swift"
-                  timestampString = "502780331.990196"
+                  timestampString = "502820407.23867"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "167"
@@ -586,60 +570,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/OpenOrdersTableViewController.swift"
-            timestampString = "502810712.483845"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BlockTrader/OpenOrdersTableViewController.swift"
-            timestampString = "502778234.011141"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "appendRName(name:_:_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BlockTrader/OpenOrdersTableViewController.swift"
             timestampString = "502778234.011141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
             landmarkName = "aggregateFoodJsons(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BlockTrader/BackendClient.swift"
-            timestampString = "502759689.275647"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
-            landmarkName = "getResturauntIDFromOrder(orderID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -665,13 +601,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BlockTrader/OpenOrdersTableViewController.swift"
-            timestampString = "502810712.483845"
+            filePath = "BlockTrader/BackendClient.swift"
+            timestampString = "502779040.338952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "do_table_refresh()"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "getCustomerNameFromID(customerID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -682,12 +618,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/BackendClient.swift"
-            timestampString = "502779040.338952"
+            timestampString = "502812930.722568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
-            landmarkName = "getCustomerNameFromID(customerID:completion:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getFacebookIDFromUserID(userID:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlockTrader/OrderInfoViewController.swift"
+            timestampString = "502819870.419304"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlockTrader/OpenOrdersTableViewController.swift"
+            timestampString = "502818284.445979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlockTrader/CustInfoPopoverViewController.swift"
+            timestampString = "502820405.895147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlockTrader/CustInfoPopoverViewController.swift"
+            timestampString = "502820405.895147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

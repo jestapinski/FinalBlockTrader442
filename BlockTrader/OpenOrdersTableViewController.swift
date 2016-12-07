@@ -173,10 +173,12 @@ class OpenOrdersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SellerViewCellTableViewCell
         if (self.TableDisplay.count == 0){
-            for _ in 0..<(TableData.count){
+            for _ in 0...(TableData.count + 1){
                 self.TableDisplay.append("")
-                self.TableRests.append("")
             }
+        }
+        if (TableRests.count == 0){
+            self.TableRests.append("")
         }
         cell.restName?.text = self.TableRests[indexPath.row]
         //cell.minLeft.text =
@@ -208,6 +210,9 @@ class OpenOrdersTableViewController: UITableViewController {
             secondViewController?.orderFoods = self.selectedOrderInfo
             secondViewController?.orderID = self.TableData[sender as! Int]
             secondViewController?.orderDict = self.orderDicts[sender as! Int]
+            secondViewController?.custID = self.orderDicts[sender as! Int]["customer_id"] as! String
+            secondViewController?.price = self.orderDicts[sender as! Int]["price"] as! String
+
         }
     }
 

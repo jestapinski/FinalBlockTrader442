@@ -11,7 +11,7 @@ import UIKit
 import SwiftyJSON
 import MapKit
 
-class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate {
     
     var orderFoods : [[String : Any]] = []
     let backendClient = BackendClient()
@@ -190,6 +190,29 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     // MARK: - Navigation
+    
+    @IBAction func showPopover(sender: AnyObject){
+        //performSegue(withIdentifier: "infoPopover", sender: "")
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "infoPop") as! CustInfoPopoverViewController
+        vc.modalPresentationStyle = .popover
+        let popover = vc.popoverPresentationController!
+        popover.delegate = self
+        popover.permittedArrowDirections = [.right, .down]
+        popover.sourceView = sender as? UIView
+        popover.sourceRect = sender.bounds
+        vc.resturaunt = self.restName
+        vc.custName = self.custName
+        vc.custFBID = self.custFBID
+        vc.orderFoods = self.getFoods()
+        vc.price = self.price
+        vc.profPic = self.backendClient.getProfilePicture(id: custFBID)
+        present(vc, animated: true, completion:nil)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
+    }
 
     /**
      Updates the order in the db with the deliverer's ID, also updates the delivery status
@@ -214,6 +237,14 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             secondViewController?.customerLocation = self.customerLocation
             secondViewController?.orderID = self.orderID
             secondViewController?.custID = self.custID
+        } else if (segue.identifier == "infoPopover"){
+            let vc = segue.destination as! CustInfoPopoverViewController
+            let controller = vc.popoverPresentationController
+            
+            if controller != nil
+            {
+                controller?.delegate = self
+            }
         }
     }
     
