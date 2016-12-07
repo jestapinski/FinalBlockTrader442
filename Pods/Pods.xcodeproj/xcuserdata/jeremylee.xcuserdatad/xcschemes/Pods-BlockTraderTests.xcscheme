@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E40B1DBAB85C1EED3BA6C19198B44DD"
+               BlueprintIdentifier = "DB53F4BA2BB77E3E4090882396B0C926"
                BuildableName = "Pods_BlockTraderTests.framework"
                BlueprintName = "Pods-BlockTraderTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E40B1DBAB85C1EED3BA6C19198B44DD"
+            BlueprintIdentifier = "DB53F4BA2BB77E3E4090882396B0C926"
             BuildableName = "Pods_BlockTraderTests.framework"
             BlueprintName = "Pods-BlockTraderTests"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E40B1DBAB85C1EED3BA6C19198B44DD"
-            BuildableName = "Pods_BlockTraderTests.framework"
-            BlueprintName = "Pods-BlockTraderTests"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

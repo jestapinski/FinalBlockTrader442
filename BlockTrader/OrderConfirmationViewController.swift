@@ -76,8 +76,8 @@ class OrderConfirmationViewController: UIViewController {
         super.viewDidLoad()
         self.customer.text = custID
         self.order.text = String(orderNumber)
-        let imageView = UIImageView()
-        imageView.loadGif("loading")
+        self.profPic.layer.cornerRadius = self.profPic.frame.size.width / 2
+        self.profPic.clipsToBounds = true
         if(self.orderNumber != 0){
             Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(OrderConfirmationViewController.execute), userInfo: self.orderNumber, repeats: true)
         }

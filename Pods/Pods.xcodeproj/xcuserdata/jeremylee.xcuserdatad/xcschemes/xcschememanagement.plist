@@ -6,93 +6,88 @@
 	<dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>AlamofireImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FBSDKLoginKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FacebookCore.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FacebookLogin.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FacebookShare.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-BlockTrader.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-BlockTraderTests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>15</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Stripe-Stripe.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Stripe.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftGifOrigin.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>13</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>039100AC066B4BC97EC8149F7228182E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0E40B1DBAB85C1EED3BA6C19198B44DD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>31418D425B97E292FFAFC566D79FC144</key>
+		<key>243EF0162038F9EC3C0E2C7DEEBC9876</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>333121AD23522557D4C3DA6AA8465F87</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>333E47F1004946B94926B19979768D18</key>
+		<key>437E836372E9ED054F8C90221E4FB240</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +107,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>533607A808BC64912197562E016B6085</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>56A9734A7265E949A0BBFB9CAC03A6F1</key>
+		<key>471D06760216EABFE60534DD1BCB3CE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,22 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A0A28913A1212C2D1EACECBA1E58AC0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5B5AC3C06B783F8674FDB4C0F900B56A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5FA217904E2D1A940C591C0B7F8DA7B0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>711EB5F58027B760C97478A1BF8DE01E</key>
+		<key>62555154ED1AE8D2F78DF3D2DE74F00F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,27 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8329B4DD82B7A073B34A61C9527865D0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>94EEF6A05D99F50D047E4489AB9158B6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
+		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,17 +147,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A8F77DC39F7D0CFE46DAA5C135D96A80</key>
+		<key>D683F21B7959031883D5DA2005075F81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBA31E54EBEB7C1313D3F962F31EE93D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD707E469C8D0BEA816D740155A3B629</key>
+		<key>DB53F4BA2BB77E3E4090882396B0C926</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -207,17 +162,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE6085225A7E2B9F776DADB9950E45E0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E8B95E3175CDDCC230A95564ADC23341</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F3ED1D1575AF9560E115561F6C10D547</key>
+		<key>EB1CA86A49A63AB5AE7B7DB8D1354B00</key>
 		<dict>
 			<key>primary</key>
 			<true/>
