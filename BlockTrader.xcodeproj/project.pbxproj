@@ -36,6 +36,10 @@
 		7B3DC5841DF7594A008DC49A /* SellerViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3DC5821DF7594A008DC49A /* SellerViewCellTableViewCell.swift */; };
 		7B3DC5851DF7594A008DC49A /* SellerViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3DC5831DF7594A008DC49A /* SellerViewCellTableViewCell.xib */; };
 		7B49CADD1DF8957C00483224 /* info_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B49CADC1DF8957C00483224 /* info_button.png */; };
+		7B49CADF1DF8A34F00483224 /* accept.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B49CADE1DF8A34E00483224 /* accept.png */; };
+		7B49CAE31DF8A71500483224 /* accept-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B49CAE01DF8A71500483224 /* accept-btn.png */; };
+		7B49CAE41DF8A71500483224 /* delivered.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B49CAE11DF8A71500483224 /* delivered.png */; };
+		7B49CAE51DF8A71500483224 /* got-food-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B49CAE21DF8A71500483224 /* got-food-btn.png */; };
 		7B9F058F1DE8DC1F00E98C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */; };
 		7B9F05911DE8DC1F00E98C5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05901DE8DC1F00E98C5C /* ViewController.swift */; };
 		7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9F05921DE8DC1F00E98C5C /* Main.storyboard */; };
@@ -103,6 +107,10 @@
 		7B3DC5821DF7594A008DC49A /* SellerViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerViewCellTableViewCell.swift; sourceTree = "<group>"; };
 		7B3DC5831DF7594A008DC49A /* SellerViewCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SellerViewCellTableViewCell.xib; sourceTree = "<group>"; };
 		7B49CADC1DF8957C00483224 /* info_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_button.png; sourceTree = "<group>"; };
+		7B49CADE1DF8A34E00483224 /* accept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accept.png; sourceTree = "<group>"; };
+		7B49CAE01DF8A71500483224 /* accept-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accept-btn.png"; sourceTree = "<group>"; };
+		7B49CAE11DF8A71500483224 /* delivered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delivered.png; sourceTree = "<group>"; };
+		7B49CAE21DF8A71500483224 /* got-food-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "got-food-btn.png"; sourceTree = "<group>"; };
 		7B9F058B1DE8DC1F00E98C5C /* BlockTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9F05901DE8DC1F00E98C5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +228,10 @@
 			isa = PBXGroup;
 			children = (
 				7B9F05921DE8DC1F00E98C5C /* Main.storyboard */,
+				7B49CAE01DF8A71500483224 /* accept-btn.png */,
+				7B49CAE11DF8A71500483224 /* delivered.png */,
+				7B49CAE21DF8A71500483224 /* got-food-btn.png */,
+				7B49CADE1DF8A34E00483224 /* accept.png */,
 				7B49CADC1DF8957C00483224 /* info_button.png */,
 				7B9F059A1DE8DC1F00E98C5C /* LaunchScreen.storyboard */,
 				7B3DC5821DF7594A008DC49A /* SellerViewCellTableViewCell.swift */,
@@ -453,6 +465,7 @@
 				7B18C7B61DEFAEB1006FD068 /* auth_stripe_page.png in Resources */,
 				7B9F05991DE8DC1F00E98C5C /* Assets.xcassets in Resources */,
 				7B271BBB1DEE19DA0078C097 /* loading_screen.png in Resources */,
+				7B49CADF1DF8A34F00483224 /* accept.png in Resources */,
 				7B18C7AC1DEF57CC006FD068 /* gathering_deliverer_info.png in Resources */,
 				D9CF29121DF84B470079A3E5 /* BlockTraderLogo.png in Resources */,
 				7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */,
@@ -460,6 +473,9 @@
 				7B271BC11DEE27F10078C097 /* loading_screen.png in Resources */,
 				7B271BBF1DEE24230078C097 /* BT_short.png in Resources */,
 				7B271BBD1DEE1D670078C097 /* main_screen.png in Resources */,
+				7B49CAE41DF8A71500483224 /* delivered.png in Resources */,
+				7B49CAE51DF8A71500483224 /* got-food-btn.png in Resources */,
+				7B49CAE31DF8A71500483224 /* accept-btn.png in Resources */,
 				7B07808D1DF093FD00AC4EE5 /* account_landing.png in Resources */,
 				7B18C7A61DEF5113006FD068 /* checking_customer_info.png in Resources */,
 				7B3DC5851DF7594A008DC49A /* SellerViewCellTableViewCell.xib in Resources */,
