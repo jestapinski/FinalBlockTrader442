@@ -71,6 +71,12 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
         self.stripeAPIClient.performCharge(providerID: actualAcctID, customerID: actualCustID, cost: cost, completion: self.moveOn)
     }
     
+    @IBAction func cancelOrder(sender: AnyObject){
+        self.backendClient.cancelOrder(orderID: self.orderID)
+        //Go back to table view
+        performSegue(withIdentifier: "cancelAfterFood", sender: "")
+    }
+    
     /**
      Callback function for completing the charge, updates the order to "Delivered" and proceeds to the next view controller
     */
