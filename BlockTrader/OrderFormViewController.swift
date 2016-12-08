@@ -55,7 +55,8 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
                 "delivery_status": "",
                 "payment_id_user": "",
                 "payment_id_reciever": "",
-                "price": desired_price.text!
+                "price": desired_price.text!,
+                "real_price": suggestedPrice.text!
             ],
             "commit":"Create Order"
         ]
