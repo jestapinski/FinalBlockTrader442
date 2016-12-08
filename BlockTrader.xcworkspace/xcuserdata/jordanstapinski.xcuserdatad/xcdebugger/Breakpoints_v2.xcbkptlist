@@ -422,7 +422,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/MyAPIClient.swift"
@@ -435,7 +435,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BlockTrader.MyAPIClient.(performCharge (providerID : Swift.String, customerID : Swift.String, cost : Swift.String, completion : () -&gt; ()) -&gt; ()).(closure #1)"
@@ -450,7 +450,7 @@
                   offsetFromSymbolStart = "36">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BlockTrader.MyAPIClient.(performCharge (providerID : Swift.String, customerID : Swift.String, cost : Swift.String, completion : () -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
