@@ -117,7 +117,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.custName = id
         self.custID = userID
         let restID = self.orderFoods.first?["resturant_id"] as! String
-        self.backendClient.getResturauntIDFromOrder(orderID: restID, completion: self.setRestLabel)
+        self.backendClient.getResturauntIDFromOrder(orderID: restID, lastOne: [:], lOFID: [], index: 0, completion: self.setRestLabel)
     }
     
     /**
@@ -150,7 +150,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
      - parameter latitude: The latitude passed from the API
      - parameter longitude: The longitude passed from the API
      */
-    func setRestLabel(_ name: String, _ latitude: String, _ longitude: String){
+    func setRestLabel(_ name: String, _ latitude: String, _ longitude: String, _ : [String : Any], _ : [String], _ : Int){
         self.restNameLabel.text = name
         self.restName = name
         self.restLocation = CLLocationCoordinate2D(latitude: CLLocationDegrees(Float(latitude)!), longitude: CLLocationDegrees(Float(longitude)!))

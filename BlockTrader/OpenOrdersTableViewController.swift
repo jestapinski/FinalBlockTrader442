@@ -71,7 +71,8 @@ class OpenOrdersTableViewController: UITableViewController {
         if (index != 0) {
             foodIDs.append(lastBack)
         }
-        if (index == arr.count) {self.aggregateFoodItems(Array(self.foodIDs.joined()), 0, [:])
+        if (index == arr.count) {
+            self.aggregateFoodItems(Array(self.foodIDs.joined()), 0, [:])
                                 return}
         self.backendClient.getFoodModelFromOrder(orderID: arr[index], index: index, numsArray: arr ,completion: self.foodOrdersLoop)
 
@@ -87,10 +88,9 @@ class OpenOrdersTableViewController: UITableViewController {
         //Takes in flattened ids, now to loop
         if (index != 0) {
             //self.TableRests.append(lastOne["name"] as! String)
-            self.backendClient.getResturauntIDFromOrder(orderID: lastOne["resturant_id"] as! String, completion: self.appendRName)
-            allJSONs.append(lastOne)
+            self.backendClient.getResturauntIDFromOrder(orderID: lastOne["resturant_id"] as! String, lastOne: lastOne, lOFID: listOfFoodIds, index: index, completion: self.appendRName)
         }
-        if (index == listOfFoodIds.count) {self.combineBack()
+        if (index == listOfFoodIds.count) {
             return}
         //Fix below and function in client
         self.backendClient.mapToFoodJSONs(foodID: listOfFoodIds[index], index: index, originalArray: listOfFoodIds , completion: self.aggregateFoodItems)
@@ -106,9 +106,14 @@ class OpenOrdersTableViewController: UITableViewController {
         self.TableDisplay.append(finalJSON["name"] as! String)
     }
     
-    func appendRName(name : String, _ : String, _ : String){
+    func appendRName(name : String, _ : String, _ : String, lastOne: [String : Any], lOFID: [String], index: Int){
         self.TableRests.append(name)
-        self.do_table_refresh()
+        allJSONs.append(lastOne)
+        if (index == lOFID.count){
+            self.combineBack()
+        }
+
+        //self.do_table_refresh()
     }
     
     /**
@@ -118,12 +123,18 @@ class OpenOrdersTableViewController: UITableViewController {
         let countIDs = self.foodIDs.map({$0.count})
         var finalNames: [[String]] = []
         var finalJSONs: [[[String : Any]]] = []
+        var finalTableRests: [String] = []
+        var counter = 0
         var currentIndex = 0
         for countNum in countIDs {
             var newArray: [String] = []
             var newJSONArray: [[String : Any]] = []
             for i in currentIndex..<(currentIndex + countNum) {
                 //print(i)
+                if (i == currentIndex){
+                    finalTableRests.append(self.TableRests[i])
+                    counter = counter + 1
+                }
                 newArray.append(allJSONs[i]["name"] as! String)
                 newJSONArray.append(allJSONs[i])
                 //self.TableRests.append(allJSONs[i]["restID"])
@@ -136,6 +147,7 @@ class OpenOrdersTableViewController: UITableViewController {
         let finalNameMapping = finalNames.map({ (x : [String]) -> String in  if x.count == 0 {return "Not Active"} else {return x.joined(separator: " & ")}})
         self.TableDisplay = finalNameMapping
         self.TableJSONs = finalJSONs
+        self.TableRests = finalTableRests
         self.do_table_refresh()
         return
     }
@@ -179,7 +191,7 @@ class OpenOrdersTableViewController: UITableViewController {
         }
         self.TableRests = self.TableRests.filter({ $0 != ""})
         if (TableRests.count != TableData.count){
-            for _ in 0..<(TableData.count){
+            for _ in 0..<(TableData.count - TableRests.count){
                 self.TableRests.append("")
             }
         }
