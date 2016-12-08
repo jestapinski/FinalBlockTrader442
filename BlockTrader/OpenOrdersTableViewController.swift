@@ -132,7 +132,7 @@ class OpenOrdersTableViewController: UITableViewController {
             for i in currentIndex..<(currentIndex + countNum) {
                 //print(i)
                 if (i == currentIndex){
-                    finalTableRests.append(self.TableRests[counter])
+                    finalTableRests.append(self.TableRests[i])
                     counter = counter + 1
                 }
                 newArray.append(allJSONs[i]["name"] as! String)

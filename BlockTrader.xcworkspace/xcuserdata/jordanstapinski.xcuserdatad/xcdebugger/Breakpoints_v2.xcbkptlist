@@ -154,7 +154,7 @@
                   moduleName = "BlockTrader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanstapinski/Desktop/67442/Project/Final/FINALREPO/FinalBlockTrader442/BlockTrader/BackendClient.swift"
-                  timestampString = "502915588.689335"
+                  timestampString = "502916137.048253"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
@@ -169,7 +169,7 @@
                   moduleName = "BlockTrader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanstapinski/Desktop/67442/Project/Final/FINALREPO/FinalBlockTrader442/BlockTrader/BackendClient.swift"
-                  timestampString = "502915588.691516"
+                  timestampString = "502916137.052005"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -634,7 +634,7 @@
                   moduleName = "BlockTrader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanstapinski/Desktop/67442/Project/Final/FINALREPO/FinalBlockTrader442/BlockTrader/MyAPIClient.swift"
-                  timestampString = "502915588.781107"
+                  timestampString = "502916137.155596"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "167"
@@ -649,7 +649,7 @@
                   moduleName = "BlockTrader"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanstapinski/Desktop/67442/Project/Final/FINALREPO/FinalBlockTrader442/BlockTrader/MyAPIClient.swift"
-                  timestampString = "502915588.782594"
+                  timestampString = "502916137.157677"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
@@ -678,7 +678,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/OpenOrdersTableViewController.swift"
@@ -687,6 +687,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
             endingLineNumber = "135"
+            landmarkName = "combineBack()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlockTrader/OpenOrdersTableViewController.swift"
+            timestampString = "502916026.334218"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "combineBack()"
             landmarkType = "7">
          </BreakpointContent>
