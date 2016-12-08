@@ -157,7 +157,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
      Moves on to next phase of delivery since food has been picked up. Updates status in DB.
     */
     @IBAction func foodHasBeenPickedUp(sender: AnyObject){
-        //self.backendClient.updateStatus(orderID: self.orderID, message: "Got Food")
+        self.backendClient.updateStatus(orderID: self.orderID, message: "Got Food")
         performSegue(withIdentifier: "goToCustomer", sender: "")
     }
     

@@ -75,7 +75,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
      Gets the customer and deliverer IDs from the order
     */
     @IBAction func customerHasFood(sender: AnyObject){
-        //self.backendClient.getIDsFromOrder(orderID: self.orderID, completion: self.handleOurIDs)
+        self.backendClient.getIDsFromOrder(orderID: self.orderID, completion: self.handleOurIDs)
         self.moveOn()
     }
     
@@ -109,7 +109,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
      Callback function for completing the charge, updates the order to "Delivered" and proceeds to the next view controller
     */
     func moveOn(){
-        //self.backendClient.updateStatus(orderID: self.orderID, message: "Delivered")
+        self.backendClient.updateStatus(orderID: self.orderID, message: "Delivered")
         performSegue(withIdentifier: "deliveredFood", sender: "")
     }
     

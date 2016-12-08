@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var credentials: [String : Any] = [:]
     var accessCode: String?
     var accessToken: AccessToken?
-    let stripePublishableKey = "pk_test_BfRm3UU2gsYRebGH6cMuwnl7"
+    let stripePublishableKey = "pk_test_sZZZTwsFB59PiVf56a6UGrlg"
     let appleMerchantID: String? = nil
     fileprivate var requiredBillingAddressFields: RequiredBillingAddressFields = .None
     
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        STPPaymentConfiguration.shared().publishableKey = "pk_test_BfRm3UU2gsYRebGH6cMuwnl7"
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_sZZZTwsFB59PiVf56a6UGrlg"
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
