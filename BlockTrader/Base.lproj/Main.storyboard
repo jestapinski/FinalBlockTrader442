@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1032,11 +1033,18 @@
                                             </segue>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" title="Next &gt;" id="OPZ-SQ-e4E">
-                                        <connections>
-                                            <segue destination="OOt-xw-TaC" kind="show" identifier="submitorder" id="apq-rH-Nzr"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <rightBarButtonItems>
+                                        <barButtonItem title="Next &gt;" id="OPZ-SQ-e4E">
+                                            <connections>
+                                                <action selector="next" destination="tkw-Ma-omB" id="7zg-FK-tAg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem id="1Sd-Bo-Zqm">
+                                            <connections>
+                                                <segue destination="OOt-xw-TaC" kind="show" identifier="submitorder" id="UjH-mp-p4a"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </rightBarButtonItems>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -1116,7 +1124,6 @@
                                 </state>
                                 <connections>
                                     <action selector="submitFormWithSender:" destination="OOt-xw-TaC" eventType="touchUpInside" id="tKw-5z-mLx"/>
-                                    <segue destination="lV0-ua-zR4" kind="show" identifier="confirmation" id="bJm-Ts-YK8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ph-T4-T6U">
@@ -1166,6 +1173,13 @@
                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="submitorder" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qT-k9-oM2">
+                                <rect key="frame" x="272" y="-10" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="lV0-ua-zR4" kind="show" identifier="confirmation" id="IxF-rz-noN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.72941176470588232" green="0.85490196078431369" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1471,8 +1485,8 @@
         <segue reference="cj4-iH-Gw1"/>
         <segue reference="PUq-pT-xYz"/>
         <segue reference="P94-8m-qZQ"/>
-        <segue reference="W5t-65-tbI"/>
-        <segue reference="bGA-1n-Owd"/>
+        <segue reference="bIC-FB-YnA"/>
         <segue reference="kf1-ce-q9Z"/>
+        <segue reference="IxF-rz-noN"/>
     </inferredMetricsTieBreakers>
 </document>
