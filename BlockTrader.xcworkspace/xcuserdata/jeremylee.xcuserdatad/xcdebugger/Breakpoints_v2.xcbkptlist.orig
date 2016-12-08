@@ -10,11 +10,19 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/PickFoodViewController.swift"
+<<<<<<< HEAD
+            timestampString = "502919975.253841"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+=======
             timestampString = "502917028.136412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
             endingLineNumber = "51"
+>>>>>>> c45c373110bf2d436ecb025e00717e5b0b5ecd87
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -45,8 +53,13 @@
             timestampString = "502919975.253841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+=======
             startingLineNumber = "109"
             endingLineNumber = "109"
+>>>>>>> c45c373110bf2d436ecb025e00717e5b0b5ecd87
             landmarkName = "didReceiveMemoryWarning()"
             landmarkType = "7">
          </BreakpointContent>
@@ -61,8 +74,13 @@
             timestampString = "502919975.253841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "142"
+            endingLineNumber = "142">
+=======
             startingLineNumber = "143"
             endingLineNumber = "143">
+>>>>>>> c45c373110bf2d436ecb025e00717e5b0b5ecd87
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -168,7 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/OrderFormViewController.swift"
+<<<<<<< HEAD
+            timestampString = "502918629.239225"
+=======
             timestampString = "502917853.029133"
+>>>>>>> c45c373110bf2d436ecb025e00717e5b0b5ecd87
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"

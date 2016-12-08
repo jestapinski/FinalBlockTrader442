@@ -25,6 +25,16 @@ class PickFoodViewController: UITableViewController {
     
     @IBOutlet weak var cust_id: UILabel!
     
+    @IBAction func next(){
+        if(self.items == []){
+            let alert = UIAlertController(title: "Select Food", message: "Please select atleast one food item", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            performSegue(withIdentifier: "submitorder", sender: nil)
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

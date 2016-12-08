@@ -64,7 +64,12 @@ class OrderConfirmationViewController: UIViewController {
                         self.performSegue(withIdentifier: "backHome", sender: nil)
                     }
                 }
+<<<<<<< HEAD
+                
+                
+=======
         
+>>>>>>> eb5c81f627688ead174af954e6659cfd5dd57c32
                 
                 if(jsonarr["provider_id"].stringValue != "0"){
                     
