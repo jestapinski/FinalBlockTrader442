@@ -39,11 +39,15 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
         self.view.endEditing(true)
     }
     
+    // MARK: request
+    //creates a create order request
     func request(credentials: [String: Any], items: [Int], lat: Float, long: Float, completion: @escaping(_ num: Int) -> ())
     {
+        //headers contain the authorization token to use with the API
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
+        //parameters contain user inputted info
         let parameters: Parameters = [
             "order": [
                 "food_order_id": "",
@@ -60,12 +64,13 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
             ],
             "commit":"Create Order"
         ]
-        
+        //submits alamofire request to create the order
         Alamofire.request("http://germy.tk:3000/orders.json", method: .post, parameters: parameters, headers: headers).responseJSON { response in
             if let json = response.result.value{
                 let jsonarr = JSON(json)
                 for item in self.items{
                     self.orderNumber = jsonarr["id"].intValue
+                    //adds the foods to the food_order table
                     var food_order_parm: Parameters = [
                         "food_order":[
                             "food_id":"\(item)",
@@ -73,6 +78,7 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
                         ],
                         "commit": "Create Food order"
                     ]
+                    //submits request to post to API
                     Alamofire.request("http://germy.tk:3000/food_orders", method: .post, parameters: food_order_parm, headers: headers)
                 }
             }
@@ -82,6 +88,7 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // MARK: Submitting Forms
+    // submits the form to move to the confirmation page
     @IBAction func submitForm(sender: AnyObject){
         request(credentials: self.credentials, items: self.items, lat: self.lat, long: self.long){(ku) -> () in
             self.orderNumber = ku
@@ -89,7 +96,9 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
                 //Move to next page
                 self.moveToConfirmation(orderNumber: ku)
             } else {
-                print("Fields are not correct")
+                let alert = UIAlertController(title: "Price", message: "Please enter a price over $0.50", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
 
         }
@@ -97,36 +106,24 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
     
     /**
      Checks that the form fields are valid for entering an order
-     
-     TODO check ""
     */
+    // MARK: checkValidFields
     func checkValidFields() -> Bool{
-//        if let food = self.food_choice.text,
-//           let location = self.customer_location.text,
-//           let resturaunt = self.resturaunt_choice.text{
-//            return food != "" && location != "" && resturaunt != "" && priceIsValid()
-//        }
-        return true
+        if(Float(self.desired_price.text!)! > 0.50){
+            return true
+            }
+        return false
     }
-    
-    /**
-     Checks that the desired price field is a valid amount
-    */
-    func priceIsValid() -> Bool{
-        return (self.desired_price.text != "")
-    }
-
     
     // MARK: - Navigation
     
     func moveToConfirmation(orderNumber: OrderNumber){
         performSegue(withIdentifier: "confirmation", sender: orderNumber)
     }
-    
+    //segues confirmtion -> to confirmation screen, backToFood -> returns back to food selection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "confirmation") {
             let finalDestination = segue.destination as? OrderConfirmationViewController
-            print("confirmed")
             finalDestination?.credentials =	 self.credentials
             finalDestination?.orderNumber = self.orderNumber
         } else if (segue.identifier == "backToFood") {
@@ -137,6 +134,7 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
             finalDestination?.customer = self.customer
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

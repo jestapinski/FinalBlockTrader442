@@ -329,7 +329,7 @@ class BackendClient {
     }
     
     
-    func getResturauntIDFromOrder(orderID: String, completion: @escaping (String, String, String) -> Void){
+    func getResturauntIDFromOrder(orderID: String, lastOne: [String : Any], lOFID: [String], index: Int, completion: @escaping (String, String, String, [String : Any], [String], Int) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -341,7 +341,7 @@ class BackendClient {
                 let lat = self.JSONtoDictionary(JSONelement: JSON(json))["latitude"] as! String
                 let long = self.JSONtoDictionary(JSONelement: JSON(json))["longitude"] as! String
                 //Here I would simply get the customer ID and pass completion along
-                completion(jsonarr, lat, long)
+                completion(jsonarr, lat, long, lastOne, lOFID, index)
             }
         }
         

@@ -4,12 +4,32 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
+		<key>Alamofire-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>AlamofireImage-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
+		<key>AlamofireImage-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
 		</dict>
 		<key>AlamofireImage.xcscheme</key>
 		<dict>
@@ -18,12 +38,32 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Bolts-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
+		<key>Bolts-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+		<key>FBSDKCoreKit-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
+		</dict>
+		<key>FBSDKCoreKit-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>30</integer>
 		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
@@ -32,12 +72,32 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>FBSDKLoginKit-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>31</integer>
+		</dict>
+		<key>FBSDKLoginKit-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>32</integer>
+		</dict>
 		<key>FBSDKLoginKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>FBSDKShareKit-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>33</integer>
+		</dict>
+		<key>FBSDKShareKit-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>34</integer>
 		</dict>
 		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
@@ -46,6 +106,16 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>FacebookCore-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>23</integer>
+		</dict>
+		<key>FacebookCore-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
 		<key>FacebookCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -53,12 +123,32 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>FacebookLogin-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
+		<key>FacebookLogin-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>26</integer>
+		</dict>
 		<key>FacebookLogin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+		<key>FacebookShare-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>27</integer>
+		</dict>
+		<key>FacebookShare-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>28</integer>
 		</dict>
 		<key>FacebookShare.xcscheme</key>
 		<dict>
@@ -81,6 +171,21 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
+		<key>PusherSwift.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>35</integer>
+		</dict>
+		<key>SVProgressHUD-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>40</integer>
+		</dict>
+		<key>SVProgressHUD-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>41</integer>
+		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -95,6 +200,26 @@
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
+		<key>Stripe-iOS10.1-Stripe.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>37</integer>
+		</dict>
+		<key>Stripe-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>36</integer>
+		</dict>
+		<key>Stripe-iOS9.3-Stripe.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>39</integer>
+		</dict>
+		<key>Stripe-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>38</integer>
+		</dict>
 		<key>Stripe.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -107,6 +232,16 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
+		<key>SwiftyJSON-iOS10.1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>42</integer>
+		</dict>
+		<key>SwiftyJSON-iOS9.3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>43</integer>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -117,12 +252,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>013FE87AD1A75D8C64F25C140F9ED0CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>02A64E41263C8B9237AFBACB2D4931AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>077CDFE48D7298BE281E40CC6D03252D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0D8205BBC29458B9DBB6167EBE932656</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0DB99E200C18BBDAAAA8D421926618DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0E40B1DBAB85C1EED3BA6C19198B44DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0E607F3F7FAAFC02CBCBA8B29C32E600</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1FB3B3EC2184F16D67CE7A9085FDE497</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>243EF0162038F9EC3C0E2C7DEEBC9876</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2529BCD780D1681AF1FAEFB8144E200B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>27F6BA322A9AF0C4E928DEC5180512C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>282A97700A860F2C62D3099E5AF15E77</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,6 +332,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>36A6247946700D20A007A97762818A51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>36AEFAA2F55A3BAF957C577162CEAF47</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>437E836372E9ED054F8C90221E4FB240</key>
 		<dict>
 			<key>primary</key>
@@ -158,6 +353,11 @@
 			<true/>
 		</dict>
 		<key>471D06760216EABFE60534DD1BCB3CE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4DAC9E591BF9FE21804E11FFCC9C5D12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,6 +387,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>636C9CA966C4CF33D6EA8E5DEE3D630F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>64F3396228E05453D58EDF7089E9CC1D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>711EB5F58027B760C97478A1BF8DE01E</key>
 		<dict>
 			<key>primary</key>
@@ -202,6 +412,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7AEFAAB6C833C6D8794C4C2677009F51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8329B4DD82B7A073B34A61C9527865D0</key>
 		<dict>
 			<key>primary</key>
@@ -212,7 +427,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8DB9B15344473FE5E6D8D17705EAFA2A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90B9B268C4870783E93CE0DC1D6EEE8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>94EEF6A05D99F50D047E4489AB9158B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99E415E32D92D7816D1A3B77665E79E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C472C4E1A971F4A6CAD88A92DC3DB26</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C78FAA948AAF9225A08CAD1520E63CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -222,7 +462,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9E6610892651A076D94BF96C77F8A88C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9F2658EA6F0F3BBB5D2D723EAD985D97</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -237,12 +487,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>AFCC0BD1A0641B32C8CDAF55EFABB06A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0E6FAACBAEFC34B1B8D198FBC74F279</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B49BBEE35DA54DF8C2CBC014B4ACA93A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BBA31E54EBEB7C1313D3F962F31EE93D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>D683F21B7959031883D5DA2005075F81</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D98219F621F26BF6936386761E6ABD77</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -262,7 +532,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>E59E0AFF27B529BEF7B5B95E1C96D500</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E97551896576B2E5A0DD34DD4E18DC92</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EB1CA86A49A63AB5AE7B7DB8D1354B00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0D18BF90405D52B1EFF2C1671B75F08</key>
 		<dict>
 			<key>primary</key>
 			<true/>

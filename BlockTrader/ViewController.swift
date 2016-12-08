@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         self.proceedButton.layer.cornerRadius = 30
     }
     
+    // MARK: proceed
+    // checks if the accesstoken is valid before continuing
     @IBAction func proceed(){
         if let accessToken = AccessToken.current{
             self.moveToMainPage(accessToken: accessToken)
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
      Performs Navigation to Home Page if the user has been authenticated through Facebook
      - parameter accessToken: The Access Token received from Facebook API
      */
+    // MARK: moveToMainPage
     func moveToMainPage(accessToken: AccessToken){
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc : MainPageViewController = mainStoryboard.instantiateViewController(withIdentifier: "loggedin") as! MainPageViewController
