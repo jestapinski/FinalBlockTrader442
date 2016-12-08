@@ -13,6 +13,7 @@ class SellerViewCellTableViewCell: UITableViewCell {
     @IBOutlet weak var restName: UILabel?
     @IBOutlet weak var minLeft: UILabel?
     @IBOutlet weak var price: UILabel?
+    @IBOutlet weak var realPrice: UILabel?
 
     override func awakeFromNib() {
         super.awakeFromNib()

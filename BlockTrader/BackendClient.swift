@@ -20,6 +20,10 @@ class BackendClient {
         self.credentials = appDelegate.credentials
     }
     
+    /**
+    Takes a person's Facebook ID and returns their Facebook Profile Picture
+     - parameter id: The Facebook ID
+    */
     func getProfilePicture(id: String) -> UIImage{
         let imgURLString = "http://graph.facebook.com/" + "v2.8/" + id + "/picture?type=large" //type=normal
         let imgURL = NSURL(string: imgURLString)
@@ -28,6 +32,11 @@ class BackendClient {
         return image!
     }
     
+    /**
+     Takes a userID from the API and returns the person's Facebook ID
+     - parameter userID: The API ID of the user
+     - parameter completion: The continuation function to be run after the response.
+    */
     func getFacebookIDFromUserID(userID: String, completion: @escaping (String) -> Void){
         self.credentials = appDelegate.credentials
         let headers = [
@@ -43,6 +52,11 @@ class BackendClient {
         }
     }
     
+    /**
+     Takes a userID from the API and returns the person's Stripe Account SellerID
+     - parameter userID: The API ID of the user
+     - parameter completion: The continuation function to be run after the response.
+     */
     func getAccountForUser(userID: String, completion: @escaping (Bool) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
@@ -58,6 +72,11 @@ class BackendClient {
         }
     }
     
+    /**
+     Takes a userID and an orderID and posts the user as the deliverer for that order
+     - parameter userID: The API id of the deliverer
+     - parameter orderID: The API id of the order
+    */
     func postProviderID(userID: String, orderID: String){
         let headers = [
             "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
@@ -76,6 +95,11 @@ class BackendClient {
 
     }
     
+    /**
+     Takes an orderID from the API as well as a message and updates the delivery status to that message.
+     - parameter orderID: The API ID of the order.
+     - parameter message: The message to be posted
+    */
     func updateStatus(orderID: String, message: String){
         let headers = [
             "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
@@ -94,6 +118,12 @@ class BackendClient {
 
     }
     
+    /**
+     Takes an orderID from the API as well as a location and updates the deliverer's location to that location.
+     - parameter orderID: The API ID of the order.
+     - parameter latitude: The latitude of the deliverer
+     - parameter longitude: The longitude of the deliverer
+     */
     func updateLocation(orderID: String, latitude: String, longitude: String){
         let headers = [
             "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
@@ -112,6 +142,10 @@ class BackendClient {
 
     }
     
+    /**
+     Cancels an order from the API
+     - parameter orderID: The API ID of the order.
+     */
     func cancelOrder(orderID: String){
         let headers = [
             "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
@@ -131,6 +165,13 @@ class BackendClient {
         
     }
     
+    /**
+     Takes a food ID and returns the model of that food item in a completion (To be executed in a loop)
+     - parameter foodID: The API ID of the food.
+     - parameter index: The current index of the array
+     - parameter originalArray: The array being passed around
+     - parameter completion: The function to be executed after getting the model
+     */
     func mapToFoodJSONs(foodID: String, index: Int, originalArray: [String], completion: @escaping ([String], Int, [String : Any]) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
@@ -147,6 +188,10 @@ class BackendClient {
     
     }
     
+    /**
+     Takes a JSON element and converts it to a swift dictionary
+     - parameter JSONelement: The JSON model returned from the API
+     */
     func JSONtoDictionary(JSONelement: JSON) -> [String : Any]{
         var finalDictionary : [String : Any] = [:]
         for (key, object) in JSONelement {
@@ -155,6 +200,10 @@ class BackendClient {
         return finalDictionary
     }
     
+    /**
+     Gets all orders from the API and maps them to swift dictionaries
+     - parameter completion: The function to be executed after getting all the orders
+     */
     func getOrders(completion: @escaping ([[String : Any]]) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
@@ -177,7 +226,11 @@ class BackendClient {
         }
     }
 
-    
+    /**
+     Takes an orderID from the API and gets the API ID of the customer
+     - parameter orderID: The API ID of the order.
+     - parameter completion: The function to be executed after getting the customer
+     */
     func getCustomerNameFromOrder(orderID: String, completion: @escaping (String, String) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
@@ -195,6 +248,11 @@ class BackendClient {
         }
     }
     
+    /**
+     Takes an orderID from the API as well as a message and updates the delivery status to that message.
+     - parameter orderID: The API ID of the order.
+     - parameter message: The message to be posted
+     */
     func getPriceFromOrder(orderID: String, completion: @escaping (String) -> Void){
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"

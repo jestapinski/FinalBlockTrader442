@@ -115,6 +115,7 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
     }
     
     func getCents(cost: String) -> String{
+        if (cost == ""){return ""}
         var newArr = cost.components(separatedBy: ".")
         if (newArr[1].characters.count == 0){
             newArr[1] = "00"

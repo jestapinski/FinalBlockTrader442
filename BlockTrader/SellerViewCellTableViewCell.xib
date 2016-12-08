@@ -31,12 +31,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWJ-kh-SA6">
-                        <rect key="frame" x="238" y="12" width="74" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWJ-kh-SA6">
+                        <rect key="frame" x="238" y="4" width="74" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="74" id="huU-lH-tWS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsD-sX-XWC">
+                        <rect key="frame" x="191" y="23" width="121" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -55,6 +62,7 @@
             <connections>
                 <outlet property="minLeft" destination="2WV-cn-jvg" id="28O-by-Z5C"/>
                 <outlet property="price" destination="UWJ-kh-SA6" id="Xv9-Q3-mro"/>
+                <outlet property="realPrice" destination="IsD-sX-XWC" id="c4z-v1-gV2"/>
                 <outlet property="restName" destination="hMs-gY-Ome" id="t56-yc-KA2"/>
             </connections>
         </tableViewCell>

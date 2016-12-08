@@ -31,6 +31,7 @@ class OpenOrdersTableViewController: UITableViewController {
     var TableOrders: [[String : Any]] = []
     var TableRests: [String] = []
     var timer: Timer? = nil
+    var TableRealPrices: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,7 @@ class OpenOrdersTableViewController: UITableViewController {
         self.orderDicts = newlistOfOrders
         self.TableOrders = newlistOfOrders
         self.TableData = newlistOfOrders.map({return $0["id"] as! String})
+        self.TableRealPrices = newlistOfOrders.map({return $0["real_price"] as! String})
         self.foodOrdersLoop(self.TableData.map({$0}), 0, [])
     }
     
@@ -157,6 +159,7 @@ class OpenOrdersTableViewController: UITableViewController {
      - parameter price: The price passed back from the API call
      */
     func setPriceLabel(price: String) -> String{
+        if (price == ""){return ""}
         let newPrice = self.API.getCents(cost: price)
         let dollars = newPrice[0..<(newPrice.characters.count - 3)]
         let cents = newPrice[(newPrice.characters.count - 2)..<(newPrice.characters.count - 1)]
@@ -180,6 +183,7 @@ class OpenOrdersTableViewController: UITableViewController {
         cell.restName?.text = self.TableRests[indexPath.row]
         //cell.minLeft.text =
         cell.price?.text = setPriceLabel(price: self.TableOrders[indexPath.row]["price"] as! String)
+        cell.realPrice?.text = "Normally: \(self.setPriceLabel(price: self.TableRealPrices[indexPath.row]))"
 //        cell.textLabel?.text = TableDisplay[indexPath.row]
         
         return cell
