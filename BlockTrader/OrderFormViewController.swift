@@ -30,13 +30,14 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cust_id: UILabel!
     @IBOutlet weak var restaurantName: UILabel!
     @IBOutlet weak var suggestedPrice: UILabel!
-    @IBOutlet weak var latitude: UITextField!
-    @IBOutlet weak var longitude: UITextField!
     @IBOutlet weak var submit: UIButton!
     @IBOutlet weak var review: UIButton!
-
-    //Change below to have better UX
     @IBOutlet weak var desired_price: UITextField!
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        desired_price.resignFirstResponder()
+        self.view.endEditing(true)
+    }
     
     func request(credentials: [String: Any], items: [Int], lat: Float, long: Float, completion: @escaping(_ num: Int) -> ())
     {
@@ -49,8 +50,8 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
                 "customer_id": self.credentials["id"]!,
                 "provider_id": 0,
                 "address": "",
-                "latitude": latitude.text!,
-                "longitude": longitude.text!,
+                "latitude": self.lat,
+                "longitude": self.long,
                 "delivery_status": "",
                 "payment_id_user": "",
                 "payment_id_reciever": "",
@@ -135,9 +136,11 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
             finalDestination?.customer = self.customer
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.desired_price.keyboardType = UIKeyboardType.decimalPad
+        self.desired_price.becomeFirstResponder()
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
         self.submit.layer.cornerRadius = 60
@@ -146,13 +149,6 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
-        view.addGestureRecognizer(tap)
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -163,8 +159,6 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
         if let currLocation = locationManager.location{
             self.lat = Float(currLocation.coordinate.latitude)
             self.long = Float(currLocation.coordinate.longitude)
-            self.latitude.text = String(self.lat)
-            self.longitude.text = String(self.long)
         }
 
         //Checking Stripe call, can remove when deployed
@@ -195,8 +189,10 @@ class OrderFormViewController: UIViewController, CLLocationManagerDelegate {
                 
             }
         }
-        self.suggestedPrice.text = self.price.description
-        self.desired_price.text = self.price.description
+        self.suggestedPrice.text = String(format: "%.2f", self.price)
+        self.desired_price.text = String(format: "%.2f", self.price)
+            
+
         }
     }
 

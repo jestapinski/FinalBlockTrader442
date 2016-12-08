@@ -32,19 +32,7 @@ class ViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
-    
-    /**
-     Function checks if authenticated through FaceBook, if so, move on.
-     
-    */
-    override func viewDidAppear(_ animated: Bool) {
-        if let accessToken = AccessToken.current{
-            self.moveToMainPage(accessToken: accessToken)
-        } else {
-            //self.viewDidAppear(true)
-        }
-    }
+
 
     /**
      Performs Navigation to Home Page if the user has been authenticated through Facebook

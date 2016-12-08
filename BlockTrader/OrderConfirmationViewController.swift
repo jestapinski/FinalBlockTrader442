@@ -23,12 +23,11 @@ class OrderConfirmationViewController: UIViewController {
     var fb_url: String = ""
     var refreshControl: UIRefreshControl!
     
-    @IBOutlet weak var customer: UILabel!
     @IBOutlet weak var order: UILabel!
-    @IBOutlet weak var orderStatus: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var loading: UIImageView!
+    @IBOutlet weak var fbmsg: UIButton!
 
     @IBAction func didTapFB(sender: AnyObject) {
         if(fb_url != ""){
@@ -49,7 +48,11 @@ class OrderConfirmationViewController: UIViewController {
         Alamofire.request(url, headers: headers).responseJSON { response in
             if let json = response.result.value{
                 let jsonarr = JSON(json)
-                self.order.text! = jsonarr["delivery_status"].stringValue
+                if(jsonarr["delivery_status"].stringValue != ""){
+                    self.order.text! = jsonarr["delivery_status"].stringValue
+                }else{
+                    self.order.text! = "Waiting for a user to accept this order."
+                }
                 if(jsonarr["provider_id"].stringValue != "0"){
                     
                     let url = "http://germy.tk:3000/users/\(jsonarr["provider_id"].stringValue).json"
@@ -64,6 +67,7 @@ class OrderConfirmationViewController: UIViewController {
                                 }
                             }
                             self.fb_url = "https://www.facebook.com/\(jsonarr1["fb_id"])"
+                            self.fbmsg.setTitle("Facebook Messenger", for: .normal)
                         }
                     }
                 }
@@ -74,8 +78,8 @@ class OrderConfirmationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.customer.text = custID
-        self.order.text = String(orderNumber)
+        self.name.text = ""
+        self.fbmsg.setTitle("", for: .normal)
         self.profPic.layer.cornerRadius = self.profPic.frame.size.width / 2
         self.profPic.clipsToBounds = true
         if(self.orderNumber != 0){
