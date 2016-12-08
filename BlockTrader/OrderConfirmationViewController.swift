@@ -23,6 +23,7 @@ class OrderConfirmationViewController: UIViewController {
     var fb_url: String = ""
     var refreshControl: UIRefreshControl!
     var tim: Timer?
+    var status: String = ""
     
     @IBOutlet weak var order: UILabel!
     @IBOutlet weak var profPic: UIImageView!
@@ -37,7 +38,9 @@ class OrderConfirmationViewController: UIViewController {
             print("no fb url")
         }
     }
-    
+    func sup(notification: Notification) {
+        print("none")
+    }
     
     func execute(timer:Timer) {
         print("timer \(timer)")
@@ -61,8 +64,25 @@ class OrderConfirmationViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "backHome", sender: nil)
                     }
-                
                 }
+                print("status: \(self.status)")
+                if(self.status != jsonarr["delivery_status"].stringValue){
+                    print("status change")
+                    // Define identifier
+                    let notificationName = Notification.Name("\(jsonarr["deliver_status"])")
+                    
+                    // Register to receive notification
+                    NotificationCenter.default.addObserver(self, selector: #selector(OrderConfirmationViewController.sup), name: notificationName, object: nil)
+                    
+                    // Post notification
+                    NotificationCenter.default.post(name: notificationName, object: nil)
+                    
+                    // Stop listening notification
+                    NotificationCenter.default.removeObserver(self, name: notificationName, object: nil);
+                    self.status = jsonarr["delivery_status"].stringValue
+                }
+                
+                
                 if(jsonarr["provider_id"].stringValue != "0"){
                     
                     let url = "http://germy.tk:3000/users/\(jsonarr["provider_id"].stringValue).json"

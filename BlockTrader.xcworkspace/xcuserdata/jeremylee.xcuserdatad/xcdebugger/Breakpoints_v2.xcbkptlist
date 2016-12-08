@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/OrderConfirmationViewController.swift"
-            timestampString = "502907334.262194"
+            timestampString = "502910858.480036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlockTrader/OrderConfirmationViewController.swift"
-            timestampString = "502907334.262194"
+            timestampString = "502910858.480036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "OrderConfirmationViewController"
             landmarkType = "3">
          </BreakpointContent>

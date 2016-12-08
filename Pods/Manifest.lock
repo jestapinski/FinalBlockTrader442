@@ -28,6 +28,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.17.0):
     - FBSDKCoreKit
+  - PusherSwift (4.0.1)
   - Stripe (9.2.0)
   - SVProgressHUD (2.0.4)
   - SwiftGifOrigin (1.6.1)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - PusherSwift
   - Stripe
   - SVProgressHUD
   - SwiftGifOrigin (~> 1.6.1)
@@ -57,11 +59,12 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 30a21d2d7b92984b3d80497113433c00824c35e9
   FBSDKLoginKit: 42b7129ac0373ca99eaf4cbebf4d07bd42371f59
   FBSDKShareKit: 9b573d03fbee36cbaf42d5bb1f2bc019e0d72347
+  PusherSwift: 8249a1c3634943cf7e1e9a691468357d53ab7e5f
   Stripe: a47770e82db059d0e7e160f9aabc2997055ee911
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 212aac01ab78e643df9663cd8115010cb1aedb84
+PODFILE CHECKSUM: 572f06ec602e5a6e37b691beb42d7f6d00a1e29d
 
 COCOAPODS: 1.1.1

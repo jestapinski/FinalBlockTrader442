@@ -503,7 +503,7 @@
                                     <action selector="showPopoverWithSender:" destination="t9G-ie-90E" eventType="touchUpInside" id="eLO-IJ-KYO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-fq-CAw">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="accept" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-fq-CAw">
                                 <rect key="frame" x="123" y="597" width="129" height="57"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.79607843140000001" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -539,6 +539,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accept" destination="4yk-fq-CAw" id="ogO-di-gkW"/>
                         <outlet property="custNameLocationLabel" destination="TvO-WY-Igi" id="TJ5-sB-ld8"/>
                         <outlet property="mapView" destination="o89-aW-mh9" id="nLU-kg-pYS"/>
                         <outlet property="priceLabel" destination="SJP-ln-IpK" id="fvm-pq-BaE"/>
@@ -641,7 +642,7 @@
                                     <action selector="showPopoverWithSender:" destination="r6A-3b-SHW" eventType="touchUpInside" id="bbC-Nf-BdN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRm-eG-m7q">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="gotfood" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRm-eG-m7q">
                                 <rect key="frame" x="96" y="498" width="129" height="57"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.79607843140000001" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -878,7 +879,7 @@
                                     <action selector="showPopoverWithSender:" destination="H2j-b2-fe6" eventType="touchUpInside" id="ILs-t2-MVv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-uw-ftX">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="delivered" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-uw-ftX">
                                 <rect key="frame" x="122.5" y="599" width="130" height="57"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.79607843140000001" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1468,10 +1469,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cj4-iH-Gw1"/>
-        <segue reference="VcS-9u-z0R"/>
-        <segue reference="W5t-65-tbI"/>
+        <segue reference="PUq-pT-xYz"/>
         <segue reference="P94-8m-qZQ"/>
-        <segue reference="kf1-ce-q9Z"/>
+        <segue reference="W5t-65-tbI"/>
         <segue reference="bGA-1n-Owd"/>
+        <segue reference="kf1-ce-q9Z"/>
     </inferredMetricsTieBreakers>
 </document>

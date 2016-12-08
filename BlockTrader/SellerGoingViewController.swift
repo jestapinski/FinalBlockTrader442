@@ -34,6 +34,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var profPic: UIImageView!
+    @IBOutlet weak var gotfood: UIButton!
 
     let locationManager = CLLocationManager()
     
@@ -127,6 +128,7 @@ class SellerGoingViewController: UIViewController, MKMapViewDelegate, CLLocation
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.gotfood.layer.cornerRadius = 30
         self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(SellerGoingViewController.execute), userInfo: nil, repeats: true)
         self.restNameLabel.text = resturaunt
         self.custNameLocationLabel.text = custName

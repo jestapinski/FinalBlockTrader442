@@ -30,6 +30,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
     @IBOutlet weak var foodLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var profPic: UIImageView!
+    @IBOutlet weak var delivered: UIButton!
     
     let backendClient = BackendClient()
     let stripeAPIClient = MyAPIClient()
@@ -139,6 +140,7 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delivered.layer.cornerRadius = 30
 //        self.phoneLabel.text = self.phoneNum
         self.ourTimer = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(GoingToCustomerViewController.execute), userInfo: nil, repeats: true)
         self.userLocationHandler()

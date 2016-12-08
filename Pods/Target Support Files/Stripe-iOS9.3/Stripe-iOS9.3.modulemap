@@ -1,0 +1,6 @@
+framework module Stripe {
+  umbrella header "Stripe-iOS9.3-umbrella.h"
+
+  export *
+  module * { export * }
+}

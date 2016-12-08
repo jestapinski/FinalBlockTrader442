@@ -37,12 +37,14 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var restNameLabel: UILabel!
     @IBOutlet weak var foodsLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var accept: UIButton!
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var profPic: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.accept.layer.cornerRadius = 30
         self.backendClient.getPriceFromOrder(orderID: self.orderID, completion: self.setPriceLabel)
         let latitude1 = self.orderDict["latitude"] as! String
         let longitude1 = self.orderDict["longitude"] as! String
