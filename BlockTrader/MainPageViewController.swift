@@ -178,6 +178,7 @@ class MainPageViewController: UIViewController {
                 let jsonarr = JSON(json)
                 for item in jsonarr.array!{
                     self.credentials["id"] = item["id"].stringValue
+                    print("found ID: \(item["id"])")
                 }
                 self.appDelegate.credentials = self.credentials
             }

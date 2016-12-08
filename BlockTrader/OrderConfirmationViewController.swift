@@ -22,6 +22,7 @@ class OrderConfirmationViewController: UIViewController {
     var credentials: [String : Any] = [:]
     var fb_url: String = ""
     var refreshControl: UIRefreshControl!
+    var tim: Timer?
     
     @IBOutlet weak var order: UILabel!
     @IBOutlet weak var profPic: UIImageView!
@@ -48,10 +49,20 @@ class OrderConfirmationViewController: UIViewController {
         Alamofire.request(url, headers: headers).responseJSON { response in
             if let json = response.result.value{
                 let jsonarr = JSON(json)
+                print("del \(jsonarr["delivery_status"].stringValue)")
                 if(jsonarr["delivery_status"].stringValue != ""){
                     self.order.text! = jsonarr["delivery_status"].stringValue
                 }else{
                     self.order.text! = "Waiting for a user to accept this order."
+                }
+                if(jsonarr["delivery_status"].stringValue == "Delivered"){
+                    let alert = UIAlertController(title: "Item Delivered", message: "Redirecting to home", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "backHome", sender: nil)
+                    }
+                
                 }
                 if(jsonarr["provider_id"].stringValue != "0"){
                     
@@ -83,7 +94,7 @@ class OrderConfirmationViewController: UIViewController {
         self.profPic.layer.cornerRadius = self.profPic.frame.size.width / 2
         self.profPic.clipsToBounds = true
         if(self.orderNumber != 0){
-            Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(OrderConfirmationViewController.execute), userInfo: self.orderNumber, repeats: true)
+            self.tim = Timer.scheduledTimer(timeInterval: 5, target: self,selector: #selector(OrderConfirmationViewController.execute), userInfo: self.orderNumber, repeats: true)
         }
         //Update labels with ID and OrderNumber to present to user
 
@@ -101,6 +112,13 @@ class OrderConfirmationViewController: UIViewController {
         if (segue.identifier == "backHome"){
             let finalDestination = segue.destination as? MainPageViewController
             finalDestination?.credentials = self.credentials
+
+
+        }else if (segue.identifier == "backHome2"){
+            self.tim!.invalidate()
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "backHome", sender: nil)
+            }
         }else if (segue.identifier == "orderLocation"){
             let finalDestination = segue.destination as? OrderLocationViewController
             finalDestination?.orderNumber = self.orderNumber

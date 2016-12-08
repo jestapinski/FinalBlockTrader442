@@ -414,7 +414,7 @@
 				TargetAttributes = {
 					7B9F058A1DE8DC1F00E98C5C = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 5WF6BNBUAU;
+						DevelopmentTeam = 6Z48U2Z6NY;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -775,10 +775,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockTrader/BlockTrader.entitlements;
-				DEVELOPMENT_TEAM = 5WF6BNBUAU;
+				DEVELOPMENT_TEAM = 6Z48U2Z6NY;
 				INFOPLIST_FILE = BlockTrader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jordan-Stapinski.BlockTrader";
+				PRODUCT_BUNDLE_IDENTIFIER = germy.BlockTrader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -791,10 +792,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockTrader/BlockTrader.entitlements;
-				DEVELOPMENT_TEAM = 5WF6BNBUAU;
+				DEVELOPMENT_TEAM = 6Z48U2Z6NY;
 				INFOPLIST_FILE = BlockTrader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jordan-Stapinski.BlockTrader";
+				PRODUCT_BUNDLE_IDENTIFIER = germy.BlockTrader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
