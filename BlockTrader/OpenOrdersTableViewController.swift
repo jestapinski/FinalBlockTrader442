@@ -32,6 +32,7 @@ class OpenOrdersTableViewController: UITableViewController {
     var TableRests: [String] = []
     var timer: Timer? = nil
     var TableRealPrices: [String] = []
+    var TableRealTimes: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +51,13 @@ class OpenOrdersTableViewController: UITableViewController {
      - parameter listOfOrders: list of the orders in the DB
     */
     func getFoodOrders(_ listOfOrders: [[String : Any]]){
-        let newlistOfOrders = listOfOrders.filter({$0["provider_id"] as! String == "0"})
+        let newlistOfOrders1 = listOfOrders.filter({$0["provider_id"] as! String == "0"})
+        let newlistOfOrders = newlistOfOrders1.filter({Int($0["minutes"] as! String)! < 90})
         self.orderDicts = newlistOfOrders
         self.TableOrders = newlistOfOrders
         self.TableData = newlistOfOrders.map({return $0["id"] as! String})
         self.TableRealPrices = newlistOfOrders.map({return $0["real_price"] as! String})
+        self.TableRealTimes = newlistOfOrders.map({return $0["minutes"] as! String})
         self.foodOrdersLoop(self.TableData.map({$0}), 0, [])
     }
     
@@ -181,11 +184,9 @@ class OpenOrdersTableViewController: UITableViewController {
             }
         }
         cell.restName?.text = self.TableRests[indexPath.row]
-        //cell.minLeft.text =
         cell.price?.text = setPriceLabel(price: self.TableOrders[indexPath.row]["price"] as! String)
         cell.realPrice?.text = "Normally: \(self.setPriceLabel(price: self.TableRealPrices[indexPath.row]))"
-//        cell.textLabel?.text = TableDisplay[indexPath.row]
-        
+        cell.minLeft?.text = "Minutes remaining: \(90 - Int(self.TableRealTimes[indexPath.row])!)"
         return cell
     }
     
