@@ -49,7 +49,6 @@ class OrderConfirmationViewController: UIViewController {
         Alamofire.request(url, headers: headers).responseJSON { response in
             if let json = response.result.value{
                 let jsonarr = JSON(json)
-                print("del \(jsonarr["delivery_status"].stringValue)")
                 if(jsonarr["delivery_status"].stringValue != ""){
                     self.order.text! = jsonarr["delivery_status"].stringValue
                 }else{

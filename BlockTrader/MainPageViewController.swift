@@ -115,7 +115,7 @@ class MainPageViewController: UIViewController {
      - parameter request: The URL request to be executed.
      */
     func handleAuthenticationRequest(request: URLRequest){
-//        self.profPic.image = img
+        print("handle auth")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
@@ -128,7 +128,7 @@ class MainPageViewController: UIViewController {
             }
             
             do{
-                
+                print("jsonreq")
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]
                 self.extractAndHandleUserInfo(jsonResult: jsonResult)
                 
@@ -166,6 +166,7 @@ class MainPageViewController: UIViewController {
         self.appDelegate.credentials = self.credentials
         print("responseString2 = \(ourAUTH)")
         self.welcomename.text = userFirstName as? String
+        print("creds: \(self.credentials)")
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
