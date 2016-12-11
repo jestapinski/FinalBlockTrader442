@@ -115,7 +115,6 @@ class MainPageViewController: UIViewController {
      - parameter request: The URL request to be executed.
      */
     func handleAuthenticationRequest(request: URLRequest){
-        print("handle auth")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")

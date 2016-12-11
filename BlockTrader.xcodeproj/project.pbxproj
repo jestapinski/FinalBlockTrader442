@@ -426,7 +426,6 @@
 				TargetAttributes = {
 					7B9F058A1DE8DC1F00E98C5C = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 5WF6BNBUAU;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -711,6 +710,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -761,6 +761,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -790,9 +791,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD7BF3B1C780988A5672A68E /* Pods-BlockTrader.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockTrader/BlockTrader.entitlements;
-				DEVELOPMENT_TEAM = 5WF6BNBUAU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BlockTrader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -807,9 +809,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ABCA6FAE95BD0BF9547C1188 /* Pods-BlockTrader.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockTrader/BlockTrader.entitlements;
-				DEVELOPMENT_TEAM = 5WF6BNBUAU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BlockTrader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

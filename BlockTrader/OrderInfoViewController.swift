@@ -128,7 +128,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         custPt.coordinate = self.customerLocation
         custPt.title = self.custName
         custPt.subtitle = "Location Description"
-        mapView.addAnnotation(custPt)
+        //mapView.addAnnotation(custPt)
     }
 
     /**
@@ -139,7 +139,7 @@ class OrderInfoViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         restPin.coordinate = self.restLocation
         restPin.title = self.restName
         restPin.subtitle = "A tasty venue"
-        mapView.addAnnotation(restPin)
+        //mapView.addAnnotation(restPin)
     }
     
     // MARK: - UI Labels
