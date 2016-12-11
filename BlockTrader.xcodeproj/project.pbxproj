@@ -14,7 +14,6 @@
 		7B0425171DF86354006C0A4A /* CustInfoPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0425161DF86354006C0A4A /* CustInfoPopoverViewController.swift */; };
 		7B07808D1DF093FD00AC4EE5 /* account_landing.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B07808C1DF093FD00AC4EE5 /* account_landing.png */; };
 		7B07808F1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */; };
-		7B0780911DF113C900AC4EE5 /* SellerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0780901DF113C900AC4EE5 /* SellerViewTableViewCell.swift */; };
 		7B0780931DF134D800AC4EE5 /* BackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0780921DF134D800AC4EE5 /* BackendClient.swift */; };
 		7B0780951DF1CD5900AC4EE5 /* OrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0780941DF1CD5900AC4EE5 /* OrderInfoViewController.swift */; };
 		7B18C7A41DEF223E006FD068 /* main_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B18C7A31DEF223E006FD068 /* main_page.png */; };
@@ -40,6 +39,11 @@
 		7B49CAE31DF8A71500483224 /* accept-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B49CAE01DF8A71500483224 /* accept-btn.png */; };
 		7B49CAE41DF8A71500483224 /* delivered.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B49CAE11DF8A71500483224 /* delivered.png */; };
 		7B49CAE51DF8A71500483224 /* got-food-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B49CAE21DF8A71500483224 /* got-food-btn.png */; };
+		7B49CAE71DFA014D00483224 /* SellerTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49CAE61DFA014D00483224 /* SellerTestCases.swift */; };
+		7B49CAE91DFA090800483224 /* StripeAccountViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49CAE81DFA090800483224 /* StripeAccountViewControllerTests.swift */; };
+		7B49CAEB1DFA0A0700483224 /* OpenOrdersTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49CAEA1DFA0A0700483224 /* OpenOrdersTableViewControllerTests.swift */; };
+		7B49CAED1DFA42F300483224 /* GatheringDeliverInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49CAEC1DFA42F300483224 /* GatheringDeliverInfoTests.swift */; };
+		7B49CAEF1DFA441400483224 /* OrderInfoViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49CAEE1DFA441400483224 /* OrderInfoViewControllerTests.swift */; };
 		7B9F058F1DE8DC1F00E98C5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */; };
 		7B9F05911DE8DC1F00E98C5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05901DE8DC1F00E98C5C /* ViewController.swift */; };
 		7B9F05941DE8DC1F00E98C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9F05921DE8DC1F00E98C5C /* Main.storyboard */; };
@@ -84,7 +88,6 @@
 		7B0425161DF86354006C0A4A /* CustInfoPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustInfoPopoverViewController.swift; sourceTree = "<group>"; };
 		7B07808C1DF093FD00AC4EE5 /* account_landing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_landing.png; sourceTree = "<group>"; };
 		7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringDelivererViewController.swift; sourceTree = "<group>"; };
-		7B0780901DF113C900AC4EE5 /* SellerViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerViewTableViewCell.swift; sourceTree = "<group>"; };
 		7B0780921DF134D800AC4EE5 /* BackendClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendClient.swift; sourceTree = "<group>"; };
 		7B0780941DF1CD5900AC4EE5 /* OrderInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderInfoViewController.swift; sourceTree = "<group>"; };
 		7B0780961DF1E28100AC4EE5 /* alamofireTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = alamofireTest.playground; sourceTree = "<group>"; };
@@ -111,6 +114,11 @@
 		7B49CAE01DF8A71500483224 /* accept-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accept-btn.png"; sourceTree = "<group>"; };
 		7B49CAE11DF8A71500483224 /* delivered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delivered.png; sourceTree = "<group>"; };
 		7B49CAE21DF8A71500483224 /* got-food-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "got-food-btn.png"; sourceTree = "<group>"; };
+		7B49CAE61DFA014D00483224 /* SellerTestCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerTestCases.swift; sourceTree = "<group>"; };
+		7B49CAE81DFA090800483224 /* StripeAccountViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeAccountViewControllerTests.swift; sourceTree = "<group>"; };
+		7B49CAEA1DFA0A0700483224 /* OpenOrdersTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenOrdersTableViewControllerTests.swift; sourceTree = "<group>"; };
+		7B49CAEC1DFA42F300483224 /* GatheringDeliverInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringDeliverInfoTests.swift; sourceTree = "<group>"; };
+		7B49CAEE1DFA441400483224 /* OrderInfoViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderInfoViewControllerTests.swift; sourceTree = "<group>"; };
 		7B9F058B1DE8DC1F00E98C5C /* BlockTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9F058E1DE8DC1F00E98C5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9F05901DE8DC1F00E98C5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -261,7 +269,6 @@
 				7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */,
 				7B271BB71DECD5E50078C097 /* OpenOrdersTableViewController.swift */,
 				7B07808E1DF0ADA200AC4EE5 /* GatheringDelivererViewController.swift */,
-				7B0780901DF113C900AC4EE5 /* SellerViewTableViewCell.swift */,
 				7B0780941DF1CD5900AC4EE5 /* OrderInfoViewController.swift */,
 				7BBA83611DF2153400B71EDA /* SellerGoingViewController.swift */,
 				7BBA83691DF363F500B71EDA /* GoingToCustomerViewController.swift */,
@@ -314,8 +321,13 @@
 		7B9F05A51DE8DC2000E98C5C /* BlockTraderTests */ = {
 			isa = PBXGroup;
 			children = (
-				7B9F05A61DE8DC2000E98C5C /* BlockTraderTests.swift */,
 				7B9F05A81DE8DC2000E98C5C /* Info.plist */,
+				7B9F05A61DE8DC2000E98C5C /* BlockTraderTests.swift */,
+				7B49CAE61DFA014D00483224 /* SellerTestCases.swift */,
+				7B49CAE81DFA090800483224 /* StripeAccountViewControllerTests.swift */,
+				7B49CAEA1DFA0A0700483224 /* OpenOrdersTableViewControllerTests.swift */,
+				7B49CAEC1DFA42F300483224 /* GatheringDeliverInfoTests.swift */,
+				7B49CAEE1DFA441400483224 /* OrderInfoViewControllerTests.swift */,
 			);
 			path = BlockTraderTests;
 			sourceTree = "<group>";
@@ -414,7 +426,7 @@
 				TargetAttributes = {
 					7B9F058A1DE8DC1F00E98C5C = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 6Z48U2Z6NY;
+						DevelopmentTeam = 5WF6BNBUAU;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -424,6 +436,7 @@
 					};
 					7B9F05A11DE8DC2000E98C5C = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 5WF6BNBUAU;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7B9F058A1DE8DC1F00E98C5C;
 					};
@@ -602,7 +615,6 @@
 				7BBA836A1DF363F500B71EDA /* GoingToCustomerViewController.swift in Sources */,
 				7B9F05C01DE8DE5200E98C5C /* MainPageViewController.swift in Sources */,
 				7B271BAE1DE9F94D0078C097 /* OrderFormViewController.swift in Sources */,
-				7B0780911DF113C900AC4EE5 /* SellerViewTableViewCell.swift in Sources */,
 				7B9F05971DE8DC1F00E98C5C /* BlockTrader.xcdatamodeld in Sources */,
 				7B9F05911DE8DC1F00E98C5C /* ViewController.swift in Sources */,
 				7B271BB01DEB486A0078C097 /* MainSellerViewController.swift in Sources */,
@@ -629,7 +641,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B49CAE71DFA014D00483224 /* SellerTestCases.swift in Sources */,
+				7B49CAE91DFA090800483224 /* StripeAccountViewControllerTests.swift in Sources */,
+				7B49CAEB1DFA0A0700483224 /* OpenOrdersTableViewControllerTests.swift in Sources */,
+				7B49CAED1DFA42F300483224 /* GatheringDeliverInfoTests.swift in Sources */,
 				7B9F05A71DE8DC2000E98C5C /* BlockTraderTests.swift in Sources */,
+				7B49CAEF1DFA441400483224 /* OrderInfoViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,11 +792,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockTrader/BlockTrader.entitlements;
-				DEVELOPMENT_TEAM = 6Z48U2Z6NY;
+				DEVELOPMENT_TEAM = 5WF6BNBUAU;
 				INFOPLIST_FILE = BlockTrader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = germy.BlockTrader;
+				PRODUCT_BUNDLE_IDENTIFIER = JordanStapinski.BlockTrader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -792,11 +809,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockTrader/BlockTrader.entitlements;
-				DEVELOPMENT_TEAM = 6Z48U2Z6NY;
+				DEVELOPMENT_TEAM = 5WF6BNBUAU;
 				INFOPLIST_FILE = BlockTrader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = germy.BlockTrader;
+				PRODUCT_BUNDLE_IDENTIFIER = JordanStapinski.BlockTrader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -809,10 +826,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5WF6BNBUAU;
 				INFOPLIST_FILE = BlockTraderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jordan-Stapinski.BlockTraderTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlockTrader.app/BlockTrader";
 			};
@@ -824,10 +843,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5WF6BNBUAU;
 				INFOPLIST_FILE = BlockTraderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jordan-Stapinski.BlockTraderTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlockTrader.app/BlockTrader";
 			};
