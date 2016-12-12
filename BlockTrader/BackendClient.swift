@@ -299,7 +299,6 @@ class BackendClient {
             if let json = response.result.value{
                 let jsonarr = self.JSONtoDictionary(JSONelement: JSON(json))
                 let finalString: String = (jsonarr["account_id"] as! String)
-                //finalString = finalString + " " + (jsonarr["last_name"] as! String)
                 //Here I would simply get the customer ID and pass completion along
                 completion(finalString)
             }
@@ -382,9 +381,7 @@ class BackendClient {
         
     }
 
-    func getFoodModelFromOrder(orderID: String, index: Int, numsArray: [String],  completion: @escaping ([String], Int, [String]) -> Void) {//-> [JSON]{
-//        var foodArray = [String]()
-//        var finalArray = [JSON]()
+    func getFoodModelFromOrder(orderID: String, index: Int, numsArray: [String],  completion: @escaping ([String], Int, [String]) -> Void) {
         let headers = [
             "Authorization": " Token token=\(self.credentials["api_authtoken"]!)"
         ]
@@ -408,17 +405,4 @@ class BackendClient {
         }
         }
 
-    func jsonsToNiceDisplay(jsonFoods: [JSON]) -> String{
-        if let firstFood = jsonFoods.first {
-            let resturaunt = firstFood["resturaunt"].stringValue
-            var foodString = ""
-            for foodItem in jsonFoods{
-                foodString += foodItem["name"].stringValue + " "
-            }
-            return foodString + "at " + resturaunt
-        } else {
-            return "No such food"
-        }
-
-    }
 }

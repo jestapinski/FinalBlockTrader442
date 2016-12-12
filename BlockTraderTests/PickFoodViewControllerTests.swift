@@ -29,10 +29,9 @@ class PickFoodViewControllerTests: XCTestCase {
         //Test values start off as nil
         XCTAssertEqual(self.testVC.customer, "")
         XCTAssertEqual(self.testVC.items, [])
-        XCTAssertEqual(self.testVC.Rests, [])
+        XCTAssertEqual(self.testVC.Rests.count, 0)
         XCTAssertEqual(self.testVC.tableTitle, [])
-        XCTAssertEqual(self.testVC.credentials, [])
-        XCTAssertEqual(self.testVC.orderNumber, 0)
+        XCTAssertEqual(self.testVC.credentials.count, 0)
         XCTAssertEqual(self.testVC.row, 0)
     }
 

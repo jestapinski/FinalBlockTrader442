@@ -85,31 +85,13 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
             inst.customerID = responseString as! String
             inst.handleCustomerID()
         }
-//        let request = URLRequest.request(url!, method: .POST, params: params)
-//        let task = session.dataTask(with: request) { (data:Data?, urlResponse, error) in
-//            DispatchQueue.main.async {
-//            
-//                if let error = self.decodeResponse(urlResponse, error: error as NSError?) {
-//                    return
-//                } else {
-//                    let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-//                    
-//                    //ResponseString! is the customer ID, this should be returned with the backend changed to be making a new customer
-//                    print(responseString!)
-//                    inst.customerID = responseString as! String
-//                    inst.handleCustomerID()
-//                    inst.handleCustomerID()
-//                
-//                }}}
-//        task.resume()
-        
     }
     
     
     func decodeResponse(_ response: URLResponse?, error: NSError?) -> NSError? {
         if let httpResponse = response as? HTTPURLResponse
             , httpResponse.statusCode != 200 {
-            return error //?? NSError.networkingError(httpResponse.statusCode)
+            return error
         }
         return error
     }
@@ -129,24 +111,6 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
     }
     
     func performCharge(providerID: String, customerID: String, cost: String, completion: @escaping () -> Void){
-//        let headers = [
-//            "Authorization": " Token token=\(appDelegate.credentials["api_authtoken"]!)"
-//        ]
-//        
-//        
-//        var parameters: Parameters = [
-//            "commit": "Charge User",
-//            "payment_id_receiever": providerID,
-//            "payment_id_user": customerID,
-//            "cost": cost
-//            //"id": "\(self.credentials["id"]!)",
-//        ]
-//        let edit_url = stripeBackendURL + "/charge"
-//        let final = Alamofire.request(edit_url, method: .patch, parameters: parameters, headers: headers).responseJSON { response in
-//            completion()
-//        }
-//        print(final)
-        
         guard let baseURL = URL(string: stripeBackendURL) else {
             let error = NSError(domain: StripeDomain, code: 50, userInfo: [
                 NSLocalizedDescriptionKey: "Please set baseURLString to your Heroku URL in CheckoutViewController.swift"
@@ -204,13 +168,6 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
     }
     
     @objc func retrieveCustomer(_ completion: @escaping STPCustomerCompletionBlock) {
-        //        guard let key = Stripe.defaultPublishableKey() , !key.contains("#") else {
-        //            let error = NSError(domain: StripeDomain, code: 50, userInfo: [
-        //                NSLocalizedDescriptionKey: "Please set stripePublishableKey to your account's test publishable key in CheckoutViewController.swift"
-        //                ])
-        //            completion(nil, error)
-        //            return
-        //        }
         guard let baseURLString = baseURLString, let baseURL = URL(string: baseURLString) else {
             // This code is just for demo purposes - in this case, if the example app isn't properly configured, we'll return a fake customer just so the app works.
             let customer = STPCustomer(stripeID: "cus_test", defaultSource: self.defaultSource, sources: self.sources)

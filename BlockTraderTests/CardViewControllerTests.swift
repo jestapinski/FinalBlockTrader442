@@ -15,7 +15,7 @@ class CardViewControllerTests: XCTestCase {
     var testVC: CardViewController = CardViewController()
     override func setUp() {
         super.setUp()
-        self.testVC = PickRestarauntViewController()
+        self.testVC = CardViewController()
 
 
     }
@@ -28,7 +28,7 @@ class CardViewControllerTests: XCTestCase {
     func testInitialization(){
         //Test values start off as nil
         XCTAssertEqual(self.testVC.customerID, "")
-        XCTAssertEqual(self.testVC.credentials, [])
+        XCTAssertEqual(self.testVC.credentials.count, 0)
         XCTAssertEqual(self.testVC.userID, "")
 
     }

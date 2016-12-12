@@ -148,10 +148,6 @@ class GoingToCustomerViewController: UIViewController, MKMapViewDelegate, CLLoca
         mapView.userTrackingMode = .follow
 
         // Do any additional setup after loading the view.
-//        self.foodLabel.text = self.getFoods()
-//        self.custNameLabel.text = self.custName
-//        self.custLocationLabel.text = "Customer Location"
-//        self.profPic.image = self.backendClient.getProfilePicture(id: self.custFBId)
 
     }
 

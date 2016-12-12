@@ -20,7 +20,7 @@ class OrderFormViewControllerTests: XCTestCase {
     var testVC: OrderFormViewController = OrderFormViewController()
     override func setUp() {
         super.setUp()
-        self.testVC = OrderInfoViewController()
+        self.testVC = OrderFormViewController()
 
     }
     
@@ -33,7 +33,7 @@ class OrderFormViewControllerTests: XCTestCase {
         // Can only test some initialization stuff
         XCTAssertEqual(self.testVC.customer, "")
         XCTAssertEqual(self.testVC.items, [])
-        XCTAssertEqual(self.testVC.credentials, [])
+        XCTAssertEqual(self.testVC.credentials.count, 0)
         XCTAssertEqual(self.testVC.orderNumber, 0)
         XCTAssertEqual(self.testVC.row, 0)
         XCTAssertEqual(self.testVC.price, 0.0)
@@ -43,16 +43,17 @@ class OrderFormViewControllerTests: XCTestCase {
     }
     
     func testCheckValidFields(){
-        self.desired_price.text! = "1.00"
-        XCTAssertEqual(self.checkValidFields.price, true)
-        self.desired_price.text! = "10000.00"
-        XCTAssertEqual(self.checkValidFields.price, true)
-        self.desired_price.text! = "0.51"
-        XCTAssertEqual(self.checkValidFields.price, true)
-        self.desired_price.text! = "0.01"
-        XCTAssertEqual(self.checkValidFields.price, false)
-        self.desired_price.text! = "-90.01"
-        XCTAssertEqual(self.checkValidFields.price, false)
+        self.testVC.desired_price = UITextField()
+        self.testVC.desired_price.text! = "1.00"
+        XCTAssertEqual(self.testVC.checkValidFields(), true)
+        self.testVC.desired_price.text! = "10000.00"
+        XCTAssertEqual(self.testVC.checkValidFields(), true)
+        self.testVC.desired_price.text! = "0.51"
+        XCTAssertEqual(self.testVC.checkValidFields(), true)
+        self.testVC.desired_price.text! = "0.01"
+        XCTAssertEqual(self.testVC.checkValidFields(), false)
+        self.testVC.desired_price.text! = "-90.01"
+        XCTAssertEqual(self.testVC.checkValidFields(), false)
 
     }
     

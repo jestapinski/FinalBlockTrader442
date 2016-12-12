@@ -17,7 +17,7 @@ class GatheringInfoViewControllerTests: XCTestCase {
     var testVC: GatheringInfoViewController = GatheringInfoViewController()
     override func setUp() {
         super.setUp()
-        self.testVC = OrderInfoViewController()
+        self.testVC = GatheringInfoViewController()
 
     }
     
@@ -28,7 +28,7 @@ class GatheringInfoViewControllerTests: XCTestCase {
     
     func testInitialization() {
         // Can only test some initialization stuff
-        XCTAssertEqual(self.testVC.credentials, [])
+        XCTAssertEqual(self.testVC.credentials.count, 0)
 
     }
     

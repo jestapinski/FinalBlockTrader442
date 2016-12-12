@@ -15,7 +15,7 @@ class OrderLocationViewControllerTests: XCTestCase {
     var testVC: OrderLocationViewController = OrderLocationViewController()
     override func setUp() {
         super.setUp()
-        self.testVC = PickFoodViewController()
+        self.testVC = OrderLocationViewController()
 
 
     }
@@ -29,7 +29,7 @@ class OrderLocationViewControllerTests: XCTestCase {
         //Test values start off as nil
         XCTAssertEqual(self.testVC.custID, "")
         XCTAssertEqual(self.testVC.orderNumber, 0)
-        XCTAssertEqual(self.testVC.credentials, [])
+        XCTAssertEqual(self.testVC.credentials.count, 0)
         XCTAssertEqual(self.testVC.fb_url, "")
         XCTAssertEqual(self.testVC.address, "")
         XCTAssertEqual(self.testVC.latitude, 0.0)

@@ -32,6 +32,13 @@
 		7B271BBD1DEE1D670078C097 /* main_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B271BBC1DEE1D670078C097 /* main_screen.png */; };
 		7B271BBF1DEE24230078C097 /* BT_short.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B271BBE1DEE24230078C097 /* BT_short.png */; };
 		7B271BC11DEE27F10078C097 /* loading_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B271BC01DEE27F10078C097 /* loading_screen.png */; };
+		7B376CE71DFE298500D675B9 /* CardViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B376CE01DFE298500D675B9 /* CardViewControllerTests.swift */; };
+		7B376CE81DFE298500D675B9 /* GatheringInfoViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B376CE11DFE298500D675B9 /* GatheringInfoViewControllerTests.swift */; };
+		7B376CE91DFE298500D675B9 /* OrderConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B376CE21DFE298500D675B9 /* OrderConfirmationViewControllerTests.swift */; };
+		7B376CEA1DFE298500D675B9 /* OrderFormViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B376CE31DFE298500D675B9 /* OrderFormViewControllerTests.swift */; };
+		7B376CEB1DFE298500D675B9 /* OrderLocationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B376CE41DFE298500D675B9 /* OrderLocationViewControllerTests.swift */; };
+		7B376CEC1DFE298500D675B9 /* PickFoodViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B376CE51DFE298500D675B9 /* PickFoodViewControllerTests.swift */; };
+		7B376CED1DFE298500D675B9 /* PickRestarauntViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B376CE61DFE298500D675B9 /* PickRestarauntViewControllerTest.swift */; };
 		7B3DC5841DF7594A008DC49A /* SellerViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3DC5821DF7594A008DC49A /* SellerViewCellTableViewCell.swift */; };
 		7B3DC5851DF7594A008DC49A /* SellerViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3DC5831DF7594A008DC49A /* SellerViewCellTableViewCell.xib */; };
 		7B49CADD1DF8957C00483224 /* info_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B49CADC1DF8957C00483224 /* info_button.png */; };
@@ -55,6 +62,12 @@
 		7B9F05C01DE8DE5200E98C5C /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05BF1DE8DE5200E98C5C /* MainPageViewController.swift */; };
 		7B9F05C31DE9E38D00E98C5C /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */; };
 		7B9F05C51DE9E3F900E98C5C /* StripeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */; };
+		7BA2052C1DFE561A00827667 /* SellerGoingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2052B1DFE561A00827667 /* SellerGoingViewControllerTests.swift */; };
+		7BA2052E1DFE5B2500827667 /* GoingToCustomerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2052D1DFE5B2500827667 /* GoingToCustomerViewControllerTests.swift */; };
+		7BA205301DFE5CBA00827667 /* ProcessingPaymentViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2052F1DFE5CBA00827667 /* ProcessingPaymentViewControllerTests.swift */; };
+		7BA205321DFE632000827667 /* CustInfoPopoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA205311DFE632000827667 /* CustInfoPopoverTests.swift */; };
+		7BA205341DFE63EE00827667 /* MyAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA205331DFE63EE00827667 /* MyAPIClientTests.swift */; };
+		7BA205361DFE656900827667 /* BackendClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA205351DFE656900827667 /* BackendClientTests.swift */; };
 		7BBA83621DF2153400B71EDA /* SellerGoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA83611DF2153400B71EDA /* SellerGoingViewController.swift */; };
 		7BBA836A1DF363F500B71EDA /* GoingToCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA83691DF363F500B71EDA /* GoingToCustomerViewController.swift */; };
 		7BBA836C1DF3C3B400B71EDA /* ProcessingPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBA836B1DF3C3B400B71EDA /* ProcessingPaymentViewController.swift */; };
@@ -107,6 +120,13 @@
 		7B271BBC1DEE1D670078C097 /* main_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_screen.png; sourceTree = "<group>"; };
 		7B271BBE1DEE24230078C097 /* BT_short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BT_short.png; sourceTree = "<group>"; };
 		7B271BC01DEE27F10078C097 /* loading_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loading_screen.png; path = ../loading_screen.png; sourceTree = "<group>"; };
+		7B376CE01DFE298500D675B9 /* CardViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewControllerTests.swift; sourceTree = "<group>"; };
+		7B376CE11DFE298500D675B9 /* GatheringInfoViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatheringInfoViewControllerTests.swift; sourceTree = "<group>"; };
+		7B376CE21DFE298500D675B9 /* OrderConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
+		7B376CE31DFE298500D675B9 /* OrderFormViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderFormViewControllerTests.swift; sourceTree = "<group>"; };
+		7B376CE41DFE298500D675B9 /* OrderLocationViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderLocationViewControllerTests.swift; sourceTree = "<group>"; };
+		7B376CE51DFE298500D675B9 /* PickFoodViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickFoodViewControllerTests.swift; sourceTree = "<group>"; };
+		7B376CE61DFE298500D675B9 /* PickRestarauntViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickRestarauntViewControllerTest.swift; sourceTree = "<group>"; };
 		7B3DC5821DF7594A008DC49A /* SellerViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerViewCellTableViewCell.swift; sourceTree = "<group>"; };
 		7B3DC5831DF7594A008DC49A /* SellerViewCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SellerViewCellTableViewCell.xib; sourceTree = "<group>"; };
 		7B49CADC1DF8957C00483224 /* info_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_button.png; sourceTree = "<group>"; };
@@ -137,6 +157,12 @@
 		7B9F05C11DE8E6DE00E98C5C /* BlockTrader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlockTrader.entitlements; sourceTree = "<group>"; };
 		7B9F05C21DE9E38D00E98C5C /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		7B9F05C41DE9E3F900E98C5C /* StripeAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeAccountViewController.swift; sourceTree = "<group>"; };
+		7BA2052B1DFE561A00827667 /* SellerGoingViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerGoingViewControllerTests.swift; sourceTree = "<group>"; };
+		7BA2052D1DFE5B2500827667 /* GoingToCustomerViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoingToCustomerViewControllerTests.swift; sourceTree = "<group>"; };
+		7BA2052F1DFE5CBA00827667 /* ProcessingPaymentViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingPaymentViewControllerTests.swift; sourceTree = "<group>"; };
+		7BA205311DFE632000827667 /* CustInfoPopoverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustInfoPopoverTests.swift; sourceTree = "<group>"; };
+		7BA205331DFE63EE00827667 /* MyAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClientTests.swift; sourceTree = "<group>"; };
+		7BA205351DFE656900827667 /* BackendClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendClientTests.swift; sourceTree = "<group>"; };
 		7BBA83611DF2153400B71EDA /* SellerGoingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerGoingViewController.swift; sourceTree = "<group>"; };
 		7BBA83691DF363F500B71EDA /* GoingToCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoingToCustomerViewController.swift; sourceTree = "<group>"; };
 		7BBA836B1DF3C3B400B71EDA /* ProcessingPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingPaymentViewController.swift; sourceTree = "<group>"; };
@@ -321,13 +347,11 @@
 		7B9F05A51DE8DC2000E98C5C /* BlockTraderTests */ = {
 			isa = PBXGroup;
 			children = (
+				7BA2052A1DFE2E0D00827667 /* API Tests */,
+				7BA205291DFE2A2A00827667 /* Seller Tests */,
+				7BA205281DFE29CF00827667 /* Buyer Tests */,
 				7B9F05A81DE8DC2000E98C5C /* Info.plist */,
 				7B9F05A61DE8DC2000E98C5C /* BlockTraderTests.swift */,
-				7B49CAE61DFA014D00483224 /* SellerTestCases.swift */,
-				7B49CAE81DFA090800483224 /* StripeAccountViewControllerTests.swift */,
-				7B49CAEA1DFA0A0700483224 /* OpenOrdersTableViewControllerTests.swift */,
-				7B49CAEC1DFA42F300483224 /* GatheringDeliverInfoTests.swift */,
-				7B49CAEE1DFA441400483224 /* OrderInfoViewControllerTests.swift */,
 			);
 			path = BlockTraderTests;
 			sourceTree = "<group>";
@@ -339,6 +363,45 @@
 				7B9F05B31DE8DC2000E98C5C /* Info.plist */,
 			);
 			path = BlockTraderUITests;
+			sourceTree = "<group>";
+		};
+		7BA205281DFE29CF00827667 /* Buyer Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7B376CE31DFE298500D675B9 /* OrderFormViewControllerTests.swift */,
+				7B376CE61DFE298500D675B9 /* PickRestarauntViewControllerTest.swift */,
+				7B376CE51DFE298500D675B9 /* PickFoodViewControllerTests.swift */,
+				7B376CE11DFE298500D675B9 /* GatheringInfoViewControllerTests.swift */,
+				7B376CE21DFE298500D675B9 /* OrderConfirmationViewControllerTests.swift */,
+				7B376CE41DFE298500D675B9 /* OrderLocationViewControllerTests.swift */,
+				7B376CE01DFE298500D675B9 /* CardViewControllerTests.swift */,
+			);
+			name = "Buyer Tests";
+			sourceTree = "<group>";
+		};
+		7BA205291DFE2A2A00827667 /* Seller Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7B49CAE61DFA014D00483224 /* SellerTestCases.swift */,
+				7B49CAE81DFA090800483224 /* StripeAccountViewControllerTests.swift */,
+				7B49CAEA1DFA0A0700483224 /* OpenOrdersTableViewControllerTests.swift */,
+				7B49CAEC1DFA42F300483224 /* GatheringDeliverInfoTests.swift */,
+				7B49CAEE1DFA441400483224 /* OrderInfoViewControllerTests.swift */,
+				7BA2052B1DFE561A00827667 /* SellerGoingViewControllerTests.swift */,
+				7BA2052D1DFE5B2500827667 /* GoingToCustomerViewControllerTests.swift */,
+				7BA2052F1DFE5CBA00827667 /* ProcessingPaymentViewControllerTests.swift */,
+				7BA205311DFE632000827667 /* CustInfoPopoverTests.swift */,
+			);
+			name = "Seller Tests";
+			sourceTree = "<group>";
+		};
+		7BA2052A1DFE2E0D00827667 /* API Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7BA205331DFE63EE00827667 /* MyAPIClientTests.swift */,
+				7BA205351DFE656900827667 /* BackendClientTests.swift */,
+			);
+			name = "API Tests";
 			sourceTree = "<group>";
 		};
 		7CEDE93E07BB2AFF239FF2E2 /* Pods */ = {
@@ -640,12 +703,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BA2052C1DFE561A00827667 /* SellerGoingViewControllerTests.swift in Sources */,
+				7B376CE81DFE298500D675B9 /* GatheringInfoViewControllerTests.swift in Sources */,
+				7BA205301DFE5CBA00827667 /* ProcessingPaymentViewControllerTests.swift in Sources */,
+				7B376CE91DFE298500D675B9 /* OrderConfirmationViewControllerTests.swift in Sources */,
+				7BA205361DFE656900827667 /* BackendClientTests.swift in Sources */,
 				7B49CAE71DFA014D00483224 /* SellerTestCases.swift in Sources */,
+				7B376CEB1DFE298500D675B9 /* OrderLocationViewControllerTests.swift in Sources */,
 				7B49CAE91DFA090800483224 /* StripeAccountViewControllerTests.swift in Sources */,
+				7B376CE71DFE298500D675B9 /* CardViewControllerTests.swift in Sources */,
+				7B376CED1DFE298500D675B9 /* PickRestarauntViewControllerTest.swift in Sources */,
+				7B376CEA1DFE298500D675B9 /* OrderFormViewControllerTests.swift in Sources */,
 				7B49CAEB1DFA0A0700483224 /* OpenOrdersTableViewControllerTests.swift in Sources */,
+				7BA2052E1DFE5B2500827667 /* GoingToCustomerViewControllerTests.swift in Sources */,
 				7B49CAED1DFA42F300483224 /* GatheringDeliverInfoTests.swift in Sources */,
+				7BA205341DFE63EE00827667 /* MyAPIClientTests.swift in Sources */,
 				7B9F05A71DE8DC2000E98C5C /* BlockTraderTests.swift in Sources */,
+				7BA205321DFE632000827667 /* CustInfoPopoverTests.swift in Sources */,
 				7B49CAEF1DFA441400483224 /* OrderInfoViewControllerTests.swift in Sources */,
+				7B376CEC1DFE298500D675B9 /* PickFoodViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
