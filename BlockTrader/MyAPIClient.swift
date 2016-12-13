@@ -87,7 +87,11 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         }
     }
     
-    
+    /**
+     Decodes a URL response to find any errors
+     - parameter response: The URL reponse from the server
+     - parameter error: The possible error
+    */
     func decodeResponse(_ response: URLResponse?, error: NSError?) -> NSError? {
         if let httpResponse = response as? HTTPURLResponse
             , httpResponse.statusCode != 200 {
@@ -96,6 +100,10 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         return error
     }
     
+    /**
+     Converts dollars to cents in string form
+     - parameter cost: The cost in the required format of "Dollar amount.CC"
+    */
     func getCents(cost: String) -> String{
         if (cost == ""){return ""}
         var newArr = cost.components(separatedBy: ".")
@@ -110,6 +118,13 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         }
     }
     
+    /**
+    Performs a Stripe charge on the customerID to the providerID with amount "cost"
+    - parameter providerID: The stripe account ID of the deliverer
+    - parameter customerID: The stripe customer ID of the buyer
+    - parameter cost: The cost of the transaction
+    - parameter completion: The completion handler
+    */
     func performCharge(providerID: String, customerID: String, cost: String, completion: @escaping () -> Void){
         guard let baseURL = URL(string: stripeBackendURL) else {
             let error = NSError(domain: StripeDomain, code: 50, userInfo: [
@@ -140,6 +155,7 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
 
     }
     
+    //Base required function in STPBackendAPIAdapter. This function is required but not used
     func completeCharge(_ result: STPPaymentResult, amount: Int, completion: @escaping STPErrorBlock) {
         guard let baseURLString = baseURLString, let baseURL = URL(string: baseURLString) else {
             let error = NSError(domain: StripeDomain, code: 50, userInfo: [
@@ -167,6 +183,9 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         task.resume()
     }
     
+    /**
+     Function from stripe-ios-master Github Repo which retrieves a customer. Required for STPBackendAPIAdapter but not used
+    */
     @objc func retrieveCustomer(_ completion: @escaping STPCustomerCompletionBlock) {
         guard let baseURLString = baseURLString, let baseURL = URL(string: baseURLString) else {
             // This code is just for demo purposes - in this case, if the example app isn't properly configured, we'll return a fake customer just so the app works.
@@ -191,6 +210,9 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         task.resume()
     }
     
+    /**
+     Function from stripe-ios-master Github Repo which retrieves a customer's default payment type. Required for STPBackendAPIAdapter but not used
+     */
     @objc func selectDefaultCustomerSource(_ source: STPSource, completion: @escaping STPErrorBlock) {
         guard let baseURLString = baseURLString, let baseURL = URL(string: baseURLString) else {
             if let token = source as? STPToken {
@@ -217,6 +239,9 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
         task.resume()
     }
     
+    /**
+     Function from stripe-ios-master Github Repo which attaches a payment source to a customer. Required for STPBackendAPIAdapter but not used
+     */
     @objc func attachSource(toCustomer source: STPSource, completion: @escaping STPErrorBlock) {
         guard let baseURLString = baseURLString, let baseURL = URL(string: baseURLString) else {
             if let token = source as? STPToken, let card = token.card {
